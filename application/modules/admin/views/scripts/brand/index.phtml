@@ -1,0 +1,23 @@
+<?php echo $this->render('messages.phtml') ?>
+
+<div class="fl"></div>
+<a class="button1" href="#"><small>Add brand</small></a>
+<div class="clear"></div>
+
+<?php if($this->brands): ?>
+<div class="empty10"></div>
+<table class="tableListingsAll" width="100%" cellspacing="0" cellpadding="0" border="0">
+		<col width="" />
+		<col width="80" />
+		<tr>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+	<?php foreach($this->brands as $brand): ?>
+		<tr>
+			<td><?php echo $brand->getName() ?></td>
+			<td>-</td>
+		</tr>
+	<?php endforeach ?>
+</table>
+<?php endif; ?>

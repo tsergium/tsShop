@@ -1,0 +1,47 @@
+<div class="empty10"></div>
+<?php if($this->result) : ?>
+	<?php foreach($this->result as $value) : ?>
+		<div class="news">
+			<span class="news-date"><?php echo date('d M Y', $value->getCreated()); ?></span>
+			<h1>
+				<a href="/blog/details/id/<?php echo $value->getId(); ?>">
+				<?php
+					if(Zend_Registry::get('lang') == 'en') {
+						echo $value->getTitleen();
+					} else {
+						echo $value->getTitle();
+					}
+				?>
+				</a>
+			</h1>
+			<div class="clear"></div>
+			<p>
+				<?php
+					if(Zend_Registry::get('lang') == 'en') {
+						echo strip_tags($value->getDescriptionen());
+					} else {
+						echo strip_tags($value->getDescription());
+					}
+				?>
+			</p>
+			<a href="/blog/details/id/<?php echo $value->getId(); ?>" class="blue-small fL"><?php echo Zend_Registry::get('translate')->_('news_table_reed_more'); ?></a>
+			<div class="clear"></div>
+		</div>
+	<?php endforeach; ?>
+
+	<!-- BEGIN: Paginare si sortare -->
+	<?php $itemCountPerPage = $this->itemCountPerPage; ?>
+	<?php $totalItemCount = $this->totalItemCount; ?>
+	<?php if($itemCountPerPage < $totalItemCount) { ?>
+	<div class="wrap-paginare">
+		<ul class="paginare fL">
+			<li><?php echo Zend_Registry::get('translate')->_('news_table_pagination'); ?></li>
+			<?php echo $this->result; ?>
+		</ul>
+	</div>
+	<?php } ?>
+	<!-- END: Paginare si sortare -->
+
+<?php else : ?>
+	<div><?php echo Zend_Registry::get('translate')->_('blog_no_articles_found'); ?></div>
+<?php endif; ?>

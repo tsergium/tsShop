@@ -1,0 +1,13 @@
+<?php if(!empty($this->message)) : ?>
+	<?php foreach($this->message as $value) : ?>
+		<?php echo $value; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+<?php if($this->user) { ?>	
+		<?php echo $this->formEditPassword; ?>
+		<div class="empty10"></div>
+		<?php echo $this->formuser; ?>
+<?php } else { ?>
+	<?php echo Zend_Registry::get('translate')->_('user_invalid_account_selected'); ?>
+<?php } ?>

@@ -1,0 +1,193 @@
+<?php if(!empty($this->message)) : ?>
+    <?php foreach($this->message as $value) : ?>
+	<div class="empty10"></div>
+	<?php echo $value; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+<?php if(null != $this->result){?>
+<div class="detaliu_produs">
+    <div class="detaliu_poza">
+	<div class="lupa">
+	    <a  rel="prettyPhoto[gallery]" href="/media/products/full/<?php echo $this->result->getImage();?>">
+			<img src="/images/lupa.png" alt="<?php echo $this->result->getName();?>" title="<?php echo $this->result->getName();?>" style="margin:0; padding:0;"/>
+	    </a>
+	    <div class="hidden">
+		<?php
+		$imageArray = getProductGallery($this->result->getId());
+		if(null != $imageArray){
+			foreach($imageArray as $value){
+		?>
+			    <a rel="prettyPhoto[gallery]" href="/media/products/full/<?php echo $value->getImage();?>" alt="<?php echo $this->result->getName();?>" title="<?php echo $this->result->getName();?>"></a>
+			<?php
+			}
+		}
+		?>
+	    </div>
+	</div>
+	<table border="0" cellspacing="0" cellpadding="0" width="100%" style="height: 314px;">
+	    <tr>
+		<td align="center" valign="middle">
+		    <img src="/media/products/big/<?php echo $this->result->getImage();?>" alt="<?php echo $this->result->getName();?>" title="<?php echo $this->result->getName();?>" />
+		</td>
+	    </tr> 
+	</table>	
+    </div>
+    <div class="detaliu_continut">
+		<h2><?php echo $this->result->getName();?></h2>
+		<p class="descriere_produs">
+		    <?php echo $this->result->getDescription();?>
+			<span style="display:block; margin-top: 10px; font-size: 15px; font-weight: bold;">Poti comanda acest produs si telefonic la 0761.015.336</span>
+
+		</p>
+		<?php if($this->result->getComposition() != null){ ?>
+		<table cellpadding="0" cellspacing="0" class="tabel">
+		    <tr>
+			<td class="header_tabel"><p>Compozitie material</p></td>
+		    </tr>
+		    <tr>
+			<td class="rand" style="border-right:1px solid #d90867;">
+			    <?php echo $this->result->getComposition(); ?>
+			</td>
+		    </tr>
+		</table>
+		<?php } ?>
+		<?php if( $this->instructions != null){ ?>
+		    <table cellpadding="0" cellspacing="0" class="tabel">
+			<tr>			
+			    <td class="header_tabel"><p>Instructiuni spalare</p></td>
+			</tr>
+			<tr>			
+			    <td class="rand" style="border-right:1px solid #d90867;">
+				<?php foreach ($this->instructions as  $value) { ?> 
+				<a rel="tooltip" title="<?php echo $value->getDescription();?>" >
+				    <img src="/media/productsInstructions/<?php echo $value->getImage();?>" class="instructionImg" alt="<?php echo $value->getDescription();?>" width="30"/>
+				</a>    
+				<?php } ?> 
+			    </td>
+			</tr>
+		    </table>
+		<?php } ?>
+		<form name="frmAddToCart" action="/cart/addproduct/id/<?php echo $this->result->getId();?>" method="post">
+			<table border="0" cellpadding="0" cellspacing="0" class="tabel">
+			    <tr>
+				<td width="150px" class="header_tabel1">Culoare</td>
+				<td width="80px" class="header_tabel1">Marime</td>
+				<td width="50px" class="header_tabel1">Cantitate</td>
+			    </tr>
+			    <tr>
+				<td width="150px">
+					<?php $colors = prodGetColor($this->result->getId());?>
+					<select name="prodColor" class="f1a">
+					<?php if(null != $colors){?>
+						<?php foreach($colors as $value){?>
+						<option value="<?php echo $value->getId();?>"><?php echo $value->getName();?></option>
+						<?php }?>
+					<?php }?>
+					</select>
+				</td>
+				<td width="80px">
+					<?php $sizes = prodGetSize($this->result->getId());?>
+					<select name="prodSize" class="f1b">
+					<?php if(null != $sizes){?>
+						<?php foreach($sizes as $value){?>
+						<option value="<?php echo $value->getId();?>?>"><?php echo $value->getName();?></option>
+						<?php }?>
+					<?php }?>
+					</select>
+				</td>
+				<td width="50px">
+					<select name="quantity" class="f1c">
+						<?php $i = 0;while($i<9){?>
+						<option value="<?php echo $i+1;?>"><?php echo $i+1;?></option>
+						<?php $i++;}?>
+					</select>
+				</td>
+			    </tr>
+			</table>
+			<div class="pret_continut">
+			    <p>Pret: <span><?php echo $this->result->getPrice();?> RON</span></p>
+			    <input class="fr" type="image" src="/images/bt_cos.gif" value="submit" />
+			</div>
+		</form>
+    </div>
+</div>
+<?php }?>
+
+<?php if(null != $this->recomended){?>
+<div class="produse_recomandate">
+    <div style="padding-top:10px; clear:both; height:35px;"><p>Va recomandam si urmatoarele modele:</p></div>
+    <?php foreach($this->recomended as $value){?>
+	<div class="modul">
+	    <div class="modul_poza">
+	    <?php $link = $this->url(array('id' => $value->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($value->getId())."-".$value->getName())),),'product');?>
+		<a href="<?php echo $link;?>" title="<?php echo $value->getName();?>">
+		    <img width="150" src="/media/products/small/<?php echo $value->getImage();?>" alt="<?php echo $value->getName();?>" title="<?php echo $value->getName();?>" border="0" />
+		</a>
+	    </div>
+	    <div class="modul_continut">
+		<ul>
+		    <li class="titlu"><?php echo $value->getName();?></li>
+		    <li class="pret">
+			<span style="font-size:12px; color:#000;">Pret:</span>
+			<?php if(null != $value->getOldprice()){?>
+			    <span style="font-size:12px; color:#5e5e5e;">(<?php echo $value->getOldprice();?> RON)</span>
+			<?php }?>
+			<span style=" font-size:13px; font-weight:bold; color:#d90867"><?php echo $value->getPrice();?> RON</span>
+		    </li>
+		    <li class="buton">
+			<a href="<?php echo $link;?>" title="<?php echo $value->getName();?>">
+			    <img src="/images/bt_modul.gif" alt="<?php echo $value->getName();?>" title="<?php echo $value->getName();?>" border="0" />
+			</a>
+		    </li>
+		</ul>
+	    </div>
+	</div>
+    <?php }?>
+</div>
+<?php }?>
+<script type="text/javascript">
+$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({
+			social_tools: false
+		});
+
+
+//    $("a.fancybox").fancybox();
+
+
+	//Select all anchor tag with rel set to tooltip
+	$('a[rel=tooltip]').mouseover(function(e) {
+		
+		//Grab the title attribute's value and assign it to a variable
+		var tip = $(this).attr('title');	
+		
+		//Remove the title attribute's to avoid the native tooltip from the browser
+		$(this).attr('title','');
+		
+		//Append the tooltip template and its value
+		$(this).append('<div id="tooltip"><div class="tipHeader"></div><div class="tipBody">' + tip + '</div><div class="tipFooter"></div></div>');		
+				
+		//Show the tooltip with faceIn effect
+		$('#tooltip').fadeIn('500');
+		$('#tooltip').fadeTo('10',0.9);
+		
+	}).mousemove(function(e) {
+	
+		//Keep changing the X and Y axis for the tooltip, thus, the tooltip move along with the mouse
+		$('#tooltip').css('top', e.pageY + 10 );
+		$('#tooltip').css('left', e.pageX + 20 );
+		
+	}).mouseout(function() {
+	
+		//Put back the title attribute's value
+		$(this).attr('title',$('.tipBody').html());
+	
+		//Remove the appended tooltip template
+		$(this).children('div#tooltip').remove();
+		
+	});
+
+});
+
+</script>

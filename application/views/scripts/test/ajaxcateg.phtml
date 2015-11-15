@@ -1,0 +1,10 @@
+<h1 class="cufon">Ajax Driven Categories</h1>
+<div class="box">
+	<?php if(($categories = top())){?>
+		<select>
+		<?php foreach($categories as $value){?>
+			<option><?php echo $value->getName();?></option>
+		<?php } ?>
+		</select>
+	<?php }?>
+</div>

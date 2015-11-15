@@ -1,0 +1,149 @@
+<?php
+	require_once APPLICATION_PUBLIC_PATH.'/library/App/PlatiOnlineRo/clspo.php';
+	require_once APPLICATION_PUBLIC_PATH.'/library/App/PlatiOnlineRo/RSALib.php';
+	$my_class = new PO3();
+
+	// Secret Answer: batman
+	$lid = "WWW.LENJERIE-DE-LUX.RO";
+	$ke = 20210539;
+	$km = 42636151;
+
+	$my_class->LoginID = $lid;
+	$my_class->KeyEnc = $ke;
+	$my_class->KeyMod = $km;
+
+	if(!empty($_GET["F_MESSAGE_RELAY"])){
+		$vF_Message_Relay = $_GET["F_MESSAGE_RELAY"];
+	}else{
+		$vF_Message_Relay = $_POST["F_MESSAGE_RELAY"];
+	}
+
+	if(!empty($_GET["F_CRYPT_MESSAGE_RELAY"])){
+		$vF_Crypt_Message_Relay = $_GET["F_CRYPT_MESSAGE_RELAY"];
+	}else{
+		$vF_Crypt_Message_Relay = $_POST["F_CRYPT_MESSAGE_RELAY"];
+	}
+
+	if(!empty($_GET["X_RESPONSE_CODE"])){
+		$vX_RESPONSE_CODE = $_GET["X_RESPONSE_CODE"];
+	}else{
+		$vX_RESPONSE_CODE = $_POST["X_RESPONSE_CODE"];
+	}
+
+	if(!empty($_GET["X_RESPONSE_REASON_TEXT"])){
+		$vX_RESPONSE_REASON_TEXT = $_GET["X_RESPONSE_REASON_TEXT"];
+	}else{
+		$vX_RESPONSE_REASON_TEXT = $_POST["X_RESPONSE_REASON_TEXT"];
+	}
+
+	if(!empty($_GET["F_ORDER_NUMBER"])){
+		$vF_ORDER_NUMBER = $_GET["F_ORDER_NUMBER"];
+	}else{
+		$vF_ORDER_NUMBER = $_POST["F_ORDER_NUMBER"];
+	}
+
+	if(!empty($_GET["F_AMOUNT"])){
+		$vF_Amount= $_GET["F_AMOUNT"];
+	}else{
+		$vF_Amount= $_POST["F_AMOUNT"];
+	}
+
+	if(!empty($_GET["F_CURRENCY"])){
+		$vF_Currency= $_GET["F_CURRENCY"];
+	}else{
+		$vF_Currency= $_POST["F_CURRENCY"];
+	}
+
+	$vMy_F_Message_Relay=strtoupper($my_class->VerifyFRM(strval($vF_Message_Relay)));
+
+	//echo "rsaString=".$rsaString."<BR>";
+	//$sEncoded=$my_class->POEncode(strval($KeyEnc).strval($KeyMod), strtoupper($rsaString));
+	//$vMy_F_Message_Relay= strtoupper($sEncoded);
+
+	// make sure the response it is from PlatiOnline.ro servers
+	if($vF_Crypt_Message_Relay!=$vMy_F_Message_Relay){
+		//die("ERROR!!!<hr>hacking attempt.[Relay Message]");
+	}
+
+	$vA= explode("^", $vF_Message_Relay);
+	//print_r( $vA);
+
+	// if the curency do not match with the message currency decline the transaction
+	$vCurrencyMessage= $vA[4];
+	//echo $vCurrencyMessage;
+	if($vCurrencyMessage!=$vF_Currency){
+		//die("ERROR!!!<hr>Hacking attempt.[Currency Relay Message]");
+	}
+
+	// if the amount do not match with the message amount decline the transaction
+	$vAmountMessage= $vA[3];
+	if($vAmountMessage!=$vF_Amount){
+		//die("ERROR!!!<hr>Hacking attempt.[Amount Relay Message]");
+	}
+	// if the response code do not match with the message response code decline the transaction
+
+	$vX_Response_Code_Message= $vA[5];
+
+	if($vX_RESPONSE_CODE!=$vX_Response_Code_Message){
+		//die("ERROR!!!<hr>Hacking attempt.[Response Code Relay Message]");
+	}
+
+	// if declined redirect print the decline page
+	// if aproved inster the order into the orders table
+	// 2 este aprobata metoda CC
+	// 11 aprobata metoda Wire Tranfer
+	if($vX_RESPONSE_CODE!=2){
+		//die('eroare_procesare:Comanda refuzata: '.$vX_RESPONSE_REASON_TEXT);
+	}
+
+	// ATENTIE
+	// validare ca nu e refresh
+	// dupa tot F_Message sau doar dupa stampul din F_Message
+	// daca e refres atunci NU treb sa inregistrezi duplicat rezultatul
+	$vReponseStamp= $vA[2];
+//	echo $vReponseStamp;
+	// END PlatiOnline.ro
+	//  -------------
+	if ($vX_RESPONSE_CODE == "2"){?>
+		<?php $statusChange = orderCardConfirm($vF_ORDER_NUMBER);?>
+		<?php if($statusChange == true){?>
+			<div class="message success">
+				<p><strong></strong> Comanda dumneavoastra a fost acceptata!</p>
+			</div>
+		<?php }else{?>
+			<div class="message success">
+				<p><strong></strong> Comanda dumneavoastra a fost acceptata!</p>
+			</div>
+			<div class="message error">
+				<p>
+					Statusul comenzii dvs. nu a putut fi modificat!<br />
+					Va rugam sa raportati aceasta problema folosind formularul de contact.
+				</p>
+			</div>
+		<?php }?>
+	<?php }elseif ($vX_RESPONSE_CODE == "13"){?>
+		<?php $statusChange = orderCardConfirm($vF_ORDER_NUMBER, true);?>
+		<?php if($statusChange == true){?>
+			<div class="message success">
+				<p><strong></strong> Tranzactia s-a autorizat cu succes, insa necesita verificari ulterioare!</p>
+			</div>
+		<?php }else{?>
+			<div class="message success">
+				<p><strong></strong> Tranzactia s-a autorizat cu succes, insa necesita verificari ulterioare!</p>
+			</div>
+			<div class="message error">
+				<p>
+					Statusul comenzii dvs. nu a putut fi modificat!<br />
+					Va rugam sa raportati aceasta problema folosind formularul de contact.
+				</p>
+			</div>
+		<?php }?>
+	<?php }else{?>
+		<div class="message error">
+			<p><strong></strong> Comanda dumneavoastra a fost refuzata!</p>
+		</div>
+		<div class="empty10"></div>
+		<div style="color: #444; border: 1px solid #888; padding: 5px; border-radius: 5px; margin-right: 10px;"><strong>Motivul refuzului:</strong>&nbsp;<?php echo $vX_RESPONSE_REASON_TEXT;?></div>
+	<?php }
+
+?>

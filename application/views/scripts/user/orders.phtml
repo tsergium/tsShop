@@ -1,0 +1,54 @@
+<?php if(!empty($this->message)) : ?>
+	<?php foreach($this->message as $value) : ?>
+		<?php echo $value; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+<?php $pricetype = $this->pricetype; ?>
+
+<!--<h1 class="title"><?php echo Zend_Registry::get('translate')->_('user_view_orders'); ?></h1>-->
+<div class="empty10">&nbsp;</div>
+<?php if($this->result) : ?>
+	<div class="box">
+		<table class="box-tbl-info" width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>			
+			<th>Nr. Com</th>
+			<th>Data</th>
+			<th>Suma</th>
+			<th><?php echo Zend_Registry::get('translate')->_('default_status'); ?></th>
+			<th><?php echo Zend_Registry::get('translate')->_('default_action'); ?></th>
+		</tr>
+		<?php $i=1; foreach($this->result as $value) : ?>
+		<?php if($value->getStatus() == 'pending') { $status = Zend_Registry::get('translate')->_('sales_index_table_pending'); } ?>
+		<?php if($value->getStatus() == 'accepted') { $status = Zend_Registry::get('translate')->_('sales_index_table_accepted'); } ?>
+		<?php if($value->getStatus() == 'completed') { $status = Zend_Registry::get('translate')->_('sales_index_table_completed'); } ?>
+		<?php if($value->getStatus() == 'rejected') { $status = Zend_Registry::get('translate')->_('sales_index_table_rejected'); } ?>
+		<?php if($value->getStatus() == 'card_unconfirmed') { $status = Zend_Registry::get('translate')->_('sales_index_table_card_unconfirmed'); } ?>
+		<?php if($value->getStatus() == 'card_confirmed') { $status = Zend_Registry::get('translate')->_('sales_index_table_card_confirmed'); } ?>
+		<?php if($value->getStatus() == 'card_onhold') { $status = "card in asteptare"; } ?>
+		
+		<tr>			
+			<td ><a href="/user/orderdetails/orderId/<?php echo $value->getId(); ?>" class="link"><?php echo $value->getId(); ?></a></td>
+			<td><?php echo $value->getCreated()?date('d M Y', $value->getCreated()):'-'; ?></td>
+			<td><?php echo number_format($value->getTotalcost(), 2, '.', ','); ?> <small>RON</small></td>
+			<td><?php echo $status; ?></td>
+			<td><a href="/user/orderdetails/orderId/<?php echo $value->getId(); ?>" class="link"><?php echo Zend_Registry::get('translate')->_('default_details'); ?></a></td>
+		</tr>
+		<?php $i++; endforeach; ?>
+		</table>
+	</div>
+
+	<?php $itemCountPerPage = $this->itemCountPerPage; ?>
+	<?php $totalItemCount = $this->totalItemCount; ?>
+	<?php if($itemCountPerPage < $totalItemCount) { ?>
+	<div class="wrap-paginare">
+		<ul class="paginare fL">
+			<li><?php echo Zend_Registry::get('translate')->_('news_table_pagination'); ?></li>
+			<?php echo $this->result; ?>
+		</ul>
+	</div>
+	<?php } ?>
+
+<?php else : ?>
+	<div class="box"><?php echo Zend_Registry::get('translate')->_('user_not_have_any_order_made'); ?></div>
+<?php endif; ?>

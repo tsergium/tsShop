@@ -1,0 +1,57 @@
+<?php if(!empty($this->message)) : ?>
+	<?php foreach($this->message as $value) : ?>
+		<?php echo $value; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+<div style="width:630px;">
+	<div class="regSubForm">
+		<h3 class="expandable">Modifica Parola</h3>
+		<?php echo $this->form; ?>
+	</div>
+
+
+	<div class="empty10"></div>
+	<div class="regSubForm">
+		<h3 class="expandable">Detalii Companie</h3>		
+	</div>
+
+	<div class="empty10"></div>
+	<?php if(($company = $this->company)) : ?>
+		<table border="0" width="100%" cellpadding="0" cellspacing="0" class="box-tbl-info">
+		<col width="150">			
+			<tr>
+				<td><strong><?php echo Zend_Registry::get('translate')->_('settings_company_details_table_company'); ?></strong></td>
+				<td align="left"><?php echo $company->getInstitution(); ?></td>
+			</tr>
+			<tr>
+				<td><strong><?php echo Zend_Registry::get('translate')->_('settings_company_details_table_address'); ?></strong></td>
+				<td align="left"><?php echo $company->getAddress(); ?></td>
+			</tr>
+			<tr>
+				<td><strong><?php echo Zend_Registry::get('translate')->_('settings_company_details_table_phone'); ?></strong></td>
+				<td align="left"><?php echo $company->getPhone(); ?></td>
+			</tr>
+			<tr>
+				<td><strong><?php echo Zend_Registry::get('translate')->_('settings_company_details_table_phone2'); ?></strong></td>
+				<td align="left"><?php echo $company->getPhone2(); ?></td>
+			</tr>		
+			<tr>
+				<td><strong><?php echo Zend_Registry::get('translate')->_('settings_company_details_table_email'); ?></strong></td>
+				<td align="left"><?php echo $company->getEmail(); ?></td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left">
+					<div class="empty5"></div>
+					<a href="/admin/index/editcompany/id/<?php echo $company->getId(); ?>" class="button1"><?php echo Zend_Registry::get('translate')->_('settings_company_details_button_edit'); ?></a>
+					<div class="empty5"></div>
+				</td>
+			</tr>
+		</table>
+	<?php else : ?>
+			
+	<?php endif; ?>
+</div>

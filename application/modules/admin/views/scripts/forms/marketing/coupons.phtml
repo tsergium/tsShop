@@ -1,0 +1,173 @@
+<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getAttrib('id');?>" class="<?php echo $this->element->getAttrib('class');?>" enctype="<?php echo $this->element->getEncType();?>">
+	<table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
+		<col width="200" />
+		<tr>
+			<td colspan="2"><center class="hint"><?php echo Zend_Registry::get('translate')->_('marketing_add_coupon_required'); ?></center></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+					$attribs = array();
+					if($this->element->code->isRequired()) {
+						$attribs['class'] = 'required';
+					}
+					echo $this->formLabel($this->element->code->getName(), $this->element->code->getLabel(), $attribs);
+				?>
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->code->helper}
+							(
+								$this->element->code->getName(),
+								$this->element->code->getValue(),
+								$this->element->code->getAttribs()
+							);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>' != ($this->element->code->getMessages())) { echo $this->formErrors($this->element->code->getMessages()); } ?>
+				<div class="hint"><?php echo $this->element->code->getDescription(); ?></div>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+					$attribs = array();
+					if($this->element->value->isRequired()) {
+						$attribs['class'] = 'required';
+					}
+					echo $this->formLabel($this->element->value->getName(), $this->element->value->getLabel(), $attribs);
+				?>
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->value->helper}
+							(
+								$this->element->value->getName(),
+								$this->element->value->getValue(),
+								$this->element->value->getAttribs()
+							);
+				?>
+				%
+				<?php if('<ul class="errors"><li></li></ul>' != ($this->element->value->getMessages())) { echo $this->formErrors($this->element->value->getMessages()); } ?>
+				<div class="hint"><?php echo $this->element->value->getDescription(); ?></div>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+					$attribs = array();
+					if($this->element->startdate->isRequired()) {
+						$attribs['class'] = 'required';
+					}
+					echo $this->formLabel($this->element->startdate->getName(), $this->element->startdate->getLabel(), $attribs);
+				?>
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->startdate->helper}
+							(
+								$this->element->startdate->getName(),
+								$this->element->startdate->getValue(),
+								$this->element->startdate->getAttribs()
+							);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>' != ($this->element->startdate->getMessages())) { echo $this->formErrors($this->element->startdate->getMessages()); } ?>
+				<div class="hint"><?php echo $this->element->startdate->getDescription(); ?></div>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+					$attribs = array();
+					if($this->element->enddate->isRequired()) {
+						$attribs['class'] = 'required';
+					}
+					echo $this->formLabel($this->element->enddate->getName(), $this->element->enddate->getLabel(), $attribs);
+				?>
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->enddate->helper}
+							(
+								$this->element->enddate->getName(),
+								$this->element->enddate->getValue(),
+								$this->element->enddate->getAttribs()
+							);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>' != ($this->element->enddate->getMessages())) { echo $this->formErrors($this->element->enddate->getMessages()); } ?>
+				<div class="hint"><?php echo $this->element->enddate->getDescription(); ?></div>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+					$attribs = array();
+					if($this->element->status->isRequired()) {
+						$attribs['class'] = 'required';
+					}
+					echo $this->formLabel($this->element->status->getName(), $this->element->status->getLabel(), $attribs);
+				?>
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->status->helper}
+							(
+								$this->element->status->getName(),
+								$this->element->status->getValue(),
+								$this->element->status->getAttribs(),
+								$this->element->status->getMultioptions(),
+								'&nbsp;&nbsp;&nbsp;'
+							);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>' != ($this->element->status->getMessages())) { echo $this->formErrors($this->element->status->getMessages()); } ?>
+				<div class="hint"><?php echo $this->element->status->getDescription(); ?></div>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<?php
+					echo $this->{$this->element->submit->helper}
+							(
+								$this->element->submit->getName(),
+								$this->element->submit->getValue(),
+								$this->element->submit->getAttribs()
+							);
+				?>
+			</td>
+		</tr>
+	</table>
+</form>
+
+<?php $this->headScript()->captureStart() ?>
+	$(document).ready(function() {
+		$("#<?php echo $this->element->getId();?>").validationEngine();
+	});
+	$(function() {	
+		$("#startdate").datepicker({dateFormat: 'dd-mm-yy' });
+		$("#enddate").datepicker({dateFormat: 'dd-mm-yy' });
+	});
+<?php $this->headScript()->captureEnd() ?>

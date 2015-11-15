@@ -1,0 +1,126 @@
+<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getId();?>" enctype="<?php echo $this->element->getEncType();?>">
+	<table width="100%" cellpadding="0" cellspacing="0" class="tableAdmin">
+	<col width="250" />
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><center class="hint"><?php echo Zend_Registry::get('translate')->_("marketing_blogcreate_required"); ?></center></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+				$attribs = array();
+				if ($this->element->title->isRequired()) {
+					$attribs['class'] = 'required';
+				}
+				echo $this->formLabel($this->element->title->getName(), $this->element->title->getLabel(), $attribs);?>
+			</td>
+			<td>
+				<?php
+				echo $this->{$this->element->title->helper}(
+							$this->element->title->getName(),
+							$this->element->title->getValue(),
+							$this->element->title->getAttribs()
+						);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->title->getMessages()))){ echo $this->formErrors($this->element->title->getMessages());} ?>
+				<p class="red-warning"><small><?php echo $this->element->title->getDescription() ?></small></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+				$attribs = array();
+				if ($this->element->description->isRequired()) {
+					$attribs['class'] = 'required';
+				}
+				echo $this->formLabel($this->element->description->getName(), $this->element->description->getLabel(), $attribs);?>
+			</td>
+			<td>
+				<?php
+				echo $this->{$this->element->description->helper}(
+							$this->element->description->getName(),
+							$this->element->description->getValue(),
+							$this->element->description->getAttribs()
+						);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->description->getMessages()))){ echo $this->formErrors($this->element->description->getMessages());} ?>
+				<p class="red-warning"><small><?php echo $this->element->description->getDescription() ?></small></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+				$attribs = array();
+				if ($this->element->content->isRequired()) {
+					$attribs['class'] = 'required';
+				}
+				echo $this->formLabel($this->element->content->getName(), $this->element->content->getLabel(), $attribs);?>
+			</td>
+			<td>
+				<?php
+				echo $this->{$this->element->content->helper}(
+							$this->element->content->getName(),
+							$this->element->content->getValue(),
+							$this->element->content->getAttribs()
+						);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->content->getMessages()))){ echo $this->formErrors($this->element->content->getMessages());} ?>
+				<p class="red-warning"><small><?php echo $this->element->content->getDescription() ?></small></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+				$attribs = array();
+				if ($this->element->status->isRequired()) {
+					$attribs['class'] = 'required';
+				}
+				echo $this->formLabel($this->element->status->getName(), $this->element->status->getLabel(), $attribs); ?>
+			</td>
+			<td>
+				<?php
+				echo $this->{$this->element->status->helper}(
+							$this->element->status->getName(),
+							$this->element->status->getValue(),
+							$this->element->status->getAttribs(),
+							$this->element->status->getMultiOptions(),
+							'&nbsp;&nbsp;&nbsp;'
+						);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->status->getMessages()))){ echo $this->formErrors($this->element->status->getMessages());} ?>
+				<p class="description"><?php echo $this->element->status->getDescription() ?></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				&nbsp;
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->submit->helper}(
+								$this->element->submit->getName(),
+								$this->element->submit->getValue(),
+								$this->element->submit->getAttribs()
+							);
+				?>
+			</td>
+		</tr>
+	</table>
+</form>

@@ -1,0 +1,57 @@
+<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getAttrib('id');?>" class="<?php echo $this->element->getAttrib('class');?>"  enctype="<?php echo $this->element->getEncType();?>">
+	<table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
+		<col width="200" />
+		<tr>
+			<td colspan="2">
+				<center class="hint">
+					Campurile marcate cu <img alt="required" src="/images/admin/required.gif"> sunt obligatorii					
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td valign="top">
+				<?php
+				$attribs = array();
+				if ($this->element->txtHeaderSearch->isRequired()) {
+					$attribs['class'] = 'required';
+				}
+				echo $this->formLabel($this->element->txtHeaderSearch->getName(), $this->element->txtHeaderSearch->getLabel(), $attribs);?>
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->txtHeaderSearch->helper}(
+								$this->element->txtHeaderSearch->getName(),
+								$this->element->txtHeaderSearch->getValue(),
+								$this->element->txtHeaderSearch->getAttribs()
+							);
+				?>
+				<?php if('<ul class="errors"><li></li></ul>'!=($this->element->txtHeaderSearch->getMessages())){ echo  $this->formErrors($this->element->txtHeaderSearch->getMessages());} ?>
+				<div class="hint"><?php echo $this->element->txtHeaderSearch->getDescription(); ?></div>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<?php echo $this->{$this->element->submit->helper}(
+								$this->element->submit->getName(),
+								$this->element->submit->getValue(),
+								$this->element->submit->getAttribs()
+							);
+				?>
+			</td>
+		</tr>
+	</table>
+</form>
+<?php $this->headScript()->captureStart() ?>
+	$(document).ready(function() {
+		$("#<?php echo $this->element->getAttrib('id');?>").validationEngine();
+	});
+<?php $this->headScript()->captureEnd() ?>

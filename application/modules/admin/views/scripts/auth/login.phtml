@@ -1,0 +1,25 @@
+<style type="text/css">
+.loginBox{
+	width: 138px;
+	padding: 10px 45px;
+	border: 1px solid #E0E5EA;
+	border-top: 3px solid #E0E5EA;
+	border-bottom: 3px solid #E0E5EA;
+	margin: 100px auto;
+	background: #FFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+</style>
+
+<div class="loginBox">
+<?php 
+if (!empty($this->message)) {
+	foreach ($this->message as $value) {
+		echo $value;
+	}
+}
+echo $this->form;
+?>
+</div>

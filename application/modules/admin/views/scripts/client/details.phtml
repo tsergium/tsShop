@@ -1,0 +1,104 @@
+<?php if(!empty($this->message)) : ?>
+	<?php foreach($this->message as $value) : ?>
+		<div class="empty10"></div>
+		<?php echo $value; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+<div class="empty10"></div>
+<a class="button1" href="/admin/client/edit/id/<?php echo $this->customer->getId();?>">Edit</a>
+
+<div style="width:630px;">
+	<div class="regSubForm">
+		<h3 class="expandable"><?php echo Zend_Registry::get('translate')->_('customers_details_title_account_details'); ?></h3>
+		<?php if(($value = $this->customer)) : ?>
+		<table width="100%" border="0" cellpadding="2" cellspacing="1" class="tableListingsAll">
+			<tr>
+				<th colspan="2">Date Personale</th>
+			</tr>			
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_name'); ?></td>
+				<td><?php echo strip_tags($value->getFirstname()).' '.strip_tags($value->getLastname()); ?></td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><?php echo strip_tags($value->getUsername()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_email'); ?></td>
+				<td><?php echo strip_tags($value->getEmail()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_member_since'); ?></td>
+				<td><?php echo date('d M Y',$value->getCreated()); ?></td>
+			</tr>
+			<tr>
+				<td>Data nasterii</td>
+				<td><?php echo date('d M Y',$value->getBirthday()); ?></td>
+			</tr>
+			<tr>
+				<td>Sex</td>
+				<td><?php echo ($value->getGender() == 1)? 'Masculin':'Feminin'; ?></td>
+			</tr>
+			<tr>
+				<th colspan="2">Date de contact</th>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_address'); ?></td>
+				<td><?php echo strip_tags($value->getAddress()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_county'); ?></td>
+				<td><?php echo strip_tags($value->getCounty()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_city'); ?></td>
+				<td><?php echo strip_tags($value->getCity()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_zip'); ?></td>
+				<td><?php echo strip_tags($value->getZip()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_phone'); ?></td>
+				<td><?php echo strip_tags($value->getPhone()); ?></td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<?php if($value->getClienttype() == 1) { ?>
+			<tr>
+				<th colspan="2"><?php echo Zend_Registry::get('translate')->_('customers_details_table_title_company_information'); ?></th>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_company'); ?></td>
+				<td><?php echo strip_tags($value->getCompanyname()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_fiscal_code'); ?></td>
+				<td><?php echo strip_tags($value->getFiscalcode()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_trade_register'); ?></td>
+				<td><?php echo strip_tags($value->getTraderegister()); ?></td>
+			</tr>
+			<tr>
+				<td><?php echo Zend_Registry::get('translate')->_('customers_details_table_bank'); ?></td>
+				<td><?php echo strip_tags($value->getBank()); ?></td>
+			</tr>
+			<tr>
+				<td>Cont bancar</td>
+				<td><?php echo strip_tags($value->getBankaccount()); ?></td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<?php } ?>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			
+		</table>
+		<?php endif; ?>
+	</div>
+</div>

@@ -1,0 +1,2884 @@
+#Example csv file
+# Begin: Backend
+# Begin: Admin Menu and Titles
+admin_menu_dashboard;Dashboard
+admin_menu_sales_main;Sales
+admin_menu_sales_orders;Orders
+admin_menu_sales_orders_new_orders;New Orders
+admin_menu_sales_orders_edit_orders;Edit Order
+admin_menu_sales_orders_add_orders;Add Order
+admin_menu_sales_orders_pending_orders;Pending Orders
+admin_menu_sales_orders_accepted_orders;Accepted Orders
+admin_menu_sales_orders_completed_orders;Completed Orders
+admin_menu_sales_orders_rejected_orders;Rejected Orders
+admin_menu_sales_orders_details_orders;Order Details
+admin_menu_sales_invoices;Invoices
+admin_menu_sales_wishlist;Wishlist
+admin_menu_sales_wishlist_details;Wishlist Details
+admin_menu_customers;Customers
+admin_menu_customers_registered;Registered
+admin_menu_customers_search_account;Search Account
+admin_menu_customers_edit_account;Edit Account
+admin_menu_customers_create_account;Create Account
+admin_menu_customers_details_account;Account Details
+admin_menu_customers_inactive;Inactive
+admin_menu_operators;Operators
+admin_menu_operators_details;Details
+admin_menu_operators_edit;Edit Operator
+admin_menu_operators_create;Create Operator
+admin_menu_products;Products
+admin_menu_products_add;Add Products
+admin_menu_products_details;Product Details
+admin_menu_products_edit;Edit Products
+admin_menu_products_gallery;Product Gallery
+admin_menu_products_add_specifications;Add Product Specifications
+admin_menu_products_edit_specifications;Edit Product Specifications
+admin_menu_products_edit_attributes;Edit Product Attributes
+admin_menu_products_deleted;Deleted Products
+admin_menu_products_custom;Custom Products
+admin_menu_products_custom_product_attributes;Custom Product Attributes
+admin_menu_products_accessories;Accessories
+admin_menu_products_attributes_create;Product Attributes
+admin_menu_products_add_product_attributes;Add Product Attributes
+admin_menu_products_edit_product_attributes;Edit Product Attributes
+admin_menu_products_specification_models;Specifications Models
+admin_menu_products_add_specification_models;Add Specification Models
+admin_menu_products_edit_specification_models;Edit Specification Models
+admin_menu_products_search;Search Product
+admin_menu_products_categories;Categories
+admin_menu_products_categories_add;Add Categories
+admin_menu_products_categories_edit;Edit Categories
+admin_menu_products_categories_add_specifications;Add Category Specifications
+admin_menu_products_categories_edit_specifications_group;Edit Category Specifications Group
+admin_menu_products_categories_edit_specifications_model;Edit Category Specifications Model
+admin_menu_products_brands;Brands
+admin_menu_products_brands_add;Add Brands
+admin_menu_products_brands_edit;Edit Brands
+admin_menu_products_import_products;Import Products
+admin_menu_products_export_products;Export Products
+admin_menu_products_buffer_category;Buffer Category
+admin_menu_products_buffer_category_move_products;Move to other Category
+admin_menu_products_buffer_category_deleted_products;Deleted Products
+admin_menu_products_out_of_stock;Out of stock
+admin_menu_products_manage_stock;Manage Stock
+admin_menu_products_import_sku;Import SKU
+admin_menu_products_export_sku;Export SKU
+admin_menu_marketing;Marketing
+admin_menu_marketing_newsletter;Newsletter
+admin_menu_marketing_blog_create_article;Create Article
+admin_menu_marketing_blog_modify_article;Modify Article
+admin_menu_marketing_subscribers;Subscribers
+admin_menu_marketing_campaign_manager;Campaign Manager
+admin_menu_marketing_campaign_manager_add;Add Campaign
+admin_menu_marketing_campaign_manager_edit;Edit Campaign
+admin_menu_marketing_campaign_manager_details;Campaign Details
+admin_menu_marketing_news;News
+admin_menu_marketing_news_add;Add News
+admin_menu_marketing_news_edit;Edit News
+admin_menu_marketing_customers_opinions;Customers Opinions
+admin_menu_marketing_coupons;Coupons
+admin_menu_marketing_coupons_add;Add Coupons
+admin_menu_marketing_coupons_edit;Edit Coupons
+admin_menu_marketing_feeds;Feeds
+admin_menu_marketing_feeds_add;Add Feeds
+admin_menu_marketing_feeds_edit;Edit Feeds
+admin_menu_reports;Reports
+admin_menu_reports_time_frame;Time Frame
+admin_menu_reports_best_sellers;Best Sellers
+admin_menu_reports_top_customers;Top Customers
+admin_menu_reports_sku_reports;SKU Reports
+admin_menu_cms_pages;Pages
+admin_menu_cms_pages_add_pages;Add Pages
+admin_menu_cms_pages_edit_pages;Edit Pages
+admin_menu_cms_headerfooter_add;Add Header/Footer Content
+admin_menu_cms_headerfooter_edit;Edit Header/Footer Content
+admin_menu_cms_seo_add;Add SEO
+admin_menu_cms_seo_edit;Edit SEO
+admin_menu_sitemap;Generate sitemap
+admin_menu_cms_google_analytics_add;Add Tracking Code
+admin_menu_cms_google_analytics_edit;Edit Tracking Code
+admin_menu_email_templates;Email Templates
+admin_menu_email_templates_signup_email;Signup Email
+admin_menu_email_templates_gotsale;Got Sale
+admin_menu_email_templates_gotsale_email;Got Sale Email
+admin_menu_email_templates_forgot_password_email;Forgot Password Email
+admin_menu_email_templates_subscribers_email;Newsletter Subscribers Activation Email
+admin_menu_plugins;Plugins
+admin_menu_plugins_signup_email;Signup Email
+admin_menu_settings;Settings
+admin_menu_settings_site_preferences;Site Preferences
+admin_menu_settings_site_preferences_add;Add Site Preferences
+admin_menu_settings_site_preferences_edit;Edit Site Preferences
+admin_menu_settings_company_details;Company Details
+admin_menu_settings_company_details_add;Add Company Details
+admin_menu_settings_company_details_edit;Edit Company Details
+admin_menu_settings_users;Users
+admin_menu_settings_payments;Payments
+admin_menu_settings_payments_add;Add Payments
+admin_menu_settings_payments_edit;Edit Payments
+admin_menu_settings_product_taxes;Product Taxes
+admin_menu_settings_product_taxes_add;Add Taxes
+admin_menu_settings_product_taxes_edit;Edit Taxes
+admin_menu_settings_themes;Themes
+admin_menu_settings_languages;Languages
+admin_menu_settings_servercheck;Server Check
+admin_menu_logout;Logout
+# End: Admin Menu and Titles
+
+# Begin: Header
+header_i_need_help;I need help
+header_last_login;Last login:
+# End: Header
+
+# Begin: Footer
+footer_newsletter;Newsletter
+footer_email_address;Email address
+footer_button_send;Send
+# End: Footer
+
+# Begin: Auth Controller
+auth_login_error_1;Invalid username or password
+auth_login_error_2;Authentication error!
+# End: Auth Controller
+
+# Begin: Dashboard Controller
+admin_dashboard_button_restrict_access;Restrict access
+admin_dashboard_settings;Settings
+admin_dashboard_lifetime_sales;Lifetime Sales
+admin_dashboard_average_order;Average Order
+admin_dashboard_last_5_orders;Last Orders
+admin_dashboard_view_all_orders;view all orders
+admin_dashboard_date;Date
+admin_dashboard_number;No.
+admin_dashboard_customer;Customer
+admin_dashboard_items;Items
+admin_dashboard_grand_total;Grand Total
+admin_dashboard_payment;Payment
+admin_dashboard_total_sales;Total Sales
+admin_dashboard_average_sales;Average Sales
+admin_dashboard_number_of_clients;No. of Clients
+admin_dashboard_number_of_products;No. of Products
+admin_dashboard_order_evolution;Order Evolution
+admin_dashboard_value;Value
+admin_dashboard_last_5_registered_users;Last 5 registered users
+admin_dashboard_name;Name
+admin_dashboard_city;City
+admin_dashboard_all_orders;All Orders
+admin_dashboard_statute;Statute
+admin_dashboard_out_of_stock_products;Out of stock products
+admin_dashboard_view_all_products_stock_0;view all products stock 0
+admin_dashboard_price;Price
+admin_dashboard_view_list;view complete list
+admin_dashboard_revenue;Revenue
+admin_dashboard_tax;Tax
+admin_dashboard_shipping;Shipping
+admin_dashboard_quantity;Quantity
+admin_dashboard_last_5_search_terms;Top 5 Search Terms
+admin_dashboard_search_term;Search Term
+admin_dashboard_searches;No. of Searches
+admin_dashboard_results;Results
+admin_dashboard_number_of_uses;Number of Uses
+admin_dashboard_top_5_search_terms;Top 5 Search Terms
+admin_dashboard_orders_chart;Orders Chart
+admin_dashboard_orders_chart_small;number of orders / month
+admin_dashboard_january;January
+admin_dashboard_february;February
+admin_dashboard_march;March
+admin_dashboard_april;April
+admin_dashboard_may;May
+admin_dashboard_june;June
+admin_dashboard_july;July
+admin_dashboard_august;August
+admin_dashboard_september;September
+admin_dashboard_october;October
+admin_dashboard_november;November
+admin_dashboard_december;December
+
+admin_dashboard_unblocked_success;The site has been successfully unblocked
+admin_dashboard_unblocked_error;Error unblocking site
+admin_dashboard_blocked_success;The site has been successfully blocked
+admin_dashboard_blocked_error;Error blocking site
+# End: Dashboard Controller
+
+# Begin: Sales Controller
+sales_add_order_success;Order successfully created!
+sales_add_order_error;Error creating order!
+sales_edit_order_success;Order successfully modified!
+sales_edit_order_error_1;Error modifying order!
+sales_edit_order_error_2;Invalid order selected!
+sales_status_success;Order status successfully changed!
+sales_status_error_1;Invalid quantity for
+sales_status_error_2;Error changing order status!
+sales_status_error_3;Invalid order selected!
+sales_status_error_4;Insufficient quantity of product:
+sales_delete_success;Order successfully deleted!
+sales_delete_error;Error deleting order!
+sales_delete_wishlist_success;Wishlist successfully deleted!
+sales_delete_wishlist_error;Error deleting wishlist!
+
+# Begin: Index
+sales_index_button_all_orders;All orders
+sales_index_button_pending_orders;Pending orders
+sales_index_button_accepted_orders;Accepted orders
+sales_index_button_completed_orders;Completed orders
+sales_index_button_rejected_orders;Rejected orders
+
+sales_index_table_order_id;Order id
+sales_index_table_products_cost;Products Cost
+sales_index_table_discount;Discount
+sales_index_table_shipping_cost;Shipping Cost
+sales_index_table_total_cost;Total Cost
+sales_index_table_name;Name
+sales_index_table_order_date;Order Date
+sales_index_table_status;Status
+sales_index_table_action;Action
+
+sales_index_table_pending;Pending
+sales_index_table_accepted;Accepted
+sales_index_table_completed;Completed
+sales_index_table_rejected;Rejected
+sales_index_table_card_unconfirmed;Unconfirmed
+sales_index_table_card_confirmed;Confirmed
+sales_index_table_details;Details
+sales_index_table_edit;Edit
+sales_index_table_delete;Delete
+
+sales_index_message_status_change;Are you sure that you want to change this order status?
+sales_index_message_delete;Are you sure that you want to delete this order?
+sales_index_message_else;There are no orders
+# End: Index
+# Begin: Pending
+sales_pending_button_all_orders;All orders
+sales_pending_button_pending_orders;Pending orders
+sales_pending_button_accepted_orders;Accepted orders
+sales_pending_button_rejected_orders;Rejected orders
+
+sales_pending_table_order_id;Order id
+sales_pending_table_products_cost;Products Cost
+sales_pending_table_discount;Discount
+sales_pending_table_shipping_cost;Shipping Cost
+sales_pending_table_total_cost;Total Cost
+sales_pending_table_name;Name
+sales_pending_table_order_date;Order Date
+sales_pending_table_status;Status
+sales_pending_table_action;Action
+
+sales_pending_table_pending;Pending
+sales_pending_table_accepted;Accepted
+sales_pending_table_rejected;Rejected
+sales_pending_table_details;Details
+sales_pending_table_edit;Edit
+sales_pending_table_delete;Delete
+
+sales_pending_message_status_change;Are you sure that you want to change this order status?
+sales_pending_message_delete;Are you sure that you want to delete this order?
+sales_pending_message_else;There are no orders
+# End: Pending
+# Begin: Accepted
+sales_accepted_button_all_orders;All orders
+sales_accepted_button_pending_orders;Pending orders
+sales_accepted_button_accepted_orders;Accepted orders
+sales_accepted_button_rejected_orders;Rejected orders
+
+sales_accepted_table_order_id;Order id
+sales_accepted_table_products_cost;Products Cost
+sales_accepted_table_discount;Discount
+sales_accepted_table_shipping_cost;Shipping Cost
+sales_accepted_table_total_cost;Total Cost
+sales_accepted_table_name;Name
+sales_accepted_table_order_date;Order Date
+sales_accepted_table_status;Status
+sales_accepted_table_action;Action
+
+sales_accepted_table_pending;Pending
+sales_accepted_table_accepted;Accepted
+sales_accepted_table_rejected;Rejected
+sales_accepted_table_details;Details
+sales_accepted_table_edit;Edit
+sales_accepted_table_delete;Delete
+
+sales_accepted_message_status_change;Are you sure that you want to change this order status?
+sales_accepted_message_delete;Are you sure that you want to delete this order?
+sales_accepted_message_else;There are no orders
+# End: Accepted
+# Begin: Rejected
+sales_rejected_button_all_orders;All orders
+sales_rejected_button_pending_orders;Pending orders
+sales_rejected_button_accepted_orders;Accepted orders
+sales_rejected_button_rejected_orders;Rejected orders
+
+sales_rejected_table_order_id;Order id
+sales_rejected_table_products_cost;Products Cost
+sales_rejected_table_discount;Discount
+sales_rejected_table_shipping_cost;Shipping Cost
+sales_rejected_table_total_cost;Total Cost
+sales_rejected_table_name;Name
+sales_rejected_table_order_date;Order Date
+sales_rejected_table_status;Status
+sales_rejected_table_action;Action
+
+sales_rejected_table_pending;Pending
+sales_rejected_table_accepted;Accepted
+sales_rejected_table_rejected;Rejected
+sales_rejected_table_details;Details
+sales_rejected_table_edit;Edit
+sales_rejected_table_delete;Delete
+
+sales_rejected_message_status_change;Are you sure that you want to change this order status?
+sales_rejected_message_delete;Are you sure that you want to delete this order?
+sales_rejected_message_else;There are no orders
+# End: Rejected
+# Begin: Details
+sales_details_title_billing;Billing
+sales_details_title_shipping;Shipping
+sales_details_title_informations;Informations
+sales_details_title_comments;Comments
+sales_details_title_products;Products
+
+sales_details_table_company;Company
+sales_details_table_fiscal_code;Fiscal code
+sales_details_table_trade_register;Trade Register
+sales_details_table_bank;Bank
+sales_details_table_iban_code;IBAN Code
+sales_details_table_function;Function
+sales_details_table_department;Department
+
+sales_details_table_name;Name
+sales_details_table_cnp;Personal code
+sales_details_table_serie;ID number
+sales_details_table_address;Address
+sales_details_table_country;Country
+sales_details_table_county;County
+sales_details_table_city;City
+sales_details_table_zip;Zip
+sales_details_table_phone;Phone
+sales_details_table_phone_2;Phone 2
+sales_details_table_fax;Fax
+sales_details_table_email;Email
+
+sales_details_table_order_id;Order id
+sales_details_table_products_cost;Products Cost
+sales_details_table_vat;Vat
+sales_details_table_tax;Tax
+sales_details_table_discount;Discount
+sales_details_table_repayment;Repayment
+sales_details_table_shipping_cost;Shipping Cost
+sales_details_table_total_cost;Total Cost
+sales_details_table_payment;Payment
+sales_details_table_shipping;Shipping
+sales_details_table_order_date;Order Date
+sales_details_table_status_changed;Status changed
+sales_details_table_status;Status
+
+sales_details_table_sku;SKU
+sales_details_table_name;Name
+sales_details_table_quantity;Quantity
+sales_details_table_price;Price
+sales_details_table_total_price;Total Price
+# End: Details
+# Begin: Add / Edit
+sales_add_title_add_order;Add order
+sales_add_title_edit_order;Edit order
+
+sales_add_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+sales_add_table_taxes;Taxes
+sales_add_table_billing;Billing Information
+sales_add_table_shipping;Shipping Information
+
+sales_add_table_products_cost;Products cost
+sales_add_table_vat;VAT
+sales_add_table_discount;Discount
+sales_add_table_repayment;Repayment
+sales_add_table_shipping_cost;Shipping cost
+sales_add_table_total_cost;Total cost
+sales_add_table_payment_method;Payment method
+sales_add_table_shipping_method;Shipping method
+
+sales_add_table_individual_person;Individual Person
+sales_add_table_legal_person;Legal Person
+sales_add_table_company;Company
+sales_add_table_fiscal_code;Fiscal code
+sales_add_table_trade_register;Trade register
+sales_add_table_bank;Bank
+sales_add_table_iban_code;IBAN Code
+sales_add_table_function;Function
+sales_add_table_department;Department
+
+sales_add_table_salutation;Salutation
+sales_add_table_first_name;First name
+sales_add_table_last_name;Last name
+sales_add_table_cnp;Personal code
+sales_add_table_serie;ID number
+sales_add_table_address;Address
+sales_add_table_address_2;Address 2
+sales_add_table_country;Country
+sales_add_table_county;County
+sales_add_table_city;City
+sales_add_table_zip;Zip code
+sales_add_table_phone;Phone
+sales_add_table_phone_2;Phone 2
+sales_add_table_fax;Fax
+sales_add_table_email;Email
+sales_add_table_comments;Comments
+
+sales_add_table_bs;Shipping Details are the same as Billing Details
+
+sales_add_button_submit;Submit
+sales_add_button_modify;Modify
+
+sales_edit_card;Card
+sales_edit_paypal;paypal
+sales_edit_virament_bancar;bank transfer
+sales_edit_ramburs;repayment
+sales_edit_ramburs_cu_asigurare_pe_marfa;repayment with assurance
+# End: Add / Edit
+# Begin: Invoices
+sales_invoices_table_order_id;Order id
+sales_invoices_table_products_cost;Products Cost
+sales_invoices_table_discount;Discount
+sales_invoices_table_shipping_cost;Shipping Cost
+sales_invoices_table_total_cost;Total Cost
+sales_invoices_table_name;Name
+sales_invoices_table_order_date;Order Date
+sales_invoices_table_action;Actions
+
+sales_invoices_table_print_invoice;Print Invoice
+sales_invoices_table_print_model;Print Model
+
+sales_invoices_message_else;There are no invoices
+
+sales_invoices_invoice;Invoice
+sales_invoices_print;print
+sales_invoices_supplier;Supplier:
+sales_invoices_buyer;Buyer:
+sales_invoices_trade_register;Trade register:
+sales_invoices_address;Address:
+sales_invoices_county;County:
+sales_invoices_iban;IBAN code:
+sales_invoices_bank;Bank:
+sales_invoices_series;Series: 1, no.:
+sales_invoices_date;Date:
+sales_invoices_vat;VAT Quote:
+sales_invoices_criterion_no;Criterion<br /> no.:
+sales_invoices_description;Description of products or services
+sales_invoices_m_u;M.U.
+sales_invoices_quantity;Quantity
+sales_invoices_unit_price;Unit price
+sales_invoices_without_vat;(without VAT)
+sales_invoices_value;Value
+sales_invoices_vat_value;VAT value
+sales_invoices_discount;discount
+sales_invoices_repayment;repayment
+sales_invoices_pieces;piece
+sales_invoices_supplier_signature_seal;Signature and seal of the supplier
+sales_invoices_prepared_by;Prepared by:
+sales_invoices_cnp;Personal code:
+sales_invoices_name;Delegate name:
+sales_invoices_c_i;ID number:
+sales_invoices_shipping;Shipping was done in our presence on ............................ hour ............
+sales_invoices_signatures;Signatures:
+sales_invoices_signature_of_receipt;Signature of receipt:
+sales_invoices_total;Total
+sales_invoices_total_amounts;Total amounts
+# End: invoices
+# Begin: Wishlists
+sales_wishlists_table_name;Name
+sales_wishlists_table_customer;Customer
+sales_wishlists_table_created;Created
+sales_wishlists_table_actions;Actions
+
+sales_wishlists_table_details;Details
+sales_wishlists_table_delete;Delete
+
+sales_wishlists_message_delete;Are you sure that you want to delete this wishlist?
+sales_wishlists_message_else;There are no wishlists
+# End: Wishlists
+# Begin: Wishlist details
+sales_wishlist_details_text_view_wishlist;View wishlist
+sales_wishlist_details_text_created_on;Created on
+sales_wishlist_details_text_by;by
+
+sales_wishlist_details_table_product;Product
+sales_wishlist_details_table_quantity;Quantity
+sales_wishlist_details_table_price;Price
+sales_wishlist_details_table_total_price;Total Price
+# End: Wishlist details
+# End: Sales Controller
+
+# Begin: Customers Controller
+customers_create_success;Customer was successfully created!
+customers_create_error;Error creating customer!
+customers_edit_success;Customer successfully modified!
+customers_edit_error_1;Error modifying customer!
+customers_edit_error_2;Invalid customer selected!
+customers_visible_success;Status was successfully changed!
+customers_visible_error;Error status change!
+customers_delete_success;Customer successfully deleted!
+customers_delete_error;Error deleting customer!
+customers_add_group_success;Group successfully created!
+customers_add_group_error;Error creating group!
+customers_edit_group_success;Group successfully modified!
+customers_edit_group_error_1;Error modifying group!
+customers_edit_group_error_2;Invalid group selected!
+customers_delete_group_success;Group successfully deleted!
+customers_delete_group_error;Error deleting group!
+customers_search_customer_error;Your search returned no results!
+
+# Begin: Index
+customers_index_create_operator;Create operator account
+
+customers_index_table_username;Username
+customers_index_table_name;Name
+customers_index_table_email;Email
+customers_index_table_access_level;Access level
+customers_index_table_status;Status
+customers_index_table_datetime;Registered
+customers_index_table_modified;Modified
+customers_index_table_last_login;Last login
+customers_index_table_actions;Actions
+
+customers_index_table_administrator;Administrator
+customers_index_table_customer;Customer
+
+customers_index_table_active;Active
+customers_index_table_inactive;Inactive
+
+customers_index_table_details;Details
+customers_index_table_edit;Edit
+customers_index_table_delete;Delete
+
+customers_index_message_status_change;Are you sure that you want to change this members customer status?
+customers_index_message_delete;Are you sure that you want to delete this customer?
+
+customers_index_else;There are no registered customers
+# End: Index
+# Begin: Inactive
+customers_inactive_table_username;Username
+customers_inactive_table_name;Name
+customers_inactive_table_email;Email
+customers_inactive_table_access_level;Access level
+customers_inactive_table_status;Status
+customers_inactive_table_datetime;Registered
+customers_inactive_table_modified;Modified
+customers_inactive_table_actions;Actions
+
+customers_inactive_table_administrator;Administrator
+customers_inactive_table_customer;Customer
+
+customers_inactive_table_active;Active
+customers_inactive_table_inactive;Inactive
+
+customers_inactive_table_details;Details
+customers_inactive_table_edit;Edit
+customers_inactive_table_delete;Delete
+
+customers_inactive_message_status_change;Are you sure that you want to change this members customer status?
+customers_inactive_message_delete;Are you sure that you want to delete this customer?
+
+customers_inactive_else;There are no inactive customers
+# End: Inactive
+# Begin: Details
+customers_details_title_account_details;Account details
+
+customers_details_table_title_customer_information;Customer information
+customers_details_table_username;Username
+customers_details_table_name;Name
+customers_details_table_cnp;Personal code
+customers_details_table_serie;ID number
+customers_details_table_email;Email
+customers_details_table_member_since;Member since
+
+customers_details_table_title_company_information;Company information
+customers_details_table_company;Company
+customers_details_table_fiscal_code;Fiscal code
+customers_details_table_trade_register;Trade register
+customers_details_table_bank;Bank
+customers_details_table_iban_code;IBAN Code
+customers_details_table_function;Function
+customers_details_table_department;Department
+
+customers_details_table_title_contact_information;Contact information
+customers_details_table_address;Address
+customers_details_table_address_2;Address 2
+customers_details_table_country;Country
+customers_details_table_county;County
+customers_details_table_city;City
+customers_details_table_zip;Zip
+customers_details_table_phone;Phone
+customers_details_table_phone_2;Phone 2
+customers_details_table_fax;Fax
+
+customers_details_table_title_shipping_information;Shipping information
+
+customers_create_table_individual;Individual
+customers_create_table_legal_person;Legal person
+# End: Details
+# Begin: Create / Edit
+customers_create_title_customer;Customer information
+customers_create_title_basic;Basic information
+customers_create_title_company;Company information
+customers_create_title_contact;Contact information
+customers_create_title_shipping;Shipping information
+
+customers_create_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+customers_create_table_username;Username
+customers_create_table_password;Password
+customers_create_table_password_confirmation;Password confirmation
+customers_create_table_email;Email
+customers_create_table_email_confirmation;Email confirmation
+customers_create_table_status;Status
+
+customers_create_table_salutation;Salutation
+customers_create_table_first_name;First name
+customers_create_table_last_name;Last name
+customers_create_table_cnp;Personal code
+customers_create_table_serie;ID number
+
+customers_create_table_company;Company
+customers_create_table_fiscal_code;Fiscal code
+customers_create_table_trade_register;Trade register
+customers_create_table_bank;Bank
+customers_create_table_iban_code;IBAN Code
+customers_create_table_function;Function
+customers_create_table_department;Department
+
+customers_create_table_address;Address
+customers_create_table_address_2;Address 2
+customers_create_table_country;Country
+customers_create_table_county;County
+customers_create_table_city;City
+customers_create_table_zip;Zip
+customers_create_table_phone;Phone
+customers_create_table_phone_2;Phone 2
+customers_create_table_fax;Fax
+
+customers_create_table_active;Active
+customers_create_table_inactive;Inactive
+
+customers_create_table_individual;Individual
+customers_create_table_legal_person;Legal person
+
+customers_create_table_username_description;Note: Only alphabetic and digit characters allowed!
+customers_create_table_password_description;Note: Password needs to be between 6 and 20 characters long
+customers_create_table_status_description;Note: Only active customers can authenticate !
+customers_create_table_phone_description;(Include '+' and country code. Example: +1-xxx-xxx-xxxx)
+customers_create_table_phone_2_description;(Include '+' and country code. Example: +1-xxx-xxx-xxxx)
+customers_create_table_fax_description;(Include '+' and country code. Example: +1-xxx-xxx-xxxx)
+
+customers_create_table_button_create;Create
+customers_edit_table_button_modify;Modify
+# End: Create / Edit
+# Begin: Search account
+customers_search_table_search_client;Search client
+customers_search_table_button_view;View
+# End: Search account
+# End: Customers Controller
+
+# Begin: Products Controller
+products_all_products_error;Invalid selection!
+
+products_add_products_error_sku;A product with this SKU already exist in DataBase! SKU must be unique!
+products_add_products_success;Product was successfully created!
+products_add_products_error;Error creating product!
+
+products_edit_products_error_sku;A product with this SKU already exist in DataBase! SKU must be unique!
+products_edit_products_success_delete_specifications;Specifications have been successfully deleted!
+products_edit_products_error_delete_specifications;Error deleting specifications!
+products_edit_products_success;Product was successfully modified!
+products_edit_products_error_1;Error modify product!
+products_edit_products_error_2;Invalid product selected!
+
+products_delete_product_success_delete_specifications;Product specifications have been successfully deleted!
+products_delete_product_error_delete_specifications;Error deleting specifications!
+products_delete_product_success;Product was successfully deleted!
+products_delete_product_error;Error deleting product!
+
+products_final_delete_product_success;Product was successfully deleted!
+products_final_delete_product_error;Error deleting product!
+
+products_undo_delete_product_success;Product was successfully saved!
+products_undo_delete_product_error;Error saving product!
+
+products_visible_success;Status was successfully changed!
+products_visible_error;Error change status!
+
+products_add_categories_success;Category was successfully created!
+products_add_categories_error;Error creating category!
+
+products_edit_categories_success;Category was successfully modified!
+products_edit_categories_error_1;Error modify category!
+products_edit_categories_error_2;Invalid category selected!
+
+products_delete_categories_success;Category was successfully deleted!
+products_delete_categories_error;Error deleting category!
+products_delete_categories_specification_group_success;Specifications group was successfully deleted!
+products_delete_categories_specification_group_error;Error deleting group specifications!
+products_delete_categories_specification_model_success;Specifications model was successfully deleted!
+products_delete_categories_specification_model_error;Error deleting model specifications!
+
+products_add_subcategories_success;Subcategory was successfully created!
+products_add_subcategories_error;Error creating subcategory!
+
+products_edit_subcategories_success;Subcategory was successfully modified!
+products_edit_subcategories_error_1;Error modifying subcategory!
+products_edit_subcategories_error_2;Invalid subcategory selected!
+
+products_delete_subcategories_success;Subcategory was successfully deleted!
+products_delete_subcategories_error;Error deleting subcategory!
+products_delete_subcategories_specification_group_success;Specifications group was successfully deleted!
+products_delete_subcategories_specification_group_error;Error deleting group specifications!
+products_delete_subcategories_specification_model_success;;Specifications model was successfully deleted!
+products_delete_subcategories_specification_model_error;Error deleting model specifications!
+
+products_add_brand_success;Brand was successfully created!
+products_add_brand_error;Error creating brand!
+
+products_edit_brand_success;Brand was successfully modified!
+products_edit_brand_error_1;Error modifying brand!
+products_edit_brand_error_2;Invalid brand selected!
+
+products_delete_brand_success;Brand was successfully deleted!
+products_delete_brand_error;Error deleting brand!
+
+products_add_product_image_success;Image was uploaded!
+products_add_product_image_error;Error uploading image!
+
+products_delete_product_image_success;Image was successfully deleted!
+products_delete_product_image_error;Error deleting image!
+
+products_add_categories_specification_group_success;Specifications group successfully created!
+products_add_categories_specification_group_error;Error creating specifications group!
+products_add_categories_specification_model_success;Specifications model successfully created!
+products_add_categories_specification_model_error;Error creating specifications model!
+
+products_save_categories_product_specifications_success;Specifications was successfully added!
+products_save_categories_product_specifications_error;Error adding specifications!
+
+products_edit_categories_specification_group_success;Specifications group was successfully modified!
+products_edit_categories_specification_group_error_1;Error modifying specifications group!
+products_edit_categories_specification_group_error_2;Invalid specifications group selected!
+
+products_edit_categories_specification_model_success;Specifications model was successfully modified!
+products_edit_categories_specification_model_error_1;Error modifying specifications model!
+products_edit_categories_specification_model_error_2;Invalid specifications model selected!
+
+products_modify_categories_product_specifications_success;Specifications was successfully modified!
+products_modify_categories_product_specifications_error;Error modifying specifications!
+
+products_delete_categories_specifications_group_success_delete_product;Product specifications have been successfully deleted!
+products_delete_categories_specifications_group_error_delete_product;Error deleting product specifications!
+products_delete_categories_specifications_group_success_delete_model;Specification model was successfully deleted!
+products_delete_categories_specifications_group_error_delete_model;Error deleting specification model!
+products_delete_categories_specifications_group_success;Specification group was successfully deleted!
+products_delete_categories_specifications_group_error;Error deleting specification group!
+
+products_delete_categories_specifications_model_success_delete_product;Product specifications have been successfully deleted!
+products_delete_categories_specifications_model_error_delete_product;Error deleting specifications products!
+products_delete_categories_specifications_model_success;Specification model was successfully deleted!
+products_delete_categories_specifications_model_error;Error deleting specification model!
+
+products_delete_categories_product_specifications_success;Specifications was successfully deleted!
+products_delete_categories_product_specifications_error;Error deleting specifications!
+
+products_add_subcategories_specification_group_success;Specifications group was successfully created!
+products_add_subcategories_specification_group_error;Error creating specifications group!
+products_add_subcategories_specification_model_success;Specifications model was successfully created!
+products_add_subcategories_specification_model_error;Error creating specifications model!
+
+products_save_subcategories_product_specifications_success;Specifications was successfully added!
+products_save_subcategories_product_specifications_error;Error adding specifications!
+
+products_edit_subcategories_specification_group_success;Specifications group was successfully modified!
+products_edit_subcategories_specification_group_error_1;Error modifying specifications group!
+products_edit_subcategories_specification_group_error_2;Invalid specifications group selected!
+
+products_edit_subcategories_specification_model_success;Specifications model was successfully modified!
+products_edit_subcategories_specification_model_error_1;Error modifying specifications model!
+products_edit_subcategories_specification_model_error_2;Invalid specifications model selected!
+
+products_modify_subcategories_product_specifications_success;Specifications was successfully modified!
+products_modify_subcategories_product_specifications_error;Error modifying specifications!
+
+products_delete_subcategories_specifications_group_success_delete_product;Product specifications have been successfully deleted!
+products_delete_subcategories_specifications_group_error_delete_product;Error deleting specifications products!
+products_delete_subcategories_specifications_group_success_delete_model;Specifications model was successfully deleted!
+products_delete_subcategories_specifications_group_error_delete_model;Error deleting specifications model!
+products_delete_subcategories_specifications_group_success;Specifications group was successfully deleted!
+products_delete_subcategories_specifications_group_error;Error deleting specifications group!
+
+products_delete_subcategories_specifications_model_success_delete_product;Specifications products was successfully deleted!
+products_delete_subcategories_specifications_model_error_delete_product;Error deleting specifications products!
+products_delete_subcategories_specifications_model_success;Specifications model was successfully deleted!
+products_delete_subcategories_specifications_model_error;Error deleting specifications model!
+
+products_delete_subcategories_product_specifications_success;Specifications was successfully deleted!
+products_delete_subcategories_product_specifications_error;Error deleting specifications!
+
+products_product_import_error;Please insert a valid ".csv" file
+
+products_product_import_2_error_sku;You must select SKU!
+products_product_import_2_error_name;You must select Name!
+products_product_import_2_error_weight;You must select Weight!
+products_product_import_2_error_sell_price;You must select Sell price!
+products_product_import_2_error_save;Error saving product
+products_product_import_2_success_save;Products successfully saved. You can find them in 'Buffer Category'.
+products_product_import_2_error_save_2;Products already exist in database, they were not uploaded:
+
+products_move_buffer_success;Products successfully moved
+products_move_buffer_error;Error moving products!
+
+products_no_product_with_this_sku;There is no product with this SKU
+products_search_by_sku_success;Stock updated!
+products_search_by_sku_error;Error updating stock!
+
+products_import_sku_error_csv;Please insert a valid ".csv" file
+products_import_sku_error_sku;Sku field missing!
+products_import_sku_error_stock;Stock field missing!
+products_import_sku_error_unlimited_stock;Unlimited stock field is missing
+products_import_sku_products_no_success;products updated!
+products_import_sku_products_no_error_update;products updated!
+products_import_sku_success;CSV file deleted!
+products_import_sku_error_delete;CSV file could not be deleted!
+
+products_addproductattributes_title_add_attribute;Add attributes
+products_editproductattributes_title_edit_attribute;Edit attributes
+products_addproducts_table_add_accessories;Add accessories
+products_editproductsspecifications_title_model_name;Model name
+products_editproductsspecifications_table_name;Name
+products_searchbysku_view;View
+products_addproductsattributes_save_success;Product attributes were saved
+products_addproductsattributes_save_error;Error saving product attributes
+products_editproductsattributes_change_success;Attribute was changed successfully
+products_editproductsattributes_change_error;Error changing attribute
+products_editproductsattributes_selected_attribute_is_not_valid;Selected attribute is not valid
+products_statusproductsattributes_success;Success
+products_statusproductsattributes_error;Error
+products_deleteproductsattributes_success;Attribute deleted successfully
+products_deleteproductsattributes_error;Error deleting attribute
+products_deleteproductattributes_success;Attribute deleted successfully
+products_deleteproductattributes_error;Error deleting attribute
+products_deleteaccessories_success;Accessory deleted successfully
+products_deleteaccessories_error;Error deleting accessory
+products_msg_add_attribute_success;Attributes have been added successfully
+products_msg_add_attribute_error;Error adding attributes
+products_msg_edit_attribute_success;Attributes were successfully modified
+products_msg_edit_attribute_error;Error modifying attributes
+products_editproductsspecifications_success;Model name modified successfully
+products_editproductsspecifications_error;Error modifying model name
+products_search_not_find_results;Did not find any results
+products_deleteproductsspecifications_success;The model was successfully deleted
+products_deleteproductsspecifications_error;Error deleting model
+products_outofstock_button_search_by_sku;search by sku
+products_outofstock_button_stock0;stock 0
+# Begin: Index
+products_index_button_add_new_product;Add new product
+products_index_button_add_new_custom_product;Add new custom product
+products_index_button_all_products;All products
+products_index_button_deleted_products;Deleted products
+products_index_button_custom_product_attributes;Custom product attributes
+products_index_button_specification_models;Specification models
+products_index_button_searched;Searched
+
+products_index_table_category_name;Category name
+products_index_table_subcategory_name;Subcategory name
+products_index_table_brand_name;Brand name
+products_index_table_number_of_products;Number of products
+products_index_table_details;Details
+
+products_index_table_view;View
+# End: Index
+# Begin: Add / Edit
+products_add_title_add_product;Add product
+products_add_title_add_custom_product;Add custom product
+products_add_title_edit_product;Edit product
+
+products_add_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" /> are required.
+
+products_add_table_category;Category
+products_add_table_subcategory;Subcategory
+products_add_table_brand;Brand
+products_add_table_sku;SKU
+products_add_table_name;Name
+products_add_table_auto_generate;Auto generate
+products_add_table_regular_price;Regular price
+products_add_table_sell_price;Sell price
+products_add_table_warranty;Warranty
+products_add_table_weight;Weight
+products_add_table_description;Description
+products_add_table_additional_price;Additional price
+products_add_table_unlimited_stock;Unlimited stock
+products_add_table_stock;stock
+products_add_table_image;Image
+products_add_table_image_resize;Image resize
+products_add_table_product_offer;Product Offer
+products_add_table_status;Status
+
+products_add_table_yes;Yes
+products_add_table_no;No
+
+products_add_table_active;Active
+products_add_table_inactive;Inactive
+
+products_add_table_button_create;Create
+products_add_table_button_modify;Modify
+
+products_editproducts_product_offer_produs_nou;New product
+products_editproducts_product_offer_lichidare_stoc;Stock liquidation
+products_editproducts_product_offer_promotie;Promotion
+products_editproducts_product_offer_produs_recomandat;Recommended product
+
+products_add_edit_hintText;Type in a search term
+products_add_edit_noResultsText;No results
+products_add_edit_searchingText;Searching...
+# End: Add / Edit
+# Begin: Product Image
+products_add_product_image_title_add_product;Add Product Gallery
+
+products_add_product_image_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" /> are required.
+
+products_add_product_image_table_image;Image
+products_add_product_image_table_image_resize;Image resize
+products_add_product_image_table_delete;Delete
+
+products_add_product_image_message_delete;Are you sure that you want to delete this image?
+
+products_add_product_image_table_button_submit;Submit
+products_add_product_image_table_button_modify;Modify
+# End: Product Image
+# Begin: Add / Edit Product specifications
+products_add_product_specifications_title_add_product_specifications;Add product specification
+products_add_product_specifications_title_edit_product_specifications;Edit product specification
+
+products_add_product_specifications_select_professional;Professional 
+products_add_product_specifications_professional_name;Name
+products_add_product_specifications_select_simple;Simple
+
+products_add_product_specifications_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" /> are required.
+
+products_add_product_specifications_table_group;Group
+products_add_product_specifications_table_model;Model
+products_add_product_specifications_table_value;Value
+
+products_add_product_specifications_table_button_submit;Submit
+products_add_product_specifications_table_button_modify;Modify
+
+products_add_product_specifications_button_make_specifications_model;Make specifications model
+
+products_add_product_specifications_message_else;Not existent model specifications list
+# End: Add / Edit Product specifications
+# Begin: All products
+products_all_button_search_product;Search product
+products_all_search_product;Product name
+
+products_all_button_add_new_product;Add new product
+products_all_button_all_products;Products
+products_all_button_deleted_products;Deleted products
+
+products_all_table_sku;SKU
+products_all_table_name;Name
+products_all_table_regular_price;Regular price
+products_all_table_sell_price_without_taxes;Sell price without taxes
+products_all_table_sell_price;Sell price
+products_all_table_stock;Stock
+products_all_table_status;Status
+products_all_table_deleted;Deleted
+products_all_table_deleted_yes;Yes
+products_all_table_deleted_no;No
+products_all_table_actions;Actions
+
+products_all_table_details;Details
+products_all_table_edit;Edit
+products_all_table_delete;Delete
+
+products_all_table_active;Active
+products_all_table_inactive;Inactive
+
+products_all_message_status_change;Are you sure that you want to change this product status?
+products_all_message_delete;Are you sure that you want to delete this product?
+products_all_message_else;There are no products
+# End: All products
+# Begin: Deleted products
+products_deleted_products_button_add_new_product;Add new product
+products_deleted_products_button_all_products;Products
+products_deleted_products_button_deleted_products;Deleted products
+
+products_deleted_products_table_sku;SKU
+products_deleted_products_table_name;Name
+products_deleted_products_table_regular_price;Regular price
+products_deleted_products_table_sell_price_without_taxes;Sell price without taxes
+products_deleted_products_table_sell_price;Sell price
+products_deleted_products_table_stock;Stock
+products_deleted_products_table_status;Status
+products_deleted_products_table_actions;Actions
+
+products_deleted_products_table_undo;Undo
+products_deleted_products_table_delete;Delete
+
+products_deleted_products_table_active;Active
+products_deleted_products_table_inactive;Inactive
+
+products_deleted_products_message_status_change;Are you sure that you want to change this product status?
+products_deleted_products_message_delete;Are you sure that you want to delete this product?
+products_deleted_products_message_else;There are no deleted products
+# End: Deleted products
+# Begin: Custom product attributes
+products_productsattributes_table_position;Position
+products_productsattributes_table_name;Name
+products_productsattributes_table_status;Status
+products_productsattributes_table_status_active;Active
+products_productsattributes_table_status_inactive;Inactive
+products_productsattributes_button_add;Add
+products_productsattributes_button_edit;Edit
+
+products_productsattributes_message_status_change;Are you sure that you want to change this attribute status?
+products_productsattributes_message_delete;Are you sure that you want to delete this attribute?
+products_productsattributes_message_else;There are no attributes
+# End: Custom product attributes
+# Begin: Specification models
+products_productsspecifications_button_add_model;Add model
+
+products_productsspecifications_table_name;Name
+products_productsspecifications_table_actions;Actions
+products_productsspecifications_table_actions_edit;Edit
+products_productsspecifications_table_actions_delete;Delete
+
+products_productsspecifications_message_no_specification_models;There are no specification models
+# End: Specification models
+# Begin: Search product
+products_search_button_search_product;Search product
+products_search_button_all_products;All products
+products_search_button_custom_products;Custom products
+products_search_button_custom_product_attributes;Custom product attributes
+products_search_title_search_products;Search products
+products_search_label_product_name;Product name
+products_search_button_view;view
+# End: Search product
+# Begin: Details
+settings_details_title_product_details;Product Details
+
+products_details_table_title_image;Image
+
+products_details_table_title_details;Details
+products_details_table_sku;SKU
+products_details_table_category;Category
+products_details_table_subcategory;Subcategory
+products_details_table_regular_price;Regular price
+products_details_table_sell_price;Sell price
+products_details_table_warranty;Warranty
+products_details_table_weight;Weight
+products_details_table_stock;Stock
+products_details_table_status;Status
+products_details_table_datetime;Created
+products_details_table_modified;Modified
+products_details_table_actions;Actions
+products_details_table_description;Description
+
+products_details_table_title_attributes;Attributes
+products_details_table_name;Name
+products_details_table_additional_cost;Additional cost
+products_details_table_edit;Edit
+products_details_table_delete;Delete
+products_details_table_active;Active
+products_details_table_inactive;Inactive
+
+products_details_table_title_accessories;Accessories
+products_details_table_accessories_price_without_tax;Sell price without taxes
+
+products_details_table_edit_product;Edit product
+products_details_table_add_more_images;Add more images
+products_details_table_add_attributes;Add attributes
+products_details_table_add_specifications;Add specifications
+products_details_table_edit_specifications;Edit specifications
+products_details_table_delete_specifications;Delete specifications
+products_details_table_delete;Delete
+
+products_details_table_gallery;Gallery
+products_details_table_specifications;Specifications
+
+products_details_message_delete_specifications;Are you sure that you want to delete specifications?
+# End: Details
+# Begin: Categories
+products_categories_button_add_new_category;Add new category
+
+products_categories_table_image;Image
+products_categories_table_name;Name
+products_categories_table_description;Description
+products_categories_table_created;Created
+products_categories_table_status;Status
+products_categories_table_actions;Actions
+
+products_categories_table_status_active;Active
+products_categories_table_status_inactive;Inactive
+products_categories_table_edit;Edit
+products_categories_table_delete;Delete
+
+products_categories_table_active;Active
+products_categories_table_inactive;Inactive
+
+products_categories_message_status_change;Are you sure that you want to change this category status?
+products_categories_message_delete;Are you sure that you want to delete this category?
+
+products_categories_else;There are no categories
+# End: Categories
+# Begin: Add / Edit Categories
+products_add_categories_title_add_category;Add category
+products_add_categories_title_edit_category;Edit category
+
+products_add_categories_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_add_categories_table_name;Name
+products_add_categories_table_image;Image
+products_add_categories_table_keywords;Keywords
+products_add_categories_table_description;Description
+products_add_categories_table_is_active;Is Active
+
+products_add_categories_table_status;Status
+products_add_categories_table_active;Active
+products_add_categories_table_inactive;Inactive
+
+products_add_categories_table_submit;Submit
+products_add_categories_table_modify;Modify
+# End: Add / Edit Categories
+# Begin: Add / Edit Categories specifications
+products_add_categories_specifications_title_add_group_specification;Add group specification
+products_add_categories_specifications_title_edit_group_specification;Edit group specification
+products_add_categories_specifications_title_add_list_specification;Add list specification
+products_add_categories_specifications_title_edit_list_specification;Edit list specification
+
+products_add_categories_specifications_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_add_categories_specifications_table_group_specifications;Group specifications
+products_add_categories_specifications_table_specifications_model;Specifications Model
+
+products_add_categories_specifications_table_group;Group
+products_add_categories_specifications_table_name;Name
+products_add_categories_specifications_table_actions;Actions
+
+products_add_categories_specifications_table_edit;Edit
+products_add_categories_specifications_table_delete;Delete
+
+products_add_categories_specifications_table_submit;Submit
+products_add_categories_specifications_table_modify;Modify
+
+products_add_categories_specifications_message_delete_group;Are you sure that you want to delete this group?
+products_add_categories_specifications_message_delete_list;Are you sure that you want to delete this list?
+# End: Add / Edit Categories specifications
+# Begin: Subcategories
+products_subcategories_button_add_new_subcategory;Add new subcategory
+
+products_subcategories_table_image;Image
+products_subcategories_table_category;Category
+products_subcategories_table_name;Name
+products_subcategories_table_description;Description
+products_subcategories_table_created;Created
+products_subcategories_table_status;Status
+products_subcategories_table_actions;Actions
+
+products_subcategories_table_make_specification_list;Make Specification list
+products_subcategories_table_edit;Edit
+products_subcategories_table_delete;Delete
+
+products_subcategories_table_active;Active
+products_subcategories_table_inactive;Inactive
+
+products_subcategories_message_status_change;Are you sure that you want to change this subcategory status?
+products_subcategories_message_delete;Are you sure that you want to delete this subcategory?
+
+products_subcategories_else;There are no categories
+# End: Subcategories
+# Begin: Add / Edit Subcategories
+products_add_subcategories_title_add_subcategory;Add subcategory
+products_add_subcategories_title_edit_subcategory;Edit subcategory
+
+products_add_subcategories_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_add_subcategories_table_category;Category
+products_add_subcategories_table_subcategory;Subcategory
+products_add_subcategories_table_name;Name
+products_add_subcategories_table_image;Image
+products_add_subcategories_table_description;Description
+products_add_subcategories_table_is_active;Is Active
+
+products_add_subcategories_table_status;Status
+products_add_subcategories_table_active;Active
+products_add_subcategories_table_inactive;Inactive
+
+products_add_subcategories_table_submit;Submit
+products_add_subcategories_table_modify;Modify
+# End: Add / Edit Subcategories
+# Begin: Add / Edit Subcategories specifications
+products_add_subcategories_specifications_title_add_group_specification;Add group specification
+products_add_subcategories_specifications_title_edit_group_specification;Edit group specification
+products_add_subcategories_specifications_title_add_list_specification;Add list specification
+products_add_subcategories_specifications_title_edit_list_specification;Edit list specification
+
+products_add_subcategories_specifications_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_add_subcategories_specifications_table_group_specifications;Group specifications
+products_add_subcategories_specifications_table_specifications_model;Specifications Model
+
+products_add_subcategories_specifications_table_group;Group
+products_add_subcategories_specifications_table_name;Name
+products_add_subcategories_specifications_table_actions;Actions
+
+products_add_subcategories_specifications_table_edit;Edit
+products_add_subcategories_specifications_table_delete;Delete
+
+products_add_subcategories_specifications_table_submit;Submit
+products_add_subcategories_specifications_table_modify;Modify
+
+products_add_subcategories_specifications_message_delete_group;Are you sure that you want to delete this group?
+products_add_subcategories_specifications_message_delete_list;Are you sure that you want to delete this list?
+# End: Add / Edit Subcategories specifications
+# Begin: Brands
+products_brands_button_add_new_brand;Add new brand
+
+products_brands_table_logo;Logo
+products_brands_table_name;Name
+products_brands_table_datetime;Created
+products_brands_table_modified;Modified
+products_brands_table_status;Status
+products_brands_table_actions;Actions
+
+products_brands_table_active;Active
+products_brands_table_inactive;Inactive
+
+products_brands_table_edit;Edit
+products_brands_table_delete;Delete
+
+products_brands_message_status_change;Are you sure that you want to change this brand status?
+products_brands_message_delete;Are you sure that you want to delete this brand?
+
+products_brands_else;There are no brands
+# End: Brands
+# Begin: Add / Edit Brands
+products_add_brands_title_add_brand;Add brand
+products_add_brands_title_edit_brand;Edit brand
+
+products_add_brands_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_add_brands_table_logo;Logo
+products_add_brands_table_name;Name
+products_add_brands_table_is_active;Is Active
+
+products_add_brands_table_status;Status
+products_add_brands_table_active;Active
+products_add_brands_table_inactive;Inactive
+
+products_add_brands_table_submit;Submit
+products_add_brands_table_modify;Modify
+# End: Add / Edit Brands
+# Begin: Product Import
+products_product_import_title_import_product;Import products
+
+products_product_import_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_product_import_table_delimiter;Delimiter
+products_product_import_table_file;File
+
+products_product_import_table_submit;Submit
+# End: Product Import
+# Begin: Product Import
+products_product_import_2_title_import_product;Import product
+
+products_product_import_2_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+products_product_import_2_required_*;* are required
+
+products_product_import_2_table_use_saved_mapping;Use saved mapping
+products_product_import_2_table_remove_mapping;Remove mapping
+products_product_import_2_table_save_as_custom_mapping;Save as custom mapping
+products_product_import_2_table_mapping;Mapping
+products_product_import_2_table_header;Header
+
+products_product_import_2_table_select_none;--Do not Map this field--
+products_product_import_2_table_select_sku;SKU *
+products_product_import_2_table_select_name;Product Name *
+products_product_import_2_table_select_regular_price;Regular price
+products_product_import_2_table_select_sell_price;Sell price *
+products_product_import_2_table_select_warranty;Warranty
+products_product_import_2_table_select_weight;Weight *
+products_product_import_2_table_select_description;Description
+products_product_import_2_table_select_unlimited_stock;Unlimited stock
+products_product_import_2_table_select_stock;Stock *
+products_product_import_2_table_select_status;Status
+products_product_import_2_table_select_image;mage URL
+
+products_product_import_2_table_submit;Import now
+# End: Product Import
+# Begin: Product Export
+products_product_export;Export Products
+# End: Product Export
+# Begin: Move buffer
+products_move_buffer_title_move_product;Move product
+
+products_move_buffer_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_move_buffer_table_move_to_category;Move to category
+products_move_buffer_table_subcategory;Subcategory
+products_move_buffer_table_move_to_subcategory;Move to subcategory
+products_move_buffer_table_move_to_brand;Move to brand
+products_move_buffer_table_products;Products
+
+products_move_buffer_table_submit;Move
+# End: Move buffer
+# Begin: Buffer Category
+products_buffer_category_button_deleted_products;Deleted products
+products_buffer_category_button_move_products;Move products
+products_deletedbufferproducts_button_products;Products
+products_buffercategory_on_attributes;on attributes
+products_buffercategory_unlimited;unlimited
+
+products_buffer_category_table_sku;SKU
+products_buffer_category_table_name;Name
+products_buffer_category_table_regular_price;Regular price
+products_buffer_category_table_sell_price;Sell price
+products_buffer_category_table_stock;Stock
+products_buffer_category_table_status;Status
+products_buffer_category_table_actions;Actions
+
+products_buffer_category_table_active;Active
+products_buffer_category_table_inactive;Inactive
+
+customers_buffer_category_table_details;Details
+customers_buffer_category_table_edit;Edit
+customers_buffer_category_table_delete;Delete
+
+customers_buffer_category_message_status_change;Are you sure that you want to change this product status?
+customers_buffer_category_message_delete;Are you sure that you want to delete this product?
+customers_buffer_category_message_else;There are no products
+# End: Buffer Category
+# Begin: Search by SKU
+products_search_by_sku_title_stock_administration;Stock administration
+
+products_search_by_sku_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_search_by_sku_table_sku;SKU
+products_search_by_sku_table_stock;Stock
+products_search_by_sku_table_actions;Actions
+
+customers_search_by_sku_table_modify;Modify
+# End: Search by SKU
+# Begin: Import SKU
+products_import_sku_title_import_sku;Import SKU
+
+products_import_sku_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+products_import_sku_table_file;File
+
+customers_import_sku_table_upload;Upload
+# End: Import SKU
+# Begin: Export SKU
+products_export_sku_title_import_sku;Export SKU
+
+customers_export_sku_button_download;Download CSV file
+# End: Export SKU
+# End: Products Controller
+
+# Begin: Marketing Controller
+marketing_add_taxes_success;Tax successfully created!
+marketing_add_taxes_error;Error creating tax!
+marketing_edit_taxes_success;Tax successfully modified!
+marketing_edit_taxes_error_1;Error modifying tax!
+marketing_edit_taxes_error_2;Invalid tax selected!
+marketing_delete_taxes_success;Tax successfully deleted!
+marketing_delete_taxes_error;Error deleting tax!
+marketing_visible_success;Status was successfully changed!
+marketing_visible_error;Error status change!
+marketing_add_discounts_success;Discount successfully created!
+marketing_add_discounts_error;Error creating discount!
+marketing_edit_discounts_success;Discount successfully modified!
+marketing_edit_discounts_error_1;Error modifying discount!
+marketing_edit_discounts_error_2;Invalid discount selected!
+marketing_delete_discounts_success;Discount successfully deleted!
+marketing_delete_discounts_error;Error deleting discount!
+marketing_add_coupons_success;Coupon successfully created!
+marketing_add_coupons_error;Error creating coupon!
+marketing_edit_coupons_success;Coupon successfully modified!
+marketing_edit_coupons_error_1;Error modifying coupon!
+marketing_edit_coupons_error_2;Invalid coupon selected!
+marketing_delete_coupons_success;Coupon successfully deleted!
+marketing_delete_coupons_error;Error deleting coupon!
+marketing_add_feeds_success;Feed successfully created!
+marketing_add_feeds_error;Error creating feed!
+marketing_edit_feeds_success;Feed successfully modified!
+marketing_edit_feeds_error_1;Error modifying feed!
+marketing_edit_feeds_error_2;Invalid feed selected!
+marketing_delete_feeds_success;Feed successfully deleted!
+marketing_delete_feeds_error;Error deleting feed!
+marketing_add_news_success;News successfully created!
+marketing_add_news_error;Error creating news!
+marketing_edit_news_success;News successfully modified!
+marketing_edit_news_error_1;Error modifying news!
+marketing_edit_news_error_2;Invalid news selected!
+marketing_delete_news_success;News successfully deleted!
+marketing_delete_news_error;Error deleting news!
+marketing_add_articles_success;Article successfully created!
+marketing_add_articles_error;Error creating article!
+marketing_edit_articles_success;Article successfully modified!
+marketing_edit_articles_error;Error modifying article!
+marketing_edit_blogstatus_success;Status successfully modified!
+marketing_edit_blogstatus_error;Error modifying status!
+marketing_blogdelete_success;Article deleted!
+marketing_blogdelete_error;Error deleting article!
+marketing_campaign_no_details;There are no details for this campaign!
+marketing_campaign_does_not_exist_in_database;Selected campaign does not exist in database!
+marketing_select_campaign;Please select a campaign!
+marketing_add_campaign_success;Campaign successfully created!
+marketing_add_campaign_error;Error creating campaign!
+marketing_edit_campaign_success;Campaign successfully modified!
+marketing_edit_campaign_error;Error modifying campaign!
+marketing_edit_campaign_error_2;Selected campaign was not found!
+marketing_edit_campaign_error_3;Selected campaign does not exist!
+marketing_delete_campaign_success;Campaign successfully deleted!
+marketing_delete_campaign_error;Error deleting campaign!
+marketing_delete_campaign_error_2;Selected campaign does not exist!
+marketing_newsletter_success;Newsletter successfully sent!
+marketing_newsletter_error;Error sending newsletter! Please try again later.
+marketing_delete_email_success;Email successfully deleted!
+marketing_delete_email_error;Error deleting email!
+marketing_delete_customer_opinion_success;Customer opinion successfully deleted!
+marketing_delete_customer_opinion_error;Error deleting customer opinion!
+
+# Begin: Newsletter
+marketing_newsletter_title_send_newsletter;Send newsletter
+
+marketing_newsletter_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+marketing_newsletter_table_title;Title
+marketing_newsletter_table_message;Message
+marketing_newsletter_table_from_name;From (name)
+marketing_newsletter_table_from_email;From (email)
+marketing_newsletter_table_to_email;Only to email address:
+
+marketing_newsletter_table_send;Send
+# End: Newsletter
+# Begin: Blog
+marketing_blog_button_create_article;Create Article
+
+marketing_blog_table_title;Title
+marketing_blog_table_description;Description
+marketing_blog_table_actions;Actions
+
+marketing_blog_table_edit;Edit
+marketing_blog_table_delete;Delete
+
+marketing_blog_table_active;Active
+marketing_blog_table_inactive;Inactive
+
+marketing_blog_article_status_change;Are you sure that you want to change this article status?
+marketing_blog_article_delete;Are you sure that you want to delete this article?
+
+marketing_blog_else;There are no messages
+# End: Blog
+# Begin: Create / Edit Article
+marketing_blogcreate_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+marketing_blogcreate_table_title;Title
+marketing_blogcreate_table_description;Description
+marketing_blogcreate_table_content;Content
+
+marketing_blogcreate_table_active;Active
+marketing_blogcreate_table_inactive;Inactive
+
+marketing_blogcreate_table_submit;Submit
+marketing_blogmodify_table_modify;Modify
+# End: Create / Edit Article
+# Begin: Subscribers
+marketing_subscribers_table_email;Email
+marketing_subscribers_table_unsubscribe_code;Unsubscribe code
+marketing_subscribers_table_subscribed;Subscribed
+marketing_subscribers_table_status;Status
+marketing_subscribers_table_actions;Actions
+
+marketing_subscribers_table_active;Active
+marketing_subscribers_table_inactive;Inactive
+
+marketing_subscribers_table_delete;Delete
+
+marketing_subscribers_message_status_change;Are you sure that you want to change this product email?
+marketing_subscribers_message_delete;Are you sure that you want to delete this email?
+
+marketing_subscribers_else;There are no subscribers
+# End: Subscribers
+# Begin: Campaign Manager
+marketing_campaignmanager_button_add_campaign;Add Campaign
+
+marketing_campaignmanager_table_name;Name
+marketing_campaignmanager_table_date;Date
+marketing_campaignmanager_table_actions;Actions
+
+marketing_campaignmanager_table_details;Details
+marketing_campaignmanager_table_edit;Edit
+marketing_campaignmanager_table_delete;Delete
+
+marketing_campaignmanager_addcampaign_campaign_name;Campaign name
+
+marketing_campaignmanager_campaigndetails_back;Back to campaigns
+
+marketing_campaignmanager_campaigndetails_table_name;Name
+marketing_campaignmanager_campaigndetails_table_clicks;Clicks
+marketing_campaignmanager_campaigndetails_table_visits;Visits
+marketing_campaignmanager_campaigndetails_table_total_cost;Total cost
+marketing_campaignmanager_campaigndetails_table_last_visit;Last visit
+
+marketing_campaignmanager_campaigndetails_table2_domain;Domain
+marketing_campaignmanager_campaigndetails_table2_clicks;Clicks
+marketing_campaignmanager_campaigndetails_table2_last_visit;Last visit
+
+marketing_campaignmanager_change_status;Are you sure you want to change the status of this article?
+marketing_campaignmanager_delete_article;Are you sure you want to delete this article?
+marketing_campaignmanager_no_campaigns;There are no campaigns created!
+# End: Campaign Manager
+# Begin: News
+marketing_news_button_add_new_message;Add new message
+
+marketing_news_table_title;Title
+marketing_news_table_message;Message
+marketing_news_table_status;Status
+marketing_news_table_datetime;Created
+marketing_news_table_actions;Actions
+
+marketing_news_table_active;Active
+marketing_news_table_inactive;Inactive
+
+marketing_news_table_view;View
+marketing_news_table_edit;Edit
+marketing_news_table_delete;Delete
+
+marketing_news_message_status_change;Are you sure that you want to change this message status?
+marketing_news_message_delete;Are you sure that you want to delete this message?
+
+marketing_news_else;There are no messages
+# End: News
+# Begin: Add / Edit News
+marketing_add_news_title_add_news;Add news
+marketing_add_news_title_edit_news;Edit news
+
+marketing_add_news_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+marketing_add_news_table_title;Title
+marketing_add_news_table_message;Message
+marketing_add_news_table_status;Status
+
+marketing_add_news_table_active;Active
+marketing_add_news_table_inactive;Inactive
+
+marketing_add_news_table_submit;Submit
+marketing_add_news_table_modify;Modify
+# End: Add / Edit News
+# Begin: Customer Opinions
+marketing_customer_opinion_button_add_new_opinion;Add new opinion
+
+marketing_customer_opinion_table_name;Name
+marketing_customer_opinion_table_email;Email
+marketing_customer_opinion_table_opinion;Opinion
+marketing_customer_opinion_table_datetime;Created
+marketing_customer_opinion_table_status;Status
+marketing_customer_opinion_table_actions;Actions
+
+marketing_customer_opinion_table_active;Active
+marketing_customer_opinion_table_inactive;Inactive
+
+marketing_customer_opinion_table_delete;Delete
+
+marketing_customer_opinion_message_status_change;Are you sure that you want to change this opinion status?
+marketing_customer_opinion_message_delete;Are you sure that you want to delete this opinion?
+
+marketing_customer_opinion_else;There are no opinions
+# End: Customer Opinions
+# Begin: Coupons
+marketing_coupons_button_add_new_coupon;Add new coupon
+
+marketing_coupons_table_code;Code
+marketing_coupons_table_value;Value
+marketing_coupons_table_start_date;Start date
+marketing_coupons_table_end_date;End date
+marketing_coupons_table_status;Status
+marketing_coupons_table_datetime;Created
+marketing_coupons_table_modified;Modified
+marketing_coupons_table_actions;Actions
+
+marketing_coupons_table_active;Active
+marketing_coupons_table_inactive;Inactive
+
+marketing_coupons_table_edit;Edit
+marketing_coupons_table_delete;Delete
+
+marketing_coupons_message_status_change;Are you sure that you want to change this coupon status?
+marketing_coupons_message_delete;Are you sure that you want to delete this coupon?
+
+marketing_coupons_else;There are no coupons
+# End: Coupons
+# Begin: Add / Edit Coupon
+marketing_add_coupon_title_add_coupon;Add coupon
+marketing_add_coupon_title_edit_coupon;Edit coupon
+
+marketing_add_coupon_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+marketing_add_coupon_table_code;Code
+marketing_add_coupon_table_value;Value
+marketing_add_coupon_table_start_date;Start date
+marketing_add_coupon_table_end_date;End date
+marketing_add_coupon_table_status;Is Active
+
+marketing_add_coupon_table_submit;Submit
+marketing_add_coupon_table_modify;Modify
+# End: Add / Edit Coupon
+# Begin: Feeds
+marketing_feeds_button_add_new_feed;Add new feed
+
+marketing_feeds_table_logo;Logo
+marketing_feeds_table_name;Name
+marketing_feeds_table_link;Link
+marketing_feeds_table_status;Status
+marketing_feeds_table_datetime;Created
+marketing_feeds_table_modified;Modified
+marketing_feeds_table_actions;Actions
+
+marketing_feeds_table_active;Active
+marketing_feeds_table_inactive;Inactive
+
+marketing_feeds_table_edit;Edit
+
+marketing_feeds_message_status_change;Are you sure that you want to change this feed status?
+marketing_feeds_message_delete;Are you sure that you want to delete this feed?
+
+marketing_feeds_else;There are no feeds
+# End: Feeds
+# Begin: Add / Edit Feed
+marketing_add_feed_title_add_feed;Add feed
+marketing_add_feed_title_edit_feed;Edit feed
+
+marketing_add_feed_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+marketing_add_feed_table_logo;Logo
+marketing_add_feed_table_name;Name
+marketing_add_feed_table_feed;Feed
+marketing_add_feed_table_code;Code
+marketing_add_feed_table_status;Is Active
+
+marketing_add_feed_table_active;Active
+marketing_add_feed_table_inactive;Inactive
+
+marketing_add_feed_table_submit;Submit
+marketing_add_feed_table_modify;Modify
+# End: Add / Edit Feed
+# End: Marketing Controller
+
+# Begin: Reports Controller
+# Begin: Time frame
+reports_time_frame_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+reports_time_frame_title_no;Number of orders made in the selected period
+reports_time_frame_title_value;The value of orders made in the selected period
+
+reports_time_frame_button_period;Period
+
+reports_time_frame_table_select_period;Select period
+reports_time_frame_select_period_select;Select
+reports_time_frame_select_period_today;Today
+reports_time_frame_select_period_last_7_days;Last 7 days
+reports_time_frame_select_period_this_month;This month
+reports_time_frame_select_period_this_year;This year
+
+reports_time_frame_table_button_View;View
+
+reports_time_frame_message_else;There was no order made in the selected period.
+# End: Time frame
+# Begin: Calendar
+reports_calendar_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+reports_calendar_table_select_date;Select date
+
+reports_calendar_table_button_View;View
+# End: Calendar
+# Begin: Best sellers
+reports_best_sellers_table_product_name;Product name
+reports_best_sellers_table_price;Price
+reports_best_sellers_table_quantity;Quantity
+
+reports_best_sellers_message_else;There are no best seller product
+# End: Best sellers
+# Begin: Top customers
+reports_top_customers_table_customer_name;Customer name
+reports_top_customers_table_number_orders;Number Orders
+reports_top_customers_table_command_value;Command Value
+
+reports_top_customers_message_else;There are no top customers
+# End: Top customers
+# Begin: SKU reports
+reports_sku_reports_table_sku;SKU
+reports_sku_reports_table_stock;Stock
+reports_sku_reports_page;Page:
+
+reports_sku_reports_message_else;There are no products!
+# End: SKU reports
+# End: Reports Controller
+
+# Begin: CMS Controller
+cms_add_success;Page successfully created!
+cms_add_error;Error creating page!
+cms_edit_success;Page successfully modified!
+cms_edit_error_1;Error modifying page!
+cms_edit_error_2;Invalid page selected!
+cms_delete_success;Page successfully deleted!
+cms_delete_error;Error deleting page!
+cms_visible_success;Page status successfully changed!
+cms_visible_error_1;Error changing page status!
+cms_visible_error_2;Invalid page selected!
+cms_add_seo_success;Seo successfully created!
+cms_add_seo_error;Error creating seo!
+cms_edit_seo_success;Seo successfully modified!
+cms_edit_seo_error_1;Error modifying seo!
+cms_edit_seo_error_2;Invalid seo selected!
+cms_visible_success;Status was successfully changed!
+cms_visible_error;Error status change!
+cms_delete_seo_success;Seo successfully deleted!
+cms_delete_seo_error;Error deleting seo!
+cms_add_analytics_success;Tracking code successfully created!
+cms_add_analytics_error;Error creating tracking code!
+cms_edit_analytics_success;Tracking code successfully modified!
+cms_edit_analytics_error_1;Error modifying tracking code!
+cms_edit_analytics_error_2;Invalid tracking code selected!
+cms_delete_analytics_success;Tracking code successfully deleted!
+cms_delete_analytics_error;Error deleting tracking code!
+cms_head_foot_success;Content successfully saved!
+cms_head_foot_error;Error saving content!
+
+# Begin: Pages
+cms_pages_button_add_new_page;Add new page
+
+cms_pages_table_position;Position
+cms_pages_table_title;Title
+cms_pages_table_url;URL
+cms_pages_table_status_header;Status Header
+cms_pages_table_status_footer;Status Footer
+cms_pages_table_datetime;Created
+cms_pages_table_modified;Modified
+cms_pages_table_actions;Actions
+
+cms_pages_table_active;Active
+cms_pages_table_inactive;Inactive
+
+cms_pages_table_Preview;Preview
+cms_pages_table_edit;Edit
+cms_pages_table_delete;Delete
+
+cms_pages_message_status_change;Are you sure that you want to change this page status?
+cms_pages_message_delete;Are you sure that you want to delete this page?
+
+cms_pages_else;There are no pages
+# End: Pages
+# Begin: Add / Edit Page
+cms_add_page_title_page_information;Page information
+cms_add_page_title_page_content;Page content
+cms_add_page_title_meta_data;Meta data
+
+cms_add_page_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+cms_add_page_table_position;Position
+cms_add_page_table_title;Title
+cms_add_page_table_url;URL
+cms_add_page_table_status;Status
+cms_add_page_table_head_line;Head line
+cms_add_page_table_content;Content
+cms_add_page_table_keywords;Keywords
+cms_add_page_table_description;Description
+
+cms_add_page_table_active;Active
+cms_add_page_table_inactive;Inactive
+
+cms_add_page_table_submit;Submit
+cms_add_page_table_modify;Modify
+# End: Add / Edit Page
+# Begin: Header / Footer
+cms_headfoot_title_add_header_content;Add header content
+cms_headfoot_title_add_footer_content;Add footer content
+
+cms_headfoot;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+cms_headfoot_table_status;Status
+
+cms_headfoot_table_active;Active
+cms_headfoot_table_inactive;Inactive
+
+cms_headfoot_table_submit;Modify
+# End: Header / Footer
+# Begin: Seo
+cms_seo_button_generate_sitemap;Generate sitemap
+
+cms_seo_button_add_new_seo;Add new seo
+
+cms_seo_table_page;Page
+cms_seo_table_title;Title
+cms_seo_table_keywords;Keywords
+cms_seo_table_description;Description
+cms_seo_table_status;Status
+cms_seo_table_actions;Actions
+
+cms_seo_table_active;Active
+cms_seo_table_inactive;Inactive
+
+cms_seo_table_button_edit;Edit
+cms_seo_table_button_delete;Delete
+
+cms_seo_message_status_change;Are you sure that you want to change this seo status?
+cms_seo_message_delete;Are you sure that you want to delete this seo?
+cms_seo_message_generated_successfully;File was generated successfully!
+cms_seo_message_error_generation;Error file generation!
+
+cms_seo_else;There is no seo
+# End: Seo
+# Begin: Add / Edit Seo
+cms_add_seo_title_add_seo;Add seo
+cms_add_seo_title_edit_seo;Edit seo
+
+cms_add_seo_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+cms_add_seo_table_page;Page
+cms_add_seo_table_title;Title
+cms_add_seo_table_keywords;Keywords
+cms_add_seo_table_description;Description
+cms_add_seo_table_is_active;Is Active
+
+cms_add_seo_table_status;Status
+cms_add_seo_table_active;Active
+cms_add_seo_table_inactive;Inactive
+
+cms_add_seo_table_submit;Submit
+cms_add_seo_table_modify;Modify
+# End: Add / Edit Seo
+# Begin: Google Analytics
+cms_google_analytics_button_add_new_tracking_code;Add new tracking code
+
+cms_google_analytics_table_tracking_code;Tracking Code
+cms_google_analytics_table_status;Status
+cms_google_analytics_table_actions;Actions
+
+cms_google_analytics_table_active;Active
+cms_google_analytics_table_inactive;Inactive
+
+cms_google_analytics_table_edit;Edit
+cms_google_analytics_table_delete;Delete
+
+cms_google_analytics_message_status_change;Are you sure that you want to change the tracking codes status?
+cms_google_analytics_message_delete;Are you sure that you want to delete the tracking codes?
+
+cms_google_analytics_else;There is no tracking codes
+# End: Google Analytics
+# Begin: Add / Edit Google Analytics
+cms_add_google_analytics_title_add_tracking_code;Add tracking code
+cms_add_google_analytics_title_edit_tracking_code;Edit tracking code
+
+cms_add_google_analytics_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+cms_add_google_analytics_table_tracking_code;Tracking Code
+cms_add_google_analytics_table_status;Status
+
+cms_add_google_analytics_table_active;Active
+cms_add_google_analytics_table_inactive;Inactive
+
+cms_add_google_analytics_table_submit;Create
+cms_add_google_analytics_table_modify;Modify
+# End: Add / Edit Google Analytics
+# End: CMS Controller
+
+# Begin: Template Controller
+template_message;Message
+template_subject;Subject
+template_button_submit;Submit
+template_legend;Legend
+template_username;Username
+template_password;Password
+template_first_name;First Name
+template_last_name;Last Name
+template_activation_link;Activation Link
+template_unsubscribe_link;Unsubscribe Link
+template_change_success;Template successfully changed!
+template_change_error;Error changing template!
+template_message_success;Changes have been made ​​successfully!
+template_message_error;Error! The changes were not made.
+# End: Template Controller
+
+# Begin: Plugins Controller
+plugins_title_plugins;Plugins
+
+plugins_table_active;Active
+plugins_table_inactive;Inactive
+
+plugins_table_edit;Edit
+plugins_message_error;No plugins installed!
+
+plugins_message_change_value_success;Value successfully changed!
+plugins_message_change_value_error;Error changing value!
+plugins_message_value_can_not_be_null;Value can not be null!
+plugins_message_constant_can_not_be_found;Constant can not be found!
+plugins_message_id_can_not_be_null;Id can not be null!
+
+plugins_status_change_success;Status was successfully changed!
+plugins_status_change_error;Error changing status!
+
+plugins_table_image;Image
+plugins_table_name;Name
+plugins_table_message;Message
+plugins_table_post_date;Post Date
+# End: Plugins Controller
+
+# Begin: Settings Controller
+settings_visible_success;Status was successfully changed!
+settings_visible_error;Error status change!
+settings_add_site_preferences_success;Performance successfully created!
+settings_add_site_preferences_error;Error creating performance!
+settings_edit_site_preferences_success;Performance successfully modified!
+settings_edit_site_preferences_error_1;Error modifying performance!
+settings_edit_site_preferences_error_2;Invalid performance selected!
+settings_delete_site_preferences_success;Site preferences successfully deleted!
+settings_delete_site_preferences_error;Error deleting site preferences!
+settings_modify_settings_success;Settings successfully changed!
+settings_modify_settings_error_1;Error changing settings!
+settings_modify_settings_error_2;Invalid settings selected!
+settings_modify_value_success;Settings successfully changed!
+settings_modify_value_error_1;Error changing settings!
+settings_modify_value_error_2;Invalid settings selected!
+settings_add_company_success;Company successfully created!
+settings_add_company_error;Error creating company!
+settings_edit_company_success;Company successfully modified!
+settings_edit_company_error_1;Error modifying company!
+settings_edit_company_error_2;Invalid company selected!
+settings_delete_company_success;Company successfully deleted!
+settings_delete_company_error;Error deleting company!
+settings_payments_success;Settings successfully updated!
+settings_payments_error;Error updating settings!
+settings_shipping_success;Settings successfully changed!
+settings_shipping_error;Error changing settings!
+settings_free_shipping_city_success;Free Shipping cities have been saved!
+settings_delete_free_shipping_city_success;The town has been deleted!
+settings_delete_free_shipping_city_error_1;Error deleting town!
+settings_delete_free_shipping_city_error_2;Invalid town selected!
+settings_add_national_shipping_success;Courier successfully created!
+settings_add_national_shipping_error;Error creating courier!
+settings_edit_national_shipping_success;Courier successfully modified!
+settings_edit_national_shipping_error_1;Error modifying courier!
+settings_edit_national_shipping_error_2;Invalid courier selected!
+settings_delete_shipping_success;Shipping successfully deleted!
+settings_delete_shipping_error;Error deleting shipping!
+settings_add_international_shipping_success;Courier successfully created!
+settings_add_international_shipping_error;Error creating courier!
+settings_delete_zone_success;Zone successfully deleted!
+settings_delete_zone_error;Error deleting zone!
+settings_edit_zone_success;Shipping zone successfully modified!
+settings_edit_zone_error;Error modifying courier!
+settings_add_zone_cost_success;Shipping zone cost successfully created!
+settings_add_zone_cost_error;Error adding shipping zone cost!
+settings_edit_zone_cost_success;Shipping zone cost successfully modified!
+settings_edit_zone_cost_error;Error editing modifying zone cost!
+settings_delete_zone_cost_success;Zone cost successfully deleted!
+settings_delete_zone_cost_error;Error deleting zone cost!
+settings_add_taxes_success;Product Tax successfully Added!
+settings_add_taxes_error;Error adding product tax!
+settings_edit_taxes_success;Product tax successfully modified!
+settings_edit_taxes_error;Error modifying tax!
+settings_delete_taxes_success;Tax successfully deleted!
+settings_delete_taxes_error;Error deleting tax!
+settings_edit_vat_success;Vat tax successfully modified!
+settings_edit_vat_error;Error modifying vat!
+
+# Begin: Index
+settings_index_table_const;Constant
+settings_index_table_name;Name
+settings_index_table_value;Value
+settings_index_table_site_blocking;Site blocking
+settings_index_table_site_blocking_blocat;blocked
+settings_index_table_site_blocking_deblocat;unblocked
+settings_index_table_site_blocking_blocheaza;block
+settings_index_table_site_blocking_deblocheaza;unblock
+settings_index_table_list_of_accepted_ips_1;List of accepted IPs
+settings_index_table_list_of_accepted_ips_2;(for blocked site)
+settings_index_table_comma_separated;(separated with comma)
+settings_index_table_button_edit;Edit
+
+settings_index_table_display;Display
+settings_index_table_products;Products
+
+settings_index_table_gallery;Gallery
+settings_index_table_thumbnails;Thumbnails
+settings_index_table_list;List
+
+settings_index_table_price_type;Price Type
+settings_index_table_weight_type;Weight type
+settings_index_table_status;Status
+
+settings_index_table_active;Active
+settings_index_table_inactive;Inactive
+
+settings_index_message_status_change;Are you sure that you want to change this performance status?
+
+settings_index_else;There are no preferences
+
+settings_siteprefset_change_success;Changed with success!
+settings_siteprefset_error_saving_in_database;Error saving in database!
+
+settings_table_title_general;General
+settings_table_pricetype;Price type
+settings_table_weighttype;Weight type
+settings_table_warrantytype;Warranty type
+settings_table_pgt;Page generation time
+settings_table_an;year
+settings_table_luna;month
+settings_table_zi;day
+settings_table_show;show
+settings_table_hide;hide
+settings_table_title_site;Site
+settings_table_display;Products view
+settings_table_products;Products per page
+settings_table_onsale;On sale
+settings_table_active;active
+settings_table_inactive;inactive
+settings_table_gallery;gallery
+settings_table_list;list
+settings_table_title_admin;Admin
+settings_table_imageresize;Resize product image
+settings_table_resize;resize
+settings_table_adaptiveResize;adaptive resize
+settings_table_adminprodspage;Products per page
+# End: Index
+# Begin: Company Details
+settings_company_details_title_company_details;Company details
+
+settings_company_details_table_logo;Logo
+settings_company_details_table_company;Company
+settings_company_details_table_slogan;Slogan
+settings_company_details_table_fiscal_code;Fiscal code
+settings_company_details_table_trade_register;Trade register
+settings_company_details_table_bank;Bank
+settings_company_details_table_iban_code;IBAN code
+settings_company_details_table_address;Address
+settings_company_details_table_country;Country
+settings_company_details_table_county;County
+settings_company_details_table_city;City
+settings_company_details_table_zip;zip
+settings_company_details_table_phone;Phone
+settings_company_details_table_phone2;Phone 2
+settings_company_details_table_fax;Fax
+settings_company_details_table_email;Email
+settings_company_details_table_url;URL
+settings_company_details_table_vat_payer;VAT Payer
+settings_company_details_table_yes;Yes
+settings_company_details_table_no;No
+
+settings_company_details_button_add_company;Add Company
+settings_company_details_button_edit;Edit
+settings_company_details_button_delete;Delete
+
+settings_company_details_message_delete;Are you sure that you want to delete this Company?
+
+settings_company_details_else;There are no company details
+# End: Company Details
+# Begin: Add / Edit Company
+settings_add_company_title_add_company;Add Company
+settings_add_company_title_edit_company;Edit Company
+
+settings_add_company_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+settings_add_company_table_logo;Logo
+settings_add_company_table_company;Company
+settings_add_company_table_slogan;Slogan
+settings_add_company_table_fiscal_code;Fiscal code
+settings_add_company_table_trade_register;Trade register
+settings_add_company_table_bank;Bank
+settings_add_company_table_iban_code;IBAN code
+settings_add_company_table_address;Address
+settings_add_company_table_country;Country
+settings_add_company_table_county;County
+settings_add_company_table_city;City
+settings_add_company_table_zip;zip
+settings_add_company_table_phone;Phone
+settings_add_company_table_phone2;Phone 2
+settings_add_company_table_phone_orange;Orange phone number
+settings_add_company_table_phone_vodafone;Vodafone phone number
+settings_add_company_table_fax;Fax
+settings_add_company_table_email;Email
+settings_add_company_table_url;URL
+settings_add_company_table_vat_payer;VAT Payer
+
+settings_add_company_table_yes;Yes
+settings_add_company_table_no;No
+
+settings_add_company_submit;Submit
+settings_add_company_modify;Modify
+# End: Add / Edit Company
+# Begin: Payments
+settings_payments_table_method;Method
+settings_payments_table_status;Status
+settings_payments_table_action;Action
+
+settings_payments_table_card;Card
+settings_payments_table_bank_transfer;Bank Transfer
+settings_payments_table_repayment;Repayment
+settings_payments_table_repayment_+;Repayment +
+settings_payments_table_in_value_of;% in value of
+
+settings_payments_table_active;Active
+settings_payments_table_inactive;Inactive
+
+settings_payments_table_price;Price
+settings_payments_table_percentage;Percentage
+settings_payments_table_update;Update
+
+settings_payments_addpayments;Add payment method
+settings_payments_editpayments;Edit payment method
+settings_payments_addsitepreferences;Add site preferences
+settings_payments_editsitepreferences;Edit site preferences
+settings_payments_editvat;Edit VAT
+# End: Payments
+# Begin: Shipping
+settings_shipping_button_cities_with_free_shipping;Cities with free shipping
+
+settings_shipping_logo;Logo
+settings_shipping_courier_name;Courier Name
+settings_shipping_price_first_for_kg;Price for first Kg
+settings_shipping_price_additional_for_kg;Price for additional Kg
+settings_shipping_status;Status
+settings_shipping_active;Active
+settings_shipping_inactive;Inactive
+
+settings_shipping_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+settings_shipping_title_flat_rate;Flat fee
+settings_shipping_title_free_shipping;Free shipping
+settings_shipping_title_courier_taxes;Courier taxes
+settings_shipping_title_withoutshipping;No tax shipping
+
+settings_shipping_table_flat_rate;Flat fee
+settings_shipping_table_status;Status
+settings_shipping_table_alternative;Alternative for orders less than minimum
+
+settings_shipping_table_active;Active
+settings_shipping_table_inactive;Inactive
+
+settings_shipping_table_add_national;Add national
+settings_shipping_table_edit_national;Edit national
+settings_shipping_table_add_international_shipping_zone;Add international shipping zone
+
+settings_shipping_table_select_county;Select county
+
+settings_shipping_table_yes;Yes
+settings_shipping_table_no;No
+
+settings_shipping_table_minimum_order_amount;Minimum Order Amount
+settings_shipping_table_only_to;Only to
+settings_shipping_table_free_shipping_for_everybody;Free shipping for everybody
+
+settings_shipping_table_flat_fee;Flat fee
+settings_shipping_table_courier_taxes;Free courier
+
+settings_shipping_table_submit;Submit
+# End: Shipping
+# Begin: Shipping Zone Add/Edit
+settings_add_shipping_zone_button_back;Back
+
+settings_add_shipping_zone_title;Add International Shipping Zone
+
+settings_add_shipping_zone_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+settings_add_shipping_zone_table_select_country;Select country
+
+settings_add_shipping_zone_table_zone_name;Zone name
+settings_add_shipping_zone_table_countries;Countries
+settings_add_shipping_zone_table_datetime;Date
+settings_add_shipping_zone_table_actions;Actions
+
+settings_add_shipping_zone_table_manage_cost;Manage cost
+settings_add_shipping_zone_table_edit;Edit
+settings_add_shipping_zone_table_delete;Delete
+
+settings_add_shipping_zone_table_submit;Submit
+settings_add_shipping_zone_table_modify;Modify
+
+settings_add_shipping_zone_message_delete;Are you sure you want to delete the zone
+settings_add_shipping_zone_message_else;There are no shipping zones
+# End: Shipping Zone Add/Edit
+# Begin: Zone Cost Add/Edit
+settings_add_zone_button_back;Back
+
+settings_add_zone_title;Add costs to delivery
+
+settings_add_zone_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+settings_add_zone_table_min_weight;Min weight(kg)
+settings_add_zone_table_max_weight;Max weight(kg)
+settings_add_zone_table_shipping_price;Shipping price
+
+settings_add_zone_table_actions;Actions
+settings_add_zone_table_edit;Modify
+settings_add_zone_table_delete;Delete
+
+settings_add_zone_table_submit;Submit
+settings_add_zone_table_modify;Modify
+
+settings_add_zone_message_delete;Are you sure you want to delete the zone
+settings_add_zone_message_else;here are no shipping zones
+# End: Zone Cost Add/Edit
+# Begin: Taxes
+settings_taxes_button_add_new_tax;Add new tax
+
+settings_taxes_table_name;Name
+settings_taxes_table_value;Value
+settings_taxes_table_categories;Categories
+settings_taxes_table_status;Status
+settings_taxes_table_actions;Actions
+
+settings_taxes_table_active;Active
+settings_taxes_table_inactive;Inactive
+
+settings_taxes_table_edit;Edit
+settings_taxes_table_delete;Delete
+
+settings_taxes_message_status_change;Are you sure that you want to delete this tax?
+settings_taxes_message_delete;Are you sure that you want to delete this tax?
+
+settings_taxes_else;There are no taxes
+# End: Taxes
+# Begin: Add / Edit Taxes
+settings_add_tax_title_add_tax;Add tax
+settings_add_tax_title_edit_tax;Edit tax
+
+settings_add_tax_table_name;Name
+settings_add_tax_table_tva;VAT
+settings_add_tax_table_value;Value
+settings_add_tax_table_type;Type
+settings_add_tax_table_all_categories;All categories
+settings_add_tax_table_status;Status
+
+settings_taxes_table_active;Active
+settings_taxes_table_inactive;Inactive
+
+settings_taxes_table_yes;Yes
+settings_taxes_table_no;No
+
+settings_taxes_table_submit;Submit
+# End: Add / Edit Taxes
+# Begin: Themes
+settings_themes_title_change_theme;Change theme
+
+settings_themes_table_name;Name
+settings_themes_table_image;Image
+settings_themes_table_status;Status
+
+settings_themes_table_active;Active
+settings_themes_table_inactive;Inactive
+
+settings_themes_message_status_change;Are you sure you want to change active theme?
+# End: Themes
+# Begin: Languages
+settings_languages_title_change_language;Change language
+
+settings_languages_table_language;Language
+settings_languages_table_status;Status
+
+settings_languages_table_active;Active
+settings_languages_table_inactive;Inactive
+
+settings_languages_message_status_change;Are you sure you want to change active language?
+# End: Languages
+# Begin: Server Check
+settings_server_check_title_server_information;Server information
+settings_server_check_title_server_info;Server info
+settings_server_check_click_here;click here
+
+settings_server_check_table_php_version;PHP Version
+settings_server_check_table_mysql_version;MySQL Version
+settings_server_check_table_gd_library;GD Library
+settings_server_check_table_gd_library_is_instaled;GD Library is instaled
+settings_server_check_table_gd_library_is_not_instaled;GD Library is not instaled
+settings_server_check_table_gd_library_version;GD Library Version
+settings_server_check_table_page_generation_time;Page generation time
+
+settings_server_check_table_active;Active
+settings_server_check_table_inactive;Inactive
+# End: Server Check
+# End: Settings Controller
+# Begin: Ajax Controller
+ajax_category_has_no_subcategories;Category has no subcategories
+ajax_select;Select
+ajax_select_category;Select category
+ajax_up_one_level;up one level
+ajax_color_changed;Color was changed
+# End: Ajax Controller
+# End: Backend
+
+
+
+
+
+# Begin: Default
+# Begin: Menu and Titles
+breadcrumbs_home;Home
+breadcrumbs_products;Products
+breadcrumbs_topbrands;Top Brands
+breadcrumbs_promotion;Promotion
+breadcrumbs_liquidation;Liquidation
+breadcrumbs_account;New Account
+breadcrumbs_myaccount;My Account
+breadcrumbs_orders;Order History
+breadcrumbs_edit_account;Edit Account
+breadcrumbs_wishlist;Wishlist
+breadcrumbs_activation;Account Activation
+breadcrumbs_password;Forgot Password?
+breadcrumbs_login;Login
+breadcrumbs_search;Search
+breadcrumbs_topsales;Top Sales
+breadcrumbs_customeropinion;Customer Opinion
+breadcrumbs_cart;Cart
+breadcrumbs_orders;Orders
+breadcrumbs_news;News
+breadcrumbs_unsubscribe;Unsubscribe
+# End: Menu and Titles
+
+# Begin: Index Controller
+index_activate;Activate
+index_activate_newsletter;Activate Newsletter
+index_newsletter_success;You were added to our newsletter!
+index_newsletter_coupon;Coupon
+index_newsletter_error_1;Error newsletter!
+index_newsletter_error_2;Please enter a valid email!
+index_activation_success;An email was sent to you for activating the newsletter!
+index_activation_error_1;Error activate email address!
+index_activation_error_2;Invalid email!
+index_unsubscribe_success;You have unsubscribed successfully
+index_unsubscribe_error;Unsubscribe error
+index_special_offers;Promotions
+index_newest_products;Newest Products
+index_promotional_products;Promotions
+index_recommended_products;Recommended
+index_news;New products
+index_product_guarantee;Warranty:
+index_product_guarantee_months;months
+index_product_months_availability;months | Availability:
+index_product_availability_on_attributes;on attributes |
+index_product_availability_in_stock;in stock
+index_product_availability_out_of_stock;out of stock
+index_product_availability_ask;ask
+index_product_more_information;Request for more info
+index_product_view_details;view details
+index_product_code;Code:
+
+index_menu_products;Products
+index_menu_view_all_products;view all products
+
+index_no_products_available;No products available
+# End: Index Controller
+
+# Begin: Products
+products_promotion;Promo
+products_new;New
+products_stock_clearance;Clearance
+products_unavailable;Unavailable product
+products_on_order;on order
+
+products_message_else;There are no products!
+products_newest_products;NEWEST PRODUCTS
+
+products_gallery;Gallery
+products_list;List
+display_products_gallery;Display products in gallery
+display_products_list;Display products in list
+
+products_price;Price
+products_price_ascending;PRICE: ascending
+products_price_descending;PRICE: descending
+products_display_on_page;Display on page
+
+products_details_product_code;Product code:
+products_details_guarantee;Warranty:
+products_details_availability;Availability:
+products_details_more_information_about_product;Request more information about this product
+products_details_add_to_cart;ADD TO CART
+products_details_print_this_page;Print this page
+products_details_print_this_page_price;Price:
+products_details_add_comment;Add comment
+products_details_recommended_accessories;Recommended accessories
+products_details_description;Description
+
+products_selected_product_is_inactive;The selected product is inactive!
+products_this_product_is_inactive;This product is inactive!
+
+products_other_recommended_products;Other recommended products
+products_purchased_with_this_product;Products that were purchased with this product
+# End: Products
+
+# Begin: Homepage
+homepage_welcome;Welcome
+homepage_my_account;my account
+homepage_logout;logout
+homepage_login;login
+homepage_new_account;new account
+homepage_or_create;or create
+homepage_home;Home
+homepage_products;PRODUCTS
+homepage_navigation_products;Products
+homepage_top_sells;TOP SELLS
+homepage_top_sells_sitemap;Top Sells
+homepage_top_brands;Top Brands
+homepage_see_full_top;see full top
+homepage_promotions;Promotions
+homepage_new_products;New products
+homepage_stock_clearance;Liquidation
+homepage_news;News
+homepage_contact_us;Contact Us
+homepage_brands;Brands
+homepage_items_in_cart;items in cart
+homepage_cart_total;Total:
+homepage_view_cart;View Cart
+homepage_cart_no_prod;There are no items in cart
+homepage_subscribe;Keep up with the latest offers and promotions:
+homepage_customer_support;Customer support
+homepage_find_a_product;Find a product
+homepage_button_details;details
+homepage_button_buy;add to cart
+homepage_breadcrumbs;You are here
+homepage_customer_opinions;Customer Opinions
+homepage_news_bottom;News
+homepage_all_customer_opinions;all customer opinions
+homepage_customer_opinions_text;Be the first who wrote his opinion about our online store.
+homepage_add_comment;add comment
+homepage_all_news;all news
+homepage_bread_welcome;You are here:
+# End: Homepage
+
+# Begin: Cart Controller
+cart_edit_product_error_1;Quantity unavailable!
+cart_edit_product_error_2;Invalid product selected!
+cart_delete_error;Invalid product selected!
+cart_wishlist_success;Wishlist successfully saved!
+cart_wishlist_error;Error saving wishlist!
+
+cart_shopping_cart;Shopping Cart
+cart_pieces;pieces
+cart_continue_shopping;continue shopping
+cart_add;add
+cart_coupon_entered;The coupon you entered is
+cart_price_reduction;price reduction:
+cart_remove;remove
+cart_salutation;Salutation
+cart_first_name;First name
+cart_last_name;Last name
+cart_cnp;Personal code
+cart_serie;ID number
+cart_address;Address
+cart_address2;Address 2
+cart_town_city;Town/City
+cart_zip_postal;Zip/Postal code
+cart_country;Country
+cart_county;State/County
+cart_phone;Phone
+cart_phone2;Phone 2
+cart_fax;Fax
+cart_email;Email
+cart_comments;Comments
+cart_account;I want an account
+cart_account_details;Account Details
+cart_billing;Billing Details
+cart_shipping;Shipping Details
+cart_shipping_details;SHIPPING DETAILS
+cart_fields_marked;Fields marked with
+cart_are_required;are required.
+cart_ship_like_bill;Shipping Details are the same as Billing Details
+cart_continue;continue order
+cart_wishlist_save_as_wishlist;Save as wishlist
+cart_wishlist_name;wishlist name
+cart_promotional_code;promotional code
+cart_wishlist_save;save
+cart_ordered_product;Ordered product
+cart_quantity;Quantity
+cart_unit_price;Unit price
+cart_total_vat;Total
+cart_payment_methods;Payment Methods
+cart_payment_method_card;Card
+cart_payment_method_repayment;Repayment
+cart_payment_method_repayment_+;Repayment +
+cart_payment_method_%_in_value_of;% in value of
+cart_payment_method_bank_transfer;Bank transfer
+cart_shopping_cart_empty;Shopping cart is empty!
+
+cart_vat;VAT 
+cart_tax_repayment;Tax repayment 
+cart_delivery_cost;Cost of delivery (complete country, county and city) 
+
+cart_button_update_total;Update total
+cart_button_remove_product_from_cart;Remove product from cart
+
+cart_coupon_add_success;Coupon added successfully!
+cart_coupon_not_valid;This coupon is not valid!
+cart_coupon_delete;The coupon was deleted!
+
+cart_form_quantity;quantity
+cart_button_add;add
+cart_button_edit;edit
+
+cart_index_button_edit;edit
+# End: Cart Controller
+
+# Begin: Order Controller
+order_payment_method;Payment Method
+order_payment_method_card;Card
+order_payment_method_repayment;Repayment
+order_payment_method_repayment_+;Repayment +
+order_payment_method_%_in_value_of;% in value of
+order_payment_method_bank_transfer;Bank transfer
+order_repayment_value;Tax repayment
+order_shipping_value;Cost of delivery
+order_shopping_cart;Shopping Cart
+order_product_name;Product name
+order_measuring_unit;M.U.
+order_quant;Quant.
+order_unit_price;Unit price (VAT)
+order_value;Value
+order_value_vat;Value VAT
+order_piece;piece
+order_total_value;Total Value:
+order_total_vat;Total VAT:
+order_total;TOTAL:
+
+order_person_individual;Individual
+order_person_legal_person;Legal Person
+order_name;Name:
+order_cnp;Personal code
+order_serie;ID number
+order_address;Address:
+order_address2;Address 2:
+order_town_city;City:
+order_zip_postal;Zip:
+order_country;Country:
+order_county;County:
+order_phone;Phone:
+order_phone2;Phone 2:
+order_fax;Fax:
+order_email;Email:
+order_person;Person:
+order_institution;Company:
+order_fiscal_code;Fiscal code:
+order_trade_register;Trade register:
+order_bank;Bank:
+order_iban_code;IBAN code:
+order_function;Function:
+order_department;Department:
+order_billing;Billing details
+order_shipping;Shipping details
+order_company;Company details
+order_comments;Comments
+order_send_order;Send Order
+order_shopping_cart_empty;Shopping cart is empty!
+# End: Order Controller
+
+# Begin: Auth Controller
+auth_index_sign_in_using;Sign-in using:
+auth_index_error_1;Invalid username or password
+auth_index_error_2;Some error has ocurred!
+auth_activation_success;Account succesfully activated. Please login!
+auth_activation_error;Error activating account!
+auth_remind_message;Reset password
+auth_remind_success;An email with your new password succesfully sent!
+auth_remind_error;Error reseting password!
+# End: Auth Controller
+
+# Begin: User Controller
+user_create_account_using;Create an account using:
+user_new_account_activate;Activate
+user_new_account_here;Here
+user_new_account_message;Activate account
+user_new_account_created;Account successfully created! Please check your email inbox for the activation email.
+user_new_account_error;Error creating account!
+user_edit_account_success;Customer informations successfully changed!
+user_edit_account_error;Error changing customer informations!
+user_edit_password_success;Password successfully updated!
+user_edit_password_error;Error modifying password!
+user_edit_old_password_error;The old password is wrong!
+user_invalid_account_selected;Invalid account selected!
+user_delete_wishlist_success;Wishlist was successfully deleted!
+user_delete_wishlist_error;Error deleting wishlist!
+
+user_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+user_my_account;Account details
+user_account;My Account
+user_edit_account;Edit Account
+user_view_orders;Orders History
+user_view_wishlists;View wishlists
+
+user_new_account;New account
+user_basic_information;Basic Information
+user_person_information;Company Info
+user_contact_information;Contact Information
+user_shipping_information;Shipping Information
+
+user_username;Username
+user_username_note;Note: Only alphabetic and digit characters are allowed!
+user_password;Change Password
+user_password_note;Note: Password needs to be between 6 and 20 characters long
+user_password_confirmation;Confirm Password
+user_old_password;Old Password
+user_new_password;New Password
+user_new_password_note;Note: Password needs to be between 6 and 20 characters long
+user_new_password_confirmation;Confirm New Password
+user_individual_person;Individual Person
+user_legal_person;Legal Person
+user_email;Email
+user_email_confirmation;Email Confirmation
+user_name;Name
+user_member_since;Member since
+
+user_salutation;Salutation
+user_first_name;First Name
+user_last_name;Last Name
+user_address;Address
+user_address2;Address 2
+user_cnp;Personal code
+user_serie;ID number
+user_city;City
+user_zip;Zip
+user_country;Country
+user_county;County
+user_phone;Phone
+user_phone2;Phone 2
+user_fax;Fax
+
+user_person_individual;Individual Person
+user_person_legal;Legal Person
+user_institution;Institution
+user_fiscal_code;Fiscal code
+user_trade_register;Trade register
+user_bank;Bank
+user_iban_code;IBAN code
+user_function;Function
+user_department;Department
+
+user_products_cost;Products Cost
+user_vat;VAT
+user_tax;Tax
+user_discount;Discount
+user_repayment;Repayment
+user_shipping_cost;Shipping Cost
+user_total_cost;Total Cost
+user_payment;Payment
+user_shipping;Shipping
+user_order_date;Order Date
+user_modified;Modified
+user_status;Status
+user_comments;Comments
+
+user_view_order_details;View order details
+user_order_pending;Pending
+user_order_accepted;Accepted
+user_order_rejected;Rejected
+user_not_have_any_order_made;You don't have any order made!
+user_not_have_any_wishlist;You don't have any wishlist!
+user_confirm_wishlist_delete;Are you sure that you want to delete this wishlist?
+
+user_login;Login
+user_change_password;Change Password
+user_modify;Modify
+user_send_email;Send email
+user_password_forgot;Forgot your password?
+
+user_subscribe_newsletter;Sign up for Newsletter
+user_submit;submit
+# End: User Controller
+
+# Begin: News
+news_unsubscribe;Unsubscribe
+news_button_send;Send
+news_unsubscribe_success;Successfully unsubscribed!
+news_unsubscribe_error_1;Error unsubscribe!
+news_unsubscribe_error_2;Invalide code!
+news_table_title_news;News
+news_table_reed_more;Read more
+news_table_pagination;Page:
+news_no_news_found;No news found
+# End: News
+
+# Begin: Blog
+blog_details_button_all_articles;all articles
+blog_no_articles_found;No articles found
+blog_message_selected_article_does_not_exist;The selected article does not exist!
+# End: Blog
+
+# Begin: Contact Us
+contact_us_index_email_success;Email was successfully send!
+contact_us_index_email_error;Error sending email!
+
+contact_us_required;Fields marked with <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> are required.
+
+contact_us_title_contact_us;Contact Us
+contact_us_title_contact_form;Contact form
+
+contact_us_table_name;Name
+contact_us_table_comments;Comment
+
+contact_us_button_submit;Send
+
+contact_us_title_contact_details;Contact details
+
+contact_us_table_company;Company
+contact_us_table_address;Address
+contact_us_table_country;Country
+contact_us_table_county;County
+contact_us_table_city;City
+contact_us_table_zip;Zip
+contact_us_table_phone;Phone
+contact_us_table_phone_2;Phone 2
+contact_us_table_fax;Fax
+contact_us_table_email;Email
+contact_us_table_url;URL
+# End: Contact Us
+
+# Begin: Customer Opinion Controller
+customer_opinion_title;Customers Opinion
+customer_opinion_success;Your opinion was sent!
+customer_opinion_error;Error sending opinion!
+customer_opinion_name;Name
+customer_opinion_city;City
+customer_opinion_email;Email
+customer_opinion_opinion;Opinion
+customer_opinion_submit;Send
+# End: Customer Opinion Controller
+
+# Begin:
+default_billing_information;Billing Information
+default_shipping_information;Shipping Information
+default_information;Information
+default_products;Products
+default_products_details;Products Details
+default_name;Name
+default_wishlist;Wishlist
+default_quantity;Quantity
+default_price;Price
+default_total_cost;Total cost
+default_total;Total
+default_order_date;Order Date
+default_wishlist_created;Created
+default_wishlist_hour;hour
+default_status;Status
+default_action;Action
+default_buy;Buy
+default_details;Details
+default_delete;Delete
+# End:
+
+# Begin: Submit Controller
+submit_message_error_p1;Due to an error command not performed <br /> Please contact us at the address
+submit_message_error_p2;or try again later. <br /> Thank you for understanding!
+
+submit_table_title_billing_information;Billing Information
+submit_table_title_shipping_information;Shipping information
+submit_table_title_products_information;Products Information
+submit_table_title_comments;Comments
+submit_table_title_products_details;Products Details
+
+submit_table_name;Name
+submit_table_address;Address
+submit_table_address2;Address 2
+submit_table_city;City
+submit_table_zip;Zip
+submit_table_country;Country
+submit_table_county;County
+submit_table_phone;Phone
+submit_table_phone2;Phone 2
+submit_table_fax;Fax
+submit_table_email;Email
+
+submit_table_institution;Institution
+submit_table_fiscal_code;Fiscal code
+submit_table_trade_register;Trade register
+submit_table_bank;Bank
+submit_table_iban_code;IBAN code
+submit_table_function;Function
+submit_table_department;Department
+
+submit_table_products_cost;Products Costs
+submit_table_tax;Tax
+submit_table_discount;Discount
+submit_table_ramburs;Ramburs
+submit_table_shipping_cost;Shipping Costs
+submit_table_total_cost;Total Costs
+submit_table_payment;Payment
+submit_table_shipping;Shipping
+submit_table_order_date;Order date
+
+submit_table_sku;SKU
+submit_table_name;Name
+submit_table_quantity;Quantity
+submit_table_price;Unit Price
+
+submit_email_subject;New order
+# End: Submit Controller
+# Begin: Iframe Controller
+iframe_subject;More information about products
+iframe_additional_information;Additional information about product:
+iframe_name;Name
+iframe_phone;Phone
+iframe_message;Message
+iframe_request_sent;Your request has been sent!
+iframe_request_could_not_be_sent;Your request could not be sent!
+iframe_button_send;send
+
+iframe_addtocart_product;Product
+iframe_addtocart_added_to_your_cart;was added to your cart!
+iframe_addtocart_continue_shopping;Continue shopping
+iframe_addtocart_checkout;Checkout
+
+iframe_browser_not_support;We apologize but we do not support your browser
+iframe_browser_use;Use browser:
+iframe_browser_version;version
+iframe_browser_platform;platform
+iframe_browser_update;To update your browser use the address below:
+iframe_browser_wie7_wxp;Windows Internet Explorer 7 for Windows XP
+iframe_browser_another;To download another browser, click on the images below:
+
+iframe_inconstruction_text;We apologize but the site is under maintenance works!<br />Back soon!
+iframe_in_construction;in construction
+# End: Iframe Controller
+# End: Default
+
+
+
+
+# Begin: default, backend
+# Begin: error
+error_404;Error 404: Page not found
+error_page_not_exist;The page you are looking for does not exist or has been moved.
+error_occurred;An error occurred
+error_exception_information;Exception information:
+error_information;Error information
+error_message;Message:
+error_stack_trace;Stack trace:
+error_request_parameters;Request parameters:
+# End: error
+
+# Begin: Confirmation Message
+confirmation_message;Confirmation Message
+confirmation_yes;Yes
+confirmation_no;No
+# End: Confirmation Message
+
+# Begin: Pagination
+paginare;Page:
+pagination_first;<< First
+pagination_previous;< Previous
+pagination_next;Next >
+pagination_last;Last >>
+pagination_of;of
+# End: Pagination
+
+# Begin: Footer
+footer_fakepixel_text;Web design and hosting:
+footer_fakepixel_title;FakePixel | Web development, programming and web design
+# End: Footer
+
+anywhere_on_attributes;on attributes
+anywhere_unlimited;unlimited
+anywhere_page_generated_in;Page generated in
+anywhere_seconds;seconds
+# End: default, backend

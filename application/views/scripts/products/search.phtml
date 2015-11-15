@@ -1,0 +1,95 @@
+
+<?php if(null != $this->result){?>
+	<h2>Rezultatul cautarii &quot;<b><?php echo $this->search; ?></b>&quot; :</h2><br/>
+	    <?php $i = 1; foreach($this->result as $value){?>
+		<div class="modul">
+			<ul class="thumb">
+				<li>
+						<div class="modul_poza" >
+							<?php $link = $this->url(array('id' => $value->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($value->getId())."-".$value->getName())),),'product');?>
+							<a href="<?php echo $link;?>" class="pozRel">
+								<img class="pozaCateg" src="<?php echo null != $value->getImage()?"/media/products/small/".$value->getImage():"/images/no-pic-small.jpg";?>" alt="<?php echo $value->getName();?>" title="<?php echo $value->getName();?>" border="0"  style=" "/>
+							</a>
+						</div>
+					<div class="clear">&nbsp</div>
+				</li>
+			</ul>
+
+			<div class="modul_continut">
+					<div class="titlu"><?php echo $value->getName();?></div>
+					<div class="pret">
+						<span style="font-size:12px; color:#000;">Pret:</span>
+						<?php if(null != $value->getOldprice()){?>
+						<span class="oldpret">(<?php echo $value->getOldprice();?> RON)</span>
+						<?php }?>
+						<span style=" font-size:13px; font-weight:bold; color:#d90867"><?php echo $value->getPrice();?> RON</span>
+					</div>
+					<div class="buton">
+						<a href="<?php echo $link;?>">
+							<img src="/images/bt_modul.gif" alt="Detalii" border="0" />
+						</a>
+					</div>
+			</div>
+		    </div>
+		 <?php if($i%3==0){?>
+			<div style="clear: both;"></div>
+		<?php }?>
+	    <?php $i++; }?>
+	<?php
+		// BEGIN: PAGINATION
+		$itemCountPerPage = $this->itemCountPerPage;
+		$totalItemCount = $this->totalItemCount;
+		if($itemCountPerPage < $totalItemCount){
+			echo $this->result;
+		}
+		// END: PAGINATION
+	?>
+<?php }else{?>
+	 <table width="99%" style="border:1px solid #EADFE8" cellspacing="0" bgcolor="#F3EDF2" cellpadding="4">
+		  <tr>
+			<td>
+				<h2>Nu sunt rezultate pentru  &quot;<b><?php echo $this->search; ?></b>&quot; ! </h2>
+			</td>
+		  </tr>
+		  <tr>
+			<td align="left" valign="top" style="padding-left:39px">Sugestii: <br />
+			  - Asigurati-va ca toate cuvintele sunt ortografiate corect.<br />
+			  - Incercati alte cuvinte cheie. <br />
+			  - Incercati cuvinte cheie mai generale. <br />
+			  - Incercati sa folositi mai putine cuvinte cheie.
+			</td>
+		  </tr>
+	</table>
+	
+<?php }?>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("ul.thumb li").hover(function() {
+	$(this).css({'z-index' : '100'}); /*Add a higher z-index value so this image stays on top*/
+	$(this).find('img').addClass("hover").stop() /* Add class of "hover", then stop animation queue buildup*/
+		.animate({
+			marginTop: '-110px', /* The next 4 lines will vertically align this image */
+			marginLeft: '-110px',
+			top: '50%',
+			left: '50%',
+			width: '250px', /* Set new width */
+			height: '250px', /* Set new height */
+			padding: '0px'
+		}, 200); /* this value of "200" is the speed of how fast/slow this hover animates */
+
+	} , function() {
+	$(this).css({'z-index' : '0'}); /* Set z-index back to 0 */
+	$(this).find('img').removeClass("hover").stop()  /* Remove the "hover" class , then stop animation queue buildup*/
+		.animate({
+			marginTop: '0', /* Set alignment back to default */
+			marginLeft: '0',
+			top: '0',
+			left: '0',
+			width: '150px', /* Set width back to default */
+			height: '150px', /* Set height back to default */
+			padding: '0px'
+		}, 400);
+});
+});
+</script>

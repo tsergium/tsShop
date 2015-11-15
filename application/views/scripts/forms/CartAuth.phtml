@@ -1,0 +1,108 @@
+<form class="login-form" method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getId();?>" enctype="<?php echo $this->element->getEncType();?>">
+	<?php
+	    echo $this->{$this->element->formauth->helper}(
+	    $this->element->formauth->getName(),
+	    $this->element->formauth->getValue(),
+	    $this->element->formauth->getAttribs()
+	    );
+	?>
+	<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td align="left">
+				<?php
+				    echo $this->formLabel(
+					$this->element->email->getName(),
+					$this->element->email->getLabel()
+				    );
+				?>
+				<br />
+				<?php
+					echo $this->{$this->element->email->helper}(
+								$this->element->email->getName(),
+								$this->element->email->getValue(),
+								$this->element->email->getAttribs()
+							);
+				?>
+				<?php if($this->element->email->getMessages() != array()) : ?>
+					<?php echo $this->formErrors($this->element->email->getMessages()) ?>
+				<?php endif; ?>
+				<?php if ($this->element->email->getDescription()) : ?>
+					<p class="description"><?php echo $this->element->email->getDescription() ?></p>
+				<?php endif; ?>
+			</td>
+		</tr>
+		<tr>
+			<td align="left">
+				<?php echo $this->formLabel($this->element->password->getName(), $this->element->password->getLabel()) ?>
+				<br />
+				<?php
+					echo $this->{$this->element->password->helper}(
+								$this->element->password->getName(),
+								$this->element->password->getValue(),
+								$this->element->password->getAttribs()
+							);
+				?>
+				<?php if($this->element->password->getMessages() != array()) : ?>
+					<?php echo $this->formErrors($this->element->password->getMessages()) ?>
+				<?php endif; ?>
+				<?php if ($this->element->password->getDescription()) : ?>
+					<p class="description"><?php echo $this->element->password->getDescription() ?></p>
+				<?php endif; ?>
+			</td>
+		</tr>
+		<tr>
+			<td>				
+				<?php
+					echo $this->{$this->element->submit->helper}(
+								$this->element->submit->getName(),
+								$this->element->submit->getLabel(),
+								$this->element->submit->getAttribs()
+							);
+				?>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-top:10px;"><a href="/auth/remind" class="greyBlack11" id="forgotPass" target="_parent"><?php echo Zend_Registry::get('translate')->_("user_password_forgot"); ?></a></td>
+		</tr>
+	</table>
+</form>
+<style type="text/css">
+	#openid_highlight{
+		padding: 0px !important;
+		box-shadow: 0 0 1px 1px #2A2865;
+		background: #3399ff;
+	}
+</style>
+<div class="box">
+	<script type="text/javascript">
+
+		var imgPath = '<?php echo $this->baseUrl('images/');?>';
+
+//		console.log(imgPath);
+
+		$(document).ready(function() {
+			openid.img_path = imgPath;
+			openid.init('openid_identifier');
+			openid.setDemoMode(false); //Stops form submission for client javascript-only test purposes
+
+		});
+	</script>
+
+	<style type="text/css">
+		#openid_form{width: 200px;}
+	</style>
+
+	<!-- Simple OpenID Selector -->
+	<form action="<?php echo $this->baseUrl('/auth/index/pg/cart');?>" method="get" id="openid_form">
+		<input type="hidden" name="action" value="verify" />
+		<div class="cufon"><?php echo Zend_Registry::get('translate')->_('auth_index_sign_in_using');?></div>
+			<div id="openid_choice">
+				<div id="openid_btns"></div>
+			</div>
+			<div id="openid_input_area">
+				<input id="openid_identifier" name="openid_identifier" type="text" value="http://" />
+				<input id="openid_submit" type="submit" value="Sign-In"/>
+			</div>
+	</form>
+	<!-- /Simple OpenID Selector -->
+</div>

@@ -1,0 +1,129 @@
+<?php if(!empty($this->message)){?>
+    <?php foreach($this->message as $value){ ?>
+		<div class="empty10"></div>
+		<?php echo $value; ?>
+    <?php }?>
+<?php }?>
+
+	<!--BEGIN: ORDER DETAILS-->
+	<div class="modula">
+	<div class="center_modula">
+	<h1>Finalizeaza comanda</h1>
+
+
+    <form action="/submit" name="orderFrm" id="orderFrm" method="POST">
+	<input type="hidden" name="response" value='yes' />
+		 <div class="cumparator1">
+      <ul>
+        <li><h2>Comanda dumneavoastra</h2></li>
+	<li>
+	    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+		    <td width="38%" class="rand2"><p>Produs</p></td>
+		    <td width="13%" class="rand2"><p>Marime</p></td>
+		    <td width="17%" class="rand2"><p>Culoare</p></td>
+		    <td width="20%" class="rand2"><p>Cantitate</p></td>
+		    <td width="12%" class="rand2"><p>Pret</p></td>
+		</tr>
+		<?php $total = 0;?>
+		<?php if(null != $this->result){?>
+			<?php foreach($this->result as $value){?>
+			<?php
+			    $subtotal = $value->getProduct()->getPrice()*$value->getQuantity();
+			    $total += $subtotal;
+			?>
+			<tr>
+			    <td class="rand1">
+			    <?php $link = $this->url(array('id' => $value->getProduct()->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($value->getProduct()->getId())."-".$value->getProduct()->getName())),),'product');?>
+				<a href="<?php echo $link;?>" title="<?php echo $value->getProduct()->getName();?>">
+				    <img src="/media/products/small/<?php echo $value->getProduct()->getImage();?>" height="64" alt="<?php echo $value->getProduct()->getName();?>" title="<?php echo $value->getProduct()->getName();?>" class="fl mr10" />
+				</a>
+				<p class="fl text_tabel" style="width: 100px; line-height: 18px; margin-top: 22px;"><?php echo $value->getProduct()->getName();?></p>
+			    </td>
+			    <td class="rand1" valign="middle"><p class="text_tabel" style="line-height: 14px;"><?php echo $value->getSizeName();?></p></td>
+			    <td class="rand1"><p class="text_tabel" style="line-height: 14px;"><?php echo $value->getColorName();?></p></td>
+			    <td class="rand1">
+				<ul>
+				    <li>
+					    <p><?php echo $value->getQuantity(); ?></p>
+				    </li>
+				</ul>
+			    </td>
+			    <td class="rand1"><p class="text_tabel"><?php echo $subtotal;?> Ron</p></td>
+			</tr>
+			<?php }?>
+		<?php }?>
+	    </table>
+	</li>
+      </ul>
+      <a href="/cart"><img src="/images/modifica_comanda.gif" class="modifica" /></a>
+    </div>
+    <div class="finalizeaza">
+	     <?php $total += $this->taxeLivrare;?>
+	     <div class="fl">
+		    <h2 class="fl">Taxe livrare: <?php echo $this->taxeLivrare;?> Ron</h2>
+		    <div class="clearfix"></div>
+		    <h2 class="fl">Cost total: <?php echo $total;?> Ron (include T.V.A)</h2>
+	     </div>
+	     <div class="clearfix"></div>
+     </div>
+    <div class="cumparator1">
+       <h2>Metoda de plata si livrare</h2>
+       <ul style="font-size: 14px;line-height: 150%">
+	       <li><strong>Metoda de plata:</strong> <?php echo $this->modelTaxeLivrare->getPaymentName();?></li>
+	       <li><strong>Livrare:</strong> <?php echo $this->modelTaxeLivrare->getCourierName();?></li>
+       </ul>
+        <label for="coupon">Coupon</label>
+        <input type="text" name="coupon" id="coupon" value="<?php echo $this->coupon; ?>" />
+    </div>
+    <?php if(null == $this->user){?>
+	<div class="cumparator1">
+	   <h2>Date de livrare</h2>
+	   <?php echo $this->form; ?>
+	</div>
+	 <div class="clearfix"></div>
+    <?php } ?>
+    <?php if(null != $this->user){?>
+    <div class="cumparator">
+	    <ul>
+		    <li><h2>Cumparator</h2></li>
+		    <li><p class="pink"><?php echo strip_tags($this->user->getFirstname()).' '.strip_tags($this->user->getLastname()); ?></p></li>
+		    <li><p><?php echo strip_tags($this->user->getAddress()); ?> , <?php echo strip_tags($this->user->getCounty()); ?>, <?php echo strip_tags($this->user->getCity()); ?></p></li>
+		    <li><p>Telefon: <?php echo strip_tags($this->user->getPhone()); ?>, Cod postal: <?php echo strip_tags($this->user->getZip()); ?></p></li>
+	    </ul>
+	    <a href="/user/editaccount/page/order"><img src="/images/bt_modifica_adresa.gif" class="modifica" /></a>
+    </div>
+    <?php }?>
+
+    <div class="cumparator1">
+		<h2>Observatii</h2>
+		<textarea cols="" rows="" class="orderTextarea" name="comments"></textarea>
+		<div class="clearfix">&nbsp;</div>
+		<input type="checkbox" name="termeni" class="validate[required]" id="termeni" value="1" />
+		<label for="termeni" class="label">Sunt de acord cu <a href="/cms/view/page/termeni"  target="_blank">Termeni si conditii</a></label>
+    </div>
+    <div class="clearfix"></div>
+
+     <div class="finalizeaza">
+		 <div class="fr">
+			<?php if(null != $total){?>
+				<input class="fr" type="image" src="/images/bt_finalizeaza.gif" value="Submit" />
+			<?php }?>
+		 </div>
+		 <div class="clearfix"></div>
+     </div>
+
+	<input type="hidden" name="payment" value="<?php echo $this->payment;?>" />
+	<input type="hidden" name="courier" value="<?php echo $this->courier;?>" />
+	<input type="hidden" name="deliveryCost" value="<?php echo $this->taxeLivrare;?>" />
+	<input type="hidden" name="totalCost" value="<?php echo $total;?>" />
+    </form>
+
+
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#orderFrm").validationEngine();
+});
+</script>

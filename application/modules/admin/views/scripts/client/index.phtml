@@ -1,0 +1,128 @@
+<?php if(!empty($this->message)) : ?>
+	<?php foreach($this->message as $value) : ?>
+		<?php echo $value; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+<div class="empty10"></div>
+<a class="button1" href="/admin/client/">Toti clientii</a>
+<a class="button1" href="/admin/client/index/status/1">Clienti Activi</a>
+<a class="button1" href="/admin/client/index/status/0">Clienti Inactivi</a>
+<div class="empty10"></div>
+<?php if($this->result) : ?>
+	<table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
+		<col width="150" />
+		<col width="100" />
+		<col width="" />
+		<col width="110" />
+		<col width="100" />
+		<col width="100" />
+		<col width="120" />
+		<thead>
+			<tr>
+				<th><?php echo Zend_Registry::get('translate')->_('customers_index_table_name'); ?></th>
+				<th>Username</th>
+				<th><?php echo Zend_Registry::get('translate')->_('customers_index_table_email'); ?></th>
+				<th><?php echo Zend_Registry::get('translate')->_('customers_index_table_status'); ?></th>
+				<th><?php echo Zend_Registry::get('translate')->_('customers_index_table_datetime'); ?></th>
+				<th><?php echo Zend_Registry::get('translate')->_('customers_index_table_modified'); ?></th>
+				<th><?php echo Zend_Registry::get('translate')->_('customers_index_table_actions'); ?></th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($this->result as $value) : ?>
+			<tr>
+				<td>					
+					<?php echo strip_tags($value->getFirstname()).' '.strip_tags($value->getLastname()); ?>
+				</td>
+				<td>
+					<?php echo strip_tags($value->getUsername()); ?>
+				</td>
+				<td><?php echo strip_tags($value->getEmail()); ?></td>
+				
+				<td align="center"><a href="/admin/client/visible/id/<?php echo $value->getId(); ?><?php echo $this->curPage?'/page/'.$this->curPage:''; ?>" class="confirmStatusChange"><?php echo ($value->getStatus()?Zend_Registry::get('translate')->_('customers_index_table_active'):Zend_Registry::get('translate')->_('customers_index_table_inactive')); ?></a></td>
+				<td align="center"><?php echo $value->getCreated()?date('Y-m-d', $value->getCreated()):'-'; ?></td>
+				<td align="center"><?php echo $value->getModified()?date('Y-m-d', $value->getModified()):'-'; ?></td>
+				<td align="center">
+					<a href="/admin/client/details/id/<?php echo $value->getId(); ?>">
+					    <img src="/images/admin/icons/edit.png" alt="modifica" />
+					</a>
+					
+					<a href="/admin/client/edit/id/<?php echo $value->getId(); ?><?php echo $this->curPage?'/page/'.$this->curPage:''; ?>">
+					    <img src="/images/admin/icons/display.png" alt="vizualizeaza" />
+					</a>
+					
+					<a href="/admin/client/delete/id/<?php echo $value->getId(); ?><?php echo $this->curPage?'/page/'.$this->curPage:''; ?>" class="confirmDelete">
+					    <img src="/images/admin/icons/delete.png" alt="sterge" />
+					</a>
+				</td>
+			</tr>
+			<?php endforeach;?>
+		</tbody>
+	</table>
+
+	<!-- BEGIN: Paginare -->
+	<?php $itemCountPerPage = $this->itemCountPerPage; ?>
+	<?php $totalItemCount = $this->totalItemCount; ?>
+	<?php if($itemCountPerPage < $totalItemCount) { ?>
+		<?php echo $this->result; ?>
+	<?php } ?>
+	
+	<!-- END: Paginare -->
+
+	<div id="confirmStatusChange" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>" style="display:none;"><?php echo Zend_Registry::get('translate')->_('customers_index_message_status_change'); ?></div>
+	<div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>" style="display:none;"><?php echo Zend_Registry::get('translate')->_('customers_index_message_delete'); ?></div>
+<?php else : ?>
+	<div><?php echo Zend_Registry::get('translate')->_('customers_index_else'); ?></div>
+<?php endif; ?>
+
+<?php $this->headScript()->captureStart() ?>
+	$(document).ready(function() {
+		$('.confirmStatusChange').click(function(){
+			var link = $(this);
+			$("#confirmStatusChange").dialog({
+				bgiframe: true,
+				height: 150,
+				width: 400,
+				modal: true,
+				buttons: {
+					'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
+						$(this).dialog('close').dialog('destroy');
+						window.location.href = link.attr('href');
+					},
+					'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
+						$(this).dialog('close').dialog('destroy');
+					}
+				}
+			});
+			return false;
+		});
+
+		$('.confirmDelete').click(function(){
+			var link = $(this);
+			$("#confirmDelete").dialog({
+				bgiframe: true,
+				height: 150,
+				width: 400,
+				modal: true,
+				buttons: {
+					'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
+						$(this).dialog('close').dialog('destroy');
+						window.location.href = link.attr('href');
+					},
+					'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
+						$(this).dialog('close').dialog('destroy');
+					}
+				}
+			});
+			return false;
+		});
+	});
+<?php $this->headScript()->captureEnd() ?>
+
+<script type="text/javascript">
+	$('#productsPerPage').change(function() {
+		var value = $('#productsPerPage').val();
+		window.location = '/admin/settings/productsperpage/page/customers/value/'+value;
+	});
+</script>

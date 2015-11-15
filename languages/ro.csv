@@ -1,0 +1,2884 @@
+#Example csv file
+# Begin: Backend
+# Begin: Admin Menu and Titles
+admin_menu_dashboard;Sumar
+admin_menu_sales_main;Vânzări
+admin_menu_sales_orders;Comenzi
+admin_menu_sales_orders_new_orders;Comenzi noi
+admin_menu_sales_orders_edit_orders;Modifică comanda
+admin_menu_sales_orders_add_orders;Adaugă comandă
+admin_menu_sales_orders_pending_orders;Comenzi în aşteptare
+admin_menu_sales_orders_accepted_orders;Comenzi acceptate
+admin_menu_sales_orders_completed_orders;Comenzi finalizate
+admin_menu_sales_orders_rejected_orders;Comenzi respinse
+admin_menu_sales_orders_details_orders;Detalii comandă
+admin_menu_sales_invoices;Facturi
+admin_menu_sales_wishlist;Liste de dorinţe
+admin_menu_sales_wishlist_details;Detalii listă de dorinţe
+admin_menu_customers;Clienti
+admin_menu_customers_registered;Inregistraţi
+admin_menu_customers_search_account;Căutare client
+admin_menu_customers_edit_account;Modifică cont
+admin_menu_customers_create_account;Crează cont
+admin_menu_customers_details_account;Detalii cont
+admin_menu_customers_inactive;Inactivi
+admin_menu_operators;Operatori
+admin_menu_operators_details;Detalii
+admin_menu_operators_edit;Modifică operator
+admin_menu_operators_create;Crează operator
+admin_menu_products;Produse
+admin_menu_products_add;Adaugă produse
+admin_menu_products_details;Detalii produse
+admin_menu_products_edit;Modifică produse
+admin_menu_products_gallery;Galerie produse
+admin_menu_products_add_specifications;Adaugă specificaţii de produs
+admin_menu_products_edit_specifications;Modifică specificaţiile produsului
+admin_menu_products_edit_attributes;Modifică atribute
+admin_menu_products_deleted;Produse şterse
+admin_menu_products_custom;Produse speciale
+admin_menu_products_custom_product_attributes;Atribute produse speciale
+admin_menu_products_accessories;Accesorii
+admin_menu_products_attributes_create;Adaugă atribute
+admin_menu_products_add_product_attributes;Asociază atribute la produse speciale
+admin_menu_products_edit_product_attributes;Modifică atribute
+admin_menu_products_specification_models;Modele de specificaţii
+admin_menu_products_add_specification_models;Crează model de specificaţii
+admin_menu_products_edit_specification_models;Modifică modelul de specificaţii
+admin_menu_products_search;Caută produs
+admin_menu_products_categories;Categorii
+admin_menu_products_categories_add;Adaugă categorii
+admin_menu_products_categories_edit;Modifică categorii
+admin_menu_products_categories_add_specifications;Adaugă specificaţii categorie
+admin_menu_products_categories_edit_specifications_group;Modifică grupul de specificaţii
+admin_menu_products_categories_edit_specifications_model;Modifică modelul de specificaţii
+admin_menu_products_brands;Branduri
+admin_menu_products_brands_add;Adaugă brand
+admin_menu_products_brands_edit;Modifică brand
+admin_menu_products_import_products;Importă produse
+admin_menu_products_export_products;Exportă produse
+admin_menu_products_buffer_category;Categorie tampon
+admin_menu_products_buffer_category_move_products;Mută Produsele în altă categorie
+admin_menu_products_buffer_category_deleted_products;Produse şterse
+admin_menu_products_out_of_stock;Lipsă stoc
+admin_menu_products_manage_stock;Administrează stoc
+admin_menu_products_import_sku;Importă SKU
+admin_menu_products_export_sku;Exportă SKU
+admin_menu_marketing;Marketing
+admin_menu_marketing_newsletter;Newsletter
+admin_menu_marketing_blog_create_article;Crează articol
+admin_menu_marketing_blog_modify_article;Modifică articol
+admin_menu_marketing_subscribers;Abonaţi
+admin_menu_marketing_campaign_manager;Manager de campanii
+admin_menu_marketing_campaign_manager_add;Adaugă campanie
+admin_menu_marketing_campaign_manager_edit;Modifică campanie
+admin_menu_marketing_campaign_manager_details;Detalii campanie
+admin_menu_marketing_news;Stiri
+admin_menu_marketing_news_add;Adaugă ştiri
+admin_menu_marketing_news_edit;Modifică ştiri
+admin_menu_marketing_customers_opinions;Opinii clienţi
+admin_menu_marketing_coupons;Cupoane
+admin_menu_marketing_coupons_add;Adaugă cupoane
+admin_menu_marketing_coupons_edit;Modifică cupoane
+admin_menu_marketing_feeds;Feed-uri
+admin_menu_marketing_feeds_add;Adaugă feed-uri
+admin_menu_marketing_feeds_edit;Modifică feed-uri
+admin_menu_reports;Rapoarte
+admin_menu_reports_time_frame;Perioada
+admin_menu_reports_best_sellers;Best Sellers
+admin_menu_reports_top_customers;Top clienţi
+admin_menu_reports_sku_reports;Rapoarte stoc
+admin_menu_cms_pages;Pagini
+admin_menu_cms_pages_add_pages;Adaugă pagini
+admin_menu_cms_pages_edit_pages;Modifică pagina
+admin_menu_cms_headerfooter_add;Adaugă Header/Footer
+admin_menu_cms_headerfooter_edit;Modifică Header/Footer
+admin_menu_cms_seo_add;Adaugă SEO
+admin_menu_cms_seo_edit;Modifică SEO
+admin_menu_sitemap;Genereaza harta site-ului
+admin_menu_cms_google_analytics_add;Adaugă cod
+admin_menu_cms_google_analytics_edit;Modifică cod
+admin_menu_email_templates;Sabloane email
+admin_menu_email_templates_signup_email;Email de înregistrare
+admin_menu_email_templates_gotsale;Mesaj Comandă efectuată
+admin_menu_email_templates_gotsale_email;Mesaj comandă email
+admin_menu_email_templates_forgot_password_email;Email de parolă uitată
+admin_menu_email_templates_subscribers_email;Email de activare pentru abonaţi newsletter
+admin_menu_plugins;Plugin-uri
+admin_menu_plugins_signup_email;Email înscriere
+admin_menu_settings;Setări
+admin_menu_settings_site_preferences;Preferinţe site
+admin_menu_settings_site_preferences_add;Adaugă preferinţe site
+admin_menu_settings_site_preferences_edit;Modifică preferinţe site
+admin_menu_settings_company_details;Detalii companie
+admin_menu_settings_company_details_add;Adaugă detalii companie
+admin_menu_settings_company_details_edit;Modifică detalii companie
+admin_menu_settings_users;Utilizatori
+admin_menu_settings_payments;Modalităţi de plată
+admin_menu_settings_payments_add;Adaugă modalităţi de plată
+admin_menu_settings_payments_edit;Modifică modalităţi de plată
+admin_menu_settings_product_taxes;Taxe pe produs
+admin_menu_settings_product_taxes_add;Adaugă taxă
+admin_menu_settings_product_taxes_edit;Modifică taxă
+admin_menu_settings_themes;Teme
+admin_menu_settings_languages;Limba
+admin_menu_settings_servercheck;Verificări server
+admin_menu_logout;Ieşire
+# End: Admin Menu and Titles
+
+# Begin: Header
+header_i_need_help;Am nevoie de ajutor
+header_last_login;Ultima Autentificare:
+# End: Header
+
+# Begin: Footer
+footer_newsletter;Newsletter
+footer_email_address;Adresa de email
+footer_button_send;Trimite
+# End: Footer
+
+# Begin: Auth Controller
+auth_login_error_1;Nume utilizator sau parolă incorectă
+auth_login_error_2;Eroare autentificare!
+# End: Auth Controller
+
+# Begin: Dashboard Controller
+admin_dashboard_button_restrict_access;Restricţionează accesul
+admin_dashboard_settings;Adrese IP admise
+admin_dashboard_lifetime_sales;Total comenzi
+admin_dashboard_average_order;Medie comenzi
+admin_dashboard_last_5_orders;Ultimele comenzi
+admin_dashboard_view_all_orders;vezi toate comenzile
+admin_dashboard_date;Data
+admin_dashboard_number;Nr.
+admin_dashboard_customer;Client
+admin_dashboard_items;Articole
+admin_dashboard_grand_total;Total general
+admin_dashboard_payment;Plată
+admin_dashboard_total_sales;Vânzări totale
+admin_dashboard_average_sales;Medie comandă
+admin_dashboard_number_of_clients;Nr. clienţi
+admin_dashboard_number_of_products;Nr. produse
+admin_dashboard_order_evolution;Evoluţie comenzi
+admin_dashboard_value;Valoare
+admin_dashboard_last_5_registered_users;Ultimii 5 utilizatori înregistraţi
+admin_dashboard_name;Nume
+admin_dashboard_city;Oraş
+admin_dashboard_all_orders;Total comenzi
+admin_dashboard_statute;Statut
+admin_dashboard_out_of_stock_products;Produse fără stoc
+admin_dashboard_view_all_products_stock_0;vezi toate produsele stoc 0
+admin_dashboard_price;Preţ
+admin_dashboard_view_list;vezi lista completă
+admin_dashboard_revenue;Venit
+admin_dashboard_tax;Taxă
+admin_dashboard_shipping;Transport
+admin_dashboard_quantity;Cantitate
+admin_dashboard_last_5_search_terms;Top 5 Cuvinte Cheie
+admin_dashboard_search_term;Termen de căutare
+admin_dashboard_searches;Căutari
+admin_dashboard_results;Rezultate
+admin_dashboard_number_of_uses;Nr. de utilizări
+admin_dashboard_top_5_search_terms;Top 5 termeni de căutare
+admin_dashboard_orders_chart;Diagramă comenzi
+admin_dashboard_orders_chart_small;număr de comenzi / lună
+admin_dashboard_january;Ianuarie
+admin_dashboard_february;Februarie
+admin_dashboard_march;Martie
+admin_dashboard_april;Aprilie
+admin_dashboard_may;Mai
+admin_dashboard_june;Iunie
+admin_dashboard_july;Iulie
+admin_dashboard_august;August
+admin_dashboard_september;Septembrie
+admin_dashboard_october;Octombrie
+admin_dashboard_november;Noiembrie
+admin_dashboard_december;Decembrie
+
+admin_dashboard_unblocked_success;Site-ul a fost deblocat cu succes
+admin_dashboard_unblocked_error;Eroare la deblocarea site-ului
+admin_dashboard_blocked_success;Site-ul a fost blocat cu succes
+admin_dashboard_blocked_error;Eroare la blocarea site-ului
+# End: Dashboard Controller
+
+# Begin: Sales Controller
+sales_add_order_success;Comanda a fost creată cu succes!
+sales_add_order_error;Eroare la crearea comenzii!
+sales_edit_order_success;Comanda a fost modificată cu succes!
+sales_edit_order_error_1;Eroare la modificarea comenzii!
+sales_edit_order_error_2;Comanda selectată este invalidă!
+sales_status_success;Statusul comenzii a fost modificat cu succes!
+sales_status_error_1;Cantitate invalidă pentru
+sales_status_error_2;Eroare la schimbarea statusului comenzii!
+sales_status_error_3;Comanda selectată este invalidă!
+sales_status_error_4;Cantitate insuficientă la produsul:
+sales_delete_success;Comanda a fost ştearsă cu succes!
+sales_delete_error;Eroare la ştergera comenzii!
+sales_delete_wishlist_success;Lista de dorinţe a fost ştearsă cu succes!
+sales_delete_wishlist_error;Eroare la ştergerea listei de dorinţe!
+
+# Begin: Index
+sales_index_button_all_orders;Toate comenzile
+sales_index_button_pending_orders;Comenzi în aşteptare
+sales_index_button_accepted_orders;Comenzi acceptate
+sales_index_button_completed_orders;Comenzi finalizate
+sales_index_button_rejected_orders;Comenzi respinse
+
+sales_index_table_order_id;Comanda nr.
+sales_index_table_products_cost;Costul produselor
+sales_index_table_discount;Reducere
+sales_index_table_shipping_cost;Cost transport
+sales_index_table_total_cost;Cost total
+sales_index_table_name;Nume
+sales_index_table_order_date;Data comenzii
+sales_index_table_status;Status
+sales_index_table_action;Acţiuni
+
+sales_index_table_pending;in aşteptare
+sales_index_table_accepted;acceptată
+sales_index_table_completed;finalizată
+sales_index_table_rejected;respinsă
+sales_index_table_card_unconfirmed;card neconfirmat
+sales_index_table_card_confirmed;card confirmat
+sales_index_table_details;Detalii
+sales_index_table_edit;Modifică
+sales_index_table_delete;Sterge
+
+sales_index_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul comenzii?
+sales_index_message_delete;Sunteţi sigur că doriţi să stergeţi această comandă?
+sales_index_message_else;Nu există comenzi
+# End: Index
+# Begin: Pending
+sales_pending_button_all_orders;Toate comenzile
+sales_pending_button_pending_orders;Comenzi în aşteptare
+sales_pending_button_accepted_orders;Comenzi acceptate
+sales_pending_button_rejected_orders;Comenzi respinse
+
+sales_pending_table_order_id;Comanda nr.
+sales_pending_table_products_cost;Costul produselor
+sales_pending_table_discount;Reducere
+sales_pending_table_shipping_cost;Cost transport
+sales_pending_table_total_cost;Cost total
+sales_pending_table_name;Nume
+sales_pending_table_order_date;Data comenzii
+sales_pending_table_status;Status
+sales_pending_table_action;Acţiuni
+
+sales_pending_table_pending;in aşteptare
+sales_pending_table_accepted;acceptată
+sales_pending_table_rejected;respinsă
+sales_pending_table_details;Detalii
+sales_pending_table_edit;Modifică
+sales_pending_table_delete;Sterge
+
+sales_pending_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul comenzii?
+sales_pending_message_delete;Sunteţi sigur că doriţi să stergeţi această comandă?
+sales_pending_message_else;Nu există comenzi
+# End: Pending
+# Begin: Accepted
+sales_accepted_button_all_orders;Toate comenzile
+sales_accepted_button_pending_orders;Comenzi în aşteptare
+sales_accepted_button_accepted_orders;Comenzi acceptate
+sales_accepted_button_rejected_orders;Comenzi respinse
+
+sales_accepted_table_order_id;Comanda nr.
+sales_accepted_table_products_cost;Costul produselor
+sales_accepted_table_discount;Reducere
+sales_accepted_table_shipping_cost;Cost transport
+sales_accepted_table_total_cost;Cost total
+sales_accepted_table_name;Nume
+sales_accepted_table_order_date;Data comenzii
+sales_accepted_table_status;Status
+sales_accepted_table_action;Acţiuni
+
+sales_accepted_table_pending;in aşteptare
+sales_accepted_table_accepted;acceptată
+sales_accepted_table_rejected;respinsă
+sales_accepted_table_details;Detalii
+sales_accepted_table_edit;Modifică
+sales_accepted_table_delete;Sterge
+
+sales_accepted_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul comenzii?
+sales_accepted_message_delete;Sunteţi sigur că doriţi să stergeţi această comandă?
+sales_accepted_message_else;Nu există comenzi
+# End: Accepted
+# Begin: Rejected
+sales_rejected_button_all_orders;Toate comenzile
+sales_rejected_button_pending_orders;Comenzi în aşteptare
+sales_rejected_button_accepted_orders;Comenzi acceptate
+sales_rejected_button_rejected_orders;Comenzi respinse
+
+sales_rejected_table_order_id;Comanda nr.
+sales_rejected_table_products_cost;Costul produselor
+sales_rejected_table_discount;Reducere
+sales_rejected_table_shipping_cost;Cost transport
+sales_rejected_table_total_cost;Cost total
+sales_rejected_table_name;Nume
+sales_rejected_table_order_date;Data comenzii
+sales_rejected_table_status;Status
+sales_rejected_table_action;Acţiuni
+
+sales_rejected_table_pending;in aşteptare
+sales_rejected_table_accepted;acceptată
+sales_rejected_table_rejected;respinsă
+sales_rejected_table_details;Detalii
+sales_rejected_table_edit;Modifică
+sales_rejected_table_delete;Sterge
+
+sales_rejected_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul comenzii?
+sales_rejected_message_delete;Sunteţi sigur că doriţi să stergeţi această comandă?
+sales_rejected_message_else;Nu există comenzi
+# End: Rejected
+# Begin: Details
+sales_details_title_billing;Facturare
+sales_details_title_shipping;Livrare
+sales_details_title_informations;Informaţii
+sales_details_title_comments;Comentarii
+sales_details_title_products;Produse
+
+sales_details_table_company;Compania
+sales_details_table_fiscal_code;Cod fiscal
+sales_details_table_trade_register;Registrul comerţului
+sales_details_table_bank;Banca
+sales_details_table_iban_code;Cont IBAN
+sales_details_table_function;Funcţia
+sales_details_table_department;Departament
+
+sales_details_table_name;Nume
+sales_details_table_cnp;CNP
+sales_details_table_serie;Serie buletin
+sales_details_table_address;Adresa
+sales_details_table_country;Tara
+sales_details_table_county;Judet
+sales_details_table_city;Oraş
+sales_details_table_zip;Cod poştal
+sales_details_table_phone;Telefon
+sales_details_table_phone_2;Telefon 2
+sales_details_table_fax;Fax
+sales_details_table_email;Email
+
+sales_details_table_order_id;Comanda nr.
+sales_details_table_products_cost;Costul produselor
+sales_details_table_vat;TVA
+sales_details_table_tax;Taxa
+sales_details_table_discount;Reducere
+sales_details_table_repayment;Ramburs
+sales_details_table_shipping_cost;Costul de livrare
+sales_details_table_total_cost;Costul total
+sales_details_table_payment;Metoda de plată
+sales_details_table_shipping;Metoda de livrare
+sales_details_table_order_date;Data comenzii
+sales_details_table_status_changed;Modificat
+sales_details_table_status;Status
+
+sales_details_table_sku;SKU
+sales_details_table_name;Nume
+sales_details_table_quantity;Cantitate
+sales_details_table_price;Preţ
+sales_details_table_total_price;Preţ total
+# End: Details
+# Begin: Add / Edit
+sales_add_title_add_order;Adaugă comandă
+sales_add_title_edit_order;Modifică comandă
+
+sales_add_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+sales_add_table_taxes;Taxe
+sales_add_table_billing;Detalii Facturare
+sales_add_table_shipping;Detalii Livrare
+
+sales_add_table_products_cost;Costul produselor
+sales_add_table_vat;TVA
+sales_add_table_discount;Reducere
+sales_add_table_repayment;Ramburs
+sales_add_table_shipping_cost;Cost de livrare
+sales_add_table_total_cost;Cost total
+sales_add_table_payment_method;Metodă de plată
+sales_add_table_shipping_method;Metodă de livrare
+
+sales_add_table_individual_person;Persoană Fizică
+sales_add_table_legal_person;Personă Juridică
+sales_add_table_company;Compania
+sales_add_table_fiscal_code;Codul fiscal
+sales_add_table_trade_register;Registrul comerţului
+sales_add_table_bank;Banca
+sales_add_table_iban_code;Codul IBAN
+sales_add_table_function;Funcţia
+sales_add_table_department;Departamentul
+
+sales_add_table_salutation;Forma de adresare
+sales_add_table_first_name;Nume
+sales_add_table_last_name;Prenume
+sales_add_table_cnp;CNP
+sales_add_table_serie;Serie buletin
+sales_add_table_address;Adresa
+sales_add_table_address_2;Adresa 2
+sales_add_table_country;Tara
+sales_add_table_county;Judeţ
+sales_add_table_city;Oraş
+sales_add_table_zip;Cod poştal
+sales_add_table_phone;Telefon
+sales_add_table_phone_2;Telefon 2
+sales_add_table_fax;Fax
+sales_add_table_email;Email
+sales_add_table_comments;Comentarii
+
+sales_add_table_bs;Detalii Livrare sunt aceleaşi ca şi Detalii Facturare
+
+sales_add_button_submit;Adaugă
+sales_add_button_modify;Modifică
+
+sales_edit_card;card
+sales_edit_paypal;paypal
+sales_edit_virament_bancar;virament bancar
+sales_edit_ramburs;ramburs
+sales_edit_ramburs_cu_asigurare_pe_marfa;ramburs cu asigurare pe marfă
+# End: Add / Edit
+# Begin: Invoices
+sales_invoices_table_order_id;Comanda nr.
+sales_invoices_table_products_cost;Costul produselor
+sales_invoices_table_discount;Reducere
+sales_invoices_table_shipping_cost;Costul de divrare
+sales_invoices_table_total_cost;Costul total
+sales_invoices_table_name;Nume
+sales_invoices_table_order_date;Data comenzii
+sales_invoices_table_action;Acţiuni
+
+sales_invoices_table_print_invoice;Imprimare Factură
+sales_invoices_table_print_model;Imprimare Model
+
+sales_invoices_message_else;Nu există facturi
+
+sales_invoices_invoice;Factură
+sales_invoices_print;imprimare
+sales_invoices_supplier;Furnizor:
+sales_invoices_buyer;Client:
+sales_invoices_trade_register;Reg. Com.:
+sales_invoices_address;Adresă:
+sales_invoices_county;Judeţ:
+sales_invoices_iban;Cod IBAN:
+sales_invoices_bank;Bancă:
+sales_invoices_series;Seria: 1, nr.:
+sales_invoices_date;Data:
+sales_invoices_vat;Cota TVA:
+sales_invoices_criterion_no;Nr. <br /> Crt
+sales_invoices_description;Denumirea produselor sau a serviciilor
+sales_invoices_m_u;U.M.
+sales_invoices_quantity;Cant.
+sales_invoices_unit_price;Preţ unitar
+sales_invoices_without_vat;(fără TVA)
+sales_invoices_value;Valoare
+sales_invoices_vat_value;Valoare TVA
+sales_invoices_discount;reducere
+sales_invoices_repayment;ramburs
+sales_invoices_pieces;buc
+sales_invoices_supplier_signature_seal;Semnătura şi ştampila <br /> furnizorului
+sales_invoices_prepared_by;Intocmit de:
+sales_invoices_cnp;CNP:
+sales_invoices_name;Nume delegat:
+sales_invoices_c_i;B.I/C.I:
+sales_invoices_shipping;Expedierea s-a făcut în prezenţa noastră la data de ............................ ora ............
+sales_invoices_signatures;Semnaturile:
+sales_invoices_signature_of_receipt;Semnătura de primire:
+sales_invoices_total;Total
+sales_invoices_total_amounts;Total plată
+# End: invoices
+# Begin: Wishlists
+sales_wishlists_table_name;Nume
+sales_wishlists_table_customer;Client
+sales_wishlists_table_created;Creat
+sales_wishlists_table_actions;Acţiuni
+
+sales_wishlists_table_details;Detalii
+sales_wishlists_table_delete;Sterge
+
+sales_wishlists_message_delete;Sunteţi sigur că doriţi să ştergeţi lista de dorinţe?
+sales_wishlists_message_else;Nu există liste de dorinţe
+# End: Wishlists
+# Begin: Wishlist details
+sales_wishlist_details_text_view_wishlist;Vezi lista de dorinţe
+sales_wishlist_details_text_created_on;Creată în
+sales_wishlist_details_text_by;de
+
+sales_wishlist_details_table_product;Produs
+sales_wishlist_details_table_quantity;Cantitate
+sales_wishlist_details_table_price;Preţ
+sales_wishlist_details_table_total_price;Preţ Total
+# End: Wishlist details
+# End: Sales Controller
+
+# Begin: Customers Controller
+customers_create_success;Clientul a fost creat cu succes!
+customers_create_error;Eroare la crearea clientului!
+customers_edit_success;Clientul a fost modificat cu succes!
+customers_edit_error_1;Eroare la modificarea clientului!
+customers_edit_error_2;Clientul selectat este invalid;
+customers_visible_success;Statusul a fost schimbat cu succes!
+customers_visible_error;Eroare la schimbarea statusului!
+customers_delete_success;Clientul a fost şters cu succes!
+customers_delete_error;Eroare la ştergerea clientului!
+customers_add_group_success;Grupul a fost creat cu succes!
+customers_add_group_error;Eroare la crearea grupului!
+customers_edit_group_success;Groupul a fost modificat cu succes!
+customers_edit_group_error_1;Eroare la modificarea grupului!
+customers_edit_group_error_2;Grupul selectat este invalid!
+customers_delete_group_success;Grupul a fost şters cu succes!
+customers_delete_group_error;Eroare la ştergerea grupului!
+customers_search_customer_error;Căutarea ta nu a returnat nici un rezultat!
+
+# Begin: Index
+customers_index_create_operator;Crează cont de operator
+
+customers_index_table_username;Nume de utilizator
+customers_index_table_name;Nume
+customers_index_table_email;Email
+customers_index_table_access_level;Nivelul de acces
+customers_index_table_status;Status
+customers_index_table_datetime;Inregistrat
+customers_index_table_modified;Modificat
+customers_index_table_last_login;Ultima logare
+customers_index_table_actions;Acţiuni
+
+customers_index_table_administrator;Administrator
+customers_index_table_customer;Client
+
+customers_index_table_active;Activ
+customers_index_table_inactive;Inactiv
+
+customers_index_table_details;Detalii
+customers_index_table_edit;Modifică
+customers_index_table_delete;Sterge
+
+customers_index_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui client?
+customers_index_message_delete;Sunteţi sigur că doriţi să stergeţi acest client?
+
+customers_index_else;Nu există clienţi înregistraţi
+# End: Index
+# Begin: Inactive
+customers_inactive_table_username;Nume de utilizator
+customers_inactive_table_name;Nume
+customers_inactive_table_email;Email
+customers_inactive_table_access_level;Nivelul de acces
+customers_inactive_table_status;Status
+customers_inactive_table_datetime;Inregistrat
+customers_inactive_table_modified;Modificat
+customers_inactive_table_actions;Acţiuni
+
+customers_inactive_table_administrator;Administrator
+customers_inactive_table_customer;Client
+
+customers_inactive_table_active;Activ
+customers_inactive_table_inactive;Inactiv
+
+customers_inactive_table_details;Detalii
+customers_inactive_table_edit;Modifică
+customers_inactive_table_delete;Sterge
+
+customers_inactive_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui client?
+customers_inactive_message_delete;Sunteţi sigur că doriţi să stergeţi acest client?
+
+customers_inactive_else;Nu există clienţi înregistraţi
+# End: Inactive
+# Begin: Details
+customers_details_title_account_details;Detalii client
+
+customers_details_table_title_customer_information;Informaţii de bază
+customers_details_table_username;Nume de utilizator
+customers_details_table_name;Nume
+customers_details_table_cnp;CNP
+customers_details_table_serie;Serie buletin
+customers_details_table_email;Email
+customers_details_table_member_since;Membru din
+
+customers_details_table_title_company_information;Detalii Companie
+customers_details_table_company;Companie
+customers_details_table_fiscal_code;Cod fiscal
+customers_details_table_trade_register;Registrul comerţului
+customers_details_table_bank;Banca
+customers_details_table_iban_code;Cod IBAN
+customers_details_table_function;Funcţia
+customers_details_table_department;Departamentul
+
+customers_details_table_title_contact_information;Date de contact
+customers_details_table_address;Adresa
+customers_details_table_address_2;Adresa 2
+customers_details_table_country;Tara
+customers_details_table_county;Judeţ
+customers_details_table_city;Oraş
+customers_details_table_zip;Cod poştal
+customers_details_table_phone;Telefon
+customers_details_table_phone_2;Telefon 2
+customers_details_table_fax;Fax
+
+customers_details_table_title_shipping_information;Detalii de livrare
+
+customers_create_table_individual;Persoană Fizică
+customers_create_table_legal_person;Persoană Juridică
+# End: Details
+# Begin: Create / Edit
+customers_create_title_customer;Client
+customers_create_title_basic;General
+customers_create_title_company;Companie
+customers_create_title_contact;Contact
+customers_create_title_shipping;Date de livrare
+
+customers_create_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+customers_create_table_username;Nume de utilizator
+customers_create_table_password;Parolă
+customers_create_table_password_confirmation;Confirmare parolă
+customers_create_table_email;Email
+customers_create_table_email_confirmation;Confirmare email
+customers_create_table_status;Status
+
+customers_create_table_salutation;Forma de adresare
+customers_create_table_first_name;Nume
+customers_create_table_last_name;Prenume
+customers_create_table_cnp;CNP
+customers_create_table_serie;Serie buletin
+
+customers_create_table_company;Companie
+customers_create_table_fiscal_code;Cod fiscal
+customers_create_table_trade_register;Registrul comerţului
+customers_create_table_bank;Banca
+customers_create_table_iban_code;Cod IBAN
+customers_create_table_function;Funcţia
+customers_create_table_department;Departamentul
+
+customers_create_table_address;Adresa
+customers_create_table_address_2;Adresa 2
+customers_create_table_country;Tara
+customers_create_table_county;Judeţ
+customers_create_table_city;Oraş
+customers_create_table_zip;Cod poştal
+customers_create_table_phone;Telefon
+customers_create_table_phone_2;Telefon 2
+customers_create_table_fax;Fax
+
+customers_create_table_active;Activ
+customers_create_table_inactive;Inactiv
+
+customers_create_table_individual;Persoană Fizică
+customers_create_table_legal_person;Persoană Juridică
+
+customers_create_table_username_description;Notă: doar caractere alfabetice şi cifre sunt permise!
+customers_create_table_password_description;Notă: Parola trebuie să fie între 6 şi 20 de caractere
+customers_create_table_status_description;Nota: Numai clienţii activi pot să se autentifice!
+customers_create_table_phone_description;(Includeţi "+" şi codul de ţară. Exemplu: xxx + 1-xxx-xxxx)
+customers_create_table_phone_2_description;(Includeţi "+" şi codul de ţară. Exemplu: xxx + 1-xxx-xxxx)
+customers_create_table_fax_description;(Includeţi "+" şi codul de ţară. Exemplu: xxx + 1-xxx-xxxx)
+
+customers_create_table_button_create;Crează
+customers_edit_table_button_modify;Modifică
+# End: Create / Edit
+# Begin: Search account
+customers_search_table_search_client;Căutare client
+customers_search_table_button_view;Vizualizează
+# End: Search account
+# End: Customers Controller
+
+# Begin: Products Controller
+products_all_products_error;Selecţie invalidă!
+
+products_add_products_error_sku;Un produs cu acest SKU există deja în baza de date! SKU trebuie să fie unic!
+products_add_products_success;Produsul a fost creat cu succes!
+products_add_products_error;Eroare la crearea produsului!
+
+products_edit_products_error_sku;Un produs cu acest SKU există deja în baza de date! SKU trebuie să fie unic!
+products_edit_products_success_delete_specifications;Specificaţiile au fost şterse cu succes!
+products_edit_products_error_delete_specifications;Eroare la ştergerea specificaţiilor!
+products_edit_products_success;Produsul a fost modificat cu succes!
+products_edit_products_error_1;Eroare la modificarea produsului!
+products_edit_products_error_2;Produs selectat incorect!
+
+products_delete_product_success_delete_specifications;Specificaţiile produsului au fost şterse cu succes!
+products_delete_product_error_delete_specifications;Eroare la ştergerea specificaţiilor!
+products_delete_product_success;Produsul a fost şters cu succes!
+products_delete_product_error;Eroare la ştergerea produsului
+
+products_final_delete_product_success;Produsul a fost şters cu succes!
+products_final_delete_product_error;Eroare la ştergerea produsului!
+
+products_undo_delete_product_success;Produsul a fost salvat cu succes!
+products_undo_delete_product_error;Eroare la salvarea produsului!
+
+products_visible_success;Statusul a fost schimbat cu succes!
+products_visible_error;Eroare la schimbarea statusului!
+
+products_add_categories_success;Categoria a fost creată cu succes!
+products_add_categories_error;Eroare la crearea de categorie!
+
+products_edit_categories_success;Categoria a fost modificată cu succes!
+products_edit_categories_error_1;Eroare la modificarea categoriei!
+products_edit_categories_error_2;Categorie selectată incorect!
+
+products_delete_categories_success;Categoria a fost ştearsă cu succes!
+products_delete_categories_error;Eroare la ştergerea categoriei!
+products_delete_categories_specification_group_success;Grupul de specificaţii a fost şters cu succes!
+products_delete_categories_specification_group_error;Eroare la ştergerea grupului de specificaţii!
+products_delete_categories_specification_model_success;Modelul de specificaţii a fost şters cu succes!
+products_delete_categories_specification_model_error;Eroare la ştergerea modelului de specificaţii!
+
+products_add_subcategories_success;Subcategoria a fost creata cu succes!
+products_add_subcategories_error;Eroare la crearea de subcategorie!
+
+products_edit_subcategories_success;Subcategoria a fost modificată cu succes!
+products_edit_subcategories_error_1;Eroare la modificarea subcategoriei!
+products_edit_subcategories_error_2;Subcategorie selectată incorect
+
+products_delete_subcategories_success;Subcategoria a fost ştearsă cu succes!
+products_delete_subcategories_error;Eroare la ştergerea subcategoriei!
+products_delete_subcategories_specification_group_success;Grupul de specificaţii a fost şters cu succes!
+products_delete_subcategories_specification_group_error;Eroare la ştergerea grupului de specificaţii!
+products_delete_subcategories_specification_model_success;Modelul de specificaţii a fost şters cu succes!
+products_delete_subcategories_specification_model_error;Eroare la ştergerea modelului de specificaţii!
+
+products_add_brand_success;Brandul a fost creat cu succes!
+products_add_brand_error;Eroare la crearea de brand!
+
+products_edit_brand_success;Brandul a fost modificat cu succes!
+products_edit_brand_error_1;Eroare la modificarea brandului!
+products_edit_brand_error_2;Brand selectat incorect!
+
+products_delete_brand_success;Brandul a fost şters cu succes!
+products_delete_brand_error;Eroare la ştergerea brandului!
+
+products_add_product_image_success;Imaginea a fost încărcată!
+products_add_product_image_error;Eroare la încărcarea imaginii!
+
+products_delete_product_image_success;Imaginea a fost ştearsă cu succes!
+products_delete_product_image_error;Eroare la ştergerea imaginii!
+
+products_add_categories_specification_group_success;Grupul de specificaţii a fost creat cu succes!
+products_add_categories_specification_group_error;Eroare la crearea grupului de specificaţii!
+products_add_categories_specification_model_success;Modelul de specificaţii a fost creat cu succes!
+products_add_categories_specification_model_error;Eroare la crearea modelului de specificaţii!
+
+products_save_categories_product_specifications_success;Specificaţiile au fost adăugate cu succes!
+products_save_categories_product_specifications_error;Eroare la adăugarea specificaţiilor!
+
+products_edit_categories_specification_group_success;Grupul de specificaţii a fost modificat cu succes!
+products_edit_categories_specification_group_error_1;Eroare la modificarea grupului de specificaţii!
+products_edit_categories_specification_group_error_2;Grup de specificaţii selectat incorect!
+
+products_edit_categories_specification_model_success;Modelul de specificaţii a fost modificat cu succes!
+products_edit_categories_specification_model_error_1;Eroare la modificarea modelului de specificaţii!
+products_edit_categories_specification_model_error_2;Model de specificaţii selectat incorect!
+
+products_modify_categories_product_specifications_success;Specificaţiile au fost modificate cu succes!
+products_modify_categories_product_specifications_error;Eroare la modificarea specificaţiilor!
+
+products_delete_categories_specifications_group_success_delete_product;Specificaţiile produsului au fost şterse cu succes!
+products_delete_categories_specifications_group_error_delete_product;Eroare la ştergerea specificaţiilor produsului!
+products_delete_categories_specifications_group_success_delete_model;Modelul de specificaţii a fost şters cu succes!
+products_delete_categories_specifications_group_error_delete_model;Eroare la ştergerea modelului de specificaţii!
+products_delete_categories_specifications_group_success;Grupul de specificaţii a fost şters cu succes!
+products_delete_categories_specifications_group_error;Eroare la ştergerea grupului de specificaţii!
+
+products_delete_categories_specifications_model_success_delete_product;Specificaţiile produsului au fost şterse cu succes!
+products_delete_categories_specifications_model_error_delete_product;Eroare la ştergerea specificaţiilor produsului!
+products_delete_categories_specifications_model_success;Modelul de specificaţii a fost şters cu succes!
+products_delete_categories_specifications_model_error;Eroare la ştergerea modelului de specificaţii!
+
+products_delete_categories_product_specifications_success;Specificaţiile au fost şterse cu succes!
+products_delete_categories_product_specifications_error;Eroare la ştergerea specificaţiilor!
+
+products_add_subcategories_specification_group_success;Grupul de specificaţii a fost creat cu succes!
+products_add_subcategories_specification_group_error;Eroare la crearea grupului de specificaţii!
+products_add_subcategories_specification_model_success;Modelul de specificaţii a fost creat cu succes!
+products_add_subcategories_specification_model_error;Eroare la crearea modelului de specificaţii!
+
+products_save_subcategories_product_specifications_success;Specificaţiile au fost adăugate cu succes!
+products_save_subcategories_product_specifications_error;Eroare la adăugarea specificaţiilor!
+
+products_edit_subcategories_specification_group_success;Grupul de specificaţii a fost modificat cu succes!
+products_edit_subcategories_specification_group_error_1;Eroare la modificarea grupului de specificaţii!
+products_edit_subcategories_specification_group_error_2;Grup de specificaţii selectat incorect!
+
+products_edit_subcategories_specification_model_success;Modelul de specificaţii a fost modificat cu succes!
+products_edit_subcategories_specification_model_error_1;Eroare la modificarea modelului de specificaţii!
+products_edit_subcategories_specification_model_error_2;Model de specificaţii selectat incorect!
+
+products_modify_subcategories_product_specifications_success;Specificaţiile au fost modificate cu succes!
+products_modify_subcategories_product_specifications_error;Eroare la modificarea specificaţiilor!
+
+products_delete_subcategories_specifications_group_success_delete_product;Specificaţiile produsului au fost şterse cu succes!
+products_delete_subcategories_specifications_group_error_delete_product;Eroare la ştergerea specificaţiilor produsului!
+products_delete_subcategories_specifications_group_success_delete_model;Modelul de specificaţii a fost şters cu succes!
+products_delete_subcategories_specifications_group_error_delete_model;Eroare la ştergerea modelului de specificaţii!
+products_delete_subcategories_specifications_group_success;Grupul de specificaţii a fost şters cu succes!
+products_delete_subcategories_specifications_group_error;Eroare la ştergerea grupului de specificaţii!
+
+products_delete_subcategories_specifications_model_success_delete_product;Specificaţiile produsului au fost şterse cu succes!
+products_delete_subcategories_specifications_model_error_delete_product;Eroare la ştergerea specificaţiilor produsului!
+products_delete_subcategories_specifications_model_success;Modelul de specificaţii a fost şters cu succes!
+products_delete_subcategories_specifications_model_error;Eroare la ştergerea modelului de specificaţii!
+
+products_delete_subcategories_product_specifications_success;Specificaţiile au fost şterse cu succes!
+products_delete_subcategories_product_specifications_error;Eroare la ştergerea specificaţiilor!
+
+products_product_import_error;Inseraţi un fişier ".csv" valid
+
+products_product_import_2_error_sku;Trebuie să selectaţi SKU!
+products_product_import_2_error_name;Trebuie să selectaţi numele!
+products_product_import_2_error_weight;Trebuie să selectaţi greutatea!
+products_product_import_2_error_sell_price;Trebuie să selectaţi preţul de vânzare!
+products_product_import_2_error_save;Eroare la salvarea produselor
+products_product_import_2_success_save;Produsele au fost salvate cu succes. Le puteţi găsi în "categoria tampon".
+products_product_import_2_error_save_2;Produsele există deja în baza de date, nu vor fi încarcate:
+
+products_move_buffer_success;Produsele au fost mutate cu succes
+products_move_buffer_error;Eroare la mutarea produselor!
+
+products_no_product_with_this_sku;Nu există produs cu acest SKU!
+products_search_by_sku_success;Stocul a fost actualizat!
+products_search_by_sku_error;Eroare la actualizarea stocului!
+
+products_import_sku_error_csv;Inseraţi un fişier ".csv" valid
+products_import_sku_error_sku;Câmpul SKU lipseşte!
+products_import_sku_error_stock;Câmpul Stock lipseşte!
+products_import_sku_error_unlimited_stock;Câmpul stoc nelimitat lipseşte!
+products_import_sku_products_no_success;produse încărcate!
+products_import_sku_products_no_error_update;produse încărcate!
+products_import_sku_success;Fişierul CSV a fost şters!
+products_import_sku_error_delete;Fişierul CSV nu a putut fi şters!
+
+products_addproductattributes_title_add_attribute;Adaugă atribute
+products_editproductattributes_title_edit_attribute;Modifică atributele
+products_addproducts_table_add_accessories;Adaugă accesorii
+products_editproductsspecifications_title_model_name;Numele modelului
+products_editproductsspecifications_table_name;Nume
+products_searchbysku_view;Vizualizare
+products_addproductsattributes_save_success;Atributele de produs au fost salvate
+products_addproductsattributes_save_error;Eroare la salvarea atributelor produsului
+products_editproductsattributes_change_success;Atributul a fost modificat cu succes
+products_editproductsattributes_change_error;Eroare la modificarea atributului
+products_editproductsattributes_selected_attribute_is_not_valid;Atributul selectat nu este valid
+products_statusproductsattributes_success;Succes
+products_statusproductsattributes_error;Eroare
+products_deleteproductsattributes_success;Atributul a fost şters cu succes
+products_deleteproductsattributes_error;Eroare la ştergerea atributului
+products_deleteproductattributes_success;Atributul a fost şters cu succes
+products_deleteproductattributes_error;Eroare la ştergerea atributului
+products_deleteaccessories_success;Accesoriul a fost şters cu succes
+products_deleteaccessories_error;Eroare la ştergerea accesoriului
+products_msg_add_attribute_success;Atributele au fost adăugate cu succes
+products_msg_add_attribute_error;Eroare la adăugarea atributelor
+products_msg_edit_attribute_success;Atributele au fost modificate cu succes
+products_msg_edit_attribute_error;Eroare la modificarea atributelor
+products_editproductsspecifications_success;Numele modelului a fost modificat cu succes
+products_editproductsspecifications_error;Eroare la mumelui modelului
+products_search_not_find_results;Nu a fost gasit nici un rezultat
+products_deleteproductsspecifications_success;Modelul a fost şters cu succes
+products_deleteproductsspecifications_error;Eroare la ştergerea modelului
+products_outofstock_button_search_by_sku;căutare după SKU
+products_outofstock_button_stock0;stoc 0
+# Begin: Index
+products_index_button_add_new_product;Adaugă produs
+products_index_button_add_new_custom_product;Adaugă produs special
+products_index_button_all_products;Toate produsele
+products_index_button_deleted_products;Produsele şterse
+products_index_button_custom_product_attributes;Atribute produse speciale
+products_index_button_specification_models;Modele de specificaţii
+products_index_button_searched;Căutări
+
+products_index_table_category_name;Numele categoriei
+products_index_table_subcategory_name;Numele subcategoriei
+products_index_table_brand_name;Numele brandului
+products_index_table_number_of_products;Numărul de produse
+products_index_table_details;Detalii
+
+products_index_table_view;Afişează
+# End: Index
+# Begin: Add / Edit
+products_add_title_add_product;Adaugă produs
+products_add_title_add_custom_product;Adaugă produs special
+products_add_title_edit_product;Modifică produsul
+
+products_add_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_table_category;Categorie
+products_add_table_subcategory;Subcategorie
+products_add_table_brand;Brand
+products_add_table_sku;SKU
+products_add_table_name;Nume
+products_add_table_auto_generate;Auto generează
+products_add_table_regular_price;Preţ recomandat
+products_add_table_sell_price;Preţ de vânzare
+products_add_table_warranty;Garanţie
+products_add_table_weight;Greutate
+products_add_table_description;Descriere
+products_add_table_additional_price;Preţ aditional
+products_add_table_unlimited_stock;Stoc nelimitat
+products_add_table_stock;Stoc
+products_add_table_image;Imagine
+products_add_table_image_resize;Redimensionare imagine
+products_add_table_product_offer;Ofertă la produs
+products_add_table_status;Status
+
+products_add_table_yes;Da
+products_add_table_no;Nu
+
+products_add_table_active;Activ
+products_add_table_inactive;Inactiv
+
+products_add_table_button_create;Crează
+products_add_table_button_modify;Modifică
+
+products_editproducts_product_offer_produs_nou;Produs nou
+products_editproducts_product_offer_lichidare_stoc;Lichidare stoc
+products_editproducts_product_offer_promotie;Promoţie
+products_editproducts_product_offer_produs_recomandat;Produs recomandat
+
+products_add_edit_hintText;Scrie un cuvânt de căutare
+products_add_edit_noResultsText;Fără rezultat
+products_add_edit_searchingText;Căutare...
+# End: Add / Edit
+# Begin: Product Image
+products_add_product_image_title_add_product;Adaugă galerie la produs
+
+products_add_product_image_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_product_image_table_image;Imagine
+products_add_product_image_table_image_resize;Redimensionare imagine
+products_add_product_image_table_delete;Sterge
+
+products_add_product_image_message_delete;Sunteţi sigur că doriţi să stergeţi această imagine?
+
+products_add_product_image_table_button_submit;Adaugă
+products_add_product_image_table_button_modify;Modifică
+# End: Product Image
+# Begin: Add / Edit Product specifications
+products_add_product_specifications_title_add_product_specifications;Adaugă specificaţii produsului
+products_add_product_specifications_title_edit_product_specifications;Modifică specificaţiile produsului
+
+products_add_product_specifications_select_professional;Profesional
+products_add_product_specifications_professional_name;Nume
+products_add_product_specifications_select_simple;Simplu 
+
+products_add_product_specifications_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_product_specifications_table_group;Grup
+products_add_product_specifications_table_model;Model
+products_add_product_specifications_table_value;Valoare
+
+products_add_product_specifications_table_button_submit;Adaugă
+products_add_product_specifications_table_button_modify;Modifică
+
+products_add_product_specifications_button_make_specifications_model;Crează model de specificaţii
+
+products_add_product_specifications_message_else;Nu există model de specificaţii
+# End: Add / Edit Product specifications
+# Begin: All products
+products_all_button_search_product;Caută produs
+products_all_search_product;Nume produs
+
+products_all_button_add_new_product;Adaugă produs
+products_all_button_all_products;Toate produsele
+products_all_button_deleted_products;Produsele şterse
+
+products_all_table_sku;SKU
+products_all_table_name;Nume
+products_all_table_regular_price;Preţ normal
+products_all_table_sell_price_without_taxes;Preţ de vânzare fără taxe
+products_all_table_sell_price;Preţ de vânzare
+products_all_table_stock;Stoc
+products_all_table_status;Status
+products_all_table_deleted;Sters
+products_all_table_deleted_yes;Da
+products_all_table_deleted_no;Nu
+products_all_table_actions;Acţiuni
+
+products_all_table_details;Detalii
+products_all_table_edit;Modifică
+products_all_table_delete;Sterge
+
+products_all_table_active;Activ
+products_all_table_inactive;Inactiv
+
+products_all_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui produs?
+products_all_message_delete;Sunteţi sigur că doriţi să ştergeţi acest produs?
+products_all_message_else;Nu există produse
+# End: All products
+# Begin: Deleted products
+products_deleted_products_button_add_new_product;Adaugă produs
+products_deleted_products_button_all_products;Toate produsele
+products_deleted_products_button_deleted_products;Produsele şterse
+
+products_deleted_products_table_sku;SKU
+products_deleted_products_table_name;Nume
+products_deleted_products_table_regular_price;Preţ normal
+products_deleted_products_table_sell_price_without_taxes;Preţ de vânzare fără taxe
+products_deleted_products_table_sell_price;Preţ de vânzare
+products_deleted_products_table_stock;Stoc
+products_deleted_products_table_status;Status
+products_deleted_products_table_actions;Acţiuni
+
+products_deleted_products_table_undo;Undo
+products_deleted_products_table_delete;Sterge
+
+products_deleted_products_table_active;Activ
+products_deleted_products_table_inactive;Inactiv
+
+products_deleted_products_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui produs?
+products_deleted_products_message_delete;Sunteţi sigur că doriţi să ştergeţi acest produs?
+products_deleted_products_message_else;Nu există produse şterse!
+# End: Deleted products
+# Begin: Custom product attributes
+products_productsattributes_table_position;Poziţie
+products_productsattributes_table_name;Nume
+products_productsattributes_table_status;Status
+products_productsattributes_table_status_active;Activ
+products_productsattributes_table_status_inactive;Inactiv
+products_productsattributes_button_add;Adaugă
+products_productsattributes_button_edit;Modifică
+
+products_productsattributes_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui atribut?
+products_productsattributes_message_delete;Sunteţi sigur că doriţi să ştergeţi acest atribut?
+products_productsattributes_message_else;Nu există atribute
+# End: Custom product attributes
+# Begin: Specification models
+products_productsspecifications_button_add_model;Adaugă model
+
+products_productsspecifications_table_name;Nume
+products_productsspecifications_table_actions;Acţiuni
+products_productsspecifications_table_actions_edit;Modifică
+products_productsspecifications_table_actions_delete;Sterge
+
+products_productsspecifications_message_no_specification_models;Nu există modele de specificaţii
+# End: Specification models
+# Begin: Search product
+products_search_button_search_product;Caută produs
+products_search_button_all_products;Toate produsele
+products_search_button_custom_products;Produse speciale
+products_search_button_custom_product_attributes;Atribute produse speciale
+products_search_title_search_products;Căutare produse
+products_search_label_product_name;Nume produs
+products_search_button_view;vizualizare
+# End: Search product
+# Begin: Details
+settings_details_title_product_details;Detalii produs
+
+products_details_table_title_image;Imagine
+
+products_details_table_title_details;Detalii
+products_details_table_sku;SKU
+products_details_table_category;Categorie
+products_details_table_subcategory;Subcategorie
+products_details_table_regular_price;Preţ normal
+products_details_table_sell_price;Preţ de vânzare
+products_details_table_warranty;Garanţie
+products_details_table_weight;Greutate
+products_details_table_stock;Stoc
+products_details_table_status;Status
+products_details_table_datetime;Creat
+products_details_table_modified;Modificat
+products_details_table_actions;Acţiuni
+products_details_table_description;Descriere
+
+products_details_table_title_attributes;Atribute
+products_details_table_name;Nume
+products_details_table_additional_cost;Preţ adiţional
+products_details_table_edit;Modifică
+products_details_table_delete;Sterge
+products_details_table_active;Activ
+products_details_table_inactive;Inactiv
+
+products_details_table_title_accessories;Accesorii
+products_details_table_accessories_price_without_tax;Preţ fără taxe
+
+products_details_table_edit_product;Modifică produsul
+products_details_table_add_more_images;Adaugă imagini
+products_details_table_add_attributes;Adaugă atribute
+products_details_table_add_specifications;Adaugă specificaţii
+products_details_table_edit_specifications;Modifică specificaţiile
+products_details_table_delete_specifications;Sterge specificaţiile
+products_details_table_delete;Sterge
+
+products_details_table_gallery;Galerie
+products_details_table_specifications;Specificaţii
+
+products_details_message_delete_specifications;Sunteţi sigur că doriţi să ştergeţi specificaţiile produsului?
+# End: Details
+# Begin: Categories
+products_categories_button_add_new_category;Adaugă categorie
+
+products_categories_table_image;Imagine
+products_categories_table_name;Nume
+products_categories_table_description;Descriere
+products_categories_table_created;Creat
+products_categories_table_status;Status
+products_categories_table_actions;Acţiuni
+
+products_categories_table_status_active;Activ
+products_categories_table_status_inactive;Inactiv
+products_categories_table_edit;Modifică
+products_categories_table_delete;Sterge
+
+products_categories_table_active;Activ
+products_categories_table_inactive;Inactiv
+
+products_categories_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestei categorii?
+products_categories_message_delete;Sunteţi sigur că doriţi să ştergeţi această categorie?
+
+products_categories_else;Nu există categorii
+# End: Categories
+# Begin: Add / Edit Categories
+products_add_categories_title_add_category;Adaugă categorie
+products_add_categories_title_edit_category;Modifică categorie
+
+products_add_categories_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_categories_table_name;Nume
+products_add_categories_table_image;Imagine
+products_add_categories_table_keywords;Keywords
+products_add_categories_table_description;Descriere
+products_add_categories_table_is_active;Activare
+
+products_add_categories_table_status;Status
+products_add_categories_table_active;Activ
+products_add_categories_table_inactive;Inactiv
+
+products_add_categories_table_submit;Adaugă
+products_add_categories_table_modify;Modifică
+# End: Add / Edit Categories
+# Begin: Add / Edit Categories specifications
+products_add_categories_specifications_title_add_group_specification;Adaugă grup la specificaţii
+products_add_categories_specifications_title_edit_group_specification;Modifică grupul specificaţiilor
+products_add_categories_specifications_title_add_list_specification;Adaugă listă de specificaţii
+products_add_categories_specifications_title_edit_list_specification;Modifică lista de specificaţii
+
+products_add_categories_specifications_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_categories_specifications_table_group_specifications;Grup la specificaţii
+products_add_categories_specifications_table_specifications_model;Model de specificaţii
+
+products_add_categories_specifications_table_group;Grup
+products_add_categories_specifications_table_name;Nume
+products_add_categories_specifications_table_actions;Acţiuni
+
+products_add_categories_specifications_table_edit;Modifică
+products_add_categories_specifications_table_delete;Sterge
+
+products_add_categories_specifications_table_submit;Adaugă
+products_add_categories_specifications_table_modify;Modifică
+
+products_add_categories_specifications_message_delete_group;Sunteţi sigur că doriţi să ştergeţi acest grup?
+products_add_categories_specifications_message_delete_list;Sunteţi sigur că doriţi să ştergeţi aceasta lista?
+# End: Add / Edit Categories specifications
+# Begin: Subcategories
+products_subcategories_button_add_new_subcategory;Adaugă subcategorie
+
+products_subcategories_table_image;Imagine
+products_subcategories_table_category;Categorie
+products_subcategories_table_name;Nume
+products_subcategories_table_description;Descriere
+products_subcategories_table_created;Creat
+products_subcategories_table_status;Status
+products_subcategories_table_actions;Acţiuni
+
+products_subcategories_table_make_specification_list;Crează lista de specificaţii
+products_subcategories_table_edit;Modifică
+products_subcategories_table_delete;Sterge
+
+products_subcategories_table_active;Activ
+products_subcategories_table_inactive;Inactiv
+
+products_subcategories_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestei subcategorii?
+products_subcategories_message_delete;Sunteţi sigur că doriţi să ştergeţi aceasta subcategorie?
+
+products_subcategories_else;Nu există subcategorii
+# End: Subcategories
+# Begin: Add / Edit Subcategories
+products_add_subcategories_title_add_subcategory;Adaugă subcategorie
+products_add_subcategories_title_edit_subcategory;Modifică subcategorie
+
+products_add_subcategories_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_subcategories_table_category;Categorie
+products_add_subcategories_table_subcategory;Subcategorie
+products_add_subcategories_table_name;Nume
+products_add_subcategories_table_image;Imagine
+products_add_subcategories_table_description;Descriere
+products_add_subcategories_table_is_active;Activare
+
+products_add_subcategories_table_status;Status
+products_add_subcategories_table_active;Activ
+products_add_subcategories_table_inactive;Inactiv
+
+products_add_subcategories_table_submit;Adaugă
+products_add_subcategories_table_modify;Modifică
+# End: Add / Edit Subcategories
+# Begin: Add / Edit Subcategories specifications
+products_add_subcategories_specifications_title_add_group_specification;Adaugă grup la specificaţii
+products_add_subcategories_specifications_title_edit_group_specification;Modifică grupul specificaţiilor
+products_add_subcategories_specifications_title_add_list_specification;Adaugă lista de specificaţii
+products_add_subcategories_specifications_title_edit_list_specification;Modifică lista de specificaţii
+
+products_add_subcategories_specifications_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_subcategories_specifications_table_group_specifications;Grup la specificaţii
+products_add_subcategories_specifications_table_specifications_model;Model de specificaţii
+
+products_add_subcategories_specifications_table_group;Grup
+products_add_subcategories_specifications_table_name;Nume
+products_add_subcategories_specifications_table_actions;Acţiuni
+
+products_add_subcategories_specifications_table_edit;Modifică
+products_add_subcategories_specifications_table_delete;Sterge
+
+products_add_subcategories_specifications_table_submit;Adaugă
+products_add_subcategories_specifications_table_modify;Modifică
+
+products_add_subcategories_specifications_message_delete_group;Sunteţi sigur că doriţi să ştergeţi acest grup?
+products_add_subcategories_specifications_message_delete_list;Sunteţi sigur că doriţi să ştergeţi această listă?
+# End: Add / Edit Subcategories specifications
+# Begin: Brands
+products_brands_button_add_new_brand;Adaugă brand
+
+products_brands_table_logo;Logo
+products_brands_table_name;Nume
+products_brands_table_datetime;Creat
+products_brands_table_modified;Modificat
+products_brands_table_status;Status
+products_brands_table_actions;Acţiuni
+
+products_brands_table_active;Activ
+products_brands_table_inactive;Inactiv
+
+products_brands_table_edit;Modifică
+products_brands_table_delete;Sterge
+
+products_brands_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui brand?
+products_brands_message_delete;Sunteţi sigur că doriţi să ştergeţi acest brand?
+
+products_brands_else;Nu există branduri
+# End: Brands
+# Begin: Add / Edit Brands
+products_add_brands_title_add_brand;Adaugă brand
+products_add_brands_title_edit_brand;Modifică brand
+
+products_add_brands_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_add_brands_table_logo;Logo
+products_add_brands_table_name;Nume
+products_add_brands_table_is_active;Activare
+
+products_add_brands_table_status;Status
+products_add_brands_table_active;Activ
+products_add_brands_table_inactive;Inactiv
+
+products_add_brands_table_submit;Adaugă
+products_add_brands_table_modify;Modifică
+# End: Add / Edit Brands
+# Begin: Product Import
+products_product_import_title_import_product;Importă produse
+
+products_product_import_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_product_import_table_delimiter;Delimitator
+products_product_import_table_file;Fişier
+
+products_product_import_table_submit;Adaugă
+# End: Product Import
+# Begin: Product Import 2
+products_product_import_2_title_import_product;Importă produse
+
+products_product_import_2_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+products_product_import_2_required_*;* sunt necesare
+
+products_product_import_2_table_use_saved_mapping;Utilizează cartografierea salvată
+products_product_import_2_table_remove_mapping;Elimină cartografierea
+products_product_import_2_table_save_as_custom_mapping;Save as custom mapping
+products_product_import_2_table_mapping;Cartografiere
+products_product_import_2_table_header;Header
+
+products_product_import_2_table_select_none;--Do not Map this field--
+products_product_import_2_table_select_sku;SKU *
+products_product_import_2_table_select_name;Numele produsului *
+products_product_import_2_table_select_regular_price;Preţul normal
+products_product_import_2_table_select_sell_price;Preţul de vânzare *
+products_product_import_2_table_select_warranty;Garanţie
+products_product_import_2_table_select_weight;Greutate *
+products_product_import_2_table_select_description;Descriere
+products_product_import_2_table_select_unlimited_stock;Stoc nelimitat
+products_product_import_2_table_select_stock;Stoc *
+products_product_import_2_table_select_status;Status
+products_product_import_2_table_select_image;sursa imaginii
+
+products_product_import_2_table_submit;Importă acum
+# End: Product Import 2
+# Begin: Product Export
+products_product_export;Exportă Produse
+# End: Product Export
+# Begin: Move buffer
+products_move_buffer_title_move_product;Mută produse
+
+products_move_buffer_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_move_buffer_table_move_to_category;Mută în categoria
+products_move_buffer_table_subcategory;Subcategorie
+products_move_buffer_table_move_to_subcategory;Mută în subcategoria
+products_move_buffer_table_move_to_brand;Mută în brandul
+products_move_buffer_table_products;Produse
+
+products_move_buffer_table_submit;Mută
+# End: Move buffer
+# Begin: Buffer Category
+products_buffer_category_button_deleted_products;Produse şterse
+products_buffer_category_button_move_products;Mută produse
+products_deletedbufferproducts_button_products;Produse
+products_buffercategory_on_attributes;pe atribute
+products_buffercategory_unlimited;nelimitat
+
+products_buffer_category_table_sku;SKU
+products_buffer_category_table_name;Nume
+products_buffer_category_table_regular_price;Preţ normal
+products_buffer_category_table_sell_price;Preţ de vânzare
+products_buffer_category_table_stock;Stoc
+products_buffer_category_table_status;Status
+products_buffer_category_table_actions;Acţiuni
+
+products_buffer_category_table_active;Activ
+products_buffer_category_table_inactive;Inactiv
+
+customers_buffer_category_table_details;Detalii
+customers_buffer_category_table_edit;Modifică
+customers_buffer_category_table_delete;Sterge
+
+customers_buffer_category_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui produs?
+customers_buffer_category_message_delete;Sunteţi sigur că doriţi să ştergeţi acest produs?
+customers_buffer_category_message_else;Nu există produse!
+# End: Buffer Category
+# Begin: Search by SKU
+products_search_by_sku_title_stock_administration;Administrează stoc
+
+products_search_by_sku_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_search_by_sku_table_sku;SKU
+products_search_by_sku_table_stock;Stoc
+products_search_by_sku_table_actions;Acţiuni
+
+customers_search_by_sku_table_modify;Modifică
+# End: Search by SKU
+# Begin: Import SKU
+products_import_sku_title_import_sku;Importă SKU
+
+products_import_sku_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+products_import_sku_table_file;Fişierul
+
+customers_import_sku_table_upload;Incarcă
+# End: Import SKU
+# Begin: Export SKU
+products_export_sku_title_import_sku;Exportă SKU
+
+customers_export_sku_button_download;Descarcă fişierul CSV
+# End: Export SKU
+# End: Products Controller
+
+# Begin: Marketing Controller
+marketing_add_taxes_success;Taxa a fost adaugată cu succes!
+marketing_add_taxes_error;Eroare la adăugarea taxei!
+marketing_edit_taxes_success;Taxa a fost modificată cu succes!
+marketing_edit_taxes_error_1;Eroare la modificarea taxei!
+marketing_edit_taxes_error_2;Taxa selectată nu este validă!
+marketing_delete_taxes_success;Taxa a fost ştearsă cu succes!
+marketing_delete_taxes_error;Eroare la ştergerea taxei!
+marketing_visible_success;Statusul a fost schimbat cu succes!
+marketing_visible_error;Eroare la schimbarea statusului!
+marketing_add_discounts_success;Discount-ul a fost adăugat cu succes!
+marketing_add_discounts_error;Eroare la adăugarea discount-ului!
+marketing_edit_discounts_success;Discount-ul a fost modificat cu succes!
+marketing_edit_discounts_error_1;Eroare la modificarea discount-ului!
+marketing_edit_discounts_error_2;Discount-ul selectat nu este valid!
+marketing_delete_discounts_success;;Discount-ul a fost şters cu succes!
+marketing_delete_discounts_error;Eroare la ştergerea discount-ului!
+marketing_add_coupons_success;Cuponul a fost adăugat cu succes!
+marketing_add_coupons_error;Eroare la adăugarea cuponului!
+marketing_edit_coupons_success;Cuponul a fost modificat cu succes!
+marketing_edit_coupons_error_1;Eroare la modificarea cuponului!
+marketing_edit_coupons_error_2;Cuponul selectat nu este valid!
+marketing_delete_coupons_success;Cuponul a fost şters cu succes!
+marketing_delete_coupons_error;Eroare la ştergerea cuponului
+marketing_add_feeds_success;Feed-ul a fost adăugat cu succes!
+marketing_add_feeds_error;Eroare la crearea feed-ului!
+marketing_edit_feeds_success;Feedu-ul a fost modificat cu succes!
+marketing_edit_feeds_error_1;Eroare la modificarea feed-ului!
+marketing_edit_feeds_error_2;Feed-ul selectat nu este valid!
+marketing_delete_feeds_success;Feed-ul a fost şters cu succes!
+marketing_delete_feeds_error;Eroare la ştergerea feed-ului!
+marketing_add_news_success;Stirea a fost adaugată cu succes!
+marketing_add_news_error;Eroare la adăugarea ştirii!
+marketing_edit_news_success;Stirea a fost modificată cu succes!
+marketing_edit_news_error_1;Eroare la modificarea ştirii!
+marketing_edit_news_error_2;Stirea selectată nu este validă!
+marketing_delete_news_success;Stirea a fost ştearsă cu succes!
+marketing_delete_news_error;Eroare la ştergerea ştirii!
+marketing_add_articles_success;Articol creat cu succes!
+marketing_add_articles_error;Eroare la adăugarea articolului!
+marketing_edit_articles_success;Articolul a fost modificat cu success!
+marketing_edit_articles_error;Articolul NU a fost modificat!
+marketing_edit_blogstatus_success;Statusul a fost schimbat!
+marketing_edit_blogstatus_error;Statusul NU a fost schimbat!
+marketing_blogdelete_success;Articolul a fost şters!
+marketing_blogdelete_error;Articolul NU a fost şters!
+marketing_campaign_no_details;Nu există detalii pentru această campanie!
+marketing_campaign_does_not_exist_in_database;Campania selectată nu există în baza de date!
+marketing_select_campaign;Vă rugăm selectaţi o campanie!
+marketing_add_campaign_success;Campanie adăugată cu succes!
+marketing_add_campaign_error;Eroare la adăugarea campaniei!
+marketing_edit_campaign_success;Campania a fost modificată cu succes!
+marketing_edit_campaign_error;Eroare la modificarea campaniei!
+marketing_edit_campaign_error_2;Campania selectată nu a fost gasită!
+marketing_edit_campaign_error_3;Campania selectată nu există!
+marketing_delete_campaign_success;Campania a fost ştearsă!
+marketing_delete_campaign_error;Eroare la ştergerea campaniei!
+marketing_delete_campaign_error_2;Campania selectată nu a fost gasită!
+marketing_newsletter_success;Newsletter-ul a fost trimis cu succes!
+marketing_newsletter_error;Eroare la trimiterea newsletter-ului! Vă rugăm încercaţi mai târziu.
+marketing_delete_email_success;Email-ul a fost şters cu succes!
+marketing_delete_email_error;Eroare la ştergerea email-ului!
+marketing_delete_customer_opinion_success;Opinia clientului a fost ştearsă cu succes!
+marketing_delete_customer_opinion_error;Eroare la ştergera opiniei clientului!
+
+# Begin: Newsletter
+marketing_newsletter_title_send_newsletter;Trimite newsletter
+
+marketing_newsletter_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+marketing_newsletter_table_title;Titlu
+marketing_newsletter_table_message;Mesaj
+marketing_newsletter_table_from_name;De la (nume)
+marketing_newsletter_table_from_email;De la (email)
+marketing_newsletter_table_to_email;Numai la adresa de email:
+
+marketing_newsletter_table_send;Trimite
+# End: Newsletter
+# Begin: Blog
+marketing_blog_button_create_article;Crează Articol
+
+marketing_blog_table_title;Titlu
+marketing_blog_table_description;Descriere
+marketing_blog_table_actions;Acţiuni
+
+marketing_blog_table_edit;Modifică
+marketing_blog_table_delete;Sterge
+
+marketing_blog_table_active;Activ
+marketing_blog_table_inactive;Inactiv
+
+marketing_blog_article_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui articol?
+marketing_blog_article_delete;Sunteţi sigur că doriţi să ştergeţi acest articol?
+
+marketing_blog_else;Nu există mesaje!
+# End: Blog
+# Begin: Create / Edit Article
+marketing_blogcreate_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+marketing_blogcreate_table_title;Titlu
+marketing_blogcreate_table_description;Descriere
+marketing_blogcreate_table_content;Conţinut
+
+marketing_blogcreate_table_active;Activ
+marketing_blogcreate_table_inactive;Inactiv
+
+marketing_blogcreate_table_submit;Trimite
+marketing_blogmodify_table_modify;Modifică
+# End: Create / Edit Article
+# Begin: Subscribers
+marketing_subscribers_table_email;Email
+marketing_subscribers_table_unsubscribe_code;Cod de dezabonare
+marketing_subscribers_table_subscribed;Inscris
+marketing_subscribers_table_status;Status
+marketing_subscribers_table_actions;Acţiuni
+
+marketing_subscribers_table_active;Activ
+marketing_subscribers_table_inactive;Inactiv
+
+marketing_subscribers_table_delete;Sterge
+
+marketing_subscribers_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui e-mail?
+marketing_subscribers_message_delete;Sunteţi sigur că doriţi să ştergeţi acest e-mail?
+
+marketing_subscribers_else;Nu există abonaţi la newsletter!
+# End: Subscribers
+# Begin: Campaign Manager
+marketing_campaignmanager_button_add_campaign;Adaugă campanie
+
+marketing_campaignmanager_table_name;Nume
+marketing_campaignmanager_table_date;Data
+marketing_campaignmanager_table_actions;Acţiuni
+
+marketing_campaignmanager_table_details;Detalii
+marketing_campaignmanager_table_edit;Modifică
+marketing_campaignmanager_table_delete;Sterge
+
+marketing_campaignmanager_addcampaign_campaign_name;Nume campanie
+
+marketing_campaignmanager_campaigndetails_back;Inapoi la campanie
+
+marketing_campaignmanager_campaigndetails_table_name;Nume
+marketing_campaignmanager_campaigndetails_table_clicks;Click-uri
+marketing_campaignmanager_campaigndetails_table_visits;Vizite
+marketing_campaignmanager_campaigndetails_table_total_cost;Cost total
+marketing_campaignmanager_campaigndetails_table_last_visit;Ultima vizită
+
+marketing_campaignmanager_campaigndetails_table2_domain;Domeniu
+marketing_campaignmanager_campaigndetails_table2_clicks;Click-uri
+marketing_campaignmanager_campaigndetails_table2_last_visit;Ultima vizită
+
+marketing_campaignmanager_change_status;Sunteţi sigur că doriţi să modificaţi statusul acestui articol?
+marketing_campaignmanager_delete_article;Sunteţi sigur că doriţi să ştergeţi acest articol?
+marketing_campaignmanager_no_campaigns;Nu există campanii create!
+# End: Campaign Manager
+# Begin: News
+marketing_news_button_add_new_message;Adaugă stire
+
+marketing_news_table_title;Titlu
+marketing_news_table_message;Mesaj
+marketing_news_table_status;Status
+marketing_news_table_datetime;Creat
+marketing_news_table_actions;Acţiuni
+
+marketing_news_table_active;Activ
+marketing_news_table_inactive;Inactiv
+
+marketing_news_table_view;Vizualizează
+marketing_news_table_edit;Modifică
+marketing_news_table_delete;Sterge
+
+marketing_news_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui mesaj?
+marketing_news_message_delete;Sunteţi sigur că doriţi să ştergeţi acest mesaj?
+
+marketing_news_else;Nu există mesaje!
+# End: News
+# Begin: Add / Edit News
+marketing_add_news_title_add_news;Adaugă ştire
+marketing_add_news_title_edit_news;Modifică ştire
+
+marketing_add_news_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+marketing_add_news_table_title;Titlu
+marketing_add_news_table_message;Mesaj
+marketing_add_news_table_status;Status
+
+marketing_add_news_table_active;Activ
+marketing_add_news_table_inactive;Inactiv
+
+marketing_add_news_table_submit;Adaugă
+marketing_add_news_table_modify;Modifică
+# End: Add / Edit News
+# Begin: Customer Opinions
+marketing_customer_opinion_button_add_new_opinion;Adaugă opinie
+
+marketing_customer_opinion_table_name;Nume
+marketing_customer_opinion_table_email;Email
+marketing_customer_opinion_table_opinion;Opinie
+marketing_customer_opinion_table_datetime;Creată
+marketing_customer_opinion_table_status;Status
+marketing_customer_opinion_table_actions;Acţiuni
+
+marketing_customer_opinion_table_active;Activ
+marketing_customer_opinion_table_inactive;Inactiv
+
+marketing_customer_opinion_table_delete;Sterge
+
+marketing_customer_opinion_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestei opinii?
+marketing_customer_opinion_message_delete;Sunteţi sigur că doriţi să ştergeţi această opinie?
+
+marketing_customer_opinion_else;Nu există opinii!
+# End: Customer Opinions
+# Begin: Coupons
+marketing_coupons_button_add_new_coupon;Adaugă cupon
+
+marketing_coupons_table_code;Cod
+marketing_coupons_table_value;Valoare
+marketing_coupons_table_start_date;Data incepere
+marketing_coupons_table_end_date;Data sfârşit
+marketing_coupons_table_status;Status
+marketing_coupons_table_datetime;Creat
+marketing_coupons_table_modified;Modificat
+marketing_coupons_table_actions;Acţiuni
+
+marketing_coupons_table_active;Activ
+marketing_coupons_table_inactive;Inactiv
+
+marketing_coupons_table_edit;Modifică
+marketing_coupons_table_delete;Sterge
+
+marketing_coupons_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui cupon?
+marketing_coupons_message_delete;Sunteţi sigur că doriţi să ştergeţi acest cupon?
+
+marketing_coupons_else;Nu există cupoane!
+# End: Coupons
+# Begin: Add / Edit Coupon
+marketing_add_coupon_title_add_coupon;Adaugă cupon
+marketing_add_coupon_title_edit_coupon;Modifică cuponul
+
+marketing_add_coupon_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+marketing_add_coupon_table_code;Cod
+marketing_add_coupon_table_value;Valoare
+marketing_add_coupon_table_start_date;Start date
+marketing_add_coupon_table_end_date;End date
+marketing_add_coupon_table_status;E Activ
+
+marketing_add_coupon_table_submit;Adaugă
+marketing_add_coupon_table_modify;Modifică
+# End: Add / Edit Coupon
+# Begin: Feeds
+marketing_feeds_button_add_new_coupon;Adaugă feed
+
+marketing_feeds_table_logo;Logo
+marketing_feeds_table_name;Nume
+marketing_feeds_table_link;Link
+marketing_feeds_table_status;Status
+marketing_feeds_table_datetime;Creat
+marketing_feeds_table_modified;Modificat
+marketing_feeds_table_actions;Acţiuni
+
+marketing_feeds_table_active;Activ
+marketing_feeds_table_inactive;Inactiv
+
+marketing_feeds_table_edit;Modifică
+
+marketing_feeds_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestui feed?
+marketing_feeds_message_delete;Sunteţi sigur că doriţi să ştergeţi acest feed?
+
+marketing_feeds_else;Nu există feed-uri!
+# End: Feeds
+# Begin: Add / Edit Feed
+marketing_add_feed_title_add_feed;Adaugă feed
+marketing_add_feed_title_edit_feed;Modifică feed
+
+marketing_add_feed_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+marketing_add_feed_table_logo;Logo
+marketing_add_feed_table_name;Nume
+marketing_add_feed_table_feed;Feed
+marketing_add_feed_table_code;Cod
+marketing_add_feed_table_status;E activ
+
+marketing_add_feed_table_active;Activ
+marketing_add_feed_table_inactive;Inactiv
+
+marketing_add_feed_table_submit;Adaugă
+marketing_add_feed_table_modify;Modifică
+# End: Add / Edit Feed
+# End: Marketing Controller
+
+# Begin: Reports Controller
+# Begin: Time frame
+reports_time_frame_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+reports_time_frame_title_no;Numărul comenzilor efectuate în perioada selectată
+reports_time_frame_title_value;Valoarea comenzilor efectuate în perioada selectată:
+
+reports_time_frame_button_period;Perioada
+
+reports_time_frame_table_select_period;Selectaţi perioada
+reports_time_frame_select_period_select;Selectaţi
+reports_time_frame_select_period_today;Azi
+reports_time_frame_select_period_last_7_days;Ultimele 7 zile
+reports_time_frame_select_period_this_month;Luna curentă
+reports_time_frame_select_period_this_year;Anul curent
+
+reports_time_frame_table_button_View;Vizualizează
+
+reports_time_frame_message_else;Nu a fost facută nici o comandă în perioada selectată.
+# End: Time frame
+# Begin: Calendar
+reports_calendar_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+reports_calendar_table_select_date;Selectaţi data
+
+reports_calendar_table_button_View;Vizualizează
+# End: Calendar
+# Begin: Best sellers
+reports_best_sellers_table_product_name;Numele produsului
+reports_best_sellers_table_price;Preţ
+reports_best_sellers_table_quantity;Cantitate
+
+reports_best_sellers_message_else;Nu există nici un produs best-seller
+# End: Best sellers
+# Begin: Top customers
+reports_top_customers_table_customer_name;Numele clientului
+reports_top_customers_table_number_orders;Numărul comenzilor
+reports_top_customers_table_command_value;Valoarea comenzilor
+
+reports_top_customers_message_else;Nu există clienţi de top
+# End: Top customers
+# Begin: SKU reports
+reports_sku_reports_table_sku;SKU
+reports_sku_reports_table_stock;Stoc
+reports_sku_reports_page;Pagina:
+
+reports_sku_reports_message_else;Nu există produse
+# End: SKU reports
+# End: Reports Controller
+
+# Begin: CMS Controller
+cms_add_success;Pagina a fost creată cu succes!
+cms_add_error;Eroare la crearea paginii!
+cms_edit_success;Pagina a fost modificată cu succes!
+cms_edit_error_1;Eroare la modificarea paginii!
+cms_edit_error_2;Pagina selectată este invalidă!
+cms_delete_success;Pagina a fost ştearsă cu succes!
+cms_delete_error;Eroare la ştergerea paginii!
+cms_visible_success;Statusul paginii a fost modificat cu succes!
+cms_visible_error_1;Eroare la schimbarea statusului paginii!
+cms_visible_error_2;Pagina selectată este invalidă!
+cms_add_seo_success;Seo a fost creat cu succes!
+cms_add_seo_error;Eroare la crearea seo!
+cms_edit_seo_success;Seo a fost modificat cu succes!
+cms_edit_seo_error_1;Eroare la modificarea seo!
+cms_edit_seo_error_2;Seo selectat invalid!
+cms_visible_success;Statusul a fost schimbat cu succes!
+cms_visible_error;Eroare la schimbarea statusului!
+cms_delete_seo_success;Seo a fost şters cu succes!
+cms_delete_seo_error;Eroare la ştergerea seo!
+cms_add_analytics_success;Codul de urmărire a fost adăugat cu succes!
+cms_add_analytics_error;Eroare la crearea codului de urmărire!
+cms_edit_analytics_success;Codul de urmărire a fost modificat cu succes!
+cms_edit_analytics_error_1;Eroare la modificarea codului de urmărire!
+cms_edit_analytics_error_2;Codul de urmărire este invalid!
+cms_delete_analytics_success;Codul de urmărire a fost şters cu succes!
+cms_delete_analytics_error;Eroare la ştergerea codului de urmărire!
+cms_head_foot_success;Continutul a fost salvat cu succes!
+cms_head_foot_error;Eroare la salvarea conţinutului!
+
+# Begin: Pages
+cms_pages_button_add_new_page;Adaugă pagină
+
+cms_pages_table_position;Poziţia
+cms_pages_table_title;Titlu
+cms_pages_table_url;URL
+cms_pages_table_status_header;Status Header
+cms_pages_table_status_footer;Status Footer
+cms_pages_table_datetime;Creat
+cms_pages_table_modified;Modificat
+cms_pages_table_actions;Acţiuni
+
+cms_pages_table_active;Activ
+cms_pages_table_inactive;Inactiv
+
+cms_pages_table_Preview;Vizualizează
+cms_pages_table_edit;Modifică
+cms_pages_table_delete;Sterge
+
+cms_pages_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestei pagini?
+cms_pages_message_delete;Sunteţi sigur că doriţi să ştergeţi aceasta pagină?
+
+cms_pages_else;Nu există pagini!
+# End: pages
+# Begin: Add / Edit Page
+cms_add_page_title_page_information;Informaţii pagină
+cms_add_page_title_page_content;Conţinut pagină
+cms_add_page_title_meta_data;Date meta
+
+cms_add_page_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+cms_add_page_table_position;Poziţia
+cms_add_page_table_title;Titlu
+cms_add_page_table_url;URL
+cms_add_page_table_status;Status
+cms_add_page_table_head_line;Head line
+cms_add_page_table_content;Conţinut
+cms_add_page_table_keywords;Cuvinte cheie
+cms_add_page_table_description;Descriere
+
+cms_add_page_table_active;Activ
+cms_add_page_table_inactive;Inactiv
+
+cms_add_page_table_submit;Adaugă
+cms_add_page_table_modify;Modifică
+# End: Add / Edit Page
+# Begin: Header / Footer
+cms_headfoot_title_add_header_content;Adaugă conţinut in header
+cms_headfoot_title_add_footer_content;Adaugă conţinut in footer
+
+cms_headfoot;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+cms_headfoot_table_status;Status
+
+cms_headfoot_table_active;Activ
+cms_headfoot_table_inactive;Inactiv
+
+cms_headfoot_table_submit;Modifică
+# End: Header / Footer
+# Begin: Seo
+cms_seo_button_generate_sitemap;Generează harta site-ului
+
+cms_seo_button_add_new_seo;Adaugă seo nou
+
+cms_seo_table_page;Pagina
+cms_seo_table_title;Titlu
+cms_seo_table_keywords;Cuvinte cheie
+cms_seo_table_description;Descriere
+cms_seo_table_status;Status
+cms_seo_table_actions;Acţiuni
+
+cms_seo_table_active;Activ
+cms_seo_table_inactive;Inactiv
+
+cms_seo_table_button_edit;Modifică
+cms_seo_table_button_delete;Sterge
+
+cms_seo_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul SEO?
+cms_seo_message_delete;Sunteţi sigur că doriţi să ştergeţi acest SEO?
+cms_seo_message_generated_successfully;Fişierul a fost generat cu succes!
+cms_seo_message_error_generation;Eroare generare fişier!
+
+cms_seo_else;Nu există seo
+# End: Seo
+# Begin: Add / Edit Seo
+cms_add_seo_title_add_seo;Adaugă SEO
+cms_add_seo_title_edit_seo;Modifică SEO
+
+cms_add_seo_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+cms_add_seo_table_page;Pagina
+cms_add_seo_table_title;Titlu
+cms_add_seo_table_keywords;Cuvinte cheie
+cms_add_seo_table_description;Descriere
+cms_add_seo_table_is_active;E Activ
+
+cms_add_seo_table_status;Status
+cms_add_seo_table_active;Activ
+cms_add_seo_table_inactive;Inactiv
+
+cms_add_seo_table_submit;Adaugă
+cms_add_seo_table_modify;Modifică
+# End: Add / Edit Seo
+# Begin: Google Analytics
+cms_google_analytics_button_add_new_tracking_code;Adaugă cod de urmărire
+
+cms_google_analytics_table_tracking_code;Cod de urmărire
+cms_google_analytics_table_status;Status
+cms_google_analytics_table_actions;Acţiuni
+
+cms_google_analytics_table_active;Activ
+cms_google_analytics_table_inactive;Inactiv
+
+cms_google_analytics_table_edit;Modifică
+cms_google_analytics_table_delete;Sterge
+
+cms_google_analytics_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul codului de urmărire?
+cms_google_analytics_message_delete;Sunteţi sigur că doriţi să ştergeţi codul de urmărire?
+
+cms_google_analytics_else;Nu există nici un cod de urmărire
+# End: Google Analytics
+# Begin: Add / Edit Google Analytics
+cms_add_google_analytics_title_add_tracking_code;Adaugă cod de urmărire
+cms_add_google_analytics_title_edit_tracking_code;Modifică codul de urmărire
+
+cms_add_google_analytics_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+cms_add_google_analytics_table_tracking_code;Cod de urmărire
+cms_add_google_analytics_table_status;Status
+
+cms_add_google_analytics_table_active;Activ
+cms_add_google_analytics_table_inactive;Inactiv
+
+cms_add_google_analytics_table_submit;Adaugă
+cms_add_google_analytics_table_modify;Modifică
+# End: Add / Edit Google Analytics
+# End: CMS Controller
+
+# Begin: Template Controller
+template_message;Mesaj
+template_subject;Subiect
+template_button_submit;Crează
+template_legend;Legendă
+template_username;Nume utilizator
+template_password;Parolă
+template_first_name;Prenume
+template_last_name;Nume
+template_activation_link;Link Activare
+template_unsubscribe_link;Link Dezabonare
+template_change_success;Sablon modificat cu success!
+template_change_error;Eroare modificare şablon!
+template_message_success;Modificările au fost efectuate cu succes!
+template_message_error;Eroare! Modificările nu au fost efectuate.
+# End: Template Controller
+
+# Begin: Plugins Controller
+plugins_title_plugins;Plugin-uri
+
+plugins_table_active;Activ
+plugins_table_inactive;Inactiv
+
+plugins_table_edit;Modifică
+plugins_message_error;Nu există plugin-uri instalate!
+
+plugins_message_change_value_success;Valoarea a fost modificată!
+plugins_message_change_value_error;Eroare la modificarea valorii!
+plugins_message_value_can_not_be_null;Valoarea nu poate sa fie nulă!
+plugins_message_constant_can_not_be_found;Constanta nu poate fi gasită!
+plugins_message_id_can_not_be_null;Id-ul nu poate fi nul!
+
+plugins_status_change_success;Statusul a fost schimbat cu succes!
+plugins_status_change_error;Eroare la schimbarea statusului!
+
+plugins_table_image;Imagine
+plugins_table_name;Nume
+plugins_table_message;Mesaj
+plugins_table_post_date;Data postare
+# End: Plugins Controller
+
+# Begin: Settings Controller
+settings_visible_success;Statusul a fost schimbat cu succes!
+settings_visible_error;Eroare la schimbarea statusului!
+settings_add_site_preferences_success;Preferinţă adaugată cu succes!
+settings_add_site_preferences_error;Eroare la modificarea preferenţei!
+settings_edit_site_preferences_success;Preferinţa a fost adaugată cu succes!
+settings_edit_site_preferences_error_1;Eroare la modificarea preferinţelor!
+settings_edit_site_preferences_error_2;Preferinţa selectată este invalidă!
+settings_delete_site_preferences_success;Preferinţa a fost ştearsă cu succes!
+settings_delete_site_preferences_error;Eroare la ştergerea preferinţei!
+settings_modify_settings_success;Setarea a fost modificată cu succes!
+settings_modify_settings_error_1;Eroare la modificarea setării!
+settings_modify_settings_error_2;Setarea selectată este invalidă!
+settings_modify_value_success;Valoarea a fost modificată cu succes!
+settings_modify_value_error_1;Eroare la modificarea valorii!
+settings_modify_value_error_2;Valoarea selectată este invalidă!
+settings_add_company_success;Compania a fost creată cu succes!
+settings_add_company_error;Eroare la crearea companiei!
+settings_edit_company_success;Compania a fost modificată cu succes!
+settings_edit_company_error_1;Eroare la modificarea companiei!
+settings_edit_company_error_2;Compania selectată este invalidă!
+settings_delete_company_success;Compania a fost ştearsă cu succes!
+settings_delete_company_error;Eroare la ştergerea companiei!
+settings_payments_success;Metoda de plată modificată cu succes!
+settings_payments_error;Eroare la modificarea metodei de plată!
+settings_shipping_success;Metoda de livrare modificată cu succes!
+settings_shipping_error;Eroare la modificarea metodei de plată!
+settings_free_shipping_city_success;Oraşele cu livrare gratuită au fost salvate!
+settings_delete_free_shipping_city_success;Oraşul a fost şters!
+settings_delete_free_shipping_city_error_1;Eroare la ştergerea orasului!
+settings_delete_free_shipping_city_error_2;Selecţia nu este validă!
+settings_add_national_shipping_success;Metoda de livrare naţională a fost adaugată cu succes!
+settings_add_national_shipping_error;Eroare la adăugarea metodei de plată naţionale!!
+settings_edit_national_shipping_success;Metoda de livrare naţională a fost modificată cu succes!
+settings_edit_national_shipping_error_1;Eroare la modificarea metodei de livrare naţionale!
+settings_edit_national_shipping_error_2;Metoda de livrare naţională este invalidă!
+settings_delete_shipping_success;Metoda de livrare a fost ştearsă cu succes!
+settings_delete_shipping_error;Eroare la modificarea metodei de livrare!
+settings_add_international_shipping_success;Metoda de livrare internaţională a fost adaugată cu succes!
+settings_add_international_shipping_error;Eroare la adăugarea metodei de plată internaţionale!
+settings_delete_zone_success;Zona a fost ştearsă cu succes!
+settings_delete_zone_error;Eroare la stergerea zonei!
+settings_edit_zone_success;Zona de livrare a fost modificată cu succes!
+settings_edit_zone_error;Eroare la modificarea zonei de livrare!
+settings_add_zone_cost_success;Costul pe zonă a fost adăugat cu succes!
+settings_add_zone_cost_error;Eroare la adăugarea costului pe zonă!
+settings_edit_zone_cost_success;Costul pe zonă a fost modificat cu succes!
+settings_edit_zone_cost_error;Eroare la modificarea costului pe zonă!
+settings_delete_zone_cost_success;Costul pe zonă a fost şters cu succes!
+settings_delete_zone_cost_error;Eroare la ştergerea costului pe zonă!
+settings_add_taxes_success;Taxa a fost adaugată cu succes!
+settings_add_taxes_error;Eroare la adăugarea taxei!
+settings_edit_taxes_success;Taxa a fost modificată cu succes!
+settings_edit_taxes_error;Eroare la modificarea taxei!
+settings_delete_taxes_success;Taxa a fost ştearsă cu succes!
+settings_delete_taxes_error;Eroare la ştergerea taxei!
+settings_edit_vat_success;Valoarea TVA a fost modificată cu succes!
+settings_edit_vat_error;Eroare la modificarea valorii TVA!
+
+# Begin: Index
+settings_index_table_const;Constanta
+settings_index_table_name;Nume
+settings_index_table_value;Valoarea
+settings_index_table_site_blocking;Blochează site
+settings_index_table_site_blocking_blocat;blocat
+settings_index_table_site_blocking_deblocat;deblocat
+settings_index_table_site_blocking_blocheaza;blochează
+settings_index_table_site_blocking_deblocheaza;deblochează
+settings_index_table_list_of_accepted_ips_1;Listă IP-uri acceptate
+settings_index_table_list_of_accepted_ips_2;(pentru site blocat)
+settings_index_table_comma_separated;(separate cu virgulă)
+settings_index_table_button_edit;Modifică
+
+settings_index_table_display;Afişare
+settings_index_table_products;Produse
+
+settings_index_table_gallery;Galerie
+settings_index_table_thumbnails;Thumbnails
+settings_index_table_list;Listă
+
+settings_index_table_price_type;Preţ de tip
+settings_index_table_weight_type;Greutate de tip
+settings_index_table_status;Status
+
+settings_index_table_active;Activ
+settings_index_table_inactive;Inactiv
+
+settings_index_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestei performanţe?
+
+settings_index_else;Nu există preferinţe
+
+settings_siteprefset_change_success;Modificările au fost facute!
+settings_siteprefset_error_saving_in_database;Eroare salvare in baza de date!
+
+settings_table_title_general;General
+settings_table_pricetype;Tip preţ
+settings_table_weighttype;Tip greutate
+settings_table_warrantytype;Tip garanţie
+settings_table_pgt;Timp generare pagină
+settings_table_an;an
+settings_table_luna;lună
+settings_table_zi;zi
+settings_table_show;afişează
+settings_table_hide;ascunde
+settings_table_title_site;Site
+settings_table_display;Afişare produse
+settings_table_products;Produse pe pagină
+settings_table_onsale;De vânzare
+settings_table_active;activ
+settings_table_inactive;inactiv
+settings_table_gallery;galerie
+settings_table_list;listă
+settings_table_title_admin;Admin
+settings_table_imageresize;Redimensionare imagine produs
+settings_table_resize;redimensionare
+settings_table_adaptiveResize;redimensionare adaptivă
+settings_table_adminprodspage;Produse pe pagină
+# End: Index
+# Begin: Company Details
+settings_company_details_title_company_details;Detalii companie
+
+settings_company_details_table_logo;Logo
+settings_company_details_table_company;Companie
+settings_company_details_table_slogan;Slogan
+settings_company_details_table_fiscal_code;Cod fiscal
+settings_company_details_table_trade_register;Registrul Comerţului
+settings_company_details_table_bank;Banca
+settings_company_details_table_iban_code;Cod IBAN
+settings_company_details_table_address;Adresa
+settings_company_details_table_country;Tara
+settings_company_details_table_county;Judeţ
+settings_company_details_table_city;Oraş
+settings_company_details_table_zip;Cod poştal
+settings_company_details_table_phone;Telefon
+settings_company_details_table_phone2;Telefon 2
+settings_company_details_table_fax;Fax
+settings_company_details_table_email;Email
+settings_company_details_table_url;URL
+settings_company_details_table_vat_payer;Plătitor TVA
+settings_company_details_table_yes;Da
+settings_company_details_table_no;Nu
+
+settings_company_details_button_add_company;Adaugă companie
+settings_company_details_button_edit;Modifică
+settings_company_details_button_delete;Sterge
+
+settings_company_details_message_delete;Sunteţi sigur că doriţi să ştergeţi această companie?
+
+settings_company_details_else;Nu există detalii companie!
+# End: Company Details
+# Begin: Add / Edit Company
+settings_add_company_title_add_company;Adaugă Companie
+settings_add_company_title_edit_company;Modifică Compania
+
+settings_add_company_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+settings_add_company_table_logo;Logo
+settings_add_company_table_company;Companie
+settings_add_company_table_slogan;Slogan
+settings_add_company_table_fiscal_code;Cod fiscal
+settings_add_company_table_trade_register;Registrul comerţului
+settings_add_company_table_bank;Banca
+settings_add_company_table_iban_code;Cod IBAN
+settings_add_company_table_address;Adresa
+settings_add_company_table_country;Tara
+settings_add_company_table_county;Judeţ
+settings_add_company_table_city;Oraş
+settings_add_company_table_zip;Cod poştal
+settings_add_company_table_phone;Telefon
+settings_add_company_table_phone2;Telefon 2
+settings_add_company_table_phone_orange;Telefon Orange
+settings_add_company_table_phone_vodafone;Telefon Vodafone
+settings_add_company_table_fax;Fax
+settings_add_company_table_email;Email
+settings_add_company_table_url;URL
+settings_add_company_table_vat_payer;Plătitor TVA
+
+settings_add_company_table_yes;Da
+settings_add_company_table_no;Nu
+
+settings_add_company_submit;Adaugă
+settings_add_company_modify;Modifică
+# End: Add / Edit Company
+# Begin: Payments
+settings_payments_table_method;Metodă
+settings_payments_table_status;Status
+settings_payments_table_action;Acţiuni
+
+settings_payments_table_card;Card
+settings_payments_table_bank_transfer;Virament Bancar
+settings_payments_table_repayment;Ramburs
+settings_payments_table_repayment_+;Ramburs +
+settings_payments_table_in_value_of;% din valoarea produselor
+
+settings_payments_table_active;Activ
+settings_payments_table_inactive;Inactiv
+
+settings_payments_table_price;Preţ
+settings_payments_table_percentage;Procentaj
+settings_payments_table_update;Modifică
+
+settings_payments_addpayments;Adaugă metoda de plată
+settings_payments_editpayments;Modifică metoda de plată
+settings_payments_addsitepreferences;Adaugă preferinţe site
+settings_payments_editsitepreferences;Modifică preferinţe site
+settings_payments_editvat;Modifică TVA-ul
+# End: Payments
+# Begin: Shipping
+settings_shipping_button_cities_with_free_shipping;Oraşe cu transport gratuit
+
+settings_shipping_logo;Logo
+settings_shipping_courier_name;Numele curierului
+settings_shipping_price_first_for_kg;Preţ pe primul kg
+settings_shipping_price_additional_for_kg;Preţ pe kg adiţional
+settings_shipping_status;Status
+settings_shipping_active;Activ
+settings_shipping_inactive;Inactiv
+
+settings_shipping_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+settings_shipping_title_flat_rate;Taxă fixă
+settings_shipping_title_free_shipping;Transport gratuit
+settings_shipping_title_courier_taxes;Taxe de curierat
+settings_shipping_title_withoutshipping;Fără taxă de livrare
+
+settings_shipping_table_flat_rate;Taxă fixă
+settings_shipping_table_status;Status
+settings_shipping_table_alternative;Alternativa pentru comenzi mai mici decât minim
+
+settings_shipping_table_active;Activ
+settings_shipping_table_inactive;Inactiv
+
+settings_shipping_table_add_national;Adaugă naţional
+settings_shipping_table_edit_national;Modifică naţional
+settings_shipping_table_add_international_shipping_zone;Adaugă zona de livrare internaţională
+
+settings_shipping_table_select_county;Selectaţi judeţul
+
+settings_shipping_table_yes;Da
+settings_shipping_table_no;Nu
+
+settings_shipping_table_minimum_order_amount;Suma minimă pentru comandă
+settings_shipping_table_only_to;Numai către
+settings_shipping_table_free_shipping_for_everybody;Livrarea gratuită la toţi
+
+settings_shipping_table_flat_fee;Taxă fixă
+settings_shipping_table_courier_taxes;Taxă curier
+
+settings_shipping_table_submit;Modifică
+# End: Shipping
+# Begin: Shipping Zone Add/Edit
+settings_add_shipping_zone_button_back;Inapoi
+
+settings_add_shipping_zone_title;Adaugă zona de expediere internaţională
+
+settings_add_shipping_zone_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+settings_add_shipping_zone_table_select_country;Selectaţi ţara
+
+settings_add_shipping_zone_table_zone_name;Numele Zonei
+settings_add_shipping_zone_table_countries;Tări
+settings_add_shipping_zone_table_datetime;Data
+settings_add_shipping_zone_table_actions;Acţiuni
+
+settings_add_shipping_zone_table_manage_cost;Administrează cost
+settings_add_shipping_zone_table_edit;Modifică
+settings_add_shipping_zone_table_delete;Sterge
+
+settings_add_shipping_zone_table_submit;Adaugă
+settings_add_shipping_zone_table_modify;Modifică
+
+settings_add_shipping_zone_message_delete;Sunteţi sigur că doriţi să ştergeţi zona?
+settings_add_shipping_zone_message_else;Nu există zone de transport
+# End: Shipping Zone Add/Edit
+# Begin: Zone Cost Add/Edit
+settings_add_zone_button_back;Inapoi
+
+settings_add_zone_title;Adaugă costuri la zona de livrare
+
+settings_add_zone_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+settings_add_zone_table_min_weight;Greutatea minimă(kg)
+settings_add_zone_table_max_weight;Greutatea maximă(kg)
+settings_add_zone_table_shipping_price;Preţul livrării
+
+settings_add_zone_table_actions;Acţiuni
+settings_add_zone_table_edit;Modifică
+settings_add_zone_table_delete;Sterge
+
+settings_add_zone_table_submit;Adaugă
+settings_add_zone_table_modify;Modifică
+
+settings_add_zone_message_delete;Sunteţi sigur că doriţi să ştergeţi zona?
+settings_add_zone_message_else;Nu există zone de transport
+# End: Zone Cost Add/Edit
+# Begin: Taxes
+settings_taxes_button_add_new_tax;Adaugă taxă
+
+settings_taxes_table_name;Nume
+settings_taxes_table_value;Valoare
+settings_taxes_table_categories;Categorii
+settings_taxes_table_status;Status
+settings_taxes_table_actions;Acţiuni
+
+settings_taxes_table_active;Activ
+settings_taxes_table_inactive;Inactiv
+
+settings_taxes_table_edit;Modifică
+settings_taxes_table_delete;Sterge
+
+settings_taxes_message_status_change;Sunteţi sigur că doriţi să modificaţi statusul acestei taxe?
+settings_taxes_message_delete;Sunteţi sigur că doriţi să ştergeţi această taxă?
+
+settings_taxes_else;Nu există taxe
+# End: Taxes
+# Begin: Add / Edit Taxes
+settings_add_tax_title_add_tax;Adaugă taxă
+settings_add_tax_title_edit_tax;Modifică taxă
+
+settings_add_tax_table_name;Nume
+settings_add_tax_table_tva;TVA
+settings_add_tax_table_value;Valoare
+settings_add_tax_table_type;Tip
+settings_add_tax_table_all_categories;Toate categoriile
+settings_add_tax_table_status;Status
+
+settings_taxes_table_active;Activ
+settings_taxes_table_inactive;Inactiv
+
+settings_taxes_table_yes;Da
+settings_taxes_table_no;Nu
+
+settings_taxes_table_submit;Adaugă
+# End: Add / Edit Taxes
+# Begin: Themes
+settings_themes_title_change_theme;Schimbă tema
+
+settings_themes_table_name;Nume
+settings_themes_table_image;Imagine
+settings_themes_table_status;Status
+
+settings_themes_table_active;Activ
+settings_themes_table_inactive;Inactiv
+
+settings_themes_message_status_change;Sunteţi sigur că doriţi să schimbaţi tema?
+# End: Themes
+# Begin: Languages
+settings_languages_title_change_language;Schimbă limba
+
+settings_languages_table_language;Limba
+settings_languages_table_status;Status
+
+settings_languages_table_active;Activ
+settings_languages_table_inactive;Inactiv
+
+settings_languages_message_status_change;Sunteţi sigur că doriţi să schimbaţi limba?
+# End: Languages
+# Begin: Server Check
+settings_server_check_title_server_information;Informaţii despre server
+settings_server_check_title_server_info;Info server
+settings_server_check_click_here;click aici
+
+settings_server_check_table_php_version;Versiunea de PHP
+settings_server_check_table_mysql_version;Versiunea de MySQL
+settings_server_check_table_gd_library;GD Library
+settings_server_check_table_gd_library_is_instaled;GD Library este instalat
+settings_server_check_table_gd_library_is_not_instaled;GD Library nu este instalat
+settings_server_check_table_gd_library_version;Versiunea de GD Library
+settings_server_check_table_page_generation_time;Timpul de generare a paginii
+
+settings_server_check_table_active;Activ
+settings_server_check_table_inactive;Inactiv
+# End: Server Check
+# End: Settings Controller
+# Begin: Ajax Controller
+ajax_category_has_no_subcategories;Categoria nu are subcategorii
+ajax_select;Selectaţi
+ajax_select_category;Selectaţi o categorie
+ajax_up_one_level;mai sus cu un nivel
+ajax_color_changed;Culoarea a fost modificata
+# End: Ajax Controller
+# End: Backend
+
+
+
+
+
+# Begin: Default
+# Begin: Menu and Titles
+breadcrumbs_home;Acasă
+breadcrumbs_products;Produse
+breadcrumbs_topbrands;Top branduri
+breadcrumbs_promotion;Promoţie
+breadcrumbs_liquidation;Lichidări
+breadcrumbs_account;Cont nou
+breadcrumbs_myaccount;Contul meu
+breadcrumbs_orders;Istoric comenzi
+breadcrumbs_edit_account;Modificare cont
+breadcrumbs_wishlist;Liste de dorinţe
+breadcrumbs_activation;Activare cont
+breadcrumbs_password;Recuperare parolă
+breadcrumbs_login;Autentificare
+breadcrumbs_search;Căutare
+breadcrumbs_topsales;Top vânzări
+breadcrumbs_customeropinion;Opinia clienţilor
+breadcrumbs_cart;Coş de cumpărături
+breadcrumbs_orders;Comandă
+breadcrumbs_news;Stiri
+breadcrumbs_unsubscribe;Dezabonare
+# End: Menu and Titles
+
+# Begin: Index Controller
+index_activate;Activare
+index_activate_newsletter;Activare Newsletter
+index_newsletter_success;Aţi fost adăugat la newsletter-ul nostru! Vă rugăm verificaţi-vă adresa de email pentru activare.
+index_newsletter_coupon;Cupon
+index_newsletter_error_1;Eroare newsletter!
+index_newsletter_error_2;Vă rugăm să introduceţi un e-mail valid!
+index_activation_success;Un email a fost trimis pentru activarea newsletter-ului!
+index_activation_error_1;Eroare la activarea de email!
+index_activation_error_2;Email invalid!
+index_unsubscribe_success;Dezabonarea a fost efectuată cu succes
+index_unsubscribe_error;Eroare la dezabonare
+index_special_offers;Promoţii
+index_newest_products;Produse Noi
+index_promotional_products;Promotii
+index_recommended_products;Recomandari
+index_news;Produse noi
+index_product_guarantee;Garanţie:
+index_product_guarantee_months;luni
+index_product_months_availability;luni | Disponibilitate:
+index_product_availability_on_attributes;pe atribute |
+index_product_availability_in_stock;in stoc
+index_product_availability_out_of_stock;lipsă stoc
+index_product_availability_ask;intreabă
+index_product_more_information;Cere mai multe info
+index_product_view_details;vezi detalii
+index_product_code;Cod:
+
+index_menu_products;Produse
+index_menu_view_all_products;Vezi toate produsele
+
+index_no_products_available;Nu sunt produse disponibile
+# End: Index Controller
+
+# Begin: Products
+products_promotion;Promo
+products_new;Nou
+products_stock_clearance;Lichidare
+products_unavailable;Produs indisponibil
+products_on_order;la comandă
+
+products_message_else;Nu există produse!
+products_newest_products;CELE MAI NOI PRODUSE
+
+products_gallery;Galerie
+products_list;Listă
+display_products_gallery;Afişează produsele sub formă de galerie
+display_products_list;Afişează produsele sub formă de listă
+
+products_price;Pret
+products_price_ascending;PREŢ: crescător
+products_price_descending;PREŢ: descrescător
+products_display_on_page;Afişare pe pagină
+
+products_details_product_code;Cod produs:
+products_details_guarantee;Garanţie:
+products_details_availability;Disponibilitate:
+products_details_more_information_about_product;Cere mai multe informaţii despre acest produs
+products_details_add_to_cart;ADAUGA IN COS
+products_details_print_this_page;Tipăreşte pagina
+products_details_print_this_page_price;Preţ:
+products_details_add_comment;Adaugă comentariu
+products_details_recommended_accessories;Accesorii recomandate
+products_details_description;Descriere
+
+products_selected_product_is_inactive;Produsul selectat este inactiv!
+products_this_product_is_inactive;Acest produs este inactiv!
+
+products_other_recommended_products;Alte produse recomandate
+products_purchased_with_this_product;Produse cumparate similar
+# End: Products
+
+# Begin: Homepage
+homepage_welcome;Bine ai venit
+homepage_my_account;contul meu
+homepage_logout;deconectare
+homepage_login;conectează-te
+homepage_new_account;cont nou
+homepage_or_create;sau crează
+homepage_home;Acasă
+homepage_products;produse
+homepage_navigation_products;Produse
+homepage_top_sells;TOP VANZARI
+homepage_top_sells_sitemap;Top Vânzări
+homepage_top_brands;Top Branduri
+homepage_see_full_top;vezi top complet
+homepage_promotions;Promoţii
+homepage_new_products;Produse noi
+homepage_stock_clearance;Lichidări
+homepage_news;Stiri
+homepage_contact_us;Contact
+homepage_brands;Branduri
+homepage_items_in_cart;articole în coş
+homepage_cart_total;Total:
+homepage_view_cart;Vizualizează cartul
+homepage_cart_no_prod;Cartul este gol!
+homepage_subscribe;Abonează-te la newsletterul nostru şi vei primi cele mai proaspete noutăţi şi promoţii:
+homepage_customer_support;Suport clienţi
+homepage_find_a_product;Caută un produs
+homepage_button_details;detalii
+homepage_button_buy;adaugă în coş
+homepage_breadcrumbs;Eşti aici
+homepage_customer_opinions;Părerile Clienţilor
+homepage_news_bottom;Stiri
+homepage_all_customer_opinions;toate părerile clienţilor
+homepage_customer_opinions_text;Fii primul care îşi spune părerea despre magazinul nostru online.
+homepage_add_comment;adaugă comentariu
+homepage_all_news;toate ştirile
+homepage_bread_welcome;Eşti aici:
+# End: Homepage
+
+# Begin: Cart Controller
+cart_edit_product_error_1;Cantitate insuficientă
+cart_edit_product_error_2;Produsul selectat nu e valid!
+cart_delete_error;Produsul selectat nu e valid!
+cart_wishlist_success;Lista de dorinţe a fost salvată cu succes!
+cart_wishlist_error;Eroare la salvarea listei de dorinte
+
+cart_shopping_cart;Coş de cumpărături
+cart_pieces;buc
+cart_continue_shopping;Continuă Cumpărăturile
+cart_add;adaugă
+cart_remove;sterge
+cart_coupon_entered;Aţi introdus cuponul
+cart_price_reduction;cu reducere de
+cart_salutation;Forma de adresare
+cart_first_name;Prenume
+cart_last_name;Nume
+cart_cnp;CNP
+cart_serie;Serie buletin
+cart_address;Adresa
+cart_address2;Adresa 2
+cart_town_city;Oraş
+cart_zip_postal;Cod Poştal
+cart_country;Tara
+cart_county;Judeţ
+cart_phone;Telefon
+cart_phone2;Telefon 2
+cart_fax;Fax
+cart_email;Email
+cart_comments;Observaţii
+cart_account;Doresc cont
+cart_account_details;Detalii Cont
+cart_billing;Detalii Facturare
+cart_shipping;Detalii Livrare
+cart_shipping_details;DETALII DE LIVRARE
+cart_fields_marked;Câmpurile marcate cu
+cart_are_required;sunt obligatorii.
+cart_ship_like_bill;Detalii Livrare sunt aceleaşi ca şi Detalii Facturare
+cart_continue;TRIMITE COMANDA
+cart_wishlist_save_as_wishlist;Salvează ca listă de dorinţe
+cart_wishlist_name;nume listă de dorinţe
+cart_promotional_code;cod promoţional
+cart_wishlist_save;salvează
+cart_ordered_product;Produsul comandat
+cart_quantity;Cantitate
+cart_unit_price;Preţ Unitar
+cart_total_vat;Total
+cart_payment_methods;Metode de plată
+cart_payment_method_card;Card
+cart_payment_method_repayment;Ramburs
+cart_payment_method_repayment_+;Ramburs +
+cart_payment_method_%_in_value_of;% din valoarea produselor
+cart_payment_method_bank_transfer;Virament bancar
+cart_shopping_cart_empty;Coşul de cumpărături este gol!
+
+cart_vat;TVA 
+cart_tax_repayment;Taxă plată ramburs 
+cart_delivery_cost;Cost de livrare (judeţul şi oraşul) 
+
+cart_button_update_total;Actualizează totalul
+cart_button_remove_product_from_cart;Sterge produsul din coş
+
+cart_coupon_add_success;Cuponul a fost adăugat cu succes!
+cart_coupon_not_valid;Cuponul introdus nu este valabil!
+cart_coupon_delete;Cuponul a fost şters cu succes!
+
+cart_form_quantity;cantitate
+cart_button_add;adaugă
+cart_button_edit;modifică
+
+cart_index_button_edit;modifică
+# End: Cart Controller
+
+# Begin: Order Controller
+order_payment_method;Metoda de plată
+order_payment_method_card;Card
+order_payment_method_repayment;Ramburs
+order_payment_method_repayment_+;Ramburs +
+order_payment_method_%_in_value_of;% din valoarea produselor
+order_payment_method_bank_transfer;Virament bancar
+order_repayment_value;Taxă plată ramburs
+order_shipping_value;Cost de livrare
+order_shopping_cart;Coş de cumpărături
+order_product_name;Denumirea produselor
+order_measuring_unit;U.M.
+order_quant;Cant.
+order_unit_price;Preţ unitar (fără TVA)
+order_value;Valoare
+order_value_vat;Valoare TVA
+order_piece;buc
+order_total_value;Total Valoare:
+order_total_vat;Total TVA:
+order_total;TOTAL:
+
+order_person_individual;Persoană Fizică
+order_person_legal_person;Persoană Juridică
+order_name;Nume:
+order_cnp;CNP:
+order_serie;Serie buletin:
+order_address;Adresa:
+order_address2;Adresa 2:
+order_town_city;Oraş:
+order_zip_postal;Cod poştal:
+order_country;Tara:
+order_county;Judeţ:
+order_phone;Telefon:
+order_phone2;Telefon 2:
+order_fax;Fax:
+order_email;Email:
+order_person;Persoana:
+order_institution;Compania:
+order_fiscal_code;Cod fiscal:
+order_trade_register;Registrul comerţului:
+order_bank;Banca:
+order_iban_code;Cod IBAN:
+order_function;Funcţie:
+order_department;Departament:
+order_billing;Detalii facturare
+order_shipping;Detalii livrare
+order_company;Detalii companie
+order_comments;Comentarii
+order_send_order;Trimite Comanda
+order_shopping_cart_empty;Coşul de cumpărături este gol!
+# End: Order Controller
+
+# Begin: Auth Controller
+auth_index_sign_in_using;Inregistrare utilizând:
+auth_index_error_1;Numele de utilizator sau parola sunt incorecte
+auth_index_error_2;Au avut loc unele erori!
+auth_activation_success;Cont activat cu succes!
+auth_activation_error;Eroare la activarea contului!
+auth_remind_message;Resetaţi parola
+auth_remind_success;Un e-mail cu noua parolă a fost trimis cu succes!
+auth_remind_error;Eroare la resetarea parolei!
+# End: Auth Controller
+
+# Begin: User Controller
+user_create_account_using;Creare cont folosind:
+user_new_account_activate;Activează
+user_new_account_here;Aici
+user_new_account_message;Activare cont
+user_new_account_created;Cont creat cu succes! Vă rugăm să verificaţi căsuţa poştală de e-mail pentru e-mailul de activare.
+user_new_account_error;Eroare la crearea contului!
+user_edit_account_success;Detaliile contului au fost modificate cu succes!
+user_edit_account_error;Eroare la modificarea detaliilor!
+user_edit_password_success;Parola a fost modificată cu succes!
+user_edit_password_error;Eroare la modificarea parolei!
+user_edit_old_password_error;Parola veche este greşită!
+user_invalid_account_selected;Contul selectat este invalid!
+user_delete_wishlist_success;Lista de dorinţe a fost ştearsă cu succes!
+user_delete_wishlist_error;Eroare la ştergerea listei de dorinţe!
+
+user_required;Câmpurile marcate cu <img src="/images/required.gif" width="9" height="9" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+user_my_account;Detalii cont
+user_account;Contul meu
+user_edit_account;Modificare cont
+user_view_orders;Istoric comenzi
+user_view_wishlists;Liste de dorinţe
+
+user_new_account;Cont nou
+user_basic_information;Informaţii de bază
+user_person_information;Informaţii Firmă
+user_contact_information;Date de Contact
+user_shipping_information;Date de livrare
+
+user_username;Nume de utilizator
+user_username_note;Nota: numai caractere alfabetice şi cifre sunt permise!
+user_password;Modificare Parola
+user_password_note;Nota: Parola trebuie să fie între 6 şi 20 de caractere
+user_password_confirmation;Rescrieţi parola
+user_old_password;Parola veche
+user_new_password;Parola nouă
+user_new_password_note;Notă: Parola trebuie să fie între 6 şi 20 de caractere
+user_new_password_confirmation;Confirmare parolă nouă
+user_individual_person;Persoană Fizică
+user_legal_person;Persoană Juridică
+user_email;Email
+user_email_confirmation;Confirmare Email
+user_name;Nume
+user_member_since;Membru din
+
+user_salutation;Forma de Adresare
+user_first_name;Nume
+user_last_name;Prenume
+user_address;Adresa
+user_address2;Adresa 2
+user_cnp;CNP
+user_serie;Serie buletin
+user_country;Tara
+user_county;Judeţ
+user_city;Localitate
+user_zip;Cod poştal
+user_phone;Telefon
+user_phone2;Telefon 2
+user_fax;Fax
+
+user_person_individual;Persoană Fizică
+user_person_legal;Persoană Juridică
+user_institution;Instituţie
+user_fiscal_code;Cod fiscal
+user_trade_register;Registrul comerţului
+user_bank;Banca
+user_iban_code;Cod IBAN
+user_function;Funcţie
+user_department;Departament
+
+user_products_cost;Costul produselor
+user_vat;TVA
+user_tax;Taxă
+user_discount;Reducere
+user_repayment;Ramburs
+user_shipping_cost;Costul de transport
+user_total_cost;Costul total
+user_payment;Metoda de plată
+user_shipping;Metoda de transport
+user_order_date;Data comandării
+user_modified;Modificat
+user_status;Status
+user_comments;Comentarii
+
+user_view_order_details;Vizualizează datele comenzii
+user_order_pending;In aşteptare
+user_order_accepted;Admisă
+user_order_rejected;Respinsă
+user_not_have_any_order_made;Nu aveţi nicio comandă efectuată!
+user_not_have_any_wishlist;Nu aveţi nicio listă de dorinţe!
+user_confirm_wishlist_delete;Sunteţi sigur că doriţi să ştergeţi această listă de dorinţe?
+
+user_login;Autentificare
+user_change_password;Modifică Parola
+user_modify;Modifică
+user_send_email;Trimite email
+user_password_forgot;Ai uitat parola?
+
+user_subscribe_newsletter;Mă abonez la newsletter
+user_submit;trimite
+# End: User Controller
+
+# Begin: News
+news_unsubscribe;Dezabonare
+news_button_send;Trimite
+news_unsubscribe_success;Dezabonat cu succes
+news_unsubscribe_error_1;Eroare dezabonare
+news_unsubscribe_error_2;Cod invalid!
+news_table_title_news;Stiri
+news_table_reed_more;Citeşte mai mult
+news_table_pagination;Pagina:
+news_no_news_found;Nu există ştiri
+# End: News
+
+# Begin: Blog
+blog_details_button_all_articles;toate articolele
+blog_no_articles_found;Nu există articole
+blog_message_selected_article_does_not_exist;Articolul selectat nu există!
+# End: Blog
+
+# Begin: Contact Us
+contact_us_index_email_success;Emailul a fost trimis cu succes!
+contact_us_index_email_error;Eroare la trimiterea de email!
+
+contact_us_required;Câmpurile marcate cu <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> sunt obligatorii.
+
+contact_us_title_contact_us;Contactaţi-ne
+contact_us_title_contact_form;Formular de contact
+
+contact_us_table_name;Nume
+contact_us_table_comments;Comentariu
+
+contact_us_button_submit;Trimite
+
+contact_us_title_contact_details;Detalii de contact
+
+contact_us_table_company;Companie
+contact_us_table_address;Adresa
+contact_us_table_country;Tara
+contact_us_table_county;Judeţ
+contact_us_table_city;Oraş
+contact_us_table_zip;Cod Poştal
+contact_us_table_phone;Telefon
+contact_us_table_phone_2;Telefon 2
+contact_us_table_fax;Fax
+contact_us_table_email;Email
+contact_us_table_url;URL
+# End: Contact Us
+
+# Begin: Customer Opinion Controller
+customer_opinion_title;Opinia Clienţilor
+customer_opinion_success;Opinia ta a fost trimisă!
+customer_opinion_error;Eroare la trimiterea opiniei!
+customer_opinion_name;Nume
+customer_opinion_city;Oraş
+customer_opinion_email;Email
+customer_opinion_opinion;Opinie
+customer_opinion_submit;Trimite
+# End: Customer Opinion Controller
+
+# Begin:
+default_billing_information;Informaţii Generale
+default_shipping_information;Date de livrare
+default_information;informaţii
+default_products;Produse
+default_products_details;Detalii despre produse
+default_name;Nume
+default_wishlist;Lista de dorinţe
+default_quantity;Cantitate
+default_price;Preţ
+default_total_cost;Cost total
+default_total;Total
+default_order_date;Data Comandării
+default_wishlist_created;Data creării
+default_wishlist_hour;oră
+default_status;Status
+default_action;Acţiuni
+default_buy;Cumpără
+default_details;Detalii
+default_delete;Sterge
+# End:
+
+# Begin: Submit Controller
+submit_message_error_p1;Din cauza unei erori comanda nu a fost efectuată!<br /> Vă rugăm să ne contactaţi pe adresa
+submit_message_error_p2;sau să încercaţi mai tarziu.<br />Vă multumim pentru înţelegere!
+
+submit_table_title_billing_information;Facturare
+submit_table_title_shipping_information;Livrare
+submit_table_title_products_information;Informatii
+submit_table_title_comments;Comentarii
+submit_table_title_products_details;Datalii produse
+
+submit_table_name;Nume
+submit_table_address;Adresa
+submit_table_address2;Adresa 2
+submit_table_country;Tara
+submit_table_county;Judet
+submit_table_city;Oras
+submit_table_zip;Cod postal
+submit_table_phone;Telefon
+submit_table_phone2;Telefon 2
+submit_table_fax;Fax
+submit_table_email;Email
+
+submit_table_institution;Compania
+submit_table_fiscal_code;Cod fiscal
+submit_table_trade_register;Registrul comertului
+submit_table_bank;Banca
+submit_table_iban_code;Cod IBAN
+submit_table_function;Functia
+submit_table_department;Departamentul
+
+submit_table_products_cost;Costul produselor
+submit_table_tax;Taxe
+submit_table_discount;Reducere
+submit_table_ramburs;Ramburs
+submit_table_shipping_cost;Costul livrarii
+submit_table_total_cost;Costul total
+submit_table_payment;Metoda de plata
+submit_table_shipping;Metoda de livrare
+submit_table_order_date;Data comenzii
+
+submit_table_sku;SKU
+submit_table_name;Nume
+submit_table_quantity;Cantitate
+submit_table_price;Pret Unitar
+
+submit_email_subject;Comandă nouă
+# End: Submit Controller
+# Begin: Iframe Controller
+iframe_subject;Informaţii suplimentare produse
+iframe_additional_information;Informaţii suplimentare despre produsul:
+iframe_name;Nume
+iframe_phone;Telefon
+iframe_message;Mesaj
+iframe_request_sent;Cererea ta a fost trimisă!
+iframe_request_could_not_be_sent;Cererea ta nu a putut fi trimisă!
+iframe_button_send;trimite
+
+iframe_addtocart_product;Produsul
+iframe_addtocart_added_to_your_cart;a fost adăugat în coşul tău de cumpărături!
+iframe_addtocart_continue_shopping;Continuă cumpărăturile
+iframe_addtocart_checkout;Mergi la casă
+
+iframe_browser_not_support;Ne cerem scuze dar nu avem suport pentru browserul dvs.
+iframe_browser_use;Folosiţi browserul:
+iframe_browser_version;versiunea
+iframe_browser_platform;pe sistemul de operare
+iframe_browser_update;Pentru a face update la browserul dvs. folosiţi adresa de mai jos:
+iframe_browser_wie7_wxp;Windows Internet Explorer 7 pentru Windows XP
+iframe_browser_another;Pentru a descărca un alt browser faceţi click pe imaginile următoare:
+
+iframe_inconstruction_text;Ne cerem scuze dar site-ul se află sub lucrări de întreţinere!<br />Revenim în curând!
+iframe_in_construction;in construcţie
+# End: Iframe Controller
+# End: Default
+
+
+
+
+# Begin: default, backend
+# Begin: error
+error_404;Eroare 404: Pagină nu a fost găsită
+error_page_not_exist;Pagina cautată de tine nu există sau a fost mutată.
+error_occurred;Eroare
+error_exception_information;Excepţie informaţii:
+error_information;Informaţii eroare
+error_message;Mesaj:
+error_stack_trace;Date despre stiva:
+error_request_parameters;Parametrii solicitaţi:
+# End: error
+
+# Begin: Confirmation Message
+confirmation_message;Mesaj de confirmare
+confirmation_yes;Da
+confirmation_no;Nu
+# End: Confirmation Message
+
+# Begin: Pagination
+paginare;Pagina:
+pagination_first;<< Prima pagină
+pagination_previous;< Inapoi
+pagination_next;Inainte >
+pagination_last;Ultima pagină >>
+pagination_of;din
+# End: Pagination
+
+# Begin: Footer
+footer_fakepixel_text;Web design şi găzduire:
+footer_fakepixel_title;FakePixel | Dezvoltare aplicaţii web, programare, design web
+# End: Footer
+
+anywhere_on_attributes;pe atribute
+anywhere_unlimited;nelimitat
+anywhere_page_generated_in;Pagină generată în
+anywhere_seconds;secunde
+# End: default, backend

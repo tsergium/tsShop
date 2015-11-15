@@ -1,0 +1,28 @@
+<?php if(!empty($this->message)) : ?>
+	<?php foreach($this->message as $value) : ?>
+		<?php echo $value; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+<!--<h1 class="title"><?php echo Zend_Registry::get('translate')->_('user_send_email'); ?></h1>-->
+
+<div class="loginArea clearfix">
+	<div class="contactLeft" id="contactLeftforget">
+		<h2>Retrieve your password here</h2>
+		<p>Please enter your email address below. You will receive a link to reset your password.</p>
+		<?php echo $this->formRemind; ?>
+<!--		<form action="http://paradoxtheme.com/bandw/customer/account/forgotpasswordpost/" method="post" id="form-validate">
+			<div class="loginBox2">
+				<label>Email Address:</label>
+				<input type="text" class="inputField" />
+				<input type="text" name="email" alt="email" id="email_address" class="inputField required-entry validate-email" value="">
+				<div class="clearfix" id="clearfixforget">
+					<br>
+					<input type="submit" value="send" class="sendBtn" />
+					<button type="submit" title="Submit" class="sendBtn">Submit</button>
+				</div>
+
+			</div>
+		</form>-->
+	</div>
+</div>

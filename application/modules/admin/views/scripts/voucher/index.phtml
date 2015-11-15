@@ -1,0 +1,72 @@
+<?php if(!empty($this->message)) : ?>
+    <?php foreach($this->message as $value) : ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+<?php if(null != $this->result) { ?>
+    <div class="empty10"></div>
+    <table class="tableListingsAll" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <col width="" />
+        <col width="80" />
+        <tr>
+            <th>Tip</th>
+            <th>Valoare</th>
+            <th>Status</th>
+            <th>Optiuni</th>
+        </tr>
+        <?php foreach($this->result as $value){?>
+        <tr>
+            <td><?php if ($value['isProcentual']) { echo 'procentual'; } else { echo 'valoric'; } ?>
+            <td><?php echo $value['value'];?></td>
+            <td><?php echo $value['status'];?></td>
+            <td align="center">
+                <a href="/admin/voucher/<?php if ($value['status'] == 'active') { echo 'dezactivate'; } else { echo 'activate'; } ?>/id/<?php echo $value['id'];?>" title="<?php if ($value['status'] == 'active') { echo 'Dezactivare'; } else { echo 'Activare'; } ?>">
+                    <?php if ($value['status'] == 'active') { echo 'Dezactivare'; } else { echo 'Activare'; } ?>
+                </a>
+                <a href="/admin/voucher/edit/id/<?php echo $value['id'];?>" title="Modifica">
+                    <img src="/images/admin/icons/edit.png" alt="modifica" />
+                </a>
+                <?php /*
+                <a class="confirmDelete" href="/admin/voucher/delete/id/<?php echo $value['id'];?>" title="Sterge">
+                    <img src="/images/admin/icons/delete.png" alt="sterge" />
+                </a>
+                */ ?>
+            </td>
+        </tr>
+        <?php }?>
+    </table>
+    <?php /*
+    <div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>" style="display:none;">
+        Sunteţi sigur că doriţi să ştergeţi aceasta reducere?
+    </div>
+    */ ?>
+<?php } else { ?>
+    <div class="empty10"></div>
+    <div class="mess-false">Nu exista reduceri!</div>
+<?php }?>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.confirmDelete').click(function(){
+        var link = $(this);
+        $("#confirmDelete").dialog({
+            bgiframe: true,
+            height: 140,
+            width: 400,
+            modal: true,
+            buttons:{
+                '<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function(){
+                    $(this).dialog('close').dialog('destroy');
+                    window.location.href = link.attr('href');
+                },
+                '<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function(){
+                    $(this).dialog('close').dialog('destroy');
+                }
+            }
+        });
+        return false;
+    });
+});
+</script>

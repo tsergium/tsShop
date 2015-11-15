@@ -1,0 +1,195 @@
+<!--<div class="header_footer"></div>
+	<div class="footer" style="height: 110px;">
+		<div class="menu_footer" style="width: 300px; float: left;">
+			<ul>
+				<li>
+					<a href="<?php echo WEBPAGE_ADDRESS;?>/">Acasa</a>
+				</li>
+				<li>|</li>
+				<li>
+					<a href="<?php echo WEBPAGE_ADDRESS;?>/tabelmarimi">Tabel marimi</a>
+				</li>
+				<li>|</li>
+				<li>
+					<a href="<?php echo WEBPAGE_ADDRESS;?>/cms/view/page/faq">Plata</a>
+				</li>
+				<li>|</li>
+				<li>
+					<a href="<?php echo WEBPAGE_ADDRESS;?>/cms/view/page/faq">Livrare</a>
+				</li>
+				<li>|</li>
+				<li>
+					<a href="http://www.anpc.gov.ro">ANPC</a>
+				</li>
+				<li>|</li>
+				<li>
+					<a href="<?php echo WEBPAGE_ADDRESS;?>/contact">Contact</a>
+				</li>
+				<li>|</li>
+				<li>
+					<?php $link = $this->url(array('page'=>'1'),'promotiiroute');?>
+					<a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $link;?>">Promotii</a>
+				</li>
+
+				<li>|</li>
+				<li>
+					&copy; 2008 - 2013 SC Oliver SRL
+				</li>
+
+			</ul>
+			</div>
+			<div class="logos" style="width: 450px; float: right;">
+				<div class="script" style="width:112px; height:31px;">
+					<a href="http://www.shopmania.ro/" title="Viziteaza magazinul Lenjerie-De-Lux.ro pe ShopMania" onclick="target='_blank'; window.open('http://www.shopmania.ro/site/lenjerie-de-lux.ro'); return false;" onkeypress="target='_blank'" target="_blank">
+						<img src="http://www.lenjerie-de-lux.ro/images/shopmania.jpg" style="border: 0;" alt="Viziteaza magazinul Lenjerie-De-Lux.ro pe ShopMania">
+					</a>
+				</div>
+
+				<div class="script">
+					<a href='https://secure2.plationline.ro/compliance.asp?f_login=DEMO+www%2Elenjerie%2Dde%2Dlux%2Ero&f_lang=ro' target='_blank'>
+						<img border='0' src='https://secure2.plationline.ro/compliance/images_sigle_po/sigla_verificare_PlatiOnline.ro_170x43_2_RO.png' alt='Sigla PlatiOnline.ro' />
+					</a>
+					<img border='0' height="43" src='https://secure2.plationline.ro/images/sigle/80px-Mastercard_SecureCode_Logo.png' alt='Sigla MasterCard' />
+					<img border='0' height="43" src='https://secure2.plationline.ro/images/sigle/80px-VerifiedByVISA_Logo.png' alt='Sigla Visa' />
+		<div style="clear: both;"></div>
+   		<div class="taguri">
+			<ul>
+			<?php if(null != $this->partners){?>
+			<?php $i = 0; foreach($this->partners as $value){?>
+				<?php if($i != 0){?><li>| </li><?php }?>
+				<?php
+				$nofollow = '';
+				if($value->getNofollow()== 'da'){
+				    $nofollow = 'nofollow="nofollow"';
+				}
+				?>
+				<li><a href="<?php echo $value->getUrl();?>" <?php echo $nofollow; ?> title="<?php echo $value->getName();?>"><?php echo $value->getName();?></a></li>
+			<?php $i++; }?>
+			<?php }?>
+			</ul>
+		</div>
+	</div>-->
+				
+<div id="footer">
+	<div class="homepageFooter">
+	<div class="footerTopBg">
+		<div class="footerTop clearfix">
+			<div class="footerTopLinks footerTopLinks1 clearfix">
+				<h3>information</h3>
+				<ul>
+					<li><a href="content.html">about us</a></li>
+					<li><a href="content.html">delivery information</a></li>
+					<li><a href="content.html">privacy policy</a></li>
+					<li><a href="content.html">terms &amp; conditions</a></li>
+				</ul>
+			</div>
+			<div class="footerTopLinks clearfix">
+				<h3>customer service</h3>
+				<ul>
+					<li><a href="contact.html">contact us</a></li>
+					<li><a href="content.html">returns</a></li>
+					<li><a href="map.html">sitemap</a></li>
+				</ul>
+			</div>
+			<div class="footerTopLinks clearfix">
+				<h3>extras</h3>
+				<ul>
+					<li><a href="content.html">brands gift</a></li>
+					<li><a href="content.html">vouchers</a></li>
+					<li><a href="content.html">affiliates</a></li>
+					<li><a href="content.html">specials</a></li>
+				</ul>
+			</div>
+			<div class="footerTopLinks clearfix">
+				<h3>my account</h3>
+				<ul>
+					<li><a href="shopping_cart.html">order</a></li>
+					<li><a href="my_account.html">history</a></li>
+					<li><a href="wishlist.html">wish list</a></li>
+					<li><a href="content.html">newsletter</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footerCenterTopBg">
+		<div class="footerCenterTop clearfix">
+			<div class="footer-column4">
+				<h2 class="theme">B&amp;W theme</h2>
+			</div>
+			<div class="footer-column4">
+				<h2 class="contact">Contact Us</h2>
+			</div>
+			<div class="footer-column4">
+				<h2 class="twitter">Twitter</h2>
+			</div>
+			<div class="footer-column4">
+				<h2 class="facebook">Facebook</h2>
+			</div>
+		</div>
+	</div>
+	<div class="footerCenterBottomBg">
+		<div class="footerCenterBottom clearfix">
+			<div class="footer-column4">
+				<p>
+					B&amp;W is an advanced  theme by Paradox-theme. The clean and modern design 
+					allows you to use the theme for every kind of online shop: clothes, accessories, 
+					electronics, furniture, books and so on. 
+				</p>
+				<?php echo $this->formNewletter; ?>
+			</div>
+			<div class="footer-column4">
+				<p class="telephoneContact">010000010<br />010000010</p>
+				<p class="mailContact">info@testshop.com<br />info@testshop.com</p>
+				<p class="skypeContact">sales.testshop<br />support.testshop</p>
+			</div>
+			<div class="footer-column4">
+				<p>Just released Shoppica 1.10! Read more info here<br /><span>6 days ago</span></p>
+				<p>Just released Shoppica 1.10! Read more info here<br /><span>6 days ago</span></p>
+				<p>Just release Shoppica<br /><span>6 days ago</span></p>
+			</div>
+			<div class="footer-column4">
+				<h4>140 people like YOURSITE.</h4>
+				<div class="clearfix">
+					<img src="images/fb-like-image1.jpg" alt="" />
+					<img src="images/fb-like-image1.jpg" alt="" />
+					<img src="images/fb-like-image2.jpg" alt="" />
+					<img src="images/fb-like-image2.jpg" alt="" class="lastFbLike" />
+				</div>
+				<div class="clearfix">
+					<img src="images/fb-like-image3.jpg" alt="" />
+					<img src="images/fb-like-image3.jpg" alt="" />
+					<img src="images/fb-like-image2.jpg" alt="" />
+					<img src="images/fb-like-image1.jpg" alt="" class="lastFbLike" />
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="footerBottomBg">
+		<div class="footerBottom clearfix">
+			<div class="footer-column3">
+				<p>&copy; Copyright <?php echo date('Y') ?>. tsergium.ro.</p>
+			</div>
+			<div class="footer-column3">
+				<p><span>Share:</span>
+					<a href="#"><img src="images/fb.jpg" alt="" /></a>
+					<a href="#"><img src="images/tw.jpg" alt="" /></a>
+					<a href="#"><img src="images/social-icon1.jpg" alt="" /></a>
+					<a href="#"><img src="images/social-icon2.jpg" alt="" /></a>
+					<a href="#"><img src="images/yahoo.jpg" alt="" /></a>
+					<a href="#"><img src="images/google.jpg" alt="" /></a>
+				</p>
+			</div>
+			<div class="footer-column3 footer-column3-3">
+				<p>
+					<a href="#"><img src="images/american.jpg" alt="" /></a>
+					<a href="#"><img src="images/discover.jpg" alt="" /></a>
+					<a href="#"><img src="images/skrill.jpg" alt="" /></a>
+					<a href="#"><img src="images/paypal.jpg" alt="" /></a>
+					<a href="#"><img src="images/visa-electron.jpg" alt="" /></a>
+					<a href="#"><img src="images/visa.jpg" alt="" /></a>
+				</p>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

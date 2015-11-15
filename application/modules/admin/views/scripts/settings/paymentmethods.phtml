@@ -1,0 +1,47 @@
+<?php if(!empty($this->message)) : ?>
+    <?php foreach($this->message as $value) : ?>
+	    <?php echo $value; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+<div class="empty10"></div>
+<?php if($this->result) : ?>
+<form name="frmDelivery" method="post" action="">
+    <table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
+	<colgroup>
+	    <col width="" />
+	    <col width="" />
+	    <col width="150" />	
+	</colgroup>
+	<thead>
+		<tr>
+			<th>Metoda de Plata</th>
+			<th>Metoda de Livrare</th>
+			<th>Cost</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->result as $value) : ?>
+		<tr>
+			<td><?php echo $value->getPaymentName();?></td>
+			<td><?php echo $value->getCourierName();?></td>
+			<td align="center">
+			    <div>
+				<input style="width: 40px;" type="text" name="delivery[<?php echo $value->getId();?>]" value="<?php echo $value->getCost();?>" />&nbsp;&nbsp;<small>RON</small>
+			    </div>
+			</td>			  
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+	<tfoot>
+	    <tr>
+		<td colspan="2">&nbsp;</td>
+		<td align="center">
+		    <input type="submit" value="Actualizeaza" class="button1" />
+		</td>
+	    </tr>
+	</tfoot>
+    </table>
+</form>
+<?php else : ?>
+	Nu sunt metode de livrare si plata!
+<?php endif; ?>

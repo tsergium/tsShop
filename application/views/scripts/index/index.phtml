@@ -1,0 +1,61 @@
+<div class="homepageContent">
+	<div class="titleDiv">
+		<h2>Latest Products</h2>
+		<div class="holder">
+			<p><a href="#" class="view1_2"></a><a href="index2.html" class="view2_2"></a></p>
+			<div class="sort-holder">
+				<span>Sort By</span>
+				<ul>
+					<li><a href="#">Name</a></li>
+					<li><a href="#">Price</a></li>
+					<li><a href="#">Brand</a></li>
+					<li><a href="#">Relevance</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<?php if(!empty($this->message)) : ?>
+		<?php foreach($this->message as $value) : ?>
+		<div class="empty10"></div>
+		<?php echo $value; ?>
+		<?php endforeach; ?>
+	<?php endif; ?>
+		
+	<?php if(null != $this->result){ ?>
+	<div class="latestProductsArea clearfix">
+		<?php  foreach($this->result as $value){ ?>
+			<?php $link = $this->url(array('id' => $value->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($value->getId())."-".$value->getName())),),'product');?>
+			<?php $img = (null != $value->getImage())?"/media/products/small/".$value->getImage():"/images/no-pic-small.jpg"; ?>
+			<div class="latestProduct">
+				<div class="productLogo">
+					<img src="<?php echo THEME_PATH; ?>/images/product_logo_sony.png" alt="" />
+				</div>
+				<div class="latestProductImage">
+					<img src="<?php echo $img;?>" alt="<?php echo $value->getName();?>" title="<?php echo $value->getName();?>" />
+				</div>
+				<div class="latestProductInfo clearfix">
+					<div class="latestPIL">
+						<p><?php echo $value->getName();?></p>
+						<a href="#" class="star1"></a><a href="#" class="star1"></a><a href="#" class="star1"></a><a href="#" class="star1"></a><a href="#" class="star1"></a>
+					</div>
+					<div class="latestPIR"><?php echo $value->getPrice();?> <sup>.00</sup><sub>RON</sub></div>
+					<!--<div class="latestPIR">1049<sup>.99</sup><sub>usd</sub></div>-->
+				</div>
+				<div class="productButtons">
+					<a href="<?php echo $link; ?>" class="productsMoreBtn">more info</a>
+					<a href="shopping_cart.html" class="productsMoreBtn">add to cart</a>
+				</div>
+			</div>
+		<?php } ?>
+	</div>
+	<?php
+	// BEGIN: PAGINATION
+	$itemCountPerPage = $this->itemCountPerPage;
+	$totalItemCount = $this->totalItemCount;
+	if($itemCountPerPage < $totalItemCount){
+		echo $this->result;
+	}
+	// END: PAGINATION
+	?>	
+	<?php } ?>
+</div>	

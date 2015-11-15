@@ -1,0 +1,254 @@
+<?php if(!empty($this->message)) : ?>
+	<?php foreach($this->message as $value) : ?>
+		<div class="empty10"></div>
+		<?php echo $value; ?>
+	<?php endforeach; ?>
+<?php endif; ?>
+
+<div class="empty10"></div>
+<?php if($this->order) { ?>
+	<table class="tableListingsAll" width="100%" border="0" cellpadding="2" cellspacing="1" id="invoiceTable">
+		<tr>
+			<td valign="top" width="33%">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableListingsAll">
+					<col width="50%">
+					<col width="50%">
+					<tr>
+						<th align="center" colspan="2"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_title_billing'); ?></strong></th>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_name'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getFirstname()).' '.strip_tags($this->order->getLastname()); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_address'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getAddress()); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_county'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getCounty()); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_city'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getCity()); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_zip'); ?>: </strong></td>
+						<td align="left"><?php echo (strip_tags($this->order->getZip()) != null)?strip_tags($this->order->getZip()):'-'; ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_phone'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getPhone()); ?></td>
+					</tr>
+					<?php if($this->order->getFax() != '') { ?>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_fax'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getFax()); ?></td>
+					</tr>
+					<?php } ?>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_email'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getEmail()); ?></td>
+					</tr>
+					<?php if($this->order->getClienttype() == '1') { ?>
+						<tr>
+							<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_company'); ?>: </strong></td>
+							<td align="left"><?php echo strip_tags($this->order->getInstitution()); ?></td>
+						</tr>
+						<tr>
+							<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_fiscal_code'); ?>: </strong></td>
+							<td align="left"><?php echo strip_tags($this->order->getFiscalcode()); ?></td>
+						</tr>
+						<tr>
+							<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_trade_register'); ?>: </strong></td>
+							<td align="left"><?php echo strip_tags($this->order->getTraderegister()); ?></td>
+						</tr>
+						<tr>
+							<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_bank'); ?>: </strong></td>
+							<td align="left"><?php echo strip_tags($this->order->getBank()); ?></td>
+						</tr>
+						<tr>
+							<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_iban_code'); ?>: </strong></td>
+							<td align="left"><?php echo strip_tags($this->order->getIbancode()); ?></td>
+						</tr>
+						<?php if($this->order->getFunction() != '') { ?>
+						<tr>
+							<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_function'); ?>: </strong></td>
+							<td align="left"><?php echo strip_tags($this->order->getFunction()); ?></td>
+						</tr>
+						<?php } ?>
+						<?php if($this->order->getDepartment() != '') { ?>
+						<tr>
+							<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_department'); ?>: </strong></td>
+							<td align="left"><?php echo strip_tags($this->order->getDepartment()); ?></td>
+						</tr>
+						<?php } ?>
+					<?php } ?>
+				</table>
+				<div class="clear">&nbsp;</div>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableListingsAll">
+					<col width="50%">
+					<col width="50%">
+					<tr>
+						<th align="center" colspan="2"><strong>Date Livrare</strong></th>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_name'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getFirstnameS()).' '.strip_tags($this->order->getLastnameS()); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_address'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getAddressS()); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_county'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags($this->order->getStateS()); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_zip'); ?>: </strong></td>
+						<td align="left"><?php echo (strip_tags($this->order->getZipcodeS()) != null)?strip_tags($this->order->getZipcodeS()):'-'; ?></td>
+					</tr>
+				</table>
+			</td>
+			<td valign="top" width="33%">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableListingsAll">
+					<col width="50%">
+					<tr>
+						<th align="center" colspan="2"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_title_informations'); ?></strong></th>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_order_id'); ?>: </strong></td>
+						<td align="left"><?php echo $this->order->getId(); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_products_cost'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags(number_format($this->order->getProductscost(), 2, ',', '.')); ?> <small>RON</small></td>
+					</tr>
+					<tr>
+						<td align="right"><strong>Cost Livrare</strong></td>
+						<td align="left"><?php echo number_format($this->order->getDeliveryCost(), 2, ',', '.'); ?> <small> RON</small></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_total_cost'); ?>: </strong></td>
+						<td align="left"><?php echo strip_tags(number_format($this->order->getTotalcost(), 2, ',', '.')); ?> <small>RON</small></td>
+					</tr>
+
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_order_date'); ?>: </strong></td>
+						<td align="left"><?php echo ($this->order->getCreated()?date('d M Y', $this->order->getCreated()):'-'); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_status_changed'); ?>: </strong></td>
+						<td align="left"><?php echo ($this->order->getModified()?date('d M Y', $this->order->getModified()):'-'); ?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_table_status'); ?>: </strong></td>
+						<td align="left">
+							<select rel="<?php echo $this->order->getId(); ?>" page="<?php echo $this->curPage; ?>" class="jsStatusChange fs10">
+								<option <?php if($this->order->getStatus() == 'pending') { ?> selected="selected" <?php } ?> value="pending"><?php echo Zend_Registry::get('translate')->_('sales_index_table_pending'); ?></option>
+								<option <?php if($this->order->getStatus() == 'accepted') { ?> selected="selected" <?php } ?> value="accepted"><?php echo Zend_Registry::get('translate')->_('sales_index_table_accepted'); ?></option>
+								<option <?php if($this->order->getStatus() == 'completed') { ?> selected="selected" <?php } ?> value="completed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_completed'); ?></option>
+								<option <?php if($this->order->getStatus() == 'rejected') { ?> selected="selected" <?php } ?> value="rejected"><?php echo Zend_Registry::get('translate')->_('sales_index_table_rejected'); ?></option>
+								<option <?php if($this->order->getStatus() == 'card_unconfirmed') { ?> selected="selected" <?php } ?> value="card_unconfirmed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_card_unconfirmed'); ?></option>
+								<option <?php if($this->order->getStatus() == 'card_confirmed') { ?> selected="selected" <?php } ?> value="card_confirmed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_card_confirmed'); ?></option>
+								<option <?php if($this->order->getStatus() == 'card_onhold') { ?> selected="selected" <?php } ?> value="card_onhold">card in asteptare</option>
+							</select>
+						</td>
+					</tr>
+                    <tr>
+                        <td align="right"><strong>Cupon</strong></td>
+                        <td align="left"><?php echo $this->order->getCouponCode();?></td>
+                    </tr>
+					<tr>
+						<td align="right"><strong>Metoda de plata</strong></td>
+						<td align="left"><?php echo $this->order->getPaymentName();?></td>
+					</tr>
+					<tr>
+						<td align="right"><strong>Curier</strong></td>
+						<td align="left"><?php echo $this->order->getCourierName();?></td>
+					</tr>
+					<?php if($this->order->getComments() != '') { ?>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<th align="center" colspan="2"><strong>Observatii</strong></th>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><?php echo strip_tags($this->order->getComments()); ?></td>
+					</tr>
+					<?php } ?>
+				</table>
+			</td>
+		</tr>
+		<?php if($this->orderproducts) : ?>
+		<tr>
+			<td colspan="3" style="padding-top: 10px;">
+				<h2 class="title"><strong><?php echo Zend_Registry::get('translate')->_('sales_details_title_products'); ?></strong></h2>
+				<div class="empty10"></div>
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableListingsAll">
+					<col width="20" />
+					<col width="" />
+					<col width="120" />
+					<col width="120" />
+					<col width="120" />
+					<col width="120" />
+					<col width="130" />
+					<col width="130" />
+					<tr>
+						<th>Nr.</th>
+						<th><?php echo Zend_Registry::get('translate')->_('sales_details_table_name'); ?></th>
+						<th>Marime</th>
+						<th>Culoare</th>
+						<th><?php echo Zend_Registry::get('translate')->_('sales_details_table_quantity'); ?></th>
+						<th><?php echo Zend_Registry::get('translate')->_('sales_details_table_price'); ?></th>
+						<th><?php echo Zend_Registry::get('translate')->_('sales_details_table_total_price'); ?></th>
+					</tr>
+					<?php $i = 1;foreach($this->orderproducts as $value) : ?>
+
+					<tr>
+						<td align="center"><?php echo $i;?></td>
+						<td>
+
+							<?php if($value->getProduct() != null ){?>
+							    <?php echo $value->getProduct()->getName(); ?>
+							<?php }else{ ?>
+							    Produs sters
+							<?php } ?>
+						</td>
+						<td><?php echo $value->getSizeName();?></td>
+						<td><?php echo $value->getColorName();?></td>
+						<td align="center">
+							<?php echo $value->getQuantity(); ?>
+						</td>
+						<td align="right">
+							<?php echo number_format($value->getPrice(), 2, ',', '.'); ?> <small>RON</small>
+						</td>
+						<td align="right">
+							<?php echo number_format($value->getPrice() * $value->getQuantity(), 2, ',', '.'); ?> <small>RON</small>
+						</td>
+					</tr>
+					<?php $i++;endforeach; ?>
+				</table>
+			</td>
+		</tr>
+	  <?php endif; ?>
+	</table>
+<?php } ?>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$('.jsStatusChange').each(function(){
+		$(this).change(function() {
+			var id = $(this).attr('rel');
+			var status = $(this).val();
+			var page = $(this).attr('page');
+			if(page) {
+				window.location = '/admin/order/status/id/'+id+'/status/'+status+'/page/'+page;
+			} else {
+				window.location = '/admin/order/status/id/'+id+'/status/'+status;
+			}
+		});
+	});
+});
+</script>

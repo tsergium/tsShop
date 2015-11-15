@@ -1,0 +1,103 @@
+<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getAttrib('id');?>" class="<?php echo $this->element->getAttrib('class');?>"	enctype="<?php echo $this->element->getEncType();?>">
+	<ul class="contact">
+		<li>
+			<p>
+			<?php
+			$attribs = array();
+			if ($this->element->fullname->isRequired()) {
+				$attribs['class'] = 'required';
+			}
+			echo $this->formLabel($this->element->fullname->getName(), $this->element->fullname->getLabel(), $attribs);?>
+			</p>
+		</li>
+		<li>
+			<?php
+	    		echo $this->{$this->element->fullname->helper}(
+	    					$this->element->fullname->getName(),
+	    					$this->element->fullname->getValue(),
+	    					$this->element->fullname->getAttribs()
+	    				);
+	    	?>
+	    	<?php if('<ul class="errors"><li></li></ul>'!=($this->element->fullname->getMessages())){ echo  $this->formErrors($this->element->fullname->getMessages());} ?>
+			<small class="red-warning"><?php echo $this->element->fullname->getDescription(); ?></small>
+		</li>	
+		<li>
+			<p>
+			<?php
+			$attribs = array();
+			if ($this->element->email->isRequired()) {
+				$attribs['class'] = 'required';
+			}
+			echo $this->formLabel($this->element->email->getName(), $this->element->email->getLabel(), $attribs);?>
+			</p>
+		</li>
+		<li>
+			<?php
+	    		echo $this->{$this->element->email->helper}(
+	    					$this->element->email->getName(),
+	    					$this->element->email->getValue(),
+	    					$this->element->email->getAttribs()
+	    				);
+	    	?>
+	    	<?php if('<ul class="errors"><li></li></ul>'!=($this->element->email->getMessages())){ echo  $this->formErrors($this->element->email->getMessages());} ?>
+			<small class="red-warning"><?php echo $this->element->email->getDescription(); ?></small>
+		</li>
+		<li>
+			<p>
+			<?php
+			$attribs = array();
+			if ($this->element->subject->isRequired()) {
+				$attribs['class'] = 'required';
+			}
+			echo $this->formLabel($this->element->subject->getName(), $this->element->subject->getLabel(), $attribs);?>
+			</p>
+		</li>
+		<li>
+			<?php
+	    		echo $this->{$this->element->subject->helper}(
+	    					$this->element->subject->getName(),
+	    					$this->element->subject->getValue(),
+	    					$this->element->subject->getAttribs()
+	    				);
+	    	?>
+	    	<?php if('<ul class="errors"><li></li></ul>'!=($this->element->subject->getMessages())){ echo  $this->formErrors($this->element->subject->getMessages());} ?>
+			<small class="red-warning"><?php echo $this->element->subject->getDescription(); ?></small>
+		</li>
+		<li>
+			<p>
+			<?php
+			$attribs = array();
+			if ($this->element->comments->isRequired()) {
+				$attribs['class'] = 'required';
+			}
+			echo $this->formLabel($this->element->comments->getName(), $this->element->comments->getLabel(), $attribs);?>
+			</p>
+		</li>
+		<li>
+			<?php
+	    		echo $this->{$this->element->comments->helper}(
+	    					$this->element->comments->getName(),
+	    					$this->element->comments->getValue(),
+	    					$this->element->comments->getAttribs()
+	    				);
+	    	?>
+	    	<?php if('<ul class="errors"><li></li></ul>'!=($this->element->comments->getMessages())){ echo  $this->formErrors($this->element->comments->getMessages());} ?>
+			<small class="red-warning"><?php echo $this->element->comments->getDescription(); ?></small>
+		</li>
+		<li>
+			<br/>
+			<?php echo $this->{$this->element->submit->helper}(
+							$this->element->submit->getName(),
+							$this->element->submit->getValue(),
+							$this->element->submit->getAttribs()
+						);
+			?>
+			
+		</li>
+	</ul>
+</form>
+<?php $this->headScript()->captureStart() ?>
+	$(document).ready(function() {
+		$("#<?php echo $this->element->getId();?>").validationEngine();
+	});
+<?php $this->headScript()->captureEnd() ?>

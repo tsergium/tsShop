@@ -1,0 +1,34 @@
+<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getId();?>" enctype="<?php echo $this->element->getEncType();?>">
+<div class="loginBox2">
+		<?php echo $this->formLabel($this->element->email->getName(), $this->element->email->getLabel()) ?>
+
+		<?php
+			echo $this->{$this->element->email->helper}(
+							$this->element->email->getName(),
+							$this->element->email->getValue(),
+							$this->element->email->getAttribs()
+						);
+		?>
+		<?php if($this->element->email->getMessages() != array()) : ?>
+			<?php echo $this->formErrors($this->element->email->getMessages()) ?>
+		<?php endif; ?>
+		<?php if ($this->element->email->getDescription()) : ?>
+			<p class="description"><?php echo $this->element->email->getDescription() ?></p>    	
+		<?php endif; ?>
+		<div class="clearfix" id="clearfixforget">
+			<br>
+			<?php
+			echo $this->{$this->element->submit->helper}(
+							$this->element->submit->getName(),
+							$this->element->submit->getLabel(),
+							$this->element->submit->getAttribs()
+						);
+			?>	
+		</div>		
+</div>
+</form>
+<script>
+	$(document).ready(function() {
+		$("#<?php echo $this->element->getAttrib('id');?>").validationEngine();
+	});
+</script>

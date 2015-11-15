@@ -1,0 +1,1 @@
+alter table ts_orders add column couponId int(11) null/*, add foreign key (couponId) references coupons(id)*/;

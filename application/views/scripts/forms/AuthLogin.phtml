@@ -1,0 +1,74 @@
+<form class="login-form" method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getId();?>" enctype="<?php echo $this->element->getEncType();?>">
+	<table cellspacing="0" cellpadding="0" border="0">
+		<col width="120" />
+		<col  />
+		<tr>
+			<td>
+				<?php
+					 echo $this->formLabel($this->element->username->getName(), $this->element->username->getLabel());
+				?>
+			</td>
+			<td>
+				<?php
+					echo $this->{$this->element->username->helper}(
+								$this->element->username->getName(),
+								$this->element->username->getValue(),
+								$this->element->username->getAttribs()
+							);
+				?>
+				<?php if($this->element->username->getMessages() != array()) : ?>
+					<?php echo $this->formErrors($this->element->username->getMessages()) ?>
+				<?php endif; ?>
+				<?php if ($this->element->username->getDescription()) : ?>
+					<p class="description"><?php echo $this->element->username->getDescription() ?></p>
+				<?php endif; ?>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<?php
+					  echo $this->formLabel($this->element->passwordLogare->getName(), $this->element->passwordLogare->getLabel()).':&nbsp;';
+				?>
+			</td>
+			<td>
+				<?php
+				echo $this->{$this->element->passwordLogare->helper}(
+								$this->element->passwordLogare->getName(),
+								$this->element->passwordLogare->getValue(),
+								$this->element->passwordLogare->getAttribs()
+							);
+				?>
+				<?php if($this->element->passwordLogare->getMessages() != array()) : ?>
+					<?php echo $this->formErrors($this->element->passwordLogare->getMessages()) ?>
+				<?php endif; ?>
+				<?php if ($this->element->passwordLogare->getDescription()) : ?>
+					<p class="description"><?php echo $this->element->passwordLogare->getDescription() ?></p>
+				<?php endif; ?>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td >
+				 <div class="parola">
+					 <?php
+						echo $this->{$this->element->submit->helper}(
+							$this->element->submit->getName(),
+							$this->element->submit->getLabel(),
+							$this->element->submit->getAttribs()
+						);
+					 ?>
+					 <p>
+					   <a class="jsRemind" href="/auth/remind">Am uitat parola</a><br />
+					   <a class="jsNewAccount" href="/user/new">Cont nou</a>
+					 </p>
+					 <div class="clear"></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</form>
+<?php $this->headScript()->captureStart() ?>
+	$(document).ready(function() {
+		$("#<?php echo $this->element->getId();?>").validationEngine();
+	});
+<?php $this->headScript()->captureEnd() ?>

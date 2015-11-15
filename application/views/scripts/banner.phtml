@@ -1,0 +1,18 @@
+<?php
+if(null != $this->slides){
+?>
+	<div class="banner">
+		<ul>		
+		<?php
+		foreach($this->slides as $value){
+		?>
+			<li>
+				<div class="black_dots"></div>
+				<a href="<?php echo $value->getUrl()?$value->getUrl():"";?>" style="display:block;height:401px;">
+					<img src="/media/slides/<?php echo $value->getImage()?$value->getImage():"";?>" alt="<?php echo $value->getName();?>" title="" />
+				</a>
+			</li>
+		<?php }?>
+		</ul>
+	</div>	
+<?php } ?>

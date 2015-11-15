@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+	
+	<?php
+	// BEGIN: SEO
+	require_once APPLICATION_PUBLIC_PATH.'/library/App/SeoSerp/SeoSerp.php';
+	require_once APPLICATION_PUBLIC_PATH.'/library/App/Breadcrumbs/Breadcrumbs.php';
+	$seoSerp = new SeoSerp();
+	$breadcrumbs = new Breadcrumbs();
+	null != $this->seoId?$_id = $this->seoId:$_id = null;
+	$seoSerp->setSeo($this->controller, $this->action, $_id);
+	$breadcrumbs->setConstructor($this->controller, $this->action, $_id);
+	// END: SEO
+	?>
+	<?php echo $this->headTitle($seoSerp->getTitle());?>
+	<?php echo $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8')->appendName('keywords', $seoSerp->getKeywords())->appendName('description', $seoSerp->getDescription());?>
+    <?php echo $this->headLink();?>
+    <?php echo $this->headStyle();?>
+    <?php echo $this->headScript();?>
+</head>
+<body>
+	<?php echo $this->render('header.phtml');?>
+	<?php if($this->controller == 'index'){ ?>
+		<?php echo $this->render('banner.phtml');?>
+	<?php } ?>
+	
+	<div id="content">		
+		<?php if($this->controller != 'index'){?>
+		<div class="breadcrumbs" style="padding: 10px 0 10px 15px;">
+			<?php echo $breadcrumbs->getBreadcrumbs();?>
+		</div>
+		<?php }else{?>
+		<?php }?>
+		<?php echo $this->layout()->content;?>
+	</div>
+	<?php echo $this->render('footer.phtml');?>
+</body>
+</html>

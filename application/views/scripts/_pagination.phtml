@@ -1,0 +1,54 @@
+<?php
+$result = Zend_View_Helper_PaginationControl::getDefaultViewPartial();
+if(is_array($result)) {
+	if(!empty($result[1])) {
+		$allParams = $result[1];
+	} else {
+		$allParams = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+	}
+} else {
+	$allParams = array();
+}
+
+?>
+
+<!--<div class="latestProductsNav">
+	<ul class="clearfix">
+		<li class="prev"><a href="#">&lt;</a></li>
+		<li><a href="#" class="activeLPN">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li class="next"><a href="#">&gt;</a></li>
+	</ul>
+</div>-->
+
+<?php if($this->pageCount): ?>
+<div class="latestProductsNav">
+	<ul class="clearfix">
+		<!-- Previous page link -->
+		<?php if(isset($this->previous)) : ?>
+			<li class="prev"><a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->previous))); ?>">&lt;</a></li>
+		<?php else : ?>
+			<li class="prev"><a href="javascript:;">&lt;</a></li>
+		<?php endif; ?>
+
+		<!-- Numbered page links -->
+		<?php foreach($this->pagesInRange as $page) : ?>
+			<?php if($page != $this->current) : ?>
+				<li><a href="<?php echo $this->url(array_merge($allParams, array('page' => $page))); ?>"><?php echo $page; ?></a></li>
+			<?php else : ?>
+				<li><a class="activeLPN" href='javascript:;'><?php echo $page; ?></a></li>
+			<?php endif; ?>
+		<?php endforeach; ?>
+
+		<!-- Next page link -->
+		<?php if(isset($this->next)) : ?>
+			<li  class="next"><a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->next))); ?>">&gt;</a></li>
+		<?php else : ?>
+			<li  class="next"><a href="javascript:;">&gt;</a></li>
+		<?php endif; ?>
+	</ul>
+</div>
+<?php endif; ?>

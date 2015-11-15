@@ -1,0 +1,186 @@
+<?php
+require_once APPLICATION_PUBLIC_PATH . '/library/App/PlatiOnlineRo/clspo.php';
+require_once APPLICATION_PUBLIC_PATH . '/library/App/PlatiOnlineRo/RSALib.php';
+$my_class = new PO3();
+
+// Secret Answer: batman
+$lid = "WWW.LENJERIE-DE-LUX.RO";
+$ke = 20210539;
+$km = 42636151;
+$orderNumber = $_SESSION['card']['orderNumber'];
+
+$order = new Default_Model_Orders();
+$order->find($orderNumber);
+if(null != $order){
+	$amount = $order->getTotalcost();
+	$firstName = $order->getFirstname();
+	$lastName = $order->getLastname();
+	$address = $order->getAddress();
+	$city = $order->getCity();
+	$zip = $order->getZip();
+	$state = $order->getCounty();
+	$phone = $order->getPhone();
+	$email = $order->getEmail();
+	
+	$firstNameS = $order->getFirstnameS();
+	$lastNameS = $order->getLastnameS();
+	$addressS = $order->getAddressS();
+	$stateS = $order->getStateS();
+	$zipcodeS = $order->getZipcodeS();
+	
+	$costLivrare = $order->getDeliveryCost();
+	$tiplivrare = $order->getCourierId();
+	
+	$typeC = 0;
+	$linkCourier = 'http://www.posta-romana.ro/images/layout2/logo_posta_romana.gif';
+	if($tiplivrare == 2){
+		$typeC = 0;
+		$linkCourier = 'http://www.posta-romana.ro/images/layout2/logo_posta_romana.gif';
+	}else{
+		$typeC = 1;
+		$linkCourier = 'http://www.fancourier.ro/fan_logo.png';
+	}
+}
+
+//if(!empty($_SESSION['platio']) && $_SESSION['platio'] == 'true'){
+//	$amount = 1.01;
+//}
+
+// BEGIN: CREATE ORDER DETAILS XML DATA
+$orderString = "<start_string>";
+if(null != $orderNumber){
+	$model = new Default_Model_OrderProducts();
+	$select = $model->getMapper()->getDbTable()->select()
+			->where('orderId = ?', $orderNumber);
+	$result = $model->fetchAll($select);
+	if(null != $result){
+		$ga_products = '';
+		foreach($result as $value){
+			$tva = number_format(($value->getPrice() - ($value->getPrice()/1.24)), '2', '.', ',');
+			$tvaAndQuant = number_format(($value->getQuantity()*($value->getPrice() - ($value->getPrice()/1.24))), '2', '.', ',');
+			$pretFaraTVa = number_format(($value->getPrice() - $tva), '2', '.', ',');
+$orderString.="
+	<item>
+		<ProdID>".$value->getProductId()."</ProdID>
+		<qty>".$value->getQuantity()."</qty>
+		<itemprice>".$pretFaraTVa."</itemprice>
+		<name>".$value->getProduct()->getName()."</name>
+		<period></period>
+		<rec_id></rec_id>
+		<description>".$value->getProduct()->getDescription()."</description>
+		<pimg></pimg>
+		<rec_price></rec_price>
+		<vat>".$tvaAndQuant."</vat>
+		<lang_id></lang_id>
+		<stamp></stamp>
+		<on_stoc></on_stoc>
+		<prodtype_id></prodtype_id>
+		<categ_id></categ_id>
+		<merchLoginID></merchLoginID>
+	</item>
+";
+		}
+$orderString.="
+	<coupon>
+		<key></key>
+		<value></value>
+		<percent></percent>
+		<workingname></workingname>
+		<type></type>
+		<scop></scop>
+		<vat></vat>
+	</coupon>
+	<shipping>
+		<type>".$typeC."</type>
+		<price>".$costLivrare."</price>
+		<pimg>".$linkCourier."</pimg>
+	</shipping>
+";
+$orderString.="</start_string>";
+	}
+}
+// END: CREATE ORDER DETAILS XML DATA
+
+$my_class->LoginID = $lid;
+$my_class->KeyEnc = $ke;
+$my_class->KeyMod = $km;
+
+$my_class->amount = $amount;
+$my_class->currency = "RON";
+$my_class->OrderNumber = $orderNumber;
+$my_class->action = "2";
+$ret = $my_class->InsertHash_Auth();
+?>
+
+<?php if(!empty($this->message)){?>
+<?php foreach($this->message as $value) { ?>
+	<div class="empty10"></div>
+	<?php echo $value; ?>
+<?php }?>
+<?php }?>
+<?php if(null != $this->msg){?>
+	<?php
+		if($this->msg != "fail") {
+			if(isset($_SESSION['ga_script'])) {
+				echo $_SESSION['ga_script'];
+				unset($_SESSION['ga_script']);
+			}
+		}
+	?>
+	<?php if($this->msg == "success"){?>
+		Comanda a fost trimisa! <br /><br />
+		Vei fi contactat in cel mai scurt timp de un membru al echipei Lenjerie-de-lux.ro!<br /><br />
+		Iti multumim!
+	<?php }elseif($this->msg == "fail"){?>
+		Din cauza unei erori comanda ta nu fost trimisa! <br /><br />
+		Te rugam sa ne contactezi folosind formularul de contact si eventual sa incerci sa plasezi comanda mai tarziu!<br /><br />
+		Iti multumim si ne cerem scuze pentru neplacerile create!
+	<?php } elseif ($this->msg == "cardsubmit") { ?>
+		Comanda ta a fost trimisa! <br /><br />
+		Daca nu sunteti trimis catre pagina de achitare cu cardul te rugam sa apesi butonul de mai jos! <br /><br />
+		Iti multumim!
+		<form id="registerForm" autocomplete="off" method="post" action="https://secure2.plationline.ro/trans30.asp">
+			<?php echo $ret; ?>
+			<input type="hidden" name="f_login" value="<?php echo $my_class->LoginID;?>">
+			<input type="hidden" name="f_show_form" value="1">
+			<input type="hidden" name="f_amount" value="<?php echo $my_class->amount;?>">
+			<input type="hidden" name="f_currency" value="<?php echo $my_class->currency;?>">
+			<input type="hidden" name="f_order_number" value="<?php echo $my_class->OrderNumber;?>">
+			<input type="hidden" name="F_Language" value="ro" >
+			<input type="hidden" name="F_Lang" value="ro">
+			<input type="hidden" name="f_order_string" value="<?php echo $orderString;?>">
+			<input type="hidden" name="f_first_name" id="f_first_name" value="<?php echo $firstName;?>">
+			<input type="hidden" name="f_last_name" id="f_last_name" value="<?php echo $lastName;?>">
+			<input type="hidden" name="f_cnp" value="-">
+			<input type="hidden" name="f_address" id="f_address" value="<?php echo $address;?>">
+			<input type="hidden" name="f_city" id="f_city" value="<?php echo $city;?>">
+			<input type="hidden" name="f_state" id="f_state" value="<?php echo $state;?>">
+			<input type="hidden" name="f_zip" id="f_zip" value="<?php echo (null != $zip) ? $zip : '-';?>">
+			<input type="hidden" name="f_country" id="f_country" value="RO">
+			<input type="hidden" name="f_phone" id="f_phone" value="<?php echo $phone;?>">
+			<input type="hidden" name="f_email" id="f_email" value="<?php echo $email;?>">
+			
+			<!-- BEGIN: SHIPPING -->
+			<input type="hidden" name="f_ship_to_first_name" id="f_ship_to_first_name" value="<?php echo $firstNameS; ?>" />
+			<input type="hidden" name="f_ship_to_last_name" id="f_ship_to_last_name" value="<?php echo $lastNameS; ?>" />
+			<input type="hidden" name="f_ship_to_address" id="f_ship_to_address" value="<?php echo $addressS; ?>" />
+			<input type="hidden" name="f_ship_to_state" id="f_ship_to_state" value="<?php echo $stateS; ?>" />
+			<input type="hidden" name="f_ship_to_zipcode" id="f_ship_to_zipcode" value="<?php echo $zipcodeS; ?>" />
+			<input type="hidden" name="f_ship_to_country" id="f_ship_to_country" value="Romania" />
+			<!-- END: SHIPPING -->
+			
+			<input type="hidden" name="f_company" value="">
+			<input type="hidden" name="f_reg_com" value="">
+			<input type="hidden" name="f_cui" value="">
+			<?php if(1 == 2){//daca e test mode START here?>
+			<input type="hidden" name="f_Test_Request" value="1">
+			<?php }//daca e test mode END here?>
+			<input type="submit" class="button1-red" value="Plateste" />
+		</form>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#registerForm').submit();
+		});
+		</script>
+	<?php }?>
+<?php }?>
