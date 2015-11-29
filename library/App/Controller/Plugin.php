@@ -402,7 +402,8 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 			$layout->getView()->warrantytype = $result[4]->getValue();
 			$layout->getView()->pgt = $result[6]->getValue();
 			foreach($result as $value) {
-				define($value->getConst(), $value->getValue());
+				defined($value->getConst())
+					|| define($value->getConst(), $value->getValue());
 				$aux = $value->getConst();
 				if($aux == 'products') {
 					$tmpProducts = $value->getValue();
