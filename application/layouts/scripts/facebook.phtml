@@ -14,5 +14,17 @@
 <body>
 	<?php echo $this->layout()->content;?>
 </div>
+
+<script src="<?php echo WEBPAGE_ADDRESS ?>/theme/facebook/isotope.pkgd.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $('.grid').isotope({
+            itemSelector: '.grid-item',
+            masonry: {
+                columnWidth: 200
+            }
+        });
+    });
+</script>
 </body>
 </html>

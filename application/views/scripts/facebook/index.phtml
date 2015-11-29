@@ -1,2 +1,25 @@
+<style>
+    .grid-item { width: 200px; }
+</style>
+
 <?php
 echo '<a href="' . $this->loginUrl . '">Log in with Facebook!</a>';
+?>
+
+<?php if ($this->products): ?>
+    <div class="grid">
+    <?php foreach ($this->products as $product): ?>
+        <div class="grid-item">
+            <div class="image">
+                <img width="200" src="<?php echo WEBPAGE_ADDRESS . '/media/products/shopmania/' . $product->getImageShopmania() ?>" alt="" \>
+            </div>
+            <div class="name"></div>
+            <div class="price">
+                <span class="old"></span>
+                <span class="new"></span>
+            </div>
+            <div class="details">details</div>
+        </div>
+    <?php endforeach ?>
+    </div>
+<?php endif ?>
