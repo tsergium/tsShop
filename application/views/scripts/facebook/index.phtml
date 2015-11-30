@@ -1,5 +1,7 @@
 <style>
-    .grid-item { width: 200px; }
+    .grid-item { width: 200px;margin: 0 5px 5px 5px;background-color: #ffffff;border-radius: 0 0 5px 5px; }
+    .grid-item .image img { border-radius: 5px 5px 0 0; }
+    .grid-item .name, .grid-item .price, .grid-item .details { padding:0 10px; }
 </style>
 
 <?php
@@ -13,10 +15,10 @@ echo '<a href="' . $this->loginUrl . '">Log in with Facebook!</a>';
             <div class="image">
                 <img width="200" src="<?php echo WEBPAGE_ADDRESS . '/media/products/shopmania/' . $product->getImageShopmania() ?>" alt="" \>
             </div>
-            <div class="name"></div>
+            <div class="name"><?php echo $product->getName() ?></div>
             <div class="price">
-                <span class="old"></span>
-                <span class="new"></span>
+                <span class="old"><?php echo $product->getOldprice() ?></span>
+                <span class="new"><?php echo $product->getPrice() ?></span>
             </div>
             <div class="details">details</div>
         </div>

@@ -10,6 +10,11 @@
     <?php echo $this->headLink(); ?>
     <?php echo $this->headStyle(); ?>
     <?php echo $this->headScript(); ?>
+    <style>
+        html, body{
+            background: #e9e9e9 none;
+        }
+    </style>
 </head>
 <body>
 	<?php echo $this->layout()->content;?>
@@ -21,7 +26,7 @@
         $('.grid').isotope({
             itemSelector: '.grid-item',
             masonry: {
-                columnWidth: 200
+                columnWidth: 210
             }
         });
     });
