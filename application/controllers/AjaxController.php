@@ -14,6 +14,9 @@ class AjaxController extends Zend_Controller_Action
 		$this->view->message = $this->_flashMessenger->getMessages();
     }
 
+    /**
+     * provides a validation for username being used
+     */
 	public function checkUsernameAction()
 	{		
 		$validateId		 = $this->getRequest()->getParam('fieldId');
@@ -26,7 +29,7 @@ class AjaxController extends Zend_Controller_Action
 		$model = new Default_Model_Clients();
 		$select = $model->getMapper()->getDbTable()->select()
 				->where('username = ?', $validateValue);
-		if(($result = $model->fetchAll($select))) {
+		if($model->fetchAll($select)) {
 			$arrayToJs[1] = false;
 		} else {
 			$arrayToJs[1] = true;
