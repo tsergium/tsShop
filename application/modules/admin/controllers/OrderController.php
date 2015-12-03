@@ -7,9 +7,13 @@ class Admin_OrderController extends Zend_Controller_Action
         $this->view->message = $this->_flashMessenger->getMessages();
     }
 
-	// start admin
-		function orderStatusChangeVerify($orderId)
-		{
+    /**
+     * ToDo: find what the fuck this is
+     * @param $orderId
+     * @return array|string
+     */
+    function orderStatusChangeVerify($orderId)
+    {
 		$array = array();
 		$model = new Default_Model_OrderProducts();
 		$select = $model->getMapper()->getDbTable()->select()
@@ -28,8 +32,6 @@ class Admin_OrderController extends Zend_Controller_Action
 					}
 				}
 			}
-//			echo "<pre>", print_r($array, 1), "</pre>";
-//			die();
 			if(null != $array) {
 				return $array;
 			} else {
@@ -39,8 +41,6 @@ class Admin_OrderController extends Zend_Controller_Action
 			return 'false';
 		}
 	}
-	// end admin
-	// END ORDER
 
     public function indexAction()
     {
@@ -334,16 +334,13 @@ class Admin_OrderController extends Zend_Controller_Action
 
 	public function searchAction()
 	{
-		// Begin: Display form
 		$form = new Admin_Form_OrderSearch();
 		$form->setDecorators(array('ViewScript', array('ViewScript', array('viewScript' => 'forms/order/search.phtml'))));
 		$this->view->form = $form;
-		// End: Display form
 
 		if($this->getRequest()->getParam('txtHeaderSearch') != null) {
 			$searchTerm = $this->getRequest()->getParam('txtHeaderSearch');
 			$this->view->searchTerm = $searchTerm;
-			$array = array();
 			$array = explode(' ', $searchTerm);
 			$model = new Default_Model_Orders();
 			$select = $model->getMapper()->getDbTable()->select();
