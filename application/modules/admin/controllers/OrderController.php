@@ -7,41 +7,6 @@ class Admin_OrderController extends Zend_Controller_Action
         $this->view->message = $this->_flashMessenger->getMessages();
     }
 
-    /**
-     * ToDo: find what the fuck this is
-     * @param $orderId
-     * @return array|string
-     */
-    function orderStatusChangeVerify($orderId)
-    {
-		$array = array();
-		$model = new Default_Model_OrderProducts();
-		$select = $model->getMapper()->getDbTable()->select()
-				->where('orderId = ?', $orderId)
-				;
-		if(($result = $model->fetchAll($select))) {
-			foreach($result as $value) {
-				$productId = $value->getProductId();
-				$product = new Default_Model_Product();
-				if($product->find($productId)) {
-					if($product->getStockNelimitat() == 0) {
-						$oldqty = $product->getStock();
-						if($oldqty - $value->getQuantity() < 0) {							
-							$array[] = $product->getName();
-						}
-					}
-				}
-			}
-			if(null != $array) {
-				return $array;
-			} else {
-				return 'true';
-			}
-		} else {
-			return 'false';
-		}
-	}
-
     public function indexAction()
     {
 		$type = $this->getRequest()->getParam('type');
@@ -355,4 +320,39 @@ class Admin_OrderController extends Zend_Controller_Action
 			}
 		}
 	}
+
+    /**
+     * ToDo: find what the fuck this is
+     * @param $orderId
+     * @return array|string
+     */
+    protected function orderStatusChangeVerify($orderId)
+    {
+        $array = array();
+        $model = new Default_Model_OrderProducts();
+        $select = $model->getMapper()->getDbTable()->select()
+            ->where('orderId = ?', $orderId)
+        ;
+        if(($result = $model->fetchAll($select))) {
+            foreach($result as $value) {
+                $productId = $value->getProductId();
+                $product = new Default_Model_Product();
+                if($product->find($productId)) {
+                    if($product->getStockNelimitat() == 0) {
+                        $oldqty = $product->getStock();
+                        if($oldqty - $value->getQuantity() < 0) {
+                            $array[] = $product->getName();
+                        }
+                    }
+                }
+            }
+            if(null != $array) {
+                return $array;
+            } else {
+                return 'true';
+            }
+        } else {
+            return 'false';
+        }
+    }
 }
