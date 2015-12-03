@@ -90,21 +90,8 @@ class Admin_ProductController extends Zend_Controller_Action
 				// END: SAVE IMAGE			
 
 				// BEGIN: SAVE IMAGE
-				if($form->imageShopmania->receive()){
-					if($form->imageShopmania->getFileName()) {
-						$tmp = pathinfo($form->imageShopmania->getFileName());
-						$extension = (!empty($tmp['extension']))?$tmp['extension']:null;
-						$filename = md5(uniqid(mt_rand(), true)).".".$extension;
-						if(copy($form->imageShopmania->getFileName(), APPLICATION_PUBLIC_PATH.'/media/products/full/'.$filename)) {
-							require_once APPLICATION_PUBLIC_PATH.'/library/App/tsThumb/ThumbLib.inc.php';
-							$thumb = PhpThumbFactory::create(APPLICATION_PUBLIC_PATH.'/media/products/full/'.$filename);
-							$thumb->resize(980)->save(APPLICATION_PUBLIC_PATH.'/media/products/shopmania/'.$filename);
-							$model->setImageShopmania($filename);
-							@unlink(APPLICATION_PUBLIC_PATH.'/media/products/full/'.$filename);
-						}
-					}
-				}
-				// END: SAVE IMAGE			
+                $this->saveImageShopmania($form, $model);
+                // END: SAVE IMAGE
 
 
 				if(($productId = $model->save())){
@@ -878,5 +865,27 @@ class Admin_ProductController extends Zend_Controller_Action
 		$this->_flashMessenger->addMessage('<div class="mess-false">Instructiunea selectata nu a fost gasita in baza de date!</div>');
 	}
 	$this->_redirect('admin/product/productintructions');
+    }
+
+    /**
+     * @param $form
+     * @param $model
+     */
+    protected function saveImageShopmania($form, $model)
+    {
+        if ($form->imageShopmania->receive()) {
+            if ($form->imageShopmania->getFileName()) {
+                $tmp = pathinfo($form->imageShopmania->getFileName());
+                $extension = (!empty($tmp['extension'])) ? $tmp['extension'] : null;
+                $filename = md5(uniqid(mt_rand(), true)) . "." . $extension;
+                if (copy($form->imageShopmania->getFileName(), APPLICATION_PUBLIC_PATH . '/media/products/full/' . $filename)) {
+                    require_once APPLICATION_PUBLIC_PATH . '/library/App/tsThumb/ThumbLib.inc.php';
+                    $thumb = PhpThumbFactory::create(APPLICATION_PUBLIC_PATH . '/media/products/full/' . $filename);
+                    $thumb->resize(980)->save(APPLICATION_PUBLIC_PATH . '/media/products/shopmania/' . $filename);
+                    $model->setImageShopmania($filename);
+                    @unlink(APPLICATION_PUBLIC_PATH . '/media/products/full/' . $filename);
+                }
+            }
+        }
     }
 }
