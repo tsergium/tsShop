@@ -41,7 +41,7 @@ class ApiController extends Zend_Controller_Action
     {
         $modelProduct = new Default_Model_Product();
         $select = $modelProduct->getMapper()->getDbTable()->select()
-            ->where('status IS NOT NULL');
+            ->where('status != 0');
         $products = $modelProduct->fetchAll($select);
         $productsData = $this->parseProductsToJson($products);
         $this->printJson($productsData, 200);
