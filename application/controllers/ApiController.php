@@ -41,7 +41,10 @@ class ApiController extends Zend_Controller_Action
     {
         $modelProduct = new Default_Model_Product();
         $select = $modelProduct->getMapper()->getDbTable()->select()
-            ->where('status != 0');
+            ->from(array('p'=>'ts_products'))
+            ->join(array('pca'=>'ts_products_categ_asoc'), 'p.id = pca.productId', array('composition' => new Zend_Db_Expr('GROUP_CONCAT(pca.categoryId)')))
+            ->where('status = ?', '1')
+            ->order('created DESC');
         $products = $modelProduct->fetchAll($select);
         $productsData = $this->parseProductsToJson($products);
         $this->printJson($productsData, 200);
@@ -64,15 +67,22 @@ class ApiController extends Zend_Controller_Action
 
     protected function parseProductsToJson($products)
     {
+        $zendView = new Zend_View;
         $productData = [];
         if (!empty($products)) {
             foreach ($products as $product) {
+                $link   = $zendView->url(array('id' => $product->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($product->getId())."-".$product->getName())),),'product');
+                $image  = (null != $product->getImage())?"/media/products/small/".$product->getImage():"/images/no-pic-small.jpg";
+
                 $productData[] = [
                     'id'    => $product->getId(),
-                    'name'  => $product->getName()
+                    'name'  => $product->getName(),
+                    'link'  => WEBPAGE_ADDRESS . $link,
+                    'image' => WEBPAGE_ADDRESS . $image
                 ];
             }
         }
+        return $productData;
     }
 
     /**
