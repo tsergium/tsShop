@@ -1,12 +1,22 @@
 <?php
+
+/**
+ * Class Admin_ProductController
+ */
 class Admin_ProductController extends Zend_Controller_Action
 {
+    /**
+     *
+     */
     public function init()
     {
         $this->_flashMessenger = $this->_helper->getHelper('FlashMessenger');
         $this->view->message = $this->_flashMessenger->getMessages();
     }
 
+    /**
+     * @throws Zend_Paginator_Exception
+     */
     public function indexAction()
     {
 		// BEGIN: DISPLAY SEARCH FORM
@@ -60,6 +70,9 @@ class Admin_ProductController extends Zend_Controller_Action
 		}
     }
 
+    /**
+     * @throws Zend_Form_Exception
+     */
 	public function addAction()
 	{
 	    $form = new Admin_Form_Product();
@@ -161,6 +174,10 @@ class Admin_ProductController extends Zend_Controller_Action
 		}
 	}
 
+    /**
+     * @throws Exception
+     * @throws Zend_Form_Exception
+     */
 	public function editAction()
 	{
 		$id = $this->getRequest()->getParam('id');

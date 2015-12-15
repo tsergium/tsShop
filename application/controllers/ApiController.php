@@ -37,6 +37,16 @@ class ApiController extends Zend_Controller_Action
         $this->printJson($categoriesData, 200);
     }
 
+    public function productsAction()
+    {
+        $modelProduct = new Default_Model_Product();
+        $select = $modelProduct->getMapper()->getDbTable()->select()
+            ->where('status IS NOT NULL');
+        $products = $modelProduct->fetchAll($select);
+        $productsData = $this->parseProductsToJson($products);
+        $this->printJson($productsData, 200);
+    }
+
     protected function parseCategoriesToJson($categories)
     {
         $categoryData = [];
@@ -50,6 +60,19 @@ class ApiController extends Zend_Controller_Action
         }
 
         return $categoryData;
+    }
+
+    protected function parseProductsToJson($products)
+    {
+        $productData = [];
+        if (!empty($products)) {
+            foreach ($products as $product) {
+                $productData[] = [
+                    'id'    => $product->getId(),
+                    'name'  => $product->getName()
+                ];
+            }
+        }
     }
 
     /**
