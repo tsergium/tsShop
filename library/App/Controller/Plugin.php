@@ -522,22 +522,22 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 						'resource'   => 'admin:slider',
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Administrare Slider</b></b>',
-								'title'      => 'Administrare Slider',
+								'label'      => '<b><b>Slider administration</b></b>',
+								'title'      => 'Slider administration',
 								'module'     => 'admin',
 								'controller' => 'slider',
 								'action'	 => 'index',
 							),
 							array(
-								'label'      => '<b><b>Adauga Slide</b></b>',
-								'title'      => 'Adauga Slide',
+								'label'      => '<b><b>Add Slide</b></b>',
+								'title'      => 'Add Slide',
 								'module'     => 'admin',
 								'controller' => 'slider',
 								'action'	 => 'add',
 							),
 							array(
-								'label'      => '<b><b>Modifica Slide</b></b>',
-								'title'      => 'Modifica Slide',
+								'label'      => '<b><b>Modify Slide</b></b>',
+								'title'      => 'Modify Slide',
 								'module'     => 'admin',
 								'controller' => 'slider',
 								'action'	 => 'edit',
@@ -547,22 +547,22 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 					),
 					//////CATEGORY//////
 					array(
-						'label'      => '<b><b>Categorii Produse</b></b>',
-						'title'      => 'Categorii Produse',
+						'label'      => '<b><b>Product Categories</b></b>',
+						'title'      => 'Product Categories',
 						'module'     => 'admin',
 						'controller' => 'category',
 						'resource'   => 'admin:category',
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Administrare Categorii</b></b>',
+								'label'      => '<b><b>Category Administration</b></b>',
 								'title'      => 'Administrare Categorii',
 								'module'     => 'admin',
 								'controller' => 'category',
 								'action' => 'index',
 							),
 							array(
-								'label'      => '<b><b>Adauga Categorie</b></b>',
-								'title'      => 'Adauga Categorie',
+								'label'      => '<b><b>Add Category</b></b>',
+								'title'      => 'Add Category',
 								'module'     => 'admin',
 								'controller' => 'category',
 								'action' => 'add',
@@ -580,97 +580,97 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 					),
 					//////PRODUCT//////
 					array(
-						'label'      => '<b><b>Produse</b></b>',
-						'title'      => 'Produse',
+						'label'      => '<b><b>Products</b></b>',
+						'title'      => 'Products',
 						'module'     => 'admin',
 						'controller' => 'product',
 						'resource'   => 'admin:product',
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Administrare Produse</b></b>',
-								'title'      => 'Administrare Produse',
+								'label'      => '<b><b>Product Administration</b></b>',
+								'title'      => 'Product administration',
 								'module'     => 'admin',
 								'controller' => 'product',
 								'action'	 => 'index',
 							),
 							array(
-								'label'      => '<b><b>Adauga Produse</b></b>',
-								'title'      => 'Adauga Produse',
+								'label'      => '<b><b>Add products</b></b>',
+								'title'      => 'Add products',
 								'module'     => 'admin',
 								'controller' => 'product',
 								'action'	 => 'add',
 							),
 							array(
-								'label'      => '<b><b>Modifica Produs</b></b>',
-								'title'      => 'Modifica Produs',
+								'label'      => '<b><b>Modify products</b></b>',
+								'title'      => 'Modify Products',
 								'module'     => 'admin',
 								'controller' => 'product',
 								'action'	 => 'edit',
 								'visible'	 		=> false,
 							),
 							array(
-								'label'      		=> '<b><b>Produse fara categorie</b></b>',
-								'title'      		=> 'Produse fara categorie',
+								'label'      		=> '<b><b>Products without categories</b></b>',
+								'title'      		=> 'Products without categories',
 								'module'     		=> 'admin',
 								'controller' 		=> 'product',
 								'action'	 		=> 'nocateg',
 							),
 							array(
-								'label'      		=> '<b><b>Atribute produse</b></b>',
-								'title'      		=> 'Atribute produse',
+								'label'      		=> '<b><b>Product attributes</b></b>',
+								'title'      		=> 'Product attributes',
 								'module'     		=> 'admin',
 								'controller' 		=> 'product',
 								'action'	 		=> 'attributes',
 								'pages'		 		=> array(
 									array(
-										'label'		=> 'Adauga marimi',
-										'title'		=> 'Adauga marimi',
-										'module'	=> 'admin',
+										'label'		    => 'Add sizes',
+										'title'		    => 'Add sizes',
+										'module'	    => 'admin',
 										'controller'	=> 'product',
-										'action'	=> 'addattributesize'
+										'action'    	=> 'addattributesize'
 									),
 									array(
-										'label'		=> 'Adauga culori',
-										'title'		=> 'Adauga culori',
-										'module'	=> 'admin',
+										'label'	    	=> 'Add colors',
+										'title'	    	=> 'Add colors',
+										'module'    	=> 'admin',
 										'controller'	=> 'product',
-										'action'	=> 'addattributecolor'
+										'action'    	=> 'addattributecolor'
 									),
 									array(
-										'label'		=> 'Instructiuni de spalare',
-										'title'		=> 'Instructiuni de spalare',
-										'module'	=> 'admin',
+										'label'		    => 'Washing instructions',
+										'title'		    => 'Washing instructions',
+										'module'    	=> 'admin',
 										'controller'	=> 'product',
-										'action'	=> 'productintructions'
+										'action'    	=> 'productintructions'
 									),
 									array(
-										'label'		=> 'Editare Instructiuni de spalare',
-										'title'		=> 'Editare Instructiuni de spalare',
-										'module'	=> 'admin',
+										'label'	    	=> 'Modify Washing instructions',
+										'title'	    	=> 'Modify Washing instructions',
+										'module'    	=> 'admin',
 										'controller'	=> 'product',
-										'action'	=> 'editinstructions',
-										'visible'	=> false,
+										'action'    	=> 'editinstructions',
+										'visible'   	=> false,
 									),
 									array(
-										'label'		=> 'Editare atribute',
-										'title'		=> 'Editare atribute',
-										'module'	=> 'admin',
+										'label'	    	=> 'Edit attributes',
+										'title'	    	=> 'Edit attributes',
+										'module'	    => 'admin',
 										'controller'	=> 'product',
-										'action'	=> 'editattribute',
-										'visible'	=> false,
+										'action'    	=> 'editattribute',
+										'visible'   	=> false,
 									),
 								),
 							),
 							array(
-								'label'      			=> '<b><b>Galerie foto</b></b>',
-								'title'      			=> 'Galerie foto',
+								'label'      			=> '<b><b>Photo gallery</b></b>',
+								'title'      			=> 'Photo gallery',
 								'module'     			=> 'admin',
 								'controller' 			=> 'product',
 								'action'	 			=> 'gallery',
 								'pages'					=> array(
 									array(
-										'label'     	=> '<b><b>Adauga poze</b></b>',
-										'title'      	=> 'Adauga poze',
+										'label'     	=> '<b><b>Add pictures</b></b>',
+										'title'      	=> 'Add pictures',
 										'module'     	=> 'admin',
 										'controller' 	=> 'product',
 										'action'	 	=> 'addgallery',
@@ -682,29 +682,29 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 					),
 					//////ORDER//////
 					array(
-						'label'      => '<b><b>Comenzi</b></b>',
-						'title'      => 'Comenzi',
+						'label'      => '<b><b>Orders</b></b>',
+						'title'      => 'Orders',
 						'module'     => 'admin',
 						'controller' => 'order',
 						'resource'   => 'admin:order',
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Administrare Comenzi</b></b>',
-								'title'      => 'Administrare Comenzi',
+								'label'      => '<b><b>Orders Administration</b></b>',
+								'title'      => 'Orders Administration',
 								'module'     => 'admin',
 								'controller' => 'order',
 								'action' => 'index',
 							),
 							array(
-								'label'      => '<b><b>Cautare Comanda</b></b>',
-								'title'      => 'Cautare Comanda',
+								'label'      => '<b><b>Search Orders</b></b>',
+								'title'      => 'Search Orders',
 								'module'     => 'admin',
 								'controller' => 'order',
 								'action'	 => 'search',
 							),
 							array(
-								'label'      => '<b><b>Detalii</b></b>',
-								'title'      => 'Detalii',
+								'label'      => '<b><b>Details</b></b>',
+								'title'      => 'Details',
 								'module'     => 'admin',
 								'controller' => 'order',
 								'action'	 => 'details',
@@ -714,30 +714,30 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 					),
 					//////CLIENTS//////
 					array(
-						'label'      => '<b><b>Clienti</b></b>',
-						'title'      => 'Clienti',
+						'label'      => '<b><b>Clients</b></b>',
+						'title'      => 'Clients',
 						'module'     => 'admin',
 						'controller' => 'client',
 						'resource'   => 'admin:client',
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Administrare Clienti</b></b>',
-								'title'      => 'Administrare Clienti',
+								'label'      => '<b><b>Client Administration</b></b>',
+								'title'      => 'Client Administration',
 								'module'     => 'admin',
 								'controller' => 'client',
 								'action' => 'index',
 								'pages'		=> array(
 									array(
-										'label'      => '<b><b>Modificare Clienti</b></b>',
-										'title'      => 'Modificare Clienti',
+										'label'      => '<b><b>Modify Clients</b></b>',
+										'title'      => 'Modify Clients',
 										'module'     => 'admin',
 										'controller' => 'client',
 										'action' => 'edit',
 										'visible'	 => false,
 									),
 									array(
-										'label'      => '<b><b>Detalii Client</b></b>',
-										'title'      => 'Detalii Client',
+										'label'      => '<b><b>Client Details</b></b>',
+										'title'      => 'Client Details',
 										'module'     => 'admin',
 										'controller' => 'client',
 										'action' => 'details',
@@ -747,8 +747,8 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 
 							),
 							array(
-								'label'      => '<b><b>Cautare Clienti</b></b>',
-								'title'      => 'Cautare Clienti',
+								'label'      => '<b><b>Client Search</b></b>',
+								'title'      => 'Client Search',
 								'module'     => 'admin',
 								'controller' => 'client',
 								'action'	 => 'search',
@@ -757,29 +757,29 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 					),
 					//////PARTNERS//////
 					array(
-						'label'      => '<b><b>Parteneri</b></b>',
-						'title'      => 'Parteneri',
+						'label'      => '<b><b>Partners</b></b>',
+						'title'      => 'Partners',
 						'module'     => 'admin',
 						'controller' => 'partner',
 						'resource'   => 'admin:partner',
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Administrare Parteneri</b></b>',
-								'title'      => 'Administrare Parteneri',
+								'label'      => '<b><b>Partners Administration</b></b>',
+								'title'      => 'Partners Administration',
 								'module'     => 'admin',
 								'controller' => 'partner',
 								'action'	 => 'index',
 							),
 							array(
-								'label'      => '<b><b>Adauga Partener</b></b>',
-								'title'      => 'Adauga Partener',
+								'label'      => '<b><b>Add Partener</b></b>',
+								'title'      => 'Add Partener',
 								'module'     => 'admin',
 								'controller' => 'partner',
 								'action'	 => 'add',
 							),
 							array(
-								'label'      => '<b><b>Modifica Partener</b></b>',
-								'title'      => 'Modifica Partener',
+								'label'      => '<b><b>Modify Partner</b></b>',
+								'title'      => 'Modify Partner',
 								'module'     => 'admin',
 								'controller' => 'partner',
 								'action'	 => 'edit',
@@ -789,8 +789,8 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 					),
 					//////EMAIL TEMPLATES//////
 					array(
-						'label'      => '<b><b>Sabloane Email</b></b>',
-						'title'      => 'Sabloane Email',
+						'label'      => '<b><b>Email Templates</b></b>',
+						'title'      => 'Email Templates',
 						'module'     => 'admin',
 						'controller' => 'template',
 						'resource'   => 'admin:template',
@@ -798,32 +798,32 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 						'params'	 => array('const'=>'signUp'),
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Email de inregistrare</b></b>',
-								'title'      => 'Email de inregistrare',
+								'label'      => '<b><b>Registration Email</b></b>',
+								'title'      => 'Registration Email',
 								'module'     => 'admin',
 								'controller' => 'template',
 								'action'	 => 'index',
 								'params'	 => array('const'=>'signUp')
 							),
 							array(
-								'label'      => '<b><b>Email de parola uitata</b></b>',
-								'title'      => 'Email de parola uitata',
+								'label'      => '<b><b>Forgot Password Email</b></b>',
+								'title'      => 'Forgot Password Email',
 								'module'     => 'admin',
 								'controller' => 'template',
 								'action'     => 'index',
 								'params'	 => array('const'=>'forgotPassTemplate')
 							),
 							array(
-								'label'      => '<b><b>Email de activare pentru abonaţi newsletter</b></b>',
-								'title'      => 'Email de activare pentru abonaţi newsletter',
+								'label'      => '<b><b>Activation email for newsetter subscribtion</b></b>',
+								'title'      => 'Activation email for newsetter subscribtion',
 								'module'     => 'admin',
 								'controller' => 'template',
 								'action' => 'index',
 								'params'	 => array('const'=>'subscribersEmail')
 							),
 							array(
-								'label'      => '<b><b>Mesaj comandă email</b></b>',
-								'title'      => 'Mesaj comandă email',
+								'label'      => '<b><b>Order Email</b></b>',
+								'title'      => 'Order Email',
 								'module'     => 'admin',
 								'controller' => 'template',
 								'action' => 'index',
@@ -850,8 +850,8 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 								'params'	 => array('id'=>'1'),
 							),
 							array(
-								'label'      => '<b><b>Termeni si conditii</b></b>',
-								'title'      => 'Termeni si conditii',
+								'label'      => '<b><b>Terms and conditions</b></b>',
+								'title'      => 'Terms and conditions',
 								'module'     => 'admin',
 								'controller' => 'cms',
 								'resource'   => 'admin:cms',
@@ -868,15 +868,15 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 						'action'     => 'newsletter',
 						'pages'		 => array(
 							array(
-								'label'      => '<b><b>Trimitere mesaj</b></b>',
-								'title'      => 'Trimitere mesaj',
+								'label'      => '<b><b>Send Mail</b></b>',
+								'title'      => 'Send Mail',
 								'module'     => 'admin',
 								'controller' => 'newsletter',
 								'action'     => 'newsletter',
 							),
 							array(
-								'label'      => '<b><b>Abonati</b></b>',
-								'title'      => 'Abonati',
+								'label'      => '<b><b>Subscribers</b></b>',
+								'title'      => 'Subscribers',
 								'module'     => 'admin',
 								'controller' => 'newsletter',
 								'action'	 => 'index',
@@ -885,15 +885,15 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 					),
                     //////COUPON//////
                     array(
-                        'label'      => '<b><b>Cupoane</b></b>',
-                        'title'      => 'Cupoane',
+                        'label'      => '<b><b>Coupons</b></b>',
+                        'title'      => 'Coupons',
                         'module'     => 'admin',
                         'controller' => 'coupon',
                         'resource'   => 'admin:coupon',
                         'pages'		 => array(
                             array(
-                                'label'      => '<b><b>Administrare Cupoane</b></b>',
-                                'title'      => 'Administrare Cupoane',
+                                'label'      => '<b><b>Coupons Administration</b></b>',
+                                'title'      => 'Coupon Administration',
                                 'module'     => 'admin',
                                 'controller' => 'coupon',
                                 'action' => 'index',
@@ -909,15 +909,15 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
                     ),
                     //////VOUCHER//////
                     array(
-                        'label'      => '<b><b>Reducere</b></b>',
-                        'title'      => 'Reducere',
+                        'label'      => '<b><b>Cart Price Rules</b></b>',
+                        'title'      => 'Cart Price Rules',
                         'module'     => 'admin',
                         'controller' => 'voucher',
                         'resource'   => 'admin:voucher',
                         'pages'         => array(
                             array(
-                                'label'      => '<b><b>Administrare Reduceri</b></b>',
-                                'title'      => 'Administrare Reduceri',
+                                'label'      => '<b><b>Cart Price Rules Administration</b></b>',
+                                'title'      => 'Cart Price Rules Administration',
                                 'module'     => 'admin',
                                 'controller' => 'voucher',
                                 'action' => 'index',
@@ -925,8 +925,8 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
                         ),
 					),
 					array(
-						'label'      => '<b><b>Setari</b></b>',
-						'title'      => 'Setari',
+						'label'      => '<b><b>Settings</b></b>',
+						'title'      => 'Settings',
 						'module'     => 'admin',
 						'controller' => 'settings',
 						'action'     => 'index',
@@ -939,8 +939,8 @@ class App_Controller_Plugin extends Zend_Controller_Plugin_Abstract
 								'action'     => 'index',
 							),
 							array(
-								'label'      => '<b><b>Metode de plata si livrare</b></b>',
-								'title'      => 'Metode de plata si livrare',
+								'label'      => '<b><b>Payment Methods and Delivery</b></b>',
+								'title'      => 'Payment Methods and Delivery',
 								'module'     => 'admin',
 								'controller' => 'settings',
 								'action'     => 'paymentmethods',
