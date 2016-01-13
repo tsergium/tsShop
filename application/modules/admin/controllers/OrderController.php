@@ -53,8 +53,7 @@ class Admin_OrderController extends Zend_Controller_Action
 				if($orderStatusChangeVerify == 'true') {
 					$orderProducts = new Default_Model_OrderProducts();
 					$select = $orderProducts->getMapper()->getDbTable()->select()
-							->where('orderId = ?', $orderId)
-							;
+							->where('orderId = ?', $orderId);
 					if(($result = $orderProducts->fetchAll($select))) {
 						foreach($result as $value) {							
 							$productId = $value->getProductId();
@@ -73,7 +72,7 @@ class Admin_OrderController extends Zend_Controller_Action
 				} elseif($orderStatusChangeVerify == 'false') {
 					$order->save();
 					$this->_flashMessenger->addMessage('<div class="mess-true">'.Zend_Registry::get('translate')->_('sales_status_success').'</div>');
-				} elseif($orderStatusChangeVerify) {
+				} elseif(is_array($orderStatusChangeVerify)) {
 					foreach($orderStatusChangeVerify as $value) {
 						$this->_flashMessenger->addMessage('<div class="mess-false">'.Zend_Registry::get('translate')->_('sales_status_error_4').' '.$value.'</div>');
 					}
