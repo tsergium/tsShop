@@ -7,6 +7,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	const NAMESPACE = 'Default_';
 
 	/**
+	 * @var array Auto Load Namespaces
+	 */
+	protected $autoLoadNamespaces = ['Base_'];
+
+	/**
 	 * Session Expiration Time in Seconds
 	 */
 	const SESSION_EXP_SEC = 604800;
@@ -19,8 +24,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		include APPLICATION_PATH . "/configs/routes.php";
 	}
 
+	protected function _initView() {
+		$this->bootstrap('layout');
+		$layout = $this->getResource('layout');
+		$view = $layout->getView();
+		$view->doctype('HTML5');
+	}
+
     protected function _initAutoload()
     {
+		foreach ($this->autoLoadNamespaces as $namespace) {
+			Zend_Loader_Autoloader::getInstance()->registerNamespace($namespace);
+		}
+
 		$autoLoader = new Zend_Application_Module_Autoloader(array(
             'namespace' => self::NAMESPACE,
             'basePath'  => dirname(__FILE__),

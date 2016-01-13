@@ -5,19 +5,12 @@
  * Date: 11/29/2015
  * Time: 8:35 PM
  */
-class ApiController extends Zend_Controller_Action
+class ApiController extends Base_Controller_Action
 {
     public function init()
     {
-        $this->_helper->viewRenderer->setNoRender();
-        $this->_helper->getHelper('layout')->disableLayout();
-        $bootstrap = $this->getInvokeArg('bootstrap');
-        if($bootstrap->hasResource('db')) {
-            $this->db = $bootstrap->getResource('db');
-        }
-
-        $this->_flashMessenger = $this->_helper->getHelper('FlashMessenger');
-        $this->view->message = $this->_flashMessenger->getMessages();
+        parent::init();
+        $this->ajaxInit();
     }
 
     public function indexAction()
