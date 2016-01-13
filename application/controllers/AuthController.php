@@ -6,8 +6,6 @@ class AuthController extends Zend_Controller_Action
 
 	public function init()
 	{
-		/* Initialize action controller here */
-		/* Initialize action controller here */
         $this->_flashMessenger = $this->_helper->getHelper('FlashMessenger');
         $bootstrap = $this->getInvokeArg('bootstrap');
         if ($bootstrap->hasResource('db')) {
@@ -47,8 +45,6 @@ class AuthController extends Zend_Controller_Action
 					$accountId = $dbAdapter->getResultRowObject();
 					$account = new Default_Model_Clients();
 					$account ->find($accountId->id);
-//					$last_login = $account->getLastlogin();
-//					$account ->saveLastLogin();
 					$storage = $auth->getStorage();
 					$storage -> write($account);
 				}
@@ -100,6 +96,13 @@ class AuthController extends Zend_Controller_Action
 		}
 		$this->view->message = $this->_flashMessenger->getMessages();
 	}
+
+	/**
+	 * Forgot password
+	 *
+	 * @throws Zend_Form_Exception
+	 * @throws Zend_Mail_Exception
+	 */
 	public function remindAction()
 	{
 		$form = new Default_Form_Remind();
@@ -108,19 +111,19 @@ class AuthController extends Zend_Controller_Action
 
 		if ($this->getRequest()->isPost()) {
             if ($form->isValid($this->getRequest()->getPost())) {
-            		$mail=$this->getRequest()->getParam('email');
+				$mail=$this->getRequest()->getParam('email');
 
-            		$account = new Default_Model_Clients();
-	            	$select = $account->getMapper()->getDbTable()->select()	            	          								    	
-	            	          								    	 ->where('email = ?', $mail);
-            		 if ($accounts=$account->fetchAll($select) ) {
-            		 	foreach ($accounts as $account){
-            		 		$username 		= $account->getUsername();
-            		 		$email 			= $account->getEmail();
-            		 		$firstname 		= $account->getFirstname();
-            		 		$lastname 	    = $account->getLastname();
-            		 		$id	    		= $account->getId();
-            		 	}
+				$accountModel	= new Default_Model_Clients();
+				$select			= $accountModel->getMapper()->getDbTable()->select()
+									->where('email = ?', $mail);
+				$account		= $accountModel->fetchRow($select);
+				if ($account) {
+						$username 		= $account->getUsername();
+						$email 			= $account->getEmail();
+						$firstname 		= $account->getFirstname();
+						$lastname 	    = $account->getLastname();
+						$id	    		= $account->getId();
+
             		 	$new_password=substr(md5(uniqid(mt_rand(), true)),0,10);
             		 	$password=md5($new_password);
             		 	$forgotPassTemplate = new Default_Model_Templates();
@@ -160,8 +163,5 @@ class AuthController extends Zend_Controller_Action
             }
 		}
     	$this->view->message = $this->_flashMessenger->getMessages();
-
 	}
-
 }
-?>
