@@ -1,4 +1,10 @@
 <?php
+const DB_CREDENTIALS = [
+    "dbServer"   => "host",
+    "dbName"     => "name",
+    "dbUser"     => "user",
+    "dbPass"     => "pass"
+];
 
 function html_to_text($string){
 
@@ -60,16 +66,8 @@ function replace_not_in_tags($find_str, $replace_str, $string) {
 	return $string;
 }
 
-// Database access info
-$dbServer = "localhost";
-$dbName = "rhai4274_lenjdelux";
-$dbUser = "rhai4274_newlenj";
-$dbPass = "NEWlenj1987";
-
-$s = mysql_connect($dbServer, $dbUser, $dbPass) or die(mysql_error());
-$db = mysql_select_db($dbName, $s) or die(mysql_error());
-// $db=mysql_connect("localhost","rhai4274_newlenj","NEWlenj1987");
-// mysql_select_db("rhai4274_lenjdelux");
+$s = mysql_connect(DB_CREDENTIALS['dbServer'], DB_CREDENTIALS['dbUser'], DB_CREDENTIALS['dbPass']) or die(mysql_error());
+$db = mysql_select_db(DB_CREDENTIALS['dbName'], $s) or die(mysql_error());
 
 $datafeed_separator = "|"; 
 $datafeed_currency = "RON";
@@ -107,7 +105,6 @@ foreach ($din_categoriile as $value) {
 			$descriere_produs = replace_not_in_tags("\n", "<BR />", $descriere_produs);
 			$descriere_produs = str_replace("\n", " ", $descriere_produs);
 			$descriere_produs = str_replace("\r", "", $descriere_produs);
-//			array('id' => $value->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($value->getId())."-".$value->getName()))
 			$link_produs = "http://www.lenjerie-de-lux.ro/p".$sc['id']."-".preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($value['name']."-".$sc['name'])).".html";
 			$cale_poza = "http://www.lenjerie-de-lux.ro/media/products/shopmania/".$sc['imageShopmania'];
 			$pret = $sc['price'];
@@ -119,7 +116,4 @@ foreach ($din_categoriile as $value) {
 	} else {
 		mysql_free_result($sql_rez);
 	}
-
-
 }
-?>
