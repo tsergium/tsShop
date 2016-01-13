@@ -2,6 +2,16 @@
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 	/**
+	 * Namespace for Module
+	 */
+	const NAMESPACE = 'Default_';
+
+	/**
+	 * Session Expiration Time in Seconds
+	 */
+	const SESSION_EXP_SEC = 604800;
+
+	/**
 	 * Initialise frontend routes
 	 */
 	protected function _initRoutes()
@@ -11,8 +21,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
     protected function _initAutoload()
     {
-        $autoloader = new Zend_Application_Module_Autoloader(array(
-            'namespace' => 'Default_',
+		$autoLoader = new Zend_Application_Module_Autoloader(array(
+            'namespace' => self::NAMESPACE,
             'basePath'  => dirname(__FILE__),
         ));
 		
@@ -20,9 +30,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		if ($ns->initialize == '') {
 			Zend_Session::start();
 			$ns->initialize = true;
-			$ns->setExpirationSeconds(604800);
+			$ns->setExpirationSeconds(self::SESSION_EXP_SEC);
 		}
 		
-        return $autoloader;
+        return $autoLoader;
     }
 }
