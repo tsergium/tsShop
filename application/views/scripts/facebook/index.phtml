@@ -1,11 +1,16 @@
 <style>
     .grid-item { width: 200px;margin: 0 5px 5px 5px;background-color: #ffffff;border-radius: 0 0 5px 5px; }
-    .grid-item .image img { border-radius: 5px 5px 0 0; }
+    .grid-item .image img { border-radius: 5px 5px 0 0;cursor: zoom-in; }
     .grid-item .name, .grid-item .price, .grid-item .details { padding:0 10px; }
 </style>
 
 <?php
-echo '<a href="' . $this->loginUrl . '">Log in with Facebook!</a>';
+/**
+ * ToDo: Check for authenticated state properly
+ */
+if (!isset($_GET['code'])) :
+    echo '<a href="' . $this->loginUrl . '">Log in with Facebook!</a>';
+endif;
 ?>
 
 <?php if ($this->products): ?>
@@ -25,3 +30,46 @@ echo '<a href="' . $this->loginUrl . '">Log in with Facebook!</a>';
     <?php endforeach ?>
     </div>
 <?php endif ?>
+
+
+
+<script>
+$(function() {
+    $(".grid-item").each(function(){
+        $(this).click(function(){
+            var docHeight = $(document).height();
+            var overlay = "<div id='overlay'>" +
+                                "<div id='overlay-item'>" +
+                                    "<div id='overlay-name' style='text-align: center;'>" + $(".name", this).text() + "</div>" +
+                                    "<img style='display: block;margin-left: auto;margin-right: auto;' src='" + $(".image img", this).attr("src") + "'>" +
+                                    "<a id='overlay-close'>close</a></div>" +
+                                "</div>" +
+                            "</div>";
+            $("body").append(overlay);
+
+            $("#overlay")
+                .height(docHeight)
+                .css({
+                    'opacity' : 1,
+                    'display' : 'block',
+                    'position': 'absolute',
+                    'top': 0,
+                    'left': 0,
+                    'background-color': 'rgba(247, 247, 247, 0.960784)',
+                    'width': '100%',
+                    'z-index': 5000
+                });
+        });
+    });
+
+    $(document).keyup(function(e) {
+        // on Enter
+        if (e.keyCode == 13) { // on Enter
+
+        }
+        if (e.keyCode == 27) { // on Esc
+            $("#overlay").remove();
+        }
+    });
+});
+</script>
