@@ -8,6 +8,12 @@ class Admin_Form_Product extends Zend_Form
         $this->addAttribs(array('id'=>'frmPartner'));
 		$this->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
 
+		$name = new Zend_Form_Element_Text('urlOrigin');
+		$name->setLabel('urlOrigin');
+		$name->setAttribs(['style'=>'width:250px;']);
+		$name->setRequired(true);
+		$this->addElement($name);
+
         $name = new Zend_Form_Element_Text('name');
         $name->setLabel('Nume');
         $name->setAttribs(array('maxlength'=>'120', 'class'=>'validate[required]', 'style'=>'width:250px;'));
