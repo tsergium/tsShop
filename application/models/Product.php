@@ -3,6 +3,7 @@ class Default_Model_Product
 {
     protected $_id;
     protected $_promotionId;
+    protected $_urlOrigin;
 	protected $_name;
 	protected $_oldprice;
 	protected $_price;
@@ -75,6 +76,17 @@ class Default_Model_Product
     public function getPromotionId()
     {
         return $this->_promotionId;
+    }
+
+    public function setUrlOrigin($urlOrigin)
+    {
+        $this->_urlOrigin = (string) $urlOrigin;
+        return $this;
+    }
+
+    public function getUrlOrigin()
+    {
+        return $this->_urlOrigin;
     }
 
 	public function setName($name)

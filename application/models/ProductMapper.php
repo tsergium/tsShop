@@ -59,6 +59,7 @@ class Default_Model_ProductMapper
     {
         $data = array(
             'promotionId'		=> $model->getPromotionId(),
+            'urlOrigin'		    => $model->getUrlOrigin(),
             'name'				=> $model->getName(),
             'oldprice'			=> $model->getOldprice(),
             'price'				=> $model->getPrice(),
