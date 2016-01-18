@@ -16,7 +16,7 @@ endif;
 <?php if ($this->products): ?>
     <div class="grid">
     <?php foreach ($this->products as $product): ?>
-        <div class="grid-item">
+        <div class="grid-item" data-active="false" data-url="<?php echo $product->getUrlOrigin() ?>">
             <div class="image">
                 <img width="200" src="<?php echo WEBPAGE_ADDRESS . '/media/products/shopmania/' . $product->getImageShopmania() ?>" alt="" \>
             </div>
@@ -38,9 +38,10 @@ $(function() {
     $(".grid-item").each(function(){
         $(this).click(function(){
             var docHeight = $(document).height();
+            var itemName = $(".name", this).text();
             var overlay = "<div id='overlay'>" +
                                 "<div id='overlay-item'>" +
-                                    "<div id='overlay-name' style='text-align: center;'>" + $(".name", this).text() + "</div>" +
+                                    "<div id='overlay-name' style='text-align: center;'>" + itemName + "</div>" +
                                     "<img style='display: block;margin-left: auto;margin-right: auto;' src='" + $(".image img", this).attr("src") + "'>" +
                                     "<a id='overlay-close'>close</a></div>" +
                                 "</div>" +

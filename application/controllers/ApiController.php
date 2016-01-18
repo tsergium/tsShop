@@ -67,7 +67,7 @@ class ApiController extends Base_Controller_Action
         if (!empty($products)) {
             foreach ($products as $product) {
                 $link   = $zendView->url(array('id' => $product->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($product->getId())."-".$product->getName())),),'product');
-                $image  = (null != $product->getImage())?"/media/products/small/".$product->getImage():"/images/no-pic-small.jpg";
+                $image  = (null != $product->getImageShopmania())?"/media/products/small/".$product->getImageShopmania():"/images/no-pic-small.jpg";
 
                 $productData[] = [
                     'id'            => $product->getId(),

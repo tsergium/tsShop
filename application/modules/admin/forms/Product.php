@@ -211,6 +211,7 @@ class Admin_Form_Product extends Zend_Form
 
 	public function edit(Default_Model_Product $model)
 	{
+		$this->urlOrigin->setValue($model->getUrlOrigin());
 		$this->name->setValue($model->getName());
 		$this->composition->setValue($model->getComposition());
 		$this->oldprice->setValue($model->getOldprice());
