@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Frontend</title>
+    <style>
+        .grid-item { width: 200px;margin: 0 5px 5px 5px;background-color: #ffffff;border-radius: 0 0 5px 5px; }
+        .grid-item .image img { border-radius: 5px 5px 0 0;cursor: zoom-in; }
+        .grid-item .name, .grid-item .price, .grid-item .details { padding:0 10px; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        /*
+        ToDo: Create key pair cookie -> local storage
+            cookie keeps the key  and timestamp
+             local storage keeps the key and value
+         */
+        $(document).ready(function() {
+            $.ajax({
+                url: "https://shoprange.org/api/products"
+            }).then(function(data) {
+                $.each(data, function(index) {
+                    var item = "<div class='grid-item'>" +
+                        "<div class='image'>" +
+                            "<img width='200' src='"+ data[index].image +"' alt=''>" +
+                        "</div>" +
+                        "<div class='name'>"+ data[index].name +"</div>" +
+                        "<div class='price'>" +
+                            "<span class='old'></span>" +
+                            "<span class='new'></span>" +
+                        "</div>" +
+                        "<div class='details'></div>" +
+                    "</div>";
+                    $('body').append(item);
+                });
+                //localStorage.clear();
+                //localStorage.setItem('products', dataArray);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="grid">
+
+</div>
+</body>
+</html>
