@@ -2,11 +2,6 @@
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 	/**
-	 * Namespace for Module
-	 */
-	const NAMESPACE = 'Default_';
-
-	/**
 	 * @var array Auto Load Namespaces
 	 */
 	protected $autoLoadNamespaces = ['Base_'];
@@ -38,7 +33,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		}
 
 		$autoLoader = new Zend_Application_Module_Autoloader(array(
-            'namespace' => self::NAMESPACE,
+            'namespace' => 'Default_',
             'basePath'  => dirname(__FILE__),
         ));
 		

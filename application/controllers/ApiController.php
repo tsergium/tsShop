@@ -45,6 +45,15 @@ class ApiController extends Base_Controller_Action
         $this->printJson($productsData, 200);
     }
 
+    public function errorAction()
+    {
+        $this->printJson([
+            'code'          => '1xx',
+            'message'       => 'There was an error',
+            'description'   => 'So...I don\'t know what happened but...it failed'
+        ], 400);
+    }
+
     protected function parseCategoriesToJson($categories)
     {
         $categoryData = [];
@@ -67,7 +76,7 @@ class ApiController extends Base_Controller_Action
         if (!empty($products)) {
             foreach ($products as $product) {
                 $link   = $zendView->url(array('id' => $product->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($product->getId())."-".$product->getName())),),'product');
-                $image  = (null != $product->getImageShopmania())?"/media/products/small/".$product->getImageShopmania():"/images/no-pic-small.jpg";
+                $image  = (null != $product->getImageShopmania())?"/media/products/shopmania/".$product->getImageShopmania():"/images/no-pic-small.jpg";
 
                 $productData[] = [
                     'id'            => $product->getId(),
@@ -75,6 +84,7 @@ class ApiController extends Base_Controller_Action
                     'name'          => $product->getName(),
                     'price'         => $product->getPrice(),
                     'link'          => WEBPAGE_ADDRESS . $link,
+                    'urlOrigin'     => $product->getUrlOrigin(),
                     'image'         => WEBPAGE_ADDRESS . $image,
                     'description'   => $product->getDescription()
                 ];
