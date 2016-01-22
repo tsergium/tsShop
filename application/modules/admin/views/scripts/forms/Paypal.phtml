@@ -1,219 +1,230 @@
-<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getId();?>" enctype="<?php echo $this->element->getEncType();?>">
-	<table width="100%" cellspacing="0" cellpadding="0">
-		<tr>
-			<td style="text-align: center" align="center">
-				<table  border="0" cellpadding="0" cellspacing="0">
-			   <col width="250" />
-			   <col />
-				<tr>
-					<td height="35">
-						<?php
-						$attribs = array();
-						if ($this->element->type->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->type->getName(), $this->element->type->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->type->helper}(
-									$this->element->type->getName(),
-									$this->element->type->getValue(),
-									$this->element->type->getAttribs(),
-									$this->element->type->getMultiOptions(),
-									'&nbsp;&nbsp;&nbsp;'
-								);
-						?>
-						<?php if('<ul class="errors"><li></li></ul>'!=($this->element->type->getMessages())){ echo  $this->formErrors($this->element->type->getMessages());} ?>
-						<div class="hint"><?php echo $this->element->type->getDescription(); ?></div>
-					</td>
-				</tr>
-		</table>
+<form method="<?php echo $this->element->getMethod(); ?>" action="<?php echo $this->element->getAction(); ?>"
+      id="<?php echo $this->element->getId(); ?>" enctype="<?php echo $this->element->getEncType(); ?>">
+    <table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+            <td style="text-align: center" align="center">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <col width="250"/>
+                    <col/>
+                    <tr>
+                        <td height="35">
+                            <?php
+                            $attribs = array();
+                            if ($this->element->type->isRequired()) {
+                                $attribs['class'] = 'required';
+                            }
+                            echo $this->formLabel($this->element->type->getName(), $this->element->type->getLabel(), $attribs); ?>
+                        </td>
+                        <td>
+                            <?php
+                            echo $this->{$this->element->type->helper}(
+                                $this->element->type->getName(),
+                                $this->element->type->getValue(),
+                                $this->element->type->getAttribs(),
+                                $this->element->type->getMultiOptions(),
+                                '&nbsp;&nbsp;&nbsp;'
+                            );
+                            ?>
+                            <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->type->getMessages())) {
+                                echo $this->formErrors($this->element->type->getMessages());
+                            } ?>
+                            <div class="hint"><?php echo $this->element->type->getDescription(); ?></div>
+                        </td>
+                    </tr>
+                </table>
 
-		<div id="inserthiddenStandard">
-			<table cellpadding="0" cellspacing="5" id="hiddenStandard">
-				<col width="240"/>
-				<col />
-				<tr>
-					<td valign="top" class="tdEmail">
-						<?php
+                <div id="inserthiddenStandard">
+                    <table cellpadding="0" cellspacing="5" id="hiddenStandard">
+                        <col width="240"/>
+                        <col/>
+                        <tr>
+                            <td valign="top" class="tdEmail">
+                                <?php
 
-						$attribs['class'] = 'required';
+                                $attribs['class'] = 'required';
 
-						echo $this->formLabel($this->element->email->getName(), $this->element->email->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-							echo $this->{$this->element->email->helper}(
-										$this->element->email->getName(),
-										$this->element->email->getValue(),
-										$this->element->email->getAttribs()
-									);
-						?>
-						<?php if('<ul class="errors"><li></li></ul>'!=($this->element->email->getMessages())){ echo  $this->formErrors($this->element->email->getMessages());} ?>
-						<div class="hint"><?php echo $this->element->email->getDescription(); ?></div>
-					</td>
-				 </tr>
-			</table>
-		</div>
-		<div id="inserhiddenApi">
-		   <table cellpadding="0" cellspacing="5" id="hiddenApi">
-					<col width="240"/>
-					<col />
-					<tr>
-						<td valign="top" class="tdusername">
-							<?php
-							$attribs['class'] = 'required';
-							echo $this->formLabel($this->element->apiUsername->getName(), $this->element->apiUsername->getLabel(), $attribs);?>
-						</td>
-						<td>
-							<?php
-								echo $this->{$this->element->apiUsername->helper}(
-											$this->element->apiUsername->getName(),
-											$this->element->apiUsername->getValue(),
-											$this->element->apiUsername->getAttribs()
-										);
-							?>
-							<?php if('<ul class="errors"><li></li></ul>'!=($this->element->apiUsername->getMessages())){ echo  $this->formErrors($this->element->apiUsername->getMessages());} ?>
-							<div class="hint"><?php echo $this->element->apiUsername->getDescription(); ?></div>
-						</td>
-					</tr>
-					<tr>
-						<td valign="top" class="tdpassword">
-							<?php
-							$attribs['class'] = 'required';
+                                echo $this->formLabel($this->element->email->getName(), $this->element->email->getLabel(), $attribs); ?>
+                            </td>
+                            <td>
+                                <?php
+                                echo $this->{$this->element->email->helper}(
+                                    $this->element->email->getName(),
+                                    $this->element->email->getValue(),
+                                    $this->element->email->getAttribs()
+                                );
+                                ?>
+                                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->email->getMessages())) {
+                                    echo $this->formErrors($this->element->email->getMessages());
+                                } ?>
+                                <div class="hint"><?php echo $this->element->email->getDescription(); ?></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="inserhiddenApi">
+                    <table cellpadding="0" cellspacing="5" id="hiddenApi">
+                        <col width="240"/>
+                        <col/>
+                        <tr>
+                            <td valign="top" class="tdusername">
+                                <?php
+                                $attribs['class'] = 'required';
+                                echo $this->formLabel($this->element->apiUsername->getName(), $this->element->apiUsername->getLabel(), $attribs); ?>
+                            </td>
+                            <td>
+                                <?php
+                                echo $this->{$this->element->apiUsername->helper}(
+                                    $this->element->apiUsername->getName(),
+                                    $this->element->apiUsername->getValue(),
+                                    $this->element->apiUsername->getAttribs()
+                                );
+                                ?>
+                                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->apiUsername->getMessages())) {
+                                    echo $this->formErrors($this->element->apiUsername->getMessages());
+                                } ?>
+                                <div class="hint"><?php echo $this->element->apiUsername->getDescription(); ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="tdpassword">
+                                <?php
+                                $attribs['class'] = 'required';
 
-							echo $this->formLabel($this->element->apiPassword->getName(), $this->element->apiPassword->getLabel(), $attribs);?>
-						</td>
-						<td>
-							<?php
-								echo $this->{$this->element->apiPassword->helper}(
-											$this->element->apiPassword->getName(),
-											$this->element->apiPassword->getValue(),
-											$this->element->apiPassword->getAttribs()
-										);
-							?>
-							<?php if('<ul class="errors"><li></li></ul>'!=($this->element->apiPassword->getMessages())){ echo  $this->formErrors($this->element->apiPassword->getMessages());} ?>
-							<div class="hint"><?php echo $this->element->apiPassword->getDescription(); ?></div>
-						</td>
-					</tr>
-					<tr>
-						<td valign="top" class="tdsignature">
-							<?php
-							$attribs['class'] = 'required';
-							echo $this->formLabel($this->element->apiSignature->getName(), $this->element->apiSignature->getLabel(), $attribs);?>
-						</td>
-						<td>
-							<?php
-								echo $this->{$this->element->apiSignature->helper}(
-											$this->element->apiSignature->getName(),
-											$this->element->apiSignature->getValue(),
-											$this->element->apiSignature->getAttribs()
-										);
-							?>
-							<?php if('<ul class="errors"><li></li></ul>'!=($this->element->apiSignature->getMessages())){ echo  $this->formErrors($this->element->apiSignature->getMessages());} ?>
-							<div class="hint"><?php echo $this->element->apiSignature->getDescription(); ?></div>
-						</td>
-				</tr>
-			</table>
-		</div>
-			<table  cellpadding="0" cellspacing="5" >
-				<col width="240"/>
-				<col />
-				<tr>
-					<td>&nbsp;</td>
-					<td>
-						<?php echo $this->{$this->element->submit->helper}(
-										$this->element->submit->getName(),
-										$this->element->submit->getValue(),
-										$this->element->submit->getAttribs()
-									);
-						?>
-					</td>
-				</tr>
-			</table>
+                                echo $this->formLabel($this->element->apiPassword->getName(), $this->element->apiPassword->getLabel(), $attribs); ?>
+                            </td>
+                            <td>
+                                <?php
+                                echo $this->{$this->element->apiPassword->helper}(
+                                    $this->element->apiPassword->getName(),
+                                    $this->element->apiPassword->getValue(),
+                                    $this->element->apiPassword->getAttribs()
+                                );
+                                ?>
+                                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->apiPassword->getMessages())) {
+                                    echo $this->formErrors($this->element->apiPassword->getMessages());
+                                } ?>
+                                <div class="hint"><?php echo $this->element->apiPassword->getDescription(); ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="tdsignature">
+                                <?php
+                                $attribs['class'] = 'required';
+                                echo $this->formLabel($this->element->apiSignature->getName(), $this->element->apiSignature->getLabel(), $attribs); ?>
+                            </td>
+                            <td>
+                                <?php
+                                echo $this->{$this->element->apiSignature->helper}(
+                                    $this->element->apiSignature->getName(),
+                                    $this->element->apiSignature->getValue(),
+                                    $this->element->apiSignature->getAttribs()
+                                );
+                                ?>
+                                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->apiSignature->getMessages())) {
+                                    echo $this->formErrors($this->element->apiSignature->getMessages());
+                                } ?>
+                                <div class="hint"><?php echo $this->element->apiSignature->getDescription(); ?></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table cellpadding="0" cellspacing="5">
+                    <col width="240"/>
+                    <col/>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <?php echo $this->{$this->element->submit->helper}(
+                                $this->element->submit->getName(),
+                                $this->element->submit->getValue(),
+                                $this->element->submit->getAttribs()
+                            );
+                            ?>
+                        </td>
+                    </tr>
+                </table>
 
-			</td>
-		</tr>
-	</table>
+            </td>
+        </tr>
+    </table>
 </form>
 
 <?php $this->headScript()->captureStart() ?>
-	$(document).ready(function() {
-		$("#<?php echo $this->element->getId();?>").validationEngine();
-	});
+$(document).ready(function() {
+$("#<?php echo $this->element->getId(); ?>").validationEngine();
+});
 <?php $this->headScript()->captureEnd() ?>
 <script type="text/javascript">
-	$(document).ready(function() {		
-		var hiddenStandard;
-		var hiddenApi;		
-		hiddenStandard = $("#hiddenStandard").detach();
-		hiddenApi = $("#hiddenApi").detach();
+    $(document).ready(function () {
+        var hiddenStandard;
+        var hiddenApi;
+        hiddenStandard = $("#hiddenStandard").detach();
+        hiddenApi = $("#hiddenApi").detach();
 
-		
-			var selectedS = $('[name="type"]:radio:checked').val();
-			if(selectedS == 'standard'){
-				if(hiddenStandard != null){
-						hiddenStandard.appendTo('#inserthiddenStandard');
-						hiddenStandard = null;
-						$("#email").removeClass('validate[custom[email]]');
-						$("#email").addClass('validate[required,custom[email]]');
-						$(".tdEmail label").addClass('required');
-						if(hiddenApi == null){
-							hiddenApi = $("#hiddenApi").detach();
-						}
-					}
-				}else{
-					if(hiddenApi != null){
-						hiddenApi.appendTo('#inserhiddenApi');
-						hiddenApi = null;
-						if(hiddenStandard == null){
-							$("#email").removeClass('validate[required,custom[email]]');
-							$("#email").addClass('validate[custom[email]]');
-							$(".tdEmail label").removeClass('required');
 
-							$("#apiUsername").addClass('validate[required]');
-							$("#apiPassword").addClass('validate[required]');
-							$("#apiSignature").addClass('validate[required]');
-							$(".tdusername label").addClass('required');
-							$(".tdpassword label").addClass('required');
-							$(".tdsignature label").addClass('required');
-							hiddenStandard = $("#hiddenStandard").detach();
-						}
-					}
-			}
-			$("input[name='type']").click(function(){
-			selectedS = $('input[name="type"]:radio:checked').val();
-			if(selectedS == 'standard'){
-				if(hiddenStandard != null){
-					hiddenStandard.appendTo('#inserthiddenStandard');
-					hiddenStandard = null;
-					$("#email").removeClass('validate[custom[email]]');
-					$("#email").addClass('validate[required,custom[email]]');
-					$(".tdEmail label").addClass('required');
-					if(hiddenApi == null){
-						hiddenApi = $("#hiddenApi").detach();
-					}
-				}
-			}else{
-				if(hiddenApi != null){
-					hiddenApi.appendTo('#inserhiddenApi');
-					hiddenApi = null;
-					if(hiddenStandard == null){
-						$("#email").removeClass('validate[required,custom[email]]');
-						$("#email").addClass('validate[custom[email]]');
-						$(".tdEmail label").removeClass('required');
+        var selectedS = $('[name="type"]:radio:checked').val();
+        if (selectedS == 'standard') {
+            if (hiddenStandard != null) {
+                hiddenStandard.appendTo('#inserthiddenStandard');
+                hiddenStandard = null;
+                $("#email").removeClass('validate[custom[email]]');
+                $("#email").addClass('validate[required,custom[email]]');
+                $(".tdEmail label").addClass('required');
+                if (hiddenApi == null) {
+                    hiddenApi = $("#hiddenApi").detach();
+                }
+            }
+        } else {
+            if (hiddenApi != null) {
+                hiddenApi.appendTo('#inserhiddenApi');
+                hiddenApi = null;
+                if (hiddenStandard == null) {
+                    $("#email").removeClass('validate[required,custom[email]]');
+                    $("#email").addClass('validate[custom[email]]');
+                    $(".tdEmail label").removeClass('required');
 
-						$("#apiUsername").addClass('validate[required]');
-						$("#apiPassword").addClass('validate[required]');
-						$("#apiSignature").addClass('validate[required]');
-						$(".tdusername label").addClass('required');
-						$(".tdpassword label").addClass('required');
-						$(".tdsignature label").addClass('required');
-						hiddenStandard = $("#hiddenStandard").detach();
-					}
-				}
-			}
-		});
-	});
+                    $("#apiUsername").addClass('validate[required]');
+                    $("#apiPassword").addClass('validate[required]');
+                    $("#apiSignature").addClass('validate[required]');
+                    $(".tdusername label").addClass('required');
+                    $(".tdpassword label").addClass('required');
+                    $(".tdsignature label").addClass('required');
+                    hiddenStandard = $("#hiddenStandard").detach();
+                }
+            }
+        }
+        $("input[name='type']").click(function () {
+            selectedS = $('input[name="type"]:radio:checked').val();
+            if (selectedS == 'standard') {
+                if (hiddenStandard != null) {
+                    hiddenStandard.appendTo('#inserthiddenStandard');
+                    hiddenStandard = null;
+                    $("#email").removeClass('validate[custom[email]]');
+                    $("#email").addClass('validate[required,custom[email]]');
+                    $(".tdEmail label").addClass('required');
+                    if (hiddenApi == null) {
+                        hiddenApi = $("#hiddenApi").detach();
+                    }
+                }
+            } else {
+                if (hiddenApi != null) {
+                    hiddenApi.appendTo('#inserhiddenApi');
+                    hiddenApi = null;
+                    if (hiddenStandard == null) {
+                        $("#email").removeClass('validate[required,custom[email]]');
+                        $("#email").addClass('validate[custom[email]]');
+                        $(".tdEmail label").removeClass('required');
+
+                        $("#apiUsername").addClass('validate[required]');
+                        $("#apiPassword").addClass('validate[required]');
+                        $("#apiSignature").addClass('validate[required]');
+                        $(".tdusername label").addClass('required');
+                        $(".tdpassword label").addClass('required');
+                        $(".tdsignature label").addClass('required');
+                        hiddenStandard = $("#hiddenStandard").detach();
+                    }
+                }
+            }
+        });
+    });
 </script>

@@ -1,25 +1,33 @@
-<?php if($this->action != "new" && $this->controller == "user"):?>
-<div class="block-left">
-	<h1 class="block-left-title"><?php echo Zend_Registry::get('translate')->_('user_account'); ?></h1>
-	<div class="block-left-content-produse" id="side-menu-container">
-		<ul class="nav-left">
-			<li>
-				<div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS;?>/user/orders" rel=""><?php echo Zend_Registry::get('translate')->_('user_view_orders'); ?></a></div>
-				<!--<ul class="sublevel" id="">
-					<li id="li"><a href=""></a></li>
-				</ul>-->
-			</li>
-			<li>
-				<div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS;?>/user/myaccount" rel=""><?php echo Zend_Registry::get('translate')->_('user_my_account'); ?></a></div>
-			</li>
-			<li>
-				<div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS;?>/user/editaccount" rel=""><?php echo Zend_Registry::get('translate')->_('user_edit_account'); ?></a></div>
-			</li>
-			<li>
-				<div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS;?>/user/wishlist" rel=""><?php echo Zend_Registry::get('translate')->_('user_view_wishlists'); ?></a></div>
-			</li>
-		</ul>
-	</div>
-	<div class="block-left-content-bottom"></div>
-</div>
+<?php if ($this->action != "new" && $this->controller == "user"): ?>
+    <div class="block-left">
+        <h1 class="block-left-title"><?php echo Zend_Registry::get('translate')->_('user_account'); ?></h1>
+        <div class="block-left-content-produse" id="side-menu-container">
+            <ul class="nav-left">
+                <li>
+                    <div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS; ?>/user/orders"
+                                               rel=""><?php echo Zend_Registry::get('translate')->_('user_view_orders'); ?></a>
+                    </div>
+                    <!--<ul class="sublevel" id="">
+                        <li id="li"><a href=""></a></li>
+                    </ul>-->
+                </li>
+                <li>
+                    <div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS; ?>/user/myaccount"
+                                               rel=""><?php echo Zend_Registry::get('translate')->_('user_my_account'); ?></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS; ?>/user/editaccount"
+                                               rel=""><?php echo Zend_Registry::get('translate')->_('user_edit_account'); ?></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="wrap-categ"><a href="<?php echo WEBPAGE_ADDRESS; ?>/user/wishlist"
+                                               rel=""><?php echo Zend_Registry::get('translate')->_('user_view_wishlists'); ?></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="block-left-content-bottom"></div>
+    </div>
 <?php endif; ?>

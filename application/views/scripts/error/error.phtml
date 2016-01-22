@@ -1,44 +1,46 @@
-<?php if($this->message == 'Page not found'): ?>
-<div class="eror">
-<div class="top_eror"></div>
-<div class=" midle_eror">
-<img src="/images/icon_eror.gif" />
-<div class="text_eror">
-	<h1>Pagina nu a fost gasita</h3>
-	<p><small>Pagina cautată de tine nu există sau a fost mutată.</small></p>
-	</div>
-	<div style="clear:both"></div>
-	</div>
-	  
-	<div class="bottom_eror"></div>
-	</div>
+<?php if ($this->message == 'Page not found'): ?>
+    <div class="eror">
+        <div class="top_eror"></div>
+        <div class=" midle_eror">
+            <img src="/images/icon_eror.gif"/>
+            <div class="text_eror">
+                <h1>Pagina nu a fost gasita</h3>
+                    <p>
+                        <small>Pagina cautată de tine nu există sau a fost mutată.</small>
+                    </p>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+        <div class="bottom_eror"></div>
+    </div>
 <?php endif; ?>
 
-<?php if ('development' == APPLICATION_ENV){ ?>
-	<table class="tabel" cellpadding="0" cellspacing="0">
-		<tr>
-			<td class="header_tabel" colspan="2">
-				<p><?php echo Zend_Registry::get('translate')->_('error_information'); ?></p>
-			</td>
-		</tr>
-		<tr>
-			<td class="rand" style="border-right:1px solid #d90867;" colspan="2">
-				<?php echo $this->exception->getMessage();?>
-			</td>
-		</tr>
-		<tr>
-			<td class="header_tabel">
-				<?php echo Zend_Registry::get('translate')->_('error_request_parameters'); ?>
-			</td>
-			<td class="header_tabel"><?php echo Zend_Registry::get('translate')->_('error_stack_trace'); ?></td>
-		</tr>
-		<tr>
-			<td class="rand">
-				<pre><small><?php echo var_export($this->request->getParams(), true); ?></small></pre>
-			</td>
-			<td class="rand" style="border-right:1px solid #d90867;">
-				<small><?php echo $this->exception->getTraceAsString(); ?></small>
-			</td>
-		</tr>
-	</table>
+<?php if ('development' == APPLICATION_ENV) { ?>
+    <table class="tabel" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="header_tabel" colspan="2">
+                <p><?php echo Zend_Registry::get('translate')->_('error_information'); ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td class="rand" style="border-right:1px solid #d90867;" colspan="2">
+                <?php echo $this->exception->getMessage(); ?>
+            </td>
+        </tr>
+        <tr>
+            <td class="header_tabel">
+                <?php echo Zend_Registry::get('translate')->_('error_request_parameters'); ?>
+            </td>
+            <td class="header_tabel"><?php echo Zend_Registry::get('translate')->_('error_stack_trace'); ?></td>
+        </tr>
+        <tr>
+            <td class="rand">
+                <pre><small><?php echo var_export($this->request->getParams(), true); ?></small></pre>
+            </td>
+            <td class="rand" style="border-right:1px solid #d90867;">
+                <small><?php echo $this->exception->getTraceAsString(); ?></small>
+            </td>
+        </tr>
+    </table>
 <?php } ?>

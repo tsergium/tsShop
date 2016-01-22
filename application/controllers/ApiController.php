@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: tsergium
@@ -34,8 +35,8 @@ class ApiController extends Base_Controller_Action
     {
         $modelProduct = new Default_Model_Product();
         $select = $modelProduct->getMapper()->getDbTable()->select()
-            ->from(array('p'=>'ts_products'))
-            ->joinLeft(array('pca'=>'ts_products_categ_asoc'), 'p.id = pca.productId', array('composition' => new Zend_Db_Expr('GROUP_CONCAT(pca.categoryId)')))
+            ->from(array('p' => 'ts_products'))
+            ->joinLeft(array('pca' => 'ts_products_categ_asoc'), 'p.id = pca.productId', array('composition' => new Zend_Db_Expr('GROUP_CONCAT(pca.categoryId)')))
             ->where('status = ?', '1')
             ->group('p.id')
             ->order('created DESC')
@@ -48,9 +49,9 @@ class ApiController extends Base_Controller_Action
     public function errorAction()
     {
         $this->printJson([
-            'code'          => '1xx',
-            'message'       => 'There was an error',
-            'description'   => 'So...I don\'t know what happened but...it failed'
+            'code' => '1xx',
+            'message' => 'There was an error',
+            'description' => 'So...I don\'t know what happened but...it failed'
         ], 400);
     }
 
@@ -60,8 +61,8 @@ class ApiController extends Base_Controller_Action
         if (!empty($categories)) {
             foreach ($categories as $category) {
                 $categoryData[] = [
-                    'id'    => $category->getId(),
-                    'name'  => $category->getName()
+                    'id' => $category->getId(),
+                    'name' => $category->getName()
                 ];
             }
         }
@@ -75,18 +76,18 @@ class ApiController extends Base_Controller_Action
         $productData = [];
         if (!empty($products)) {
             foreach ($products as $product) {
-                $link   = $zendView->url(array('id' => $product->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($product->getId())."-".$product->getName())),),'product');
-                $image  = (null != $product->getImageShopmania())?"/media/products/shopmania/".$product->getImageShopmania():"/images/no-pic-small.jpg";
+                $link = $zendView->url(array('id' => $product->getId(), 'categAndName' => preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower(getProdCateg($product->getId()) . "-" . $product->getName())),), 'product');
+                $image = (null != $product->getImageShopmania()) ? "/media/products/shopmania/" . $product->getImageShopmania() : "/images/no-pic-small.jpg";
 
                 $productData[] = [
-                    'id'            => $product->getId(),
-                    'category'      => explode(',', $product->getComposition()),
-                    'name'          => $product->getName(),
-                    'price'         => $product->getPrice(),
-                    'link'          => WEBPAGE_ADDRESS . $link,
-                    'urlOrigin'     => $product->getUrlOrigin(),
-                    'image'         => WEBPAGE_ADDRESS . $image,
-                    'description'   => $product->getDescription()
+                    'id' => $product->getId(),
+                    'category' => explode(',', $product->getComposition()),
+                    'name' => $product->getName(),
+                    'price' => $product->getPrice(),
+                    'link' => WEBPAGE_ADDRESS . $link,
+                    'urlOrigin' => $product->getUrlOrigin(),
+                    'image' => WEBPAGE_ADDRESS . $image,
+                    'description' => $product->getDescription()
                 ];
             }
         }
@@ -100,7 +101,8 @@ class ApiController extends Base_Controller_Action
      * @param integer $httpCode
      * @throws Zend_Controller_Response_Exception
      */
-    protected function printJson($response, $httpCode) {
+    protected function printJson($response, $httpCode)
+    {
         $this->getResponse()->setHeader('Content-Type', 'application/json');
         $this->getResponse()->setHttpResponseCode($httpCode);
 

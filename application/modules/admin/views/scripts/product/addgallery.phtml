@@ -1,55 +1,56 @@
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<div class="empty10"></div>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 
 <div class="empty10"></div>
-<?php echo $this->form;?>
+<?php echo $this->form; ?>
 
-<?php if(null != $this->result){?>
-<div class="empty10"></div>
-<div class="media">
-	<?php foreach($this->result as $value){?>
-	<div class="item">
-		<div class="image">
-			<img width="150" src="/media/products/small/<?php echo $value->getImage();?>" alt="<?php echo $value->getProduct()->getName();?>" />
-		</div>
-		<div class="name">
-			<a href="/admin/product/deletegallery/id/<?php echo $value->getId();?>" class="confirmDelete">
-				Sterge
-			</a>
-		</div>
-	</div>
-	<?php }?>
-</div>
-<div class="clear"></div>
-<div id="confirmDelete" title="Mesaj de confirmare" style="display:none;">
-	Sunteţi sigur că doriţi să ştergeţi poza?
-</div>
-<?php }?>
+<?php if (null != $this->result) { ?>
+    <div class="empty10"></div>
+    <div class="media">
+        <?php foreach ($this->result as $value) { ?>
+            <div class="item">
+                <div class="image">
+                    <img width="150" src="/media/products/small/<?php echo $value->getImage(); ?>"
+                         alt="<?php echo $value->getProduct()->getName(); ?>"/>
+                </div>
+                <div class="name">
+                    <a href="/admin/product/deletegallery/id/<?php echo $value->getId(); ?>" class="confirmDelete">
+                        Sterge
+                    </a>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+    <div class="clear"></div>
+    <div id="confirmDelete" title="Mesaj de confirmare" style="display:none;">
+        Sunteţi sigur că doriţi să ştergeţi poza?
+    </div>
+<?php } ?>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	$('.confirmDelete').click(function(){
-		var link = $(this);
-		$("#confirmDelete").dialog({
-			bgiframe: true,
-			height: 140,
-			width: 400,
-			modal: true,
-			buttons:{
-				'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function(){
-					$(this).dialog('close').dialog('destroy');
-					window.location.href = link.attr('href');
-				},
-				'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function(){
-					$(this).dialog('close').dialog('destroy');
-				}
-			}
-		});
-		return false;
-	});
-});
+    $(document).ready(function () {
+        $('.confirmDelete').click(function () {
+            var link = $(this);
+            $("#confirmDelete").dialog({
+                bgiframe: true,
+                height: 140,
+                width: 400,
+                modal: true,
+                buttons: {
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                        window.location.href = link.attr('href');
+                    },
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                    }
+                }
+            });
+            return false;
+        });
+    });
 </script>

@@ -1,107 +1,116 @@
-<?php if(!empty($this->msg) && $this->msg == "true"):?>
-	<div class="empty10"></div>
-	<div class="mess-true"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_generated_successfully'); ?></div>
-<?php endif;?>
-<?php if(!empty($this->msg) && $this->msg == "false"):?>
-	<div class="empty10"></div>
-	<div class="mess-false"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_error_generation'); ?></div>
-<?php endif;?>
+<?php if (!empty($this->msg) && $this->msg == "true"): ?>
+    <div class="empty10"></div>
+    <div
+        class="mess-true"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_generated_successfully'); ?></div>
+<?php endif; ?>
+<?php if (!empty($this->msg) && $this->msg == "false"): ?>
+    <div class="empty10"></div>
+    <div class="mess-false"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_error_generation'); ?></div>
+<?php endif; ?>
 
-<?php if(!empty($this->message)):?>
-	<?php foreach($this->message as $value) : ?>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
-	<div class="sp10"></div>
-<?php endif;?>
+<?php if (!empty($this->message)): ?>
+    <?php foreach ($this->message as $value) : ?>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
+    <div class="sp10"></div>
+<?php endif; ?>
 
 <!--<div class="empty10"></div>
 <a class="button1" href="/admin/cms/generatesitemap"><?php echo Zend_Registry::get('translate')->_('cms_seo_button_generate_sitemap'); ?></a>
 <div class="empty10"></div>-->
 
-<?php if(1 == 2): ?>
-<div class="sp10"></div>
-<a class="button1" href="/admin/cms/addseo"><?php echo Zend_Registry::get('translate')->_('cms_seo_button_add_new_seo'); ?></a>
-<div class="sp10"></div>
+<?php if (1 == 2): ?>
+    <div class="sp10"></div>
+    <a class="button1"
+       href="/admin/cms/addseo"><?php echo Zend_Registry::get('translate')->_('cms_seo_button_add_new_seo'); ?></a>
+    <div class="sp10"></div>
 
-<?php if($this->result) : ?>
-	<table border="0" width="100%" cellpadding="2" cellspacing="1" class="tableListingsAll">
-		<col />
-		<col width="150" />
-		<tr>
-			<th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_page'); ?></th>
-			<th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_title'); ?></th>
-			<th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_keywords'); ?></th>
-			<th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_description'); ?></th>
-			<th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_status'); ?></th>
-			<th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_actions'); ?></th>
-		</tr>
-		<?php foreach($this->result as $value) : ?>
-		<tr>
-			<td align="left"><?php echo $value->getPage(); ?></td>
-			<td align="left"><?php echo $value->getTitle(); ?></td>
-			<td align="left"><?php echo $value->getKeyword(); ?></td>
-			<td align="left"><?php echo $value->getDescription(); ?></td>
-			<td align="left"><a href="/admin/cms/seostatus/id/<?php echo $value->getId(); ?><?php echo $this->curPage?'/page/'.$this->curPage:''; ?>" class="confirmStatusChange"><?php echo $value->getStatus()?Zend_Registry::get('translate')->_('cms_seo_table_active'):Zend_Registry::get('translate')->_('cms_seo_table_inactive'); ?></a></td>
-			<td>
-				<a href="/admin/cms/editseo/id/<?php echo $value->getId(); ?><?php echo $this->curPage?'/page/'.$this->curPage:''; ?>"><?php echo Zend_Registry::get('translate')->_('cms_seo_table_button_edit'); ?></a>
-				|
-				<a href="/admin/cms/deleteseo/id/<?php echo $value->getId(); ?><?php echo $this->curPage?'/page/'.$this->curPage:''; ?>" class="confirmDelete"><?php echo Zend_Registry::get('translate')->_('cms_seo_table_button_delete'); ?></a>
-			</td>
-		</tr>
-		<?php endforeach; ?>
-	</table>
+    <?php if ($this->result) : ?>
+        <table border="0" width="100%" cellpadding="2" cellspacing="1" class="tableListingsAll">
+            <col/>
+            <col width="150"/>
+            <tr>
+                <th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_page'); ?></th>
+                <th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_title'); ?></th>
+                <th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_keywords'); ?></th>
+                <th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_description'); ?></th>
+                <th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_status'); ?></th>
+                <th><?php echo Zend_Registry::get('translate')->_('cms_seo_table_actions'); ?></th>
+            </tr>
+            <?php foreach ($this->result as $value) : ?>
+                <tr>
+                    <td align="left"><?php echo $value->getPage(); ?></td>
+                    <td align="left"><?php echo $value->getTitle(); ?></td>
+                    <td align="left"><?php echo $value->getKeyword(); ?></td>
+                    <td align="left"><?php echo $value->getDescription(); ?></td>
+                    <td align="left"><a
+                            href="/admin/cms/seostatus/id/<?php echo $value->getId(); ?><?php echo $this->curPage ? '/page/' . $this->curPage : ''; ?>"
+                            class="confirmStatusChange"><?php echo $value->getStatus() ? Zend_Registry::get('translate')->_('cms_seo_table_active') : Zend_Registry::get('translate')->_('cms_seo_table_inactive'); ?></a>
+                    </td>
+                    <td>
+                        <a href="/admin/cms/editseo/id/<?php echo $value->getId(); ?><?php echo $this->curPage ? '/page/' . $this->curPage : ''; ?>"><?php echo Zend_Registry::get('translate')->_('cms_seo_table_button_edit'); ?></a>
+                        |
+                        <a href="/admin/cms/deleteseo/id/<?php echo $value->getId(); ?><?php echo $this->curPage ? '/page/' . $this->curPage : ''; ?>"
+                           class="confirmDelete"><?php echo Zend_Registry::get('translate')->_('cms_seo_table_button_delete'); ?></a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
 
-	<div id="confirmStatusChange" title="Confirmation message" style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_status_change'); ?></div>
-	<div id="confirmDelete" title="Confirmation message" style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_delete'); ?></div>
-<?php else : ?>
-	<div class="sp10"></div>
-	<a class="button1" href="/admin/cms/addseo"><?php echo Zend_Registry::get('translate')->_('cms_seo_button_add_new_seo'); ?></a>
-	<div class="sp10"></div>
-	<br />
-	<p><?php echo Zend_Registry::get('translate')->_('cms_seo_else'); ?></p>
-<?php endif; ?>
+        <div id="confirmStatusChange" title="Confirmation message"
+             style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_status_change'); ?></div>
+        <div id="confirmDelete" title="Confirmation message"
+             style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_seo_message_delete'); ?></div>
+    <?php else : ?>
+        <div class="sp10"></div>
+        <a class="button1"
+           href="/admin/cms/addseo"><?php echo Zend_Registry::get('translate')->_('cms_seo_button_add_new_seo'); ?></a>
+        <div class="sp10"></div>
+        <br/>
+        <p><?php echo Zend_Registry::get('translate')->_('cms_seo_else'); ?></p>
+    <?php endif; ?>
 
-<?php $this->headScript()->captureStart() ?>
-	$(document).ready(function() {
-		$('.confirmStatusChange').click(function(){
-			var link = $(this);
-			$("#confirmStatusChange").dialog({
-				bgiframe: true,
-				height: 140,
-				width: 400,
-				modal: true,
-				buttons: {
-					'Yes': function() {
-						$(this).dialog('close').dialog('destroy');
-						window.location.href = link.attr('href');
-					},
-					'No': function() {
-						$(this).dialog('close').dialog('destroy');
-					}
-				}
-			});
-			return false;
-		});
+    <?php $this->headScript()->captureStart() ?>
+    $(document).ready(function() {
+    $('.confirmStatusChange').click(function(){
+    var link = $(this);
+    $("#confirmStatusChange").dialog({
+    bgiframe: true,
+    height: 140,
+    width: 400,
+    modal: true,
+    buttons: {
+    'Yes': function() {
+    $(this).dialog('close').dialog('destroy');
+    window.location.href = link.attr('href');
+    },
+    'No': function() {
+    $(this).dialog('close').dialog('destroy');
+    }
+    }
+    });
+    return false;
+    });
 
-		$('.confirmDelete').click(function(){
-			var link = $(this);
-			$("#confirmDelete").dialog({
-				bgiframe: true,
-				height: 140,
-				width: 400,
-				modal: true,
-				buttons: {
-					'Yes': function() {
-						$(this).dialog('close').dialog('destroy');
-						window.location.href = link.attr('href');
-					},
-					'No': function() {
-						$(this).dialog('close').dialog('destroy');
-					}
-				}
-			});
-			return false;
-		});
-	});
-<?php $this->headScript()->captureEnd() ?>
+    $('.confirmDelete').click(function(){
+    var link = $(this);
+    $("#confirmDelete").dialog({
+    bgiframe: true,
+    height: 140,
+    width: 400,
+    modal: true,
+    buttons: {
+    'Yes': function() {
+    $(this).dialog('close').dialog('destroy');
+    window.location.href = link.attr('href');
+    },
+    'No': function() {
+    $(this).dialog('close').dialog('destroy');
+    }
+    }
+    });
+    return false;
+    });
+    });
+    <?php $this->headScript()->captureEnd() ?>
 <?php endif; ?>

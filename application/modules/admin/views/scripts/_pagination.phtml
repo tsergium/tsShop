@@ -1,91 +1,102 @@
 <?php
 $result = Zend_View_Helper_PaginationControl::getDefaultViewPartial();
-if(is_array($result)) {
-	if(!empty($result[1])) {
-		$allParams = $result[1];
-	} else {
-		$allParams = Zend_Controller_Front::getInstance()->getRequest()->getParams();
-	}
+if (is_array($result)) {
+    if (!empty($result[1])) {
+        $allParams = $result[1];
+    } else {
+        $allParams = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+    }
 } else {
-	$allParams = array();
+    $allParams = array();
 }
 ?>
-<?php if($this->pageCount): ?>
-<div class="wrap-paginare">
-	<ul class="paginare fL">
-		<!-- BEGIN: FIRST PAGE LINK -->
-		<?php if(isset($this->previous)) : ?>
-			<li>
-				<a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->first))); ?>" title="Prima pagina">
-					<img src="/images/admin/pagination/orange/first.png" alt="Prima pagina" title="Prima pagina" />
-				</a>
-			</li>
-		<?php else : ?>
-			<li>
-				<a href="#" title="Prima pagina">
-					<img src="/images/admin/pagination/orange/first.png" alt="Prima pagina" title="Prima pagina" />
-				</a>
-			</li>
-		<?php endif; ?>
-		<!-- END: FIRST PAGE LINK -->
-		
-		<!-- BEGIN: PREV PAGE LINK -->
-		<?php if(isset($this->previous)) : ?>
-			<li>
-				<a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->previous))); ?>" title="Pagina anterioara">
-					<img src="/images/admin/pagination/orange/prev.png" alt="Pagina anterioara" title="Pagina anterioara" />
-				</a>
-			</li>
-		<?php else : ?>
-			<li>
-				<a href="#" title="Pagina anterioara">
-					<img src="/images/admin/pagination/orange/prev.png" alt="Pagina anterioara" title="Pagina anterioara" />
-				</a>
-			</li>
-		<?php endif; ?>
-		<!-- END: PREV PAGE LINK -->
+<?php if ($this->pageCount): ?>
+    <div class="wrap-paginare">
+        <ul class="paginare fL">
+            <!-- BEGIN: FIRST PAGE LINK -->
+            <?php if (isset($this->previous)) : ?>
+                <li>
+                    <a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->first))); ?>"
+                       title="Prima pagina">
+                        <img src="/images/admin/pagination/orange/first.png" alt="Prima pagina" title="Prima pagina"/>
+                    </a>
+                </li>
+            <?php else : ?>
+                <li>
+                    <a href="#" title="Prima pagina">
+                        <img src="/images/admin/pagination/orange/first.png" alt="Prima pagina" title="Prima pagina"/>
+                    </a>
+                </li>
+            <?php endif; ?>
+            <!-- END: FIRST PAGE LINK -->
 
-		<!-- BEGIN: NUMBERED PAGE LINKS -->
-		<?php foreach($this->pagesInRange as $page) : ?>
-			<?php if($page != $this->current) : ?>
-				<li><a href="<?php echo $this->url(array_merge($allParams, array('page' => $page))); ?>"><?php echo $page; ?></a></li>
-			<?php else : ?>
-				<li><strong><a href='javascript:void(0)'><?php echo $page; ?></a></strong></li>
-			<?php endif; ?>
-		<?php endforeach; ?>
-		<!-- END: NUMBERED PAGE LINKS -->
+            <!-- BEGIN: PREV PAGE LINK -->
+            <?php if (isset($this->previous)) : ?>
+                <li>
+                    <a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->previous))); ?>"
+                       title="Pagina anterioara">
+                        <img src="/images/admin/pagination/orange/prev.png" alt="Pagina anterioara"
+                             title="Pagina anterioara"/>
+                    </a>
+                </li>
+            <?php else : ?>
+                <li>
+                    <a href="#" title="Pagina anterioara">
+                        <img src="/images/admin/pagination/orange/prev.png" alt="Pagina anterioara"
+                             title="Pagina anterioara"/>
+                    </a>
+                </li>
+            <?php endif; ?>
+            <!-- END: PREV PAGE LINK -->
 
-		<!-- BEGIN: NEXT PAGE LINK -->
-		<?php if(isset($this->next)) : ?>
-			<li>
-				<a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->next))); ?>" title="Pagina urmatoare">
-					<img src="/images/admin/pagination/orange/next.png" alt="Pagina urmatoare" title="Pagina urmatoare" />
-				</a>
-			</li>
-		<?php else : ?>
-			<li>
-				<a href="#">
-					<img src="/images/admin/pagination/orange/next.png" alt="Pagina urmatoare" title="Pagina urmatoare" />
-				</a>
-			</li>
-		<?php endif; ?>
-		<!-- END: NEXT PAGE LINK -->
+            <!-- BEGIN: NUMBERED PAGE LINKS -->
+            <?php foreach ($this->pagesInRange as $page) : ?>
+                <?php if ($page != $this->current) : ?>
+                    <li>
+                        <a href="<?php echo $this->url(array_merge($allParams, array('page' => $page))); ?>"><?php echo $page; ?></a>
+                    </li>
+                <?php else : ?>
+                    <li><strong><a href='javascript:void(0)'><?php echo $page; ?></a></strong></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <!-- END: NUMBERED PAGE LINKS -->
 
-		<!-- BEGIN: LAST PAGE LINK -->
-		<?php if(isset($this->next)) : ?>
-			<li>
-				<a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->last))); ?>" title="Ultima pagina">
-					<img src="/images/admin/pagination/orange/last.png" alt="Pagina urmatoare" title="Ultima pagina" />
-				</a>
-			</li>
-		<?php else : ?>
-			<li>
-				<a href="#" title="Ultima pagina">
-					<img src="/images/admin/pagination/orange/last.png" alt="Ultima pagina" title="Ultima pagina" />
-				</a>
-			</li>
-		<?php endif; ?>
-		<!-- END: LAST PAGE LINK -->
-	</ul>
-</div>
+            <!-- BEGIN: NEXT PAGE LINK -->
+            <?php if (isset($this->next)) : ?>
+                <li>
+                    <a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->next))); ?>"
+                       title="Pagina urmatoare">
+                        <img src="/images/admin/pagination/orange/next.png" alt="Pagina urmatoare"
+                             title="Pagina urmatoare"/>
+                    </a>
+                </li>
+            <?php else : ?>
+                <li>
+                    <a href="#">
+                        <img src="/images/admin/pagination/orange/next.png" alt="Pagina urmatoare"
+                             title="Pagina urmatoare"/>
+                    </a>
+                </li>
+            <?php endif; ?>
+            <!-- END: NEXT PAGE LINK -->
+
+            <!-- BEGIN: LAST PAGE LINK -->
+            <?php if (isset($this->next)) : ?>
+                <li>
+                    <a href="<?php echo $this->url(array_merge($allParams, array('page' => $this->last))); ?>"
+                       title="Ultima pagina">
+                        <img src="/images/admin/pagination/orange/last.png" alt="Pagina urmatoare"
+                             title="Ultima pagina"/>
+                    </a>
+                </li>
+            <?php else : ?>
+                <li>
+                    <a href="#" title="Ultima pagina">
+                        <img src="/images/admin/pagination/orange/last.png" alt="Ultima pagina" title="Ultima pagina"/>
+                    </a>
+                </li>
+            <?php endif; ?>
+            <!-- END: LAST PAGE LINK -->
+        </ul>
+    </div>
 <?php endif; ?>

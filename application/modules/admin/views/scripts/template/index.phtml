@@ -1,14 +1,14 @@
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 <div class="empty10"></div>
-<?php echo $this->form;?>
+<?php echo $this->form; ?>
 <!--include legend-->
-<?php if($this->const){
-	include $this->const.'.phtml';
- }else{
-	 include 'signUp.phtml';
- }
+<?php if ($this->const) {
+    include $this->const . '.phtml';
+} else {
+    include 'signUp.phtml';
+}
 ?>

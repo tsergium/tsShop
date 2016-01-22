@@ -1,209 +1,216 @@
 <!--<div class="menu_top">
     <div class="menu_top_right">
 	<ul>
-	    <li><a href="<?php echo WEBPAGE_ADDRESS;?>/">Acasa</a></li>
+	    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/">Acasa</a></li>
 	    <li>|</li>
-	    <li><a href="<?php echo WEBPAGE_ADDRESS;?>/cms/view/page/faq">FAQ</a></li>
+	    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/cms/view/page/faq">FAQ</a></li>
 	    <li>|</li>
-	    <li><a href="<?php echo WEBPAGE_ADDRESS;?>/contact">Contact</a></li>
+	    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/contact">Contact</a></li>
 	    <li>|</li>
-	    <li><a href="<?php echo WEBPAGE_ADDRESS;?>/tabelmarimi">Tabel marimi</a></li>
+	    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/tabelmarimi">Tabel marimi</a></li>
 	    <li>|</li>
-	    <li><a href="<?php echo WEBPAGE_ADDRESS;?>/reduceri/pagina-1.html">Reduceri</a></li>
+	    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/reduceri/pagina-1.html">Reduceri</a></li>
 	    <li>|</li>
-	    <li><a href="<?php echo WEBPAGE_ADDRESS;?>/hainefemei/pagina-1.html">Haine Femei</a></li>
+	    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/hainefemei/pagina-1.html">Haine Femei</a></li>
 	</ul>
     </div>
 </div>-->
 <?php
-require_once APPLICATION_PUBLIC_PATH.'/library/App/SeoSerp/SeoSerp.php';
-require_once APPLICATION_PUBLIC_PATH.'/library/App/Breadcrumbs/Breadcrumbs.php';
+require_once APPLICATION_PUBLIC_PATH . '/library/App/SeoSerp/SeoSerp.php';
+require_once APPLICATION_PUBLIC_PATH . '/library/App/Breadcrumbs/Breadcrumbs.php';
 $seoSerp = new SeoSerp();
 $breadcrumbs = new Breadcrumbs();
-$this->seoId?$_id = $this->seoId:$_id = null;
+$this->seoId ? $_id = $this->seoId : $_id = null;
 $seoSerp->setSeo($this->controller, $this->action, $_id);
 $breadcrumbs->setConstructor($this->controller, $this->action, $_id);
 ?>
 <div id="header">
-		<div class="headerTopBg">
-			<div class="headerTop clearfix">
-				<?php if($this->authClient == null){ ?>
-					<p>Welcome visitor you can <a href="<?php echo WEBPAGE_ADDRESS ?>/auth">login</a> or <a href="<?php echo WEBPAGE_ADDRESS ?>/user/new">create an account</a></p>
-				<?php }else{ ?>
-					<p>Welcome <?php echo $this->authClient->getUsername(); ?>  |  <a href="<?php echo WEBPAGE_ADDRESS ?>/auth/logout">Logout</a>
-				<?php } ?>
-				<ul class="clearfix">
-					<li class="cartCurrency">CURRENCY</li>
-					<li><a href="#" class="currency">&euro;</a></li>
-					<li><a href="#" class="currency">&pound;</a></li>
-					<li><a href="#" class="currency activeCurrency">&#36;</a></li>
-					<li class="shoppingCartInfo"><span>SHOPPING CART</span> 3 ITEM(S) - $192.00</li>
-					<li class="openCartBtn"><a href="#"></a>
-						<ul class="cartOpen clearfix">
-							<li>
-								<span class="openCartImage"><img src="<?php echo THEME_PATH ?>/images/open-cart-img1.png" alt="open cart image" /></span>
+    <div class="headerTopBg">
+        <div class="headerTop clearfix">
+            <?php if ($this->authClient == null){ ?>
+                <p>Welcome visitor you can <a href="<?php echo WEBPAGE_ADDRESS ?>/auth">login</a> or <a
+                        href="<?php echo WEBPAGE_ADDRESS ?>/user/new">create an account</a></p>
+            <?php }else{ ?>
+            <p>Welcome <?php echo $this->authClient->getUsername(); ?> | <a
+                    href="<?php echo WEBPAGE_ADDRESS ?>/auth/logout">Logout</a>
+                <?php } ?>
+            <ul class="clearfix">
+                <li class="cartCurrency">CURRENCY</li>
+                <li><a href="#" class="currency">&euro;</a></li>
+                <li><a href="#" class="currency">&pound;</a></li>
+                <li><a href="#" class="currency activeCurrency">&#36;</a></li>
+                <li class="shoppingCartInfo"><span>SHOPPING CART</span> 3 ITEM(S) - $192.00</li>
+                <li class="openCartBtn"><a href="#"></a>
+                    <ul class="cartOpen clearfix">
+                        <li>
+                            <span class="openCartImage"><img src="<?php echo THEME_PATH ?>/images/open-cart-img1.png"
+                                                             alt="open cart image"/></span>
 								<span class="openCartInfo">
-									Numark RED WAWE<br />
+									Numark RED WAWE<br/>
 									<span class="openCartCost">129<sup>.99</sup><sub>USD</sub></span>
 									<span class="openCartQuantity">1</span>
 								</span>
-								<span class="openCartDelete"></span>
-								<span class="openCartBottom"></span>
-							</li>
-							<li>
-								<span class="openCartImage"><img src="<?php echo THEME_PATH ?>/images/open-cart-img2.png" alt="open cart image" /></span>
+                            <span class="openCartDelete"></span>
+                            <span class="openCartBottom"></span>
+                        </li>
+                        <li>
+                            <span class="openCartImage"><img src="<?php echo THEME_PATH ?>/images/open-cart-img2.png"
+                                                             alt="open cart image"/></span>
 								<span class="openCartInfo">
-									Wireless Mouse M305<br />
+									Wireless Mouse M305<br/>
 									<span class="openCartCost">59<sup>.00</sup><sub>USD</sub></span>
 									<span class="openCartQuantity">1</span>
 								</span>
-								<span class="openCartDelete"></span>
-								<span class="openCartBottom"></span>
-							</li>
-							<li>
-								<span class="openCartImage"><img src="<?php echo THEME_PATH ?>/images/open-cart-img3.png" alt="open cart image" /></span>
+                            <span class="openCartDelete"></span>
+                            <span class="openCartBottom"></span>
+                        </li>
+                        <li>
+                            <span class="openCartImage"><img src="<?php echo THEME_PATH ?>/images/open-cart-img3.png"
+                                                             alt="open cart image"/></span>
 								<span class="openCartInfo">
-									Dual USB 2A <br />
+									Dual USB 2A <br/>
 									<span class="openCartCost">10<sup>.00</sup><sub>USD</sub></span>
 									<span class="openCartQuantity">1</span>
 								</span>
-								<span class="openCartDelete"></span>
-								<span class="openCartBottom"></span>
-							</li>
-							<li class="openCartBtn">
-								<a href="checkout.html">checkout</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="headerCenterBg">
-			<div class="headerCenter">
-				<h1>black &amp; white</h1>
-				<ul>
-					<?php if($this->authClient != null){ ?>
-						<!--<li><a href="wishlist.html">Wish List(0)</a></li>-->
-						<li><a href="<?php echo WEBPAGE_ADDRESS;?>/user/myaccount">My Account</a></li>
-						<li><a href="<?php echo WEBPAGE_ADDRESS;?>/user/editaccount">Edit Account</a></li>
-						<li><a href="<?php echo WEBPAGE_ADDRESS;?>/user/orders">Order History</a></li>
-						<li><a href="<?php echo WEBPAGE_ADDRESS;?>/auth/logout">Logout</a></li>						
-					<?php } ?>
-					<li><a href="shopping_cart.html">Shopping Cart</a></li>
-					<li><a href="checkout.html">Checkout</a></li>
-					<li class="searchForm">
-						<form action="" method="post">
-							<p>
-							<input type="text" value="I'm looking for..." class="inputField" />
-							<input type="submit" value="Search" class="submitBtn" />
-							</p>
-						</form>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="mainMenu">
-			<ul class="clearfix">
-				<li class="firstMainMenuItem level-0"><a href="<?php echo WEBPAGE_ADDRESS;?>">home</a></li>
-				<?php if(null != $this->categories){?>
-					<?php foreach($this->categories as $value){?>
-						<?php $subcategories = getSubcatForCat($value->getId()); ?>
-						<?php $link = $this->url(array('id'=>$value->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/','_', strtolower($value->getName())), 'page'=>'1'),'prodcategroutepag');?>
-						<li class="dropdown level-0">
-							<a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $link;?>"><?php echo $value->getName();?>
-								<?php if($subcategories){ ?>
-									<img src="<?php echo THEME_PATH ?>/images/dropdown-arrow.png" alt="" />
-								<?php } ?>	
-							</a>
-							<?php if(null != $subcategories){ ?>
-								<ul>
-									 <?php foreach($subcategories as $value2){?>
-										<?php $link = $this->url(array('id'=>$value2->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/','_', strtolower($value2->getName())), 'page'=>'1'),'prodcategroutepag');?>
-										<li class="level-1"><a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $link;?>"><?php echo $value2->getName();?></a>
-									 <?php } ?>		
-								</ul>		
-							<?php } ?>
-						</li>	
-					<?php } ?>
-				<?php } ?>				
-			</ul>
-		</div>
-		<div class="headerBottomBg">
-			<div class="headerBottom clearfix">
-				<p>You are here: <a href="<?php echo WEBPAGE_ADDRESS; ?>">Home</a> <?php echo $breadcrumbs->getBreadcrumbs();?></p>
-				<p class="byBrands"><a href="#">shop by brands</a></p>
-				<div class="navigation">
-					<div class="navigationTop">
-						<ul>
-							<li><a href="#">A</a></li>
-							<li><a href="#">B</a></li>
-							<li><a href="#" class="activeNavigation">C</a></li>
-							<li><a href="#">D</a></li>
-							<li class="emptyBrand">E</li>
-							<li class="emptyBrand">F</li>
-							<li><a href="#">G</a></li>
-							<li><a href="#">H</a></li>
-							<li><a href="#">I</a></li>
-							<li class="emptyBrand">J</li>
-							<li><a href="#">K</a></li>
-							<li><a href="#">L</a></li>
-							<li class="emptyBrand">M</li>
-							<li><a href="#">N</a></li>
-							<li class="emptyBrand">O</li>
-							<li class="emptyBrand">P</li>
-							<li><a href="#">Q</a></li>
-							<li><a href="#">R</a></li>
-							<li><a href="#">S</a></li>
-							<li><a href="#">T</a></li>
-							<li><a href="#">U</a></li>
-							<li class="emptyBrand">V</li>
-							<li class="emptyBrand">W</li>
-							<li class="emptyBrand">X</li>
-							<li class="emptyBrand">Y</li>
-							<li class="lastNavigation"><a href="#">Z</a></li>
-						</ul>
-					</div>
-					<div class="navigationCenter">
-						<ul>
-							<li><a href="#">C.H. HANSON</a></li>
-							<li><a href="#">CABLE CAPTURE</a></li>
-							<li><a href="#">CABLE CLAMP</a></li>
-							<li><a href="#">CABOT</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">C.H. HANSON</a></li>
-							<li><a href="#">CABLE CAPTURE</a></li>
-							<li><a href="#">CABLE CLAMP</a></li>
-							<li><a href="#">CABOT</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">C.H. HANSON</a></li>
-							<li><a href="#">CABLE CAPTURE</a></li>
-							<li><a href="#">CABLE CLAMP</a></li>
-							<li><a href="#">CABOT</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">C.H. HANSON</a></li>
-							<li><a href="#">CABLE CAPTURE</a></li>
-							<li><a href="#">CABLE CLAMP</a></li>
-							<li><a href="#">CABOT</a></li>
-						</ul>
-						<ul class="lastNavigationMenu">
-							<li><a href="#">C.H. HANSON</a></li>
-							<li><a href="#">CABLE CAPTURE</a></li>
-						</ul>
-					</div>
-					<div class="navigationBottom">
-						<a href="#" class="brand1"></a>
-						<a href="#" class="brand2"></a>
-						<a href="#" class="brand3"></a>
-						<a href="#" class="brand4"></a>
-						<a href="#" class="brand5"></a>
-						<a href="#" class="brand6"></a>
-						<a href="#" class="brand7"></a>
-						<a href="#" class="brand8"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                            <span class="openCartDelete"></span>
+                            <span class="openCartBottom"></span>
+                        </li>
+                        <li class="openCartBtn">
+                            <a href="checkout.html">checkout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="headerCenterBg">
+        <div class="headerCenter">
+            <h1>black &amp; white</h1>
+            <ul>
+                <?php if ($this->authClient != null) { ?>
+                    <!--<li><a href="wishlist.html">Wish List(0)</a></li>-->
+                    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/user/myaccount">My Account</a></li>
+                    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/user/editaccount">Edit Account</a></li>
+                    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/user/orders">Order History</a></li>
+                    <li><a href="<?php echo WEBPAGE_ADDRESS; ?>/auth/logout">Logout</a></li>
+                <?php } ?>
+                <li><a href="shopping_cart.html">Shopping Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li class="searchForm">
+                    <form action="" method="post">
+                        <p>
+                            <input type="text" value="I'm looking for..." class="inputField"/>
+                            <input type="submit" value="Search" class="submitBtn"/>
+                        </p>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mainMenu">
+        <ul class="clearfix">
+            <li class="firstMainMenuItem level-0"><a href="<?php echo WEBPAGE_ADDRESS; ?>">home</a></li>
+            <?php if (null != $this->categories) { ?>
+                <?php foreach ($this->categories as $value) { ?>
+                    <?php $subcategories = getSubcatForCat($value->getId()); ?>
+                    <?php $link = $this->url(array('id' => $value->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/', '_', strtolower($value->getName())), 'page' => '1'), 'prodcategroutepag'); ?>
+                    <li class="dropdown level-0">
+                        <a href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $link; ?>"><?php echo $value->getName(); ?>
+                            <?php if ($subcategories) { ?>
+                                <img src="<?php echo THEME_PATH ?>/images/dropdown-arrow.png" alt=""/>
+                            <?php } ?>
+                        </a>
+                        <?php if (null != $subcategories) { ?>
+                            <ul>
+                                <?php foreach ($subcategories as $value2){ ?>
+                                <?php $link = $this->url(array('id' => $value2->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/', '_', strtolower($value2->getName())), 'page' => '1'), 'prodcategroutepag'); ?>
+                                <li class="level-1"><a
+                                        href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $link; ?>"><?php echo $value2->getName(); ?></a>
+                                    <?php } ?>
+                            </ul>
+                        <?php } ?>
+                    </li>
+                <?php } ?>
+            <?php } ?>
+        </ul>
+    </div>
+    <div class="headerBottomBg">
+        <div class="headerBottom clearfix">
+            <p>You are here: <a
+                    href="<?php echo WEBPAGE_ADDRESS; ?>">Home</a> <?php echo $breadcrumbs->getBreadcrumbs(); ?></p>
+            <p class="byBrands"><a href="#">shop by brands</a></p>
+            <div class="navigation">
+                <div class="navigationTop">
+                    <ul>
+                        <li><a href="#">A</a></li>
+                        <li><a href="#">B</a></li>
+                        <li><a href="#" class="activeNavigation">C</a></li>
+                        <li><a href="#">D</a></li>
+                        <li class="emptyBrand">E</li>
+                        <li class="emptyBrand">F</li>
+                        <li><a href="#">G</a></li>
+                        <li><a href="#">H</a></li>
+                        <li><a href="#">I</a></li>
+                        <li class="emptyBrand">J</li>
+                        <li><a href="#">K</a></li>
+                        <li><a href="#">L</a></li>
+                        <li class="emptyBrand">M</li>
+                        <li><a href="#">N</a></li>
+                        <li class="emptyBrand">O</li>
+                        <li class="emptyBrand">P</li>
+                        <li><a href="#">Q</a></li>
+                        <li><a href="#">R</a></li>
+                        <li><a href="#">S</a></li>
+                        <li><a href="#">T</a></li>
+                        <li><a href="#">U</a></li>
+                        <li class="emptyBrand">V</li>
+                        <li class="emptyBrand">W</li>
+                        <li class="emptyBrand">X</li>
+                        <li class="emptyBrand">Y</li>
+                        <li class="lastNavigation"><a href="#">Z</a></li>
+                    </ul>
+                </div>
+                <div class="navigationCenter">
+                    <ul>
+                        <li><a href="#">C.H. HANSON</a></li>
+                        <li><a href="#">CABLE CAPTURE</a></li>
+                        <li><a href="#">CABLE CLAMP</a></li>
+                        <li><a href="#">CABOT</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">C.H. HANSON</a></li>
+                        <li><a href="#">CABLE CAPTURE</a></li>
+                        <li><a href="#">CABLE CLAMP</a></li>
+                        <li><a href="#">CABOT</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">C.H. HANSON</a></li>
+                        <li><a href="#">CABLE CAPTURE</a></li>
+                        <li><a href="#">CABLE CLAMP</a></li>
+                        <li><a href="#">CABOT</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">C.H. HANSON</a></li>
+                        <li><a href="#">CABLE CAPTURE</a></li>
+                        <li><a href="#">CABLE CLAMP</a></li>
+                        <li><a href="#">CABOT</a></li>
+                    </ul>
+                    <ul class="lastNavigationMenu">
+                        <li><a href="#">C.H. HANSON</a></li>
+                        <li><a href="#">CABLE CAPTURE</a></li>
+                    </ul>
+                </div>
+                <div class="navigationBottom">
+                    <a href="#" class="brand1"></a>
+                    <a href="#" class="brand2"></a>
+                    <a href="#" class="brand3"></a>
+                    <a href="#" class="brand4"></a>
+                    <a href="#" class="brand5"></a>
+                    <a href="#" class="brand6"></a>
+                    <a href="#" class="brand7"></a>
+                    <a href="#" class="brand8"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

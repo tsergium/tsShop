@@ -1,44 +1,45 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
     <title>Lenjerie-de-lux.ro</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <?php //echo $this->headLink(); ?>
     <?php //echo $this->headStyle(); ?>
     <?php //echo $this->headScript(); ?>
 </head>
 <body>
-	<ul class="iframeLogin">
-		<li class="titlu1">
-			Logare
-		</li>
-		<li style="color:#ffffff; text-align: center;">
-			<?php if(!empty($this->message)) { ?>
-				<?php foreach($this->message as $value) : ?>
-					<?php echo $value; ?>
-				<?php endforeach; ?>
-			<?php }else{ ?>
-				<div class="empty10">&nbsp;</div>
-			<?php } ?>
+<ul class="iframeLogin">
+    <li class="titlu1">
+        Logare
+    </li>
+    <li style="color:#ffffff; text-align: center;">
+        <?php if (!empty($this->message)) { ?>
+            <?php foreach ($this->message as $value) : ?>
+                <?php echo $value; ?>
+            <?php endforeach; ?>
+        <?php } else { ?>
+            <div class="empty10">&nbsp;</div>
+        <?php } ?>
 
-			<?php echo $this->formLogin; ?>
-		</li>
-	</ul>
+        <?php echo $this->formLogin; ?>
+    </li>
+</ul>
 </body>
 <script type="text/javascript">
-$(document).ready(function() {
-	$('.jsRemind').click(function() {
+    $(document).ready(function () {
+        $('.jsRemind').click(function () {
 //		parent.location.reload();
-		parent.document.location = '/auth/remind';
-		parent.$.fancybox.close();
-	});
-	$('.jsNewAccount').click(function() {
-		parent.document.location = '/user/new';
-		parent.$.fancybox.close();
-	});
-	<?php if($this->authUser){ ?>
-		parent.document.location = '/order/';
-		parent.$.fancybox.close();
-	<?php } ?>
-});
+            parent.document.location = '/auth/remind';
+            parent.$.fancybox.close();
+        });
+        $('.jsNewAccount').click(function () {
+            parent.document.location = '/user/new';
+            parent.$.fancybox.close();
+        });
+        <?php if($this->authUser){ ?>
+        parent.document.location = '/order/';
+        parent.$.fancybox.close();
+        <?php } ?>
+    });
 </script>
 </html>

@@ -1,93 +1,100 @@
-<link rel="stylesheet" type="text/css" href="/js/jquery-tools/tablesorter/blue/style.css" />
+<link rel="stylesheet" type="text/css" href="/js/jquery-tools/tablesorter/blue/style.css"/>
 <script type="text/javascript" src="/js/jquery-tools/tablesorter/jquery.tablesorter.js"></script>
 <script type="text/javascript" src="/js/jquery-tools/tablesorter/addons/jquery.tablesorter.pager.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-    $("#sortProd").tablesorter({
-		widthFixed: false,
-		widgets: ['zebra'],
-		headers: {
-			4: {sorter: false}
-		}
-	});
-});
+    $(document).ready(function () {
+        $("#sortProd").tablesorter({
+            widthFixed: false,
+            widgets: ['zebra'],
+            headers: {
+                4: {sorter: false}
+            }
+        });
+    });
 </script>
-<?php if(!empty($this->message)) : ?>
-	<div class="empty10"></div>
-	<?php foreach($this->message as $value) : ?>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <div class="empty10"></div>
+    <?php foreach ($this->message as $value) : ?>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 
 <?php $funcProd = new Product(); ?>
 <?php $pricetype = $this->pricetype; ?>
 
 <div class="empty10"></div>
-<a class="button1" href="/admin/cms/media-add"><small>Adauga Fisier</small></a>
-<a class="button1" href="/admin/cms/media"><small>Media</small></a>
+<a class="button1" href="/admin/cms/media-add">
+    <small>Adauga Fisier</small>
+</a>
+<a class="button1" href="/admin/cms/media">
+    <small>Media</small>
+</a>
 <div class="empty10"></div>
-	
-<div class="regSubForm">
-	<span class="hint fR"><small><?php echo Zend_Registry::get('translate')->_("products_search_by_sku_required"); ?></small></span>
-	<div class="clear"></div>
-	<?php echo $this->form; ?>
-	<div class="empty10"></div>
-</div>
-	
-<?php if($this->result) : ?>
-	<table id="sortProd" cellspacing="1" class="tablesorter">
-		<col width="80" />
-		<col width="80" />
-		<col width="" />
-		<col width="" />
-		<col width="120" />
-		<thead>
-			<tr>
-				<th>Adaugat</th>
-				<th>Tipul</th>
-				<th><?php echo Zend_Registry::get('translate')->_('cms_pages_table_url'); ?></th>
-				<th>Note</th>
-				<th><?php echo Zend_Registry::get('translate')->_('cms_pages_table_actions'); ?></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php foreach($this->result as $value) : ?>
-			<tr>
-				<td align="center"><?php echo $value->getCreated()?date('Y-m-d', $value->getCreated()):'-'; ?></td>
-				<td align="left"><?php echo $value->getType(); ?></td>
-				<td align="left"><a target="_blank" href="<?php echo $value->getUrl(); ?>"><?php echo $value->getUrl(); ?></a></td>
-				<td align="left"><?php echo $value->getNote(); ?></td>
-				<td align="center">
-					<a href="/admin/cms/media-delete/id/<?php echo $value->getId(); ?>" class="confirmDelete"><?php echo Zend_Registry::get('translate')->_('cms_pages_table_delete'); ?></a>
-				</td>
-			</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
 
-	<div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>" style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_pages_message_delete'); ?></div>
+<div class="regSubForm">
+    <span class="hint fR"><small><?php echo Zend_Registry::get('translate')->_("products_search_by_sku_required"); ?></small></span>
+    <div class="clear"></div>
+    <?php echo $this->form; ?>
+    <div class="empty10"></div>
+</div>
+
+<?php if ($this->result) : ?>
+    <table id="sortProd" cellspacing="1" class="tablesorter">
+        <col width="80"/>
+        <col width="80"/>
+        <col width=""/>
+        <col width=""/>
+        <col width="120"/>
+        <thead>
+        <tr>
+            <th>Adaugat</th>
+            <th>Tipul</th>
+            <th><?php echo Zend_Registry::get('translate')->_('cms_pages_table_url'); ?></th>
+            <th>Note</th>
+            <th><?php echo Zend_Registry::get('translate')->_('cms_pages_table_actions'); ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($this->result as $value) : ?>
+            <tr>
+                <td align="center"><?php echo $value->getCreated() ? date('Y-m-d', $value->getCreated()) : '-'; ?></td>
+                <td align="left"><?php echo $value->getType(); ?></td>
+                <td align="left"><a target="_blank"
+                                    href="<?php echo $value->getUrl(); ?>"><?php echo $value->getUrl(); ?></a></td>
+                <td align="left"><?php echo $value->getNote(); ?></td>
+                <td align="center">
+                    <a href="/admin/cms/media-delete/id/<?php echo $value->getId(); ?>"
+                       class="confirmDelete"><?php echo Zend_Registry::get('translate')->_('cms_pages_table_delete'); ?></a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>"
+         style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_pages_message_delete'); ?></div>
 <?php endif; ?>
 
 <?php $this->headScript()->captureStart(); ?>
-	$(document).ready(function() {
-		$('.confirmDelete').click(function() {
-			var link = $(this);
-			$("#confirmDelete").dialog({
-				bgiframe: true,
-				height: 150,
-				width: 400,
-				modal: true,
-				buttons: {
-					'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
-						$(this).dialog('close').dialog('destroy');
-						window.location.href = link.attr('href');
-					},
-					'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
-						$(this).dialog('close').dialog('destroy');
-					}
-				}
-			});
-			return false;
-		});
-	});
+$(document).ready(function() {
+$('.confirmDelete').click(function() {
+var link = $(this);
+$("#confirmDelete").dialog({
+bgiframe: true,
+height: 150,
+width: 400,
+modal: true,
+buttons: {
+'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
+$(this).dialog('close').dialog('destroy');
+window.location.href = link.attr('href');
+},
+'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
+$(this).dialog('close').dialog('destroy');
+}
+}
+});
+return false;
+});
+});
 <?php $this->headScript()->captureEnd(); ?>

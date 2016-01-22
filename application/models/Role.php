@@ -1,8 +1,9 @@
 <?php
+
 class Default_Model_DbTable_Role extends Zend_Db_Table_Abstract
 {
-	protected $_name    = 'ts_acl_role';
-	protected $_primary = 'id';
+    protected $_name = 'ts_acl_role';
+    protected $_primary = 'id';
     protected $_dependentTables = array('Default_Model_DbTable_AdminUser');
 }
 
@@ -14,32 +15,35 @@ class Default_Model_Role
 
     public function __construct(array $options = null)
     {
-        if(is_array($options)) {
+        if (is_array($options)) {
             $this->setOptions($options);
         }
     }
+
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' property');
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' property');
         }
         $this->$method($value);
     }
+
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' property');
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' property');
         }
         return $this->$method();
     }
+
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -48,7 +52,7 @@ class Default_Model_Role
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -59,7 +63,7 @@ class Default_Model_Role
 
     public function setName($name)
     {
-        $this->_name = (string) $name;
+        $this->_name = (string)$name;
         return $this;
     }
 
@@ -76,12 +80,12 @@ class Default_Model_Role
 
     public function getMapper()
     {
-        if(null === $this->_mapper) {
-			$this->setMapper(new Default_Model_RoleMapper());
+        if (null === $this->_mapper) {
+            $this->setMapper(new Default_Model_RoleMapper());
         }
         return $this->_mapper;
     }
-    
+
     public function save()
     {
         return $this->getMapper()->save($this);
@@ -92,16 +96,16 @@ class Default_Model_Role
         return $this->getMapper()->find($id, $this);
     }
 
-    public function fetchAll($select=null)
+    public function fetchAll($select = null)
     {
         return $this->getMapper()->fetchAll($select);
     }
 
     public function delete()
     {
-    	if(null === ($id = $this->getId())) {
-    		throw new Exception("Invalid record selected!");
-    	}
+        if (null === ($id = $this->getId())) {
+            throw new Exception("Invalid record selected!");
+        }
         return $this->getMapper()->delete($id);
     }
 }
@@ -112,30 +116,30 @@ class Default_Model_RoleMapper
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
         return $this;
     }
-    
+
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_Role');
         }
         return $this->_dbTable;
     }
-    
+
     public function save(Default_Model_Role $role)
     {
         $data = array(
-            'name'				=> $role->getName(),
+            'name' => $role->getName(),
         );
-        if(null === ($id = $role->getId())) {
+        if (null === ($id = $role->getId())) {
             $this->getDbTable()->insert($data);
             $id = $this->getDbTable()->lastInsertId();
         } else {
@@ -143,35 +147,35 @@ class Default_Model_RoleMapper
         }
         return $id;
     }
-    
+
     public function find($id, Default_Model_Role $role)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
         $role->setOptions($row->toArray());
-		return $role;
+        return $role;
     }
 
     public function fetchAll($select)
     {
         $resultSet = $this->getDbTable()->fetchAll($select);
-        
+
         $entries = array();
-        foreach($resultSet as $row) {
+        foreach ($resultSet as $row) {
             $role = new Default_Model_Role();
             $role->setOptions($row->toArray())
-					->setMapper($this);
+                ->setMapper($this);
             $entries[] = $role;
         }
         return $entries;
     }
-    
+
     public function delete($id)
     {
-    	$where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
         return $this->getDbTable()->delete($where);
     }
 }

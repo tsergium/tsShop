@@ -1,28 +1,28 @@
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<?php echo $value; ?>
-		<div class="empty10"></div>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <?php echo $value; ?>
+        <div class="empty10"></div>
+    <?php endforeach; ?>
 <?php endif; ?>
 <div class="newTitleDiv clearfix">
-	<div class="loginTitle">please login</div>
-	<div class="newTitleShadow"></div>
-	<div class="newTitleBg"></div>
+    <div class="loginTitle">please login</div>
+    <div class="newTitleShadow"></div>
+    <div class="newTitleBg"></div>
 </div>
 <div class="contentBox">
-	<div class="loginArea clearfix">
-		<div class="contactLeft">
-			<h2>Returning Customer</h2>
-			<?php echo $this->formAuth; ?>
-		</div>
-		<div class="loginRight">
-			<h2>New Customer</h2>
-			<div class="clearfix">
-				<div class="contactInfoRight2">
-					<span>Register Account  By creating an account you will be able to shop faster, be up to date  on an order's status, and keep track of the orders you have previously made.</span>
-					<a href="/user/new" class="sendBtn" >Continue</a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="loginArea clearfix">
+        <div class="contactLeft">
+            <h2>Returning Customer</h2>
+            <?php echo $this->formAuth; ?>
+        </div>
+        <div class="loginRight">
+            <h2>New Customer</h2>
+            <div class="clearfix">
+                <div class="contactInfoRight2">
+                    <span>Register Account  By creating an account you will be able to shop faster, be up to date  on an order's status, and keep track of the orders you have previously made.</span>
+                    <a href="/user/new" class="sendBtn">Continue</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

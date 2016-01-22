@@ -1,47 +1,55 @@
 <!--BEGIN: SEARCH PRODUCTS-->
 <div class="empty10"></div>
 <div class="fL">
-	<a class="button1" href="/admin/product/gallery"><small>Toate Produsele</small></a>
+    <a class="button1" href="/admin/product/gallery">
+        <small>Toate Produsele</small>
+    </a>
 </div>
 <div class="fR">
-	<?php echo $this->searchForm;?>
+    <?php echo $this->searchForm; ?>
 </div>
 <div class="clear">&nbsp;</div>
-<?php if($this->search){ ?>
-<div class="empty10"></div>
-<h2>Rezultatul cautarii &quot;<b><?php echo $this->search; ?></b>&quot; :</h2><br/>
+<?php if ($this->search) { ?>
+    <div class="empty10"></div>
+    <h2>Rezultatul cautarii &quot;<b><?php echo $this->search; ?></b>&quot; :</h2><br/>
 <?php } ?>
 <!--END: SEARCH PRODUCTS-->
 
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<div class="empty10"></div>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 
-<?php if(null != $this->result){?>
-<div class="empty10"></div>
-<div class="media">
-	<?php $i=1; foreach($this->result as $value){?>
-	<div class="item">
-		<div class="image">
-			<a href="/admin/product/addgallery/id/<?php echo $value->getId();?>" title="<?php echo $value->getName();?>">
-				<img width="150" src="/media/products/small/<?php echo $value->getImage();?>" alt="<?php echo $value->getName();?>" />
-			</a>
-		</div>
-		<div class="name">
-			<a href="/admin/product/addgallery/id/<?php echo $value->getId();?>" title="<?php echo $value->getName();?>">
-				<?php echo $value->getName();?>
-			</a>
-		</div>
-	</div>
-	<?php if($i%5==0){?><div class="clear"></div><?php }?>
-	<?php $i++;}?>
-</div>
+<?php if (null != $this->result) { ?>
+    <div class="empty10"></div>
+    <div class="media">
+        <?php $i = 1;
+        foreach ($this->result as $value) { ?>
+            <div class="item">
+                <div class="image">
+                    <a href="/admin/product/addgallery/id/<?php echo $value->getId(); ?>"
+                       title="<?php echo $value->getName(); ?>">
+                        <img width="150" src="/media/products/small/<?php echo $value->getImage(); ?>"
+                             alt="<?php echo $value->getName(); ?>"/>
+                    </a>
+                </div>
+                <div class="name">
+                    <a href="/admin/product/addgallery/id/<?php echo $value->getId(); ?>"
+                       title="<?php echo $value->getName(); ?>">
+                        <?php echo $value->getName(); ?>
+                    </a>
+                </div>
+            </div>
+            <?php if ($i % 5 == 0) { ?>
+                <div class="clear"></div><?php } ?>
+            <?php $i++;
+        } ?>
+    </div>
 
-<div class="clear"></div>
-<!-- BEGIN: Paginare -->
-<?php echo $this->result;?>
-<!-- END: Paginare -->
-<?php }?>
+    <div class="clear"></div>
+    <!-- BEGIN: Paginare -->
+    <?php echo $this->result; ?>
+    <!-- END: Paginare -->
+<?php } ?>

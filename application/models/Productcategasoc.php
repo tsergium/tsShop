@@ -1,22 +1,24 @@
 <?php
+
 class Default_Model_DbTable_Productcategasoc extends Zend_Db_Table_Abstract
 {
-	protected $_name    = 'ts_products_categ_asoc';
-	protected $_primary = 'id';
+    protected $_name = 'ts_products_categ_asoc';
+    protected $_primary = 'id';
 }
+
 class Default_Model_Productcategasoc
 {
     protected $_id;
-	protected $_productId;
-	protected $_categoryId;
-	protected $_created;
-	protected $_modified;
+    protected $_productId;
+    protected $_categoryId;
+    protected $_created;
+    protected $_modified;
 
     protected $_mapper;
 
     public function __construct(array $options = null)
     {
-        if(is_array($options)) {
+        if (is_array($options)) {
             $this->setOptions($options);
         }
     }
@@ -24,8 +26,8 @@ class Default_Model_Productcategasoc
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' product category asociation property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' product category asociation property ' . $method);
         }
         $this->$method($value);
     }
@@ -33,8 +35,8 @@ class Default_Model_Productcategasoc
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' product category asociation property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' product category asociation property ' . $method);
         }
         return $this->$method();
     }
@@ -42,9 +44,9 @@ class Default_Model_Productcategasoc
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -53,7 +55,7 @@ class Default_Model_Productcategasoc
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -64,7 +66,7 @@ class Default_Model_Productcategasoc
 
     public function setProductId($productId)
     {
-        $this->_productId = (int) $productId;
+        $this->_productId = (int)$productId;
         return $this;
     }
 
@@ -75,7 +77,7 @@ class Default_Model_Productcategasoc
 
     public function setCategoryId($categoryId)
     {
-        $this->_categoryId = (int) $categoryId;
+        $this->_categoryId = (int)$categoryId;
         return $this;
     }
 
@@ -84,9 +86,9 @@ class Default_Model_Productcategasoc
         return $this->_categoryId;
     }
 
-	public function setCreated($date)
+    public function setCreated($date)
     {
-        $this->_created = (!empty($date) && strtotime($date)>0)?strtotime($date):null;
+        $this->_created = (!empty($date) && strtotime($date) > 0) ? strtotime($date) : null;
         return $this;
     }
 
@@ -95,9 +97,9 @@ class Default_Model_Productcategasoc
         return $this->_created;
     }
 
-	public function setModified($date)
+    public function setModified($date)
     {
-        $this->_modified = (!empty($date) && strtotime($date)>0)?strtotime($date):null;
+        $this->_modified = (!empty($date) && strtotime($date) > 0) ? strtotime($date) : null;
         return $this;
     }
 
@@ -114,7 +116,7 @@ class Default_Model_Productcategasoc
 
     public function getMapper()
     {
-        if(null === $this->_mapper) {
+        if (null === $this->_mapper) {
             $this->setMapper(new Default_Model_ProductcategasocMapper());
         }
         return $this->_mapper;
@@ -137,23 +139,23 @@ class Default_Model_Productcategasoc
 
     public function delete()
     {
-    	if(null === ($id = $this->getId())) {
-    		throw new Exception('Invalid record selected!');
-    	}
+        if (null === ($id = $this->getId())) {
+            throw new Exception('Invalid record selected!');
+        }
         return $this->getMapper()->delete($id);
     }
 }
 
 class Default_Model_ProductcategasocMapper
 {
-	protected $_dbTable;
+    protected $_dbTable;
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
@@ -162,7 +164,7 @@ class Default_Model_ProductcategasocMapper
 
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_Productcategasoc');
         }
         return $this->_dbTable;
@@ -171,12 +173,12 @@ class Default_Model_ProductcategasocMapper
     public function find($id, Default_Model_Productcategasoc $model)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $model -> setOptions($row->toArray());
-		return $model;
+        $model->setOptions($row->toArray());
+        return $model;
     }
 
     public function fetchAll($select)
@@ -184,11 +186,11 @@ class Default_Model_ProductcategasocMapper
         $resultSet = $this->getDbTable()->fetchAll($select);
 
         $entries = array();
-        foreach($resultSet as $row) {
+        foreach ($resultSet as $row) {
             $model = new Default_Model_Productcategasoc();
             $model->setOptions($row->toArray())
-                 	->setMapper($this);
-			$entries[] = $model;
+                ->setMapper($this);
+            $entries[] = $model;
         }
         return $entries;
     }
@@ -196,14 +198,14 @@ class Default_Model_ProductcategasocMapper
     public function save(Default_Model_Productcategasoc $model)
     {
         $data = array(
-			'productId'				=> $model->getProductId(),
-			'categoryId'			=> $model->getCategoryId(),
+            'productId' => $model->getProductId(),
+            'categoryId' => $model->getCategoryId(),
         );
-        if(null === ($id = $model->getId())) {
-			$data['created']	 = new Zend_Db_Expr('NOW()');
+        if (null === ($id = $model->getId())) {
+            $data['created'] = new Zend_Db_Expr('NOW()');
             $id = $this->getDbTable()->insert($data);
         } else {
-        	$data['modified']	 = new Zend_Db_Expr('NOW()');
+            $data['modified'] = new Zend_Db_Expr('NOW()');
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
         return $id;
@@ -211,7 +213,7 @@ class Default_Model_ProductcategasocMapper
 
     public function delete($id)
     {
-    	$where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
         return $this->getDbTable()->delete($where);
     }
 }

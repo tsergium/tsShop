@@ -1,23 +1,24 @@
 <?php
+
 class Default_Model_DbTable_Category extends Zend_Db_Table_Abstract
 {
-	protected $_name    = 'ts_categories';
-	protected $_primary = 'id';
+    protected $_name = 'ts_categories';
+    protected $_primary = 'id';
 }
 
 class Default_Model_Category
 {
     protected $_id;
     protected $_parentId;
-	protected $_name;
-	protected $_created;
-	protected $_modified;
+    protected $_name;
+    protected $_created;
+    protected $_modified;
 
     protected $_mapper;
-	
+
     public function __construct(array $options = null)
     {
-        if(is_array($options)) {
+        if (is_array($options)) {
             $this->setOptions($options);
         }
     }
@@ -25,8 +26,8 @@ class Default_Model_Category
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' category property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' category property ' . $method);
         }
         $this->$method($value);
     }
@@ -34,7 +35,7 @@ class Default_Model_Category
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
+        if (('mapper' == $name) || !method_exists($this, $method)) {
             throw new Exception('Invalid category property');
         }
         return $this->$method();
@@ -43,9 +44,9 @@ class Default_Model_Category
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -54,7 +55,7 @@ class Default_Model_Category
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -62,10 +63,10 @@ class Default_Model_Category
     {
         return $this->_id;
     }
-    
+
     public function setParentId($value)
     {
-        $this->_parentId =  (!empty($value))?(int)($value):null;
+        $this->_parentId = (!empty($value)) ? (int)($value) : null;
         return $this;
     }
 
@@ -76,7 +77,7 @@ class Default_Model_Category
 
     public function setName($name)
     {
-        $this->_name = (string) $name;
+        $this->_name = (string)$name;
         return $this;
     }
 
@@ -85,9 +86,9 @@ class Default_Model_Category
         return $this->_name;
     }
 
-	public function setCreated($date)
+    public function setCreated($date)
     {
-        $this->_created = (!empty($date) && strtotime($date)>0)?strtotime($date):null;
+        $this->_created = (!empty($date) && strtotime($date) > 0) ? strtotime($date) : null;
         return $this;
     }
 
@@ -96,9 +97,9 @@ class Default_Model_Category
         return $this->_created;
     }
 
-	public function setModified($date)
+    public function setModified($date)
     {
-        $this->_modified = (!empty($date) && strtotime($date)>0)?strtotime($date):null;
+        $this->_modified = (!empty($date) && strtotime($date) > 0) ? strtotime($date) : null;
         return $this;
     }
 
@@ -115,7 +116,7 @@ class Default_Model_Category
 
     public function getMapper()
     {
-        if(null === $this->_mapper) {
+        if (null === $this->_mapper) {
             $this->setMapper(new Default_Model_CategoryMapper());
         }
         return $this->_mapper;
@@ -138,9 +139,9 @@ class Default_Model_Category
 
     public function delete()
     {
-    	if(null === ($id = $this->getId())) {
-    		throw new Exception("Invalid record selected!");
-    	}
+        if (null === ($id = $this->getId())) {
+            throw new Exception("Invalid record selected!");
+        }
         return $this->getMapper()->delete($id);
     }
 
@@ -152,10 +153,10 @@ class Default_Model_CategoryMapper
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
@@ -164,7 +165,7 @@ class Default_Model_CategoryMapper
 
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_Category');
         }
         return $this->_dbTable;
@@ -173,12 +174,12 @@ class Default_Model_CategoryMapper
     public function find($id, Default_Model_Category $model)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $model -> setOptions($row->toArray());
-		return $model;
+        $model->setOptions($row->toArray());
+        return $model;
     }
 
     public function fetchAll($select)
@@ -189,7 +190,7 @@ class Default_Model_CategoryMapper
         foreach ($resultSet as $row) {
             $model = new Default_Model_Category();
             $model->setOptions($row->toArray())
-                  	->setMapper($this);
+                ->setMapper($this);
             $entries[] = $model;
         }
         return $entries;
@@ -198,16 +199,16 @@ class Default_Model_CategoryMapper
     public function save(Default_Model_Category $model)
     {
         $data = array(
-			'parentId'				=> $model->getParentId(),
-			'name'					=> $model->getName(),
+            'parentId' => $model->getParentId(),
+            'name' => $model->getName(),
         );
 
-        if(null === ($id = $model->getId())) {
-        	$data['created']		 = new Zend_Db_Expr('CURDATE()');
+        if (null === ($id = $model->getId())) {
+            $data['created'] = new Zend_Db_Expr('CURDATE()');
             $id = $this->getDbTable()->insert($data);
 
         } else {
-        	$data['modified']	 = new Zend_Db_Expr('NOW()');
+            $data['modified'] = new Zend_Db_Expr('NOW()');
             $this->getDbTable()->update($data, array('id = ?' => $id));
 
         }
@@ -216,7 +217,7 @@ class Default_Model_CategoryMapper
 
     public function delete($id)
     {
-    	$where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
         return $this->getDbTable()->delete($where);
     }
 }

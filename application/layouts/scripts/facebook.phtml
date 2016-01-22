@@ -1,28 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-	<title>Facebook</title>
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon"/>
+    <title>Facebook</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
 
     <?php echo $this->headLink(); ?>
     <?php echo $this->headStyle(); ?>
     <?php echo $this->headScript(); ?>
     <style>
-        html, body{
+        html, body {
             background: #e9e9e9 none;
         }
     </style>
 </head>
 <body>
-	<?php echo $this->layout()->content;?>
+<?php echo $this->layout()->content; ?>
 </div>
 
 <script src="<?php echo WEBPAGE_ADDRESS ?>/theme/facebook/isotope.pkgd.min.js"></script>
 <script>
-    $(document).ready( function() {
+    $(document).ready(function () {
         $('.grid').isotope({
             itemSelector: '.grid-item',
             masonry: {

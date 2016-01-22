@@ -1,7 +1,8 @@
 <?php
+
 class Default_Model_DbTable_Voucher extends Zend_Db_Table_Abstract
 {
-    protected $_name    = 'vouchers';
+    protected $_name = 'vouchers';
     protected $_primary = 'id';
 }
 
@@ -17,7 +18,7 @@ class Default_Model_Voucher
 
     public function __construct(array $options = null)
     {
-        if(is_array($options)) {
+        if (is_array($options)) {
             $this->setOptions($options);
         }
     }
@@ -25,8 +26,8 @@ class Default_Model_Voucher
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' voucher property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' voucher property ' . $method);
         }
         $this->$method($value);
     }
@@ -34,7 +35,7 @@ class Default_Model_Voucher
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
+        if (('mapper' == $name) || !method_exists($this, $method)) {
             throw new Exception('Invalid voucher property');
         }
         return $this->$method();
@@ -43,9 +44,9 @@ class Default_Model_Voucher
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -54,7 +55,7 @@ class Default_Model_Voucher
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -65,7 +66,7 @@ class Default_Model_Voucher
 
     public function setIsProcentual($value)
     {
-        $this->_isProcentual =  (!empty($value))?$value:0;
+        $this->_isProcentual = (!empty($value)) ? $value : 0;
         return $this;
     }
 
@@ -104,7 +105,7 @@ class Default_Model_Voucher
 
     public function getMapper()
     {
-        if(null === $this->_mapper) {
+        if (null === $this->_mapper) {
             $this->setMapper(new Default_Model_VoucherMapper());
         }
         return $this->_mapper;
@@ -127,7 +128,7 @@ class Default_Model_Voucher
 
     public function delete()
     {
-        if(null === ($id = $this->getId())) {
+        if (null === ($id = $this->getId())) {
             throw new Exception("Invalid record selected!");
         }
         return $this->getMapper()->delete($id);
@@ -141,10 +142,10 @@ class Default_Model_VoucherMapper
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
@@ -153,7 +154,7 @@ class Default_Model_VoucherMapper
 
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_Voucher');
         }
         return $this->_dbTable;
@@ -162,11 +163,11 @@ class Default_Model_VoucherMapper
     public function find($id, Default_Model_Voucher $model)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $model -> setOptions($row->toArray());
+        $model->setOptions($row->toArray());
         return $model;
     }
 
@@ -179,12 +180,12 @@ class Default_Model_VoucherMapper
     public function save(Default_Model_Voucher $model)
     {
         $data = array(
-            'isProcentual'           => $model->getIsProcentual(),
-            'value'                   => $model->getValue(),
-            'status'                  => $model->getStatus(),
+            'isProcentual' => $model->getIsProcentual(),
+            'value' => $model->getValue(),
+            'status' => $model->getStatus(),
         );
 
-        if(null === ($id = $model->getId())) {
+        if (null === ($id = $model->getId())) {
             $id = $this->getDbTable()->insert($data);
 
         } else {

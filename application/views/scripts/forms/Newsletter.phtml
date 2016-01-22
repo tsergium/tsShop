@@ -1,31 +1,33 @@
-<form class="login-form" method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getId();?>" enctype="<?php echo $this->element->getEncType();?>">
-<p>
-		<?php
-			echo $this->{$this->element->emailNewsletter->helper}(
-				$this->element->emailNewsletter->getName(),
-				$this->element->emailNewsletter->getValue(),
-				$this->element->emailNewsletter->getAttribs()
-			);
-		?>
-		<?php if($this->element->emailNewsletter->getMessages() != array()){ ?>
-			<?php echo $this->formErrors($this->element->emailNewsletter->getMessages());?>
-		<?php } ?>
-		<?php if ($this->element->emailNewsletter->getDescription()){?>
-			<p class="description"><?php echo $this->element->emailNewsletter->getDescription();?></p>
-		<?php } ?>	
-		 <?php
-			echo $this->{$this->element->submit->helper}(
-				$this->element->submit->getName(),
-				$this->element->submit->getLabel(),
-				$this->element->submit->getAttribs()
-			);
-		 ?>		
-	</li>
-</p>
+<form class="login-form" method="<?php echo $this->element->getMethod(); ?>"
+      action="<?php echo $this->element->getAction(); ?>" id="<?php echo $this->element->getId(); ?>"
+      enctype="<?php echo $this->element->getEncType(); ?>">
+    <p>
+        <?php
+        echo $this->{$this->element->emailNewsletter->helper}(
+            $this->element->emailNewsletter->getName(),
+            $this->element->emailNewsletter->getValue(),
+            $this->element->emailNewsletter->getAttribs()
+        );
+        ?>
+        <?php if ($this->element->emailNewsletter->getMessages() != array()) { ?>
+            <?php echo $this->formErrors($this->element->emailNewsletter->getMessages()); ?>
+        <?php } ?>
+        <?php if ($this->element->emailNewsletter->getDescription()){ ?>
+    <p class="description"><?php echo $this->element->emailNewsletter->getDescription(); ?></p>
+    <?php } ?>
+    <?php
+    echo $this->{$this->element->submit->helper}(
+        $this->element->submit->getName(),
+        $this->element->submit->getLabel(),
+        $this->element->submit->getAttribs()
+    );
+    ?>
+    </li>
+    </p>
 </form>
 <div class="clear"></div>
 <script type="text/javascript">
-$(document).ready(function() {
-	$("#<?php echo $this->element->getId();?>").validationEngine();
-});
+    $(document).ready(function () {
+        $("#<?php echo $this->element->getId();?>").validationEngine();
+    });
 </script>

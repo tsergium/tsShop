@@ -1,4 +1,5 @@
 <?php
+
 class Admin_CouponController extends Zend_Controller_Action
 {
     public function init()
@@ -14,7 +15,7 @@ class Admin_CouponController extends Zend_Controller_Action
         $select = $model->getMapper()->getDbTable()->select();
         $coupons = $model->fetchAll($select);
 
-        if(null != $coupons){
+        if (null != $coupons) {
             $paginator = Zend_Paginator::factory($coupons);
             $paginator->setItemCountPerPage($this->view->adminProdsPage);
             $paginator->setCurrentPageNumber($this->_getParam('page'));
@@ -33,16 +34,16 @@ class Admin_CouponController extends Zend_Controller_Action
     {
         $form = new Admin_Form_Coupon();
         $form->setDecorators(array('ViewScript', array('ViewScript', array('viewScript' => 'forms/coupon/CouponAdd.phtml'))));
-        if($this->getRequest()->isPost()) {
-            if($form->isValid($this->getRequest()->getPost())) {
+        if ($this->getRequest()->isPost()) {
+            if ($form->isValid($this->getRequest()->getPost())) {
                 $post = $this->getRequest()->getPost();
                 $post['status'] = 'active';
                 $model = new Default_Model_Coupon();
                 $model->setOptions($post);
-                if($model->save()) {
-                       $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul a fost adaugat cu succes!</div>');
+                if ($model->save()) {
+                    $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul a fost adaugat cu succes!</div>');
                 } else {
-                       $this->_flashMessenger->addMessage('<div class="mess-false">Eroare la adaugarea cuponului!</div>');
+                    $this->_flashMessenger->addMessage('<div class="mess-false">Eroare la adaugarea cuponului!</div>');
                 }
             }
             $this->_redirect('admin/coupon');
@@ -55,17 +56,17 @@ class Admin_CouponController extends Zend_Controller_Action
         $id = $this->getRequest()->getParam('id');
         $model = new Default_Model_Coupon();
         $model->find($id);
-        if(null != $model){
+        if (null != $model) {
             $form = new Admin_Form_Coupon();
             $form->setDecorators(array('ViewScript', array('ViewScript', array('viewScript' => 'forms/coupon/CouponEdit.phtml'))));
             $form->edit($model);
             $this->view->form = $form;
             $post = $this->getRequest()->getPost();
-            if(null != $post) {
-                if($form->isValid($post)) {
+            if (null != $post) {
+                if ($form->isValid($post)) {
                     $post['status'] = $model->getStatus();
                     $model->setOptions($post);
-                    if($model->save()) {
+                    if ($model->save()) {
                         $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul a fost modificat cu succes!</div>');
                     } else {
                         $this->_flashMessenger->addMessage('<div class="mess-false">Eroare la modificarea cuponului!</div>');
@@ -73,7 +74,7 @@ class Admin_CouponController extends Zend_Controller_Action
                 }
                 $this->_redirect('admin/coupon');
             }
-        }else{
+        } else {
             $this->_flashMessenger->addMessage('<div class="mess-false">Cuponul selectat nu a fost gasit!</div>');
             $this->_redirect('admin/coupon');
         }
@@ -84,15 +85,15 @@ class Admin_CouponController extends Zend_Controller_Action
         $id = $this->getRequest()->getParam('id');
         $model = new Default_Model_Coupon();
         $model->find($id);
-        if(null != $model){
+        if (null != $model) {
             $options = array('code' => $model->getCode(), 'status' => 'active');
             $model->setOptions($options);
-            if($model->save()){
+            if ($model->save()) {
                 $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul a fost activat!</div>');
-            }else{
+            } else {
                 $this->_flashMessenger->addMessage('<div class="mess-false">Eroare activare cupon!</div>');
             }
-        }else{
+        } else {
             $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul selectat nu a fost gasit!</div>');
         }
         $this->_redirect('/admin/coupon');
@@ -103,15 +104,15 @@ class Admin_CouponController extends Zend_Controller_Action
         $id = $this->getRequest()->getParam('id');
         $model = new Default_Model_Coupon();
         $model->find($id);
-        if(null != $model){
+        if (null != $model) {
             $options = array('code' => $model->getCode(), 'status' => 'inactive');
             $model->setOptions($options);
-            if($model->save()){
+            if ($model->save()) {
                 $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul a fost dezactivat!</div>');
-            }else{
+            } else {
                 $this->_flashMessenger->addMessage('<div class="mess-false">Eroare dezactivare cupon!</div>');
             }
-        }else{
+        } else {
             $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul selectat nu a fost gasit!</div>');
         }
         $this->_redirect('/admin/coupon');
@@ -122,13 +123,13 @@ class Admin_CouponController extends Zend_Controller_Action
         $id = $this->getRequest()->getParam('id');
         $model = new Default_Model_Coupon();
         $model->find($id);
-        if(null != $model){
-            if($model->delete()){
+        if (null != $model) {
+            if ($model->delete()) {
                 $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul a fost sters!</div>');
-            }else{
+            } else {
                 $this->_flashMessenger->addMessage('<div class="mess-false">Eroare stergere cupon!</div>');
             }
-        }else{
+        } else {
             $this->_flashMessenger->addMessage('<div class="mess-true">Cuponul selectat nu a fost gasit!</div>');
         }
         $this->_redirect('/admin/coupon');

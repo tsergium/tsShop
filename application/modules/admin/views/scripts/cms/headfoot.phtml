@@ -1,19 +1,19 @@
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 
 <div style="width:630px;">
-	<div class="regSubForm">
-		<!-- Begin: Display Header Form-->
-		<h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("cms_headfoot_title_add_header_content"); ?></h3>
-		<?php echo $this->formHeader; ?>
-		<!-- End: Display Header Form-->
+    <div class="regSubForm">
+        <!-- Begin: Display Header Form-->
+        <h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("cms_headfoot_title_add_header_content"); ?></h3>
+        <?php echo $this->formHeader; ?>
+        <!-- End: Display Header Form-->
 
-		<!-- Begin: Display Footer Form-->
-		<h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("cms_headfoot_title_add_footer_content"); ?></h3>
-		<?php echo $this->formFooter; ?>
-		<!-- End: Display Footer Form-->
-	</div>
+        <!-- Begin: Display Footer Form-->
+        <h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("cms_headfoot_title_add_footer_content"); ?></h3>
+        <?php echo $this->formFooter; ?>
+        <!-- End: Display Footer Form-->
+    </div>
 </div>

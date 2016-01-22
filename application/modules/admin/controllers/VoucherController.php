@@ -1,4 +1,5 @@
 <?php
+
 class Admin_VoucherController extends Zend_Controller_Action
 {
     public function init()
@@ -14,7 +15,7 @@ class Admin_VoucherController extends Zend_Controller_Action
         $select = $model->getMapper()->getDbTable()->select();
         $vouchers = $model->fetchAll($select);
 
-        if(null != $vouchers){
+        if (null != $vouchers) {
             $paginator = Zend_Paginator::factory($vouchers);
             $paginator->setItemCountPerPage($this->view->adminProdsPage);
             $paginator->setCurrentPageNumber($this->_getParam('page'));
@@ -57,19 +58,19 @@ class Admin_VoucherController extends Zend_Controller_Action
         $id = $this->getRequest()->getParam('id');
         $model = new Default_Model_Voucher();
         $model->find($id);
-        if(null != $model){
+        if (null != $model) {
             $form = new Admin_Form_Voucher();
             $form->setDecorators(array('ViewScript', array('ViewScript', array('viewScript' => 'forms/voucher/VoucherEdit.phtml'))));
             $form->edit($model);
             $this->view->form = $form;
             $post = $this->getRequest()->getPost();
 
-            if(null != $post) {
-                if($form->isValid($post)) {
-                    $post['isProcentual'] = (isset($post['isProcentual']))?1:0;
+            if (null != $post) {
+                if ($form->isValid($post)) {
+                    $post['isProcentual'] = (isset($post['isProcentual'])) ? 1 : 0;
                     $post['status'] = $model->getStatus();
                     $model->setOptions($post);
-                    if($model->save()) {
+                    if ($model->save()) {
                         $this->_flashMessenger->addMessage('<div class="mess-true">Reducerea a fost modificata cu succes!</div>');
                     } else {
                         $this->_flashMessenger->addMessage('<div class="mess-false">Eroare la modificarea reducerii!</div>');
@@ -77,7 +78,7 @@ class Admin_VoucherController extends Zend_Controller_Action
                 }
                 $this->_redirect('admin/voucher');
             }
-        }else{
+        } else {
             $this->_flashMessenger->addMessage('<div class="mess-false">Reducerea selectata nu a fost gasita!</div>');
             $this->_redirect('admin/voucher');
         }
@@ -88,15 +89,15 @@ class Admin_VoucherController extends Zend_Controller_Action
         $id = $this->getRequest()->getParam('id');
         $model = new Default_Model_Voucher();
         $model->find($id);
-        if(null != $model){
-            $options = array('isProcentual' => $model->getIsProcentual(), 'value' => $model->getValue(),'status' => 'active');
+        if (null != $model) {
+            $options = array('isProcentual' => $model->getIsProcentual(), 'value' => $model->getValue(), 'status' => 'active');
             $model->setOptions($options);
-            if($model->save()){
+            if ($model->save()) {
                 $this->_flashMessenger->addMessage('<div class="mess-true">Reducerea a fost activata!</div>');
-            }else{
+            } else {
                 $this->_flashMessenger->addMessage('<div class="mess-false">Eroare activare reducere!</div>');
             }
-        }else{
+        } else {
             $this->_flashMessenger->addMessage('<div class="mess-true">Reducerea selectata nu a fost gasita!</div>');
         }
         $this->_redirect('/admin/voucher');
@@ -107,15 +108,15 @@ class Admin_VoucherController extends Zend_Controller_Action
         $id = $this->getRequest()->getParam('id');
         $model = new Default_Model_Voucher();
         $model->find($id);
-        if(null != $model){
-            $options = array('isProcentual' => $model->getIsProcentual(), 'value' => $model->getValue(),'status' => 'inactive');
+        if (null != $model) {
+            $options = array('isProcentual' => $model->getIsProcentual(), 'value' => $model->getValue(), 'status' => 'inactive');
             $model->setOptions($options);
-            if($model->save()){
+            if ($model->save()) {
                 $this->_flashMessenger->addMessage('<div class="mess-true">Reducerea a fost dezactivata!</div>');
-            }else{
+            } else {
                 $this->_flashMessenger->addMessage('<div class="mess-false">Eroare dezactivare reducere!</div>');
             }
-        }else{
+        } else {
             $this->_flashMessenger->addMessage('<div class="mess-true">Reducerea selectata nu a fost gasita!</div>');
         }
         $this->_redirect('/admin/voucher');

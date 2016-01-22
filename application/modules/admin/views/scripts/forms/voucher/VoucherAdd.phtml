@@ -1,61 +1,70 @@
-<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getAttrib('id');?>" class="<?php echo $this->element->getAttrib('class');?>"  enctype="<?php echo $this->element->getEncType();?>">
-<table class="tableAdmin box-tbl-info" width="630" cellpadding="0" cellspacing="0" border="0">
-    <col width="200" />
-    <tr>
-        <th valign="middle">
-            <?php
-            $attribs = array();
-            echo $this->formLabel($this->element->isProcentual->getName(), $this->element->isProcentual->getLabel(), $attribs);?>
-        </th>
-        <td>
-            <input type="checkbox" value="<?php echo $this->element->isProcentual->getValue(); ?>" <?php if ($this->element->isProcentual->getValue()) { echo 'checked="checked"'; } ?> name="isProcentual" id="isProcentual" />
-            <?php
-            /*
-                echo $this->{$this->element->isProcentual->helper}(
-                            $this->element->isProcentual->getName(),
-                            $this->element->isProcentual->getValue(),
-                            $this->element->isProcentual->getAttribs()
-                        );
-            */
-            ?>
-            <?php if('<ul class="errors"><li></li></ul>'!=($this->element->isProcentual->getMessages())){ echo  $this->formErrors($this->element->isProcentual->getMessages());} ?>
-        </td>
-    </tr>
-    <tr>
-        <th valign="middle">
-            <?php
-            $attribs = array();
-            if ($this->element->value->isRequired()) {
-                $attribs['class'] = 'required';
-            }
-            echo $this->formLabel($this->element->value->getName(), $this->element->value->getLabel(), $attribs);?>
-        </th>
-        <td>
-            <?php
+<form method="<?php echo $this->element->getMethod(); ?>" action="<?php echo $this->element->getAction(); ?>"
+      id="<?php echo $this->element->getAttrib('id'); ?>" class="<?php echo $this->element->getAttrib('class'); ?>"
+      enctype="<?php echo $this->element->getEncType(); ?>">
+    <table class="tableAdmin box-tbl-info" width="630" cellpadding="0" cellspacing="0" border="0">
+        <col width="200"/>
+        <tr>
+            <th valign="middle">
+                <?php
+                $attribs = array();
+                echo $this->formLabel($this->element->isProcentual->getName(), $this->element->isProcentual->getLabel(), $attribs); ?>
+            </th>
+            <td>
+                <input type="checkbox"
+                       value="<?php echo $this->element->isProcentual->getValue(); ?>" <?php if ($this->element->isProcentual->getValue()) {
+                    echo 'checked="checked"';
+                } ?> name="isProcentual" id="isProcentual"/>
+                <?php
+                /*
+                    echo $this->{$this->element->isProcentual->helper}(
+                                $this->element->isProcentual->getName(),
+                                $this->element->isProcentual->getValue(),
+                                $this->element->isProcentual->getAttribs()
+                            );
+                */
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->isProcentual->getMessages())) {
+                    echo $this->formErrors($this->element->isProcentual->getMessages());
+                } ?>
+            </td>
+        </tr>
+        <tr>
+            <th valign="middle">
+                <?php
+                $attribs = array();
+                if ($this->element->value->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->value->getName(), $this->element->value->getLabel(), $attribs); ?>
+            </th>
+            <td>
+                <?php
                 echo $this->{$this->element->value->helper}(
-                            $this->element->value->getName(),
-                            $this->element->value->getValue(),
-                            $this->element->value->getAttribs()
-                        );
-            ?>
-            <?php if('<ul class="errors"><li></li></ul>'!=($this->element->value->getMessages())){ echo  $this->formErrors($this->element->value->getMessages());} ?>
-        </td>
-    </tr>
-    <tr>
-        <th valign="middle">&nbsp;</th>
-        <td>
-            <?php echo $this->{$this->element->submit->helper}(
-                            $this->element->submit->getName(),
-                            $this->element->submit->getValue(),
-                            $this->element->submit->getAttribs()
-                        );
-            ?>
-        </td>
-    </tr>
-</table>
+                    $this->element->value->getName(),
+                    $this->element->value->getValue(),
+                    $this->element->value->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->value->getMessages())) {
+                    echo $this->formErrors($this->element->value->getMessages());
+                } ?>
+            </td>
+        </tr>
+        <tr>
+            <th valign="middle">&nbsp;</th>
+            <td>
+                <?php echo $this->{$this->element->submit->helper}(
+                    $this->element->submit->getName(),
+                    $this->element->submit->getValue(),
+                    $this->element->submit->getAttribs()
+                );
+                ?>
+            </td>
+        </tr>
+    </table>
 </form>
 <script type="text/javascript">
-$(document).ready(function() {
-    $("#<?php echo $this->element->getAttrib('id');?>").validationEngine();
-});
+    $(document).ready(function () {
+        $("#<?php echo $this->element->getAttrib('id');?>").validationEngine();
+    });
 </script>

@@ -1,83 +1,89 @@
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<div class="empty10"></div>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 
-<?php if($this->analytics) : ?>
-<div class="empty10"></div>
-<table border="0" width="100%" cellpadding="2" cellspacing="1" class="tableListingsAll">
-	<col />
-	<col width="60" />
-	<col width="140" />
-	<tr>
-		<th><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_tracking_code'); ?></th>
-		<th><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_status'); ?></th>
-		<th><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_actions'); ?></th>
-	</tr>
-	<?php foreach($this->analytics as $analytics) : ?>
-	<tr>
-		<td align="left"><?php echo htmlspecialchars($analytics->getCode());?></td>
-		<td align="center"><a href="/admin/cms/analyticsstatus/id/<?php echo $analytics->getId(); ?>" class="confirmStatusChange"><?php echo ($analytics->getStatus()?Zend_Registry::get('translate')->_('products_brands_table_active'):Zend_Registry::get('translate')->_('products_brands_table_inactive')); ?></a></td>
-		<td align="center">
-			<a href="/admin/cms/editanalytics/id/<?php echo $analytics->getId(); ?>"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_edit'); ?></a>
-			|
-			<a href="/admin/cms/deleteanalytics/id/<?php echo $analytics->getId(); ?>" class="confirmDelete"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_delete'); ?></a>
-		</td>
-	</tr>
-	<?php endforeach; ?>
-</table>
+<?php if ($this->analytics) : ?>
+    <div class="empty10"></div>
+    <table border="0" width="100%" cellpadding="2" cellspacing="1" class="tableListingsAll">
+        <col/>
+        <col width="60"/>
+        <col width="140"/>
+        <tr>
+            <th><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_tracking_code'); ?></th>
+            <th><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_status'); ?></th>
+            <th><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_actions'); ?></th>
+        </tr>
+        <?php foreach ($this->analytics as $analytics) : ?>
+            <tr>
+                <td align="left"><?php echo htmlspecialchars($analytics->getCode()); ?></td>
+                <td align="center"><a href="/admin/cms/analyticsstatus/id/<?php echo $analytics->getId(); ?>"
+                                      class="confirmStatusChange"><?php echo($analytics->getStatus() ? Zend_Registry::get('translate')->_('products_brands_table_active') : Zend_Registry::get('translate')->_('products_brands_table_inactive')); ?></a>
+                </td>
+                <td align="center">
+                    <a href="/admin/cms/editanalytics/id/<?php echo $analytics->getId(); ?>"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_edit'); ?></a>
+                    |
+                    <a href="/admin/cms/deleteanalytics/id/<?php echo $analytics->getId(); ?>"
+                       class="confirmDelete"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_table_delete'); ?></a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 
-<div id="confirmStatusChange" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message');?>" style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_message_status_change'); ?></div>
-<div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message');?>" style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_message_delete'); ?></div>
+    <div id="confirmStatusChange" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>"
+         style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_message_status_change'); ?></div>
+    <div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>"
+         style="display:none;"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_message_delete'); ?></div>
 <?php else : ?>
-<div class="sp10"></div>
-	<a href="/admin/cms/addanalytics" class="button1"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_button_add_new_tracking_code'); ?></a>
-<div class="sp10"></div>
-<p><?php echo Zend_Registry::get('translate')->_("cms_google_analytics_else"); ?></p>
+    <div class="sp10"></div>
+    <a href="/admin/cms/addanalytics"
+       class="button1"><?php echo Zend_Registry::get('translate')->_('cms_google_analytics_button_add_new_tracking_code'); ?></a>
+    <div class="sp10"></div>
+    <p><?php echo Zend_Registry::get('translate')->_("cms_google_analytics_else"); ?></p>
 <?php endif; ?>
 
 <?php $this->headScript()->captureStart() ?>
-	$(document).ready(function() {
-		$('.confirmStatusChange').click(function(){
-			var link = $(this);
-			$("#confirmStatusChange").dialog({
-				bgiframe: true,
-				height: 150,
-				width: 400,
-				modal: true,
-				buttons: {
-					'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
-						$(this).dialog('close').dialog('destroy');
-						window.location.href = link.attr('href');
-					},
-					'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
-						$(this).dialog('close').dialog('destroy');
-					}
-				}
-			});
-			return false;
-		});
+    $(document).ready(function() {
+    $('.confirmStatusChange').click(function(){
+    var link = $(this);
+    $("#confirmStatusChange").dialog({
+    bgiframe: true,
+    height: 150,
+    width: 400,
+    modal: true,
+    buttons: {
+    '<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
+    $(this).dialog('close').dialog('destroy');
+    window.location.href = link.attr('href');
+    },
+    '<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
+    $(this).dialog('close').dialog('destroy');
+    }
+    }
+    });
+    return false;
+    });
 
-		$('.confirmDelete').click(function(){
-			var link = $(this);
-			$("#confirmDelete").dialog({
-				bgiframe: true,
-				height: 150,
-				width: 400,
-				modal: true,
-				buttons: {
-					'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
-						$(this).dialog('close').dialog('destroy');
-						window.location.href = link.attr('href');
-					},
-					'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
-						$(this).dialog('close').dialog('destroy');
-					}
-				}
-			});
-			return false;
-		});
-	});
+    $('.confirmDelete').click(function(){
+    var link = $(this);
+    $("#confirmDelete").dialog({
+    bgiframe: true,
+    height: 150,
+    width: 400,
+    modal: true,
+    buttons: {
+    '<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
+    $(this).dialog('close').dialog('destroy');
+    window.location.href = link.attr('href');
+    },
+    '<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
+    $(this).dialog('close').dialog('destroy');
+    }
+    }
+    });
+    return false;
+    });
+    });
 <?php $this->headScript()->captureEnd() ?>

@@ -1,18 +1,19 @@
 <?php
+
 class TestController extends Zend_Controller_Action
 {
-	protected $_keys;
+    protected $_keys;
 
     public function init()
     {
-    	/* Initialize action controller here */
+        /* Initialize action controller here */
         $this->_flashMessenger = $this->_helper->getHelper('FlashMessenger');
         $this->view->message = $this->_flashMessenger->getMessages();
-	}
-	
+    }
 
-	public function indexAction()
-	{
+
+    public function indexAction()
+    {
 //		$product = new Default_Model_Product();
 //	    $select = $product->getMapper()->getDbTable()->select()
 //		    	->from(array('p'=>'ts_products'))
@@ -39,11 +40,11 @@ class TestController extends Zend_Controller_Action
 //			 }
 //		}
 
-	}
+    }
 
-	public function page1Action()
-	{
-		// get an instace of Zend_Auth
+    public function page1Action()
+    {
+        // get an instace of Zend_Auth
         $auth = Zend_Auth::getInstance();
 
         // check if a user is already logged
@@ -83,14 +84,14 @@ class TestController extends Zend_Controller_Action
 
                 // for google and yahoo use AtributeExchange Extension
                 if ('https://www.google.com/accounts/o8/id' == $openid_identifier || 'http://me.yahoo.com/' == $openid_identifier) {
-                  $ext = $this->_getOpenIdExt('ax', $toFetch);
+                    $ext = $this->_getOpenIdExt('ax', $toFetch);
                 } else {
                     $ext = $this->_getOpenIdExt('sreg', $toFetch);
                 }
 
                 $adapter->setExtensions($ext);
             }
-			
+
             // here a user is redirect to the provider for loging
             $result = $auth->authenticate($adapter);
             // the following two lines should never be executed unless the redirection faild.
@@ -139,15 +140,15 @@ class TestController extends Zend_Controller_Action
                 } else if ($code) {
                     // for facebook
                     $msgs = $result->getMessages();
-                    $toStore['properties'] = (array) $msgs['user'];
+                    $toStore['properties'] = (array)$msgs['user'];
                 } else if ($oauth_token) {
                     // for twitter
                     $identity = $result->getIdentity();
                     // get user info
-                    $twitterUserData = (array) $adapter->verifyCredentials();
+                    $twitterUserData = (array)$adapter->verifyCredentials();
                     $toStore = array('identity' => $identity['user_id']);
                     if (isset($twitterUserData['status'])) {
-                        $twitterUserData['status'] = (array) $twitterUserData['status'];
+                        $twitterUserData['status'] = (array)$twitterUserData['status'];
                     }
                     $toStore['properties'] = $twitterUserData;
                 }
@@ -162,14 +163,15 @@ class TestController extends Zend_Controller_Action
                 return $this->_redirect('/test/page1');
             }
         }
-	}
+    }
 
-	/**
+    /**
      * Get My_Auth_Adapter_Facebook adapter
      *
      * @return My_Auth_Adapter_Facebook
      */
-    protected function _getFacebookAdapter() {
+    protected function _getFacebookAdapter()
+    {
         extract($this->_keys->facebook->toArray());
         return new My_Auth_Adapter_Facebook($appid, $secret, $redirecturi, $scope);
     }
@@ -179,20 +181,22 @@ class TestController extends Zend_Controller_Action
      *
      * @return My_Auth_Adapter_Oauth_Twitter
      */
-    protected function _getTwitterAdapter() {
+    protected function _getTwitterAdapter()
+    {
         extract($this->_keys->twitter->toArray());
 //		echo "<pre>", print_r($this->_keys->twitter->toArray(), 1), "</pre>";
 //		die();
         return new My_Auth_Adapter_Oauth_Twitter(array(), $appid, $secret, $redirecturi);
     }
 
-	 /**
+    /**
      * Get Zend_Auth_Adapter_OpenId adapter
      *
      * @param string $openid_identifier
      * @return Zend_Auth_Adapter_OpenId
      */
-    protected function _getOpenIdAdapter($openid_identifier = null) {
+    protected function _getOpenIdAdapter($openid_identifier = null)
+    {
         $adapter = new Zend_Auth_Adapter_OpenId($openid_identifier);
         $dir = APPLICATION_PATH . '/../media/tmp';
 
@@ -213,7 +217,8 @@ class TestController extends Zend_Controller_Action
      * @param array $propertiesToRequest
      * @return Zend_OpenId_Extension|null
      */
-    protected function _getOpenIdExt($extType, array $propertiesToRequest) {
+    protected function _getOpenIdExt($extType, array $propertiesToRequest)
+    {
 
         $ext = null;
 
@@ -225,26 +230,27 @@ class TestController extends Zend_Controller_Action
 
         return $ext;
     }
-	
-	public function tweeterAction()
-	{
-		
-	}
 
-	public function ajaxcategAction()
-	{
-		function top(){
-			$category = new Default_Model_Categories();
-			$select = $category->getMapper()->getDbTable()->select()
-					->where('parentId IS NULL');
-			$categories = $category->fetchAll($select);
-			if(null != $categories){
-				return $categories;
-			}else{
-				return false;
-			}
-		}
-	}
+    public function tweeterAction()
+    {
+
+    }
+
+    public function ajaxcategAction()
+    {
+        function top()
+        {
+            $category = new Default_Model_Categories();
+            $select = $category->getMapper()->getDbTable()->select()
+                ->where('parentId IS NULL');
+            $categories = $category->fetchAll($select);
+            if (null != $categories) {
+                return $categories;
+            } else {
+                return false;
+            }
+        }
+    }
 }
 
 

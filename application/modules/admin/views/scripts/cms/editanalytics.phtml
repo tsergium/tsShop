@@ -1,11 +1,11 @@
 <?php if (!empty($this->message)) : ?>
-	<?php foreach ($this->message as $value) : ?>
-		<?php echo $value;?>
-	<?php endforeach; ?>
+    <?php foreach ($this->message as $value) : ?>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 <div style="width:630px;">
-	<div class="regSubForm">
-		<h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("cms_add_google_analytics_title_edit_tracking_code");?></h3>
-		<?php echo $this->form;?>
-	</div>
+    <div class="regSubForm">
+        <h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("cms_add_google_analytics_title_edit_tracking_code"); ?></h3>
+        <?php echo $this->form; ?>
+    </div>
 </div>

@@ -1,124 +1,157 @@
 <div class="empty10"></div>
-<a class="button1 <?php if($this->type == 'index') echo "btn-active"; ?>" href="/admin/order"><small><?php echo Zend_Registry::get('translate')->_('sales_accepted_button_all_orders'); ?></small></a>
-<a class="button1 <?php if($this->type == 'pending') echo "btn-active"; ?>" href="/admin/order/index/type/pending"><small><?php echo Zend_Registry::get('translate')->_('sales_index_button_pending_orders'); ?></small></a>
-<a class="button1 <?php if($this->type == 'accepted') echo "btn-active"; ?>" href="/admin/order/index/type/accepted"><small><?php echo Zend_Registry::get('translate')->_('sales_index_button_accepted_orders'); ?></small></a>
-<a class="button1 <?php if($this->type == 'completed') echo "btn-active"; ?>" href="/admin/order/index/type/completed"><small><?php echo Zend_Registry::get('translate')->_('sales_index_button_completed_orders'); ?></small></a>
-<a class="button1 <?php if($this->type == 'rejected') echo "btn-active"; ?>" href="/admin/order/index/type/rejected"><small><?php echo Zend_Registry::get('translate')->_('sales_index_button_rejected_orders'); ?></small></a>
-<a class="button1 <?php if($this->type == 'card_unconfirmed') echo "btn-active"; ?>" href="/admin/order/index/type/card_unconfirmed"><small>Comenzi Card Neconfirmat</small></a>
-<a class="button1 <?php if($this->type == 'card_confirmed') echo "btn-active"; ?>" href="/admin/order/index/type/card_confirmed"><small>Comenzi Card Confirmat</small></a>
-<a class="button1 <?php if($this->type == 'card_onhold') echo "btn-active"; ?>" href="/admin/order/index/type/card_onhold"><small>Comenzi Card in Asteptare</small></a>
+<a class="button1 <?php if ($this->type == 'index') echo "btn-active"; ?>" href="/admin/order">
+    <small><?php echo Zend_Registry::get('translate')->_('sales_accepted_button_all_orders'); ?></small>
+</a>
+<a class="button1 <?php if ($this->type == 'pending') echo "btn-active"; ?>" href="/admin/order/index/type/pending">
+    <small><?php echo Zend_Registry::get('translate')->_('sales_index_button_pending_orders'); ?></small>
+</a>
+<a class="button1 <?php if ($this->type == 'accepted') echo "btn-active"; ?>" href="/admin/order/index/type/accepted">
+    <small><?php echo Zend_Registry::get('translate')->_('sales_index_button_accepted_orders'); ?></small>
+</a>
+<a class="button1 <?php if ($this->type == 'completed') echo "btn-active"; ?>" href="/admin/order/index/type/completed">
+    <small><?php echo Zend_Registry::get('translate')->_('sales_index_button_completed_orders'); ?></small>
+</a>
+<a class="button1 <?php if ($this->type == 'rejected') echo "btn-active"; ?>" href="/admin/order/index/type/rejected">
+    <small><?php echo Zend_Registry::get('translate')->_('sales_index_button_rejected_orders'); ?></small>
+</a>
+<a class="button1 <?php if ($this->type == 'card_unconfirmed') echo "btn-active"; ?>"
+   href="/admin/order/index/type/card_unconfirmed">
+    <small>Comenzi Card Neconfirmat</small>
+</a>
+<a class="button1 <?php if ($this->type == 'card_confirmed') echo "btn-active"; ?>"
+   href="/admin/order/index/type/card_confirmed">
+    <small>Comenzi Card Confirmat</small>
+</a>
+<a class="button1 <?php if ($this->type == 'card_onhold') echo "btn-active"; ?>"
+   href="/admin/order/index/type/card_onhold">
+    <small>Comenzi Card in Asteptare</small>
+</a>
 <div class="empty10"></div>
 
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<div class="empty10"></div>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 
-<?php if($this->result) : ?>
-	<table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
-		<col width="100" />
-		<col width="" />
-		<col width="150" />
-		<col width="150" />
-		<col width="120" />
-		<col width="120" />
-		<thead>
-			<tr>
-				<th><?php echo Zend_Registry::get('translate')->_('sales_index_table_order_id'); ?></th>
-				<th><?php echo Zend_Registry::get('translate')->_('sales_index_table_name'); ?></th>
-				<th><?php echo Zend_Registry::get('translate')->_('sales_index_table_total_cost'); ?></th>
-				<th><?php echo Zend_Registry::get('translate')->_('sales_index_table_order_date'); ?></th>
-				<th><?php echo Zend_Registry::get('translate')->_('sales_index_table_status'); ?></th>
-				<th><?php echo Zend_Registry::get('translate')->_('sales_index_table_action'); ?></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php foreach($this->result as $value) : ?>
-			<tr>
-				<td align="center"><?php echo $value->getId(); ?></td>
-				<td align="left"><?php echo strip_tags($value->getFirstname()).' '.strip_tags($value->getLastname()); ?></td>
-				<td align="center"><?php echo number_format($value->getTotalcost(), 2, '.', ','); ?> <small><?php echo $pricetype; ?></small></td>
-				<td align="center"><?php echo $value->getCreated()?date('d M Y', $value->getCreated()):'-'; ?></td>
-				<td align="center">
-					<select rel="<?php echo $value->getId(); ?>" page="<?php echo $this->curPage; ?>" class="jsStatusChange fs10">
-						<option <?php if($value->getStatus() == 'pending') { ?> selected="selected" <?php } ?> value="pending"><?php echo Zend_Registry::get('translate')->_('sales_index_table_pending'); ?></option>
-						<option <?php if($value->getStatus() == 'accepted') { ?> selected="selected" <?php } ?> value="accepted"><?php echo Zend_Registry::get('translate')->_('sales_index_table_accepted'); ?></option>
-						<option <?php if($value->getStatus() == 'completed') { ?> selected="selected" <?php } ?> value="completed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_completed'); ?></option>
-						<option <?php if($value->getStatus() == 'rejected') { ?> selected="selected" <?php } ?> value="rejected"><?php echo Zend_Registry::get('translate')->_('sales_index_table_rejected'); ?></option>
-						<option <?php if($value->getStatus() == 'card_unconfirmed') { ?> selected="selected" <?php } ?> value="card_unconfirmed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_card_unconfirmed'); ?></option>
-						<option <?php if($value->getStatus() == 'card_confirmed') { ?> selected="selected" <?php } ?> value="card_confirmed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_card_confirmed'); ?></option>
-						<option <?php if($value->getStatus() == 'card_onhold') { ?> selected="selected" <?php } ?> value="card_onhold">card in asteptare</option>
-					</select>
-				</td>
-				<td align="center">
-					<a href="/admin/order/details/orderId/<?php echo $value->getId(); ?>">
-					   <img src="/images/admin/icons/display.png" alt="vizualizeaza" />
-					</a>
-					 
-					<a href="/admin/order/deleteorders/id/<?php echo $value->getId(); ?><?php echo $this->curPage?'/page/'.$this->curPage:''; ?>" class="confirmDelete">
-					    <img src="/images/admin/icons/delete.png" alt="sterge" />
-					</a>
-				</td>
-			</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
+<?php if ($this->result) : ?>
+    <table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <col width="100"/>
+        <col width=""/>
+        <col width="150"/>
+        <col width="150"/>
+        <col width="120"/>
+        <col width="120"/>
+        <thead>
+        <tr>
+            <th><?php echo Zend_Registry::get('translate')->_('sales_index_table_order_id'); ?></th>
+            <th><?php echo Zend_Registry::get('translate')->_('sales_index_table_name'); ?></th>
+            <th><?php echo Zend_Registry::get('translate')->_('sales_index_table_total_cost'); ?></th>
+            <th><?php echo Zend_Registry::get('translate')->_('sales_index_table_order_date'); ?></th>
+            <th><?php echo Zend_Registry::get('translate')->_('sales_index_table_status'); ?></th>
+            <th><?php echo Zend_Registry::get('translate')->_('sales_index_table_action'); ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($this->result as $value) : ?>
+            <tr>
+                <td align="center"><?php echo $value->getId(); ?></td>
+                <td align="left"><?php echo strip_tags($value->getFirstname()) . ' ' . strip_tags($value->getLastname()); ?></td>
+                <td align="center"><?php echo number_format($value->getTotalcost(), 2, '.', ','); ?>
+                    <small><?php echo $pricetype; ?></small>
+                </td>
+                <td align="center"><?php echo $value->getCreated() ? date('d M Y', $value->getCreated()) : '-'; ?></td>
+                <td align="center">
+                    <select rel="<?php echo $value->getId(); ?>" page="<?php echo $this->curPage; ?>"
+                            class="jsStatusChange fs10">
+                        <option <?php if ($value->getStatus() == 'pending') { ?> selected="selected" <?php } ?>
+                            value="pending"><?php echo Zend_Registry::get('translate')->_('sales_index_table_pending'); ?></option>
+                        <option <?php if ($value->getStatus() == 'accepted') { ?> selected="selected" <?php } ?>
+                            value="accepted"><?php echo Zend_Registry::get('translate')->_('sales_index_table_accepted'); ?></option>
+                        <option <?php if ($value->getStatus() == 'completed') { ?> selected="selected" <?php } ?>
+                            value="completed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_completed'); ?></option>
+                        <option <?php if ($value->getStatus() == 'rejected') { ?> selected="selected" <?php } ?>
+                            value="rejected"><?php echo Zend_Registry::get('translate')->_('sales_index_table_rejected'); ?></option>
+                        <option <?php if ($value->getStatus() == 'card_unconfirmed') { ?> selected="selected" <?php } ?>
+                            value="card_unconfirmed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_card_unconfirmed'); ?></option>
+                        <option <?php if ($value->getStatus() == 'card_confirmed') { ?> selected="selected" <?php } ?>
+                            value="card_confirmed"><?php echo Zend_Registry::get('translate')->_('sales_index_table_card_confirmed'); ?></option>
+                        <option <?php if ($value->getStatus() == 'card_onhold') { ?> selected="selected" <?php } ?>
+                            value="card_onhold">card in asteptare
+                        </option>
+                    </select>
+                </td>
+                <td align="center">
+                    <a href="/admin/order/details/orderId/<?php echo $value->getId(); ?>">
+                        <img src="/images/admin/icons/display.png" alt="vizualizeaza"/>
+                    </a>
 
-	<!-- BEGIN: Paginare -->
-	<?php $itemCountPerPage = $this->itemCountPerPage; ?>
-	<?php $totalItemCount = $this->totalItemCount; ?>
-	<?php if($itemCountPerPage < $totalItemCount) { ?>
-		<?php echo $this->result; ?>
-	<?php } ?>
+                    <a href="/admin/order/deleteorders/id/<?php echo $value->getId(); ?><?php echo $this->curPage ? '/page/' . $this->curPage : ''; ?>"
+                       class="confirmDelete">
+                        <img src="/images/admin/icons/delete.png" alt="sterge"/>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 
-	<!-- END: Paginare -->
+    <!-- BEGIN: Paginare -->
+    <?php $itemCountPerPage = $this->itemCountPerPage; ?>
+    <?php $totalItemCount = $this->totalItemCount; ?>
+    <?php if ($itemCountPerPage < $totalItemCount) { ?>
+        <?php echo $this->result; ?>
+    <?php } ?>
 
-	<div id="confirmStatusChange" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>" style="display:none;"><?php echo Zend_Registry::get('translate')->_('sales_index_message_status_change'); ?></div>
-	<div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>" style="display:none;"><?php echo Zend_Registry::get('translate')->_('sales_index_message_delete'); ?></div>
+    <!-- END: Paginare -->
+
+    <div id="confirmStatusChange" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>"
+         style="display:none;"><?php echo Zend_Registry::get('translate')->_('sales_index_message_status_change'); ?></div>
+    <div id="confirmDelete" title="<?php echo Zend_Registry::get('translate')->_('confirmation_message'); ?>"
+         style="display:none;"><?php echo Zend_Registry::get('translate')->_('sales_index_message_delete'); ?></div>
 <?php else : ?>
-	<div><?php echo Zend_Registry::get('translate')->_('sales_index_message_else'); ?></div>
+    <div><?php echo Zend_Registry::get('translate')->_('sales_index_message_else'); ?></div>
 <?php endif; ?>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+    $(document).ready(function () {
 
-		$('.confirmDelete').click(function() {
-			var link = $(this);
-			$('#confirmDelete').dialog({
-					bgiframe: true,
-					height: 150,
-					width: 400,
-					modal: true,
-					buttons: {
-						'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function() {
-							$(this).dialog('close').dialog('destroy');
-							window.location.href = link.attr('href');
-						},
-						'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function() {
-							$(this).dialog('close').dialog('destroy');
-						}
-					}
-				});
-			return false;
-		});
-	});
+        $('.confirmDelete').click(function () {
+            var link = $(this);
+            $('#confirmDelete').dialog({
+                bgiframe: true,
+                height: 150,
+                width: 400,
+                modal: true,
+                buttons: {
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                        window.location.href = link.attr('href');
+                    },
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                    }
+                }
+            });
+            return false;
+        });
+    });
 </script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('.jsStatusChange').each(function() {
-			$(this).change(function() {
-				var id = $(this).attr('rel');
-				var status = $(this).val();
-				var page = $(this).attr('page');
-				if(page) {
-					window.location = '/admin/order/status/id/'+id+'/status/'+status+'/page/'+page;
-				} else {
-					window.location = '/admin/order/status/id/'+id+'/status/'+status;
-				}
-			});
-		});
-	});
+    $(document).ready(function () {
+        $('.jsStatusChange').each(function () {
+            $(this).change(function () {
+                var id = $(this).attr('rel');
+                var status = $(this).val();
+                var page = $(this).attr('page');
+                if (page) {
+                    window.location = '/admin/order/status/id/' + id + '/status/' + status + '/page/' + page;
+                } else {
+                    window.location = '/admin/order/status/id/' + id + '/status/' + status;
+                }
+            });
+        });
+    });
 </script>

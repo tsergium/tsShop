@@ -1,20 +1,21 @@
 <?php
+
 class Default_Model_DbTable_ProductInventory extends Zend_Db_Table_Abstract
 {
-	protected $_name    = 'fp_product_inventory';
-	protected $_primary = 'id';
+    protected $_name = 'fp_product_inventory';
+    protected $_primary = 'id';
 }
 
 class Default_Model_ProductInventory
 {
     protected $_id;
-	protected $_productId;
-	protected $_product;
-	protected $_attributeListId;
-	protected $_attributeList;
+    protected $_productId;
+    protected $_product;
+    protected $_attributeListId;
+    protected $_attributeList;
 //	protected $_attributeId;
 //	protected $_attribute;
-	protected $_quantity;
+    protected $_quantity;
 //	protected $_status;
 //	protected $_date;
 //	protected $_datetime;
@@ -24,7 +25,7 @@ class Default_Model_ProductInventory
 
     public function __construct(array $options = null)
     {
-        if(is_array($options)) {
+        if (is_array($options)) {
             $this->setOptions($options);
         }
     }
@@ -32,8 +33,8 @@ class Default_Model_ProductInventory
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' product property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' product property ' . $method);
         }
         $this->$method($value);
     }
@@ -41,8 +42,8 @@ class Default_Model_ProductInventory
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' product property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' product property ' . $method);
         }
         return $this->$method();
     }
@@ -50,9 +51,9 @@ class Default_Model_ProductInventory
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -61,7 +62,7 @@ class Default_Model_ProductInventory
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -70,14 +71,14 @@ class Default_Model_ProductInventory
         return $this->_id;
     }
 
-	public function setProductId($id)
+    public function setProductId($id)
     {
-    	$val = new Default_Model_Products();
-    	$val->find($id);
-    	if(null !== $val->getId()) {
-    		$this->setProduct($val);
-	        $this->_attributeListId = $val->getId();
-    	}
+        $val = new Default_Model_Products();
+        $val->find($id);
+        if (null !== $val->getId()) {
+            $this->setProduct($val);
+            $this->_attributeListId = $val->getId();
+        }
         return $this;
     }
 
@@ -88,13 +89,13 @@ class Default_Model_ProductInventory
 
     public function setProduct(Default_Model_ProductsAttributes $val)
     {
-    	$this->_attributeList = $val;
-    	return $this;
+        $this->_attributeList = $val;
+        return $this;
     }
 
     public function getProduct()
     {
-    	return $this->_attributeList;
+        return $this->_attributeList;
     }
 
 //    public function setAttributeListId($attributeListId)
@@ -110,12 +111,12 @@ class Default_Model_ProductInventory
 
     public function setAttributeListId($attributeListId)
     {
-    	$product = new Default_Model_Products();
-    	$product -> find($productId);
-    	if(null !== $product->getId()) {
-    		$this->setProduct($product);
-	        $this->_productId = $product->getId();
-    	}
+        $product = new Default_Model_Products();
+        $product->find($productId);
+        if (null !== $product->getId()) {
+            $this->setProduct($product);
+            $this->_productId = $product->getId();
+        }
         return $this;
     }
 
@@ -148,7 +149,7 @@ class Default_Model_ProductInventory
 
     public function setQuantity($value)
     {
-        $this->_quantity = (int) $value;
+        $this->_quantity = (int)$value;
         return $this;
     }
 
@@ -232,9 +233,9 @@ class Default_Model_ProductInventory
 
     public function delete()
     {
-    	if(null === ($id = $this->getId())) {
-    		throw new Exception("Invalid record selected!");
-    	}
+        if (null === ($id = $this->getId())) {
+            throw new Exception("Invalid record selected!");
+        }
         return $this->getMapper()->delete($id);
     }
 
@@ -242,14 +243,14 @@ class Default_Model_ProductInventory
 
 class Default_Model_ProductInventoryMapper
 {
-	protected $_dbTable;
+    protected $_dbTable;
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
@@ -258,7 +259,7 @@ class Default_Model_ProductInventoryMapper
 
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_ProducInventory');
         }
         return $this->_dbTable;
@@ -267,23 +268,23 @@ class Default_Model_ProductInventoryMapper
     public function find($id, Default_Model_ProductInventory $val)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
         $val->setOptions($row->toArray());
-		return $val;
+        return $val;
     }
 
     public function fetchAll($select)
     {
         $resultSet = $this->getDbTable()->fetchAll($select);
         $entries = array();
-        foreach($resultSet as $row) {
+        foreach ($resultSet as $row) {
             $val = new Default_Model_ProductInventory();
             $val->setOptions($row->toArray())
-				->setMapper($this);
-			$entries[] = $val;
+                ->setMapper($this);
+            $entries[] = $val;
         }
         return $entries;
     }
@@ -291,13 +292,13 @@ class Default_Model_ProductInventoryMapper
     public function save(Default_Model_ProductInventory $val)
     {
         $data = array(
-			'productId'				=> $val->getProductId(),
-			'attributeListId'		=> $val->getAttributeListId(),
+            'productId' => $val->getProductId(),
+            'attributeListId' => $val->getAttributeListId(),
 //			'attributeId'			=> $val->getAttributeId(),
-			'quantity'				=> $val->getQuantity(),
+            'quantity' => $val->getQuantity(),
 //			'status'				=> $val->getStatus(),
         );
-        if(null === ($id = $val->getId())) {
+        if (null === ($id = $val->getId())) {
 //        	$data['date']		 = new Zend_Db_Expr('CURDATE()');
 //			$data['datetime']	 = new Zend_Db_Expr('NOW()');
             $id = $this->getDbTable()->insert($data);
@@ -310,7 +311,7 @@ class Default_Model_ProductInventoryMapper
 
     public function delete($id)
     {
-    	$where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
         return $this->getDbTable()->delete($where);
     }
 }

@@ -5,12 +5,12 @@
             <th>Constant</th>
             <th>Value</th>
         </tr>
-    <?php foreach ($this->settings as $settings): ?>
-        <tr>
-            <td><?php echo $settings->getName() ?></td>
-            <td><?php echo $settings->getConst() ?></td>
-            <td><?php echo $settings->getValue() ?></td>
-        </tr>
-    <?php endforeach ?>
+        <?php foreach ($this->settings as $settings): ?>
+            <tr>
+                <td><?php echo $settings->getName() ?></td>
+                <td><?php echo $settings->getConst() ?></td>
+                <td><?php echo $settings->getValue() ?></td>
+            </tr>
+        <?php endforeach ?>
     </table>
 <?php endif;

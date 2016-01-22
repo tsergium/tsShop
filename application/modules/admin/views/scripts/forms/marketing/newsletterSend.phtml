@@ -1,124 +1,135 @@
-<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getAttrib('id');?>" class="<?php echo $this->element->getAttrib('class');?>" enctype="<?php echo $this->element->getEncType();?>">
-<table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
-	<col width="200" />
-	<tr>
-		<td colspan="2"><center class="hint"><?php echo Zend_Registry::get('translate')->_("marketing_newsletter_required"); ?></center></td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
-	<tr>
-		<td valign="top">
-			<?php
-				$attribs = array();
-				if($this->element->title->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->title->getName(), $this->element->title->getLabel(), $attribs);
-			?>
-		</td>
-		<td>
-	    	<?php
-	    		echo $this->{$this->element->title->helper}
-						(
-	    					$this->element->title->getName(),
-	    					$this->element->title->getValue(),
-	    					$this->element->title->getAttribs()
-	    				);
-	    	?>
-	    	<?php if('<ul class="errors"><li></li></ul>' != ($this->element->title->getMessages())) { echo $this->formErrors($this->element->title->getMessages()); } ?>
-			<div class="hint"><?php echo $this->element->title->getDescription(); ?></div>
-		</td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
-</table>
-<table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
-	<tr>
-		<td valign="top">
-			<?php
-				$attribs = array();
-				if($this->element->message->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->message->getName(), $this->element->message->getLabel(), $attribs);
-			?>
-		</td>
-	</tr>
-	<tr>
-		<td>
-	    	<?php
-	    		echo $this->{$this->element->message->helper}
-						(
-	    					$this->element->message->getName(),
-	    					$this->element->message->getValue(),
-	    					$this->element->message->getAttribs()
-	    				);
-	    	?>
-	    	<?php if('<ul class="errors"><li></li></ul>' != ($this->element->message->getMessages())) { echo $this->formErrors($this->element->message->getMessages()); } ?>
-			<div class="hint"><?php echo $this->element->message->getDescription(); ?></div>
-		</td>
-	</tr>
-</table>
-<table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
-	<tr>
-		<td valign="top">
-			<?php
-				echo $this->{$this->element->status->helper}
-						(
-							$this->element->status->getName(),
-							$this->element->status->getCheckedValue(),
-							$this->element->status->getAttribs()
-						);
-			?>
-		</td>
-		<td>
-			<?php echo $this->formLabel($this->element->status->getName(), $this->element->status->getLabel(), $attribs); ?>
-			<?php
-	    		echo $this->{$this->element->email->helper}
-						(
-	    					$this->element->email->getName(),
-	    					$this->element->email->getValue(),
-	    					$this->element->email->getAttribs()
-	    				);
-	    	?>
-			<?php if('<ul class="errors"><li></li></ul>' != ($this->element->email->getMessages())) { echo $this->formErrors($this->element->email->getMessages()); } ?>
-		</td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td>
-	    	<?php
-				echo $this->{$this->element->submit->helper}
-						(
-	    					$this->element->submit->getName(),
-	    					$this->element->submit->getValue(),
-	    					$this->element->submit->getAttribs()
-	    				);
-	    	?>
-		</td>
-	</tr>
-</table>
+<form method="<?php echo $this->element->getMethod(); ?>" action="<?php echo $this->element->getAction(); ?>"
+      id="<?php echo $this->element->getAttrib('id'); ?>" class="<?php echo $this->element->getAttrib('class'); ?>"
+      enctype="<?php echo $this->element->getEncType(); ?>">
+    <table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
+        <col width="200"/>
+        <tr>
+            <td colspan="2">
+                <center
+                    class="hint"><?php echo Zend_Registry::get('translate')->_("marketing_newsletter_required"); ?></center>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->title->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->title->getName(), $this->element->title->getLabel(), $attribs);
+                ?>
+            </td>
+            <td>
+                <?php
+                echo $this->{$this->element->title->helper}
+                (
+                    $this->element->title->getName(),
+                    $this->element->title->getValue(),
+                    $this->element->title->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->title->getMessages())) {
+                    echo $this->formErrors($this->element->title->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->title->getDescription(); ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->message->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->message->getName(), $this->element->message->getLabel(), $attribs);
+                ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php
+                echo $this->{$this->element->message->helper}
+                (
+                    $this->element->message->getName(),
+                    $this->element->message->getValue(),
+                    $this->element->message->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->message->getMessages())) {
+                    echo $this->formErrors($this->element->message->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->message->getDescription(); ?></div>
+            </td>
+        </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
+        <tr>
+            <td valign="top">
+                <?php
+                echo $this->{$this->element->status->helper}
+                (
+                    $this->element->status->getName(),
+                    $this->element->status->getCheckedValue(),
+                    $this->element->status->getAttribs()
+                );
+                ?>
+            </td>
+            <td>
+                <?php echo $this->formLabel($this->element->status->getName(), $this->element->status->getLabel(), $attribs); ?>
+                <?php
+                echo $this->{$this->element->email->helper}
+                (
+                    $this->element->email->getName(),
+                    $this->element->email->getValue(),
+                    $this->element->email->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->email->getMessages())) {
+                    echo $this->formErrors($this->element->email->getMessages());
+                } ?>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <?php
+                echo $this->{$this->element->submit->helper}
+                (
+                    $this->element->submit->getName(),
+                    $this->element->submit->getValue(),
+                    $this->element->submit->getAttribs()
+                );
+                ?>
+            </td>
+        </tr>
+    </table>
 </form>
 <?php
-	$this->headScript()->appendFile('/js/ckeditor/ckeditor.js');
-	echo $this->headScript();
+$this->headScript()->appendFile('/js/ckeditor/ckeditor.js');
+echo $this->headScript();
 ?>
 <?php $this->headScript()->captureStart() ?>
-	$(document).ready(function() {
-		CKEDITOR.replace( 'message',
-			{
-				width: '800',
-				height: '400'
-			}
-		);
-		$("#<?php echo $this->element->getAttrib('id');?>").validationEngine();
-	});
+$(document).ready(function() {
+CKEDITOR.replace( 'message',
+{
+width: '800',
+height: '400'
+}
+);
+$("#<?php echo $this->element->getAttrib('id'); ?>").validationEngine();
+});
 <?php $this->headScript()->captureEnd() ?>

@@ -1,167 +1,184 @@
-<?php if(!empty($this->message)){?>
-    <?php foreach($this->message as $value){ ?>
-		<div class="empty10"></div>
-		<?php echo $value; ?>
-    <?php }?>
-<?php }?>
+<?php if (!empty($this->message)) { ?>
+    <?php foreach ($this->message as $value) { ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php } ?>
+<?php } ?>
 
 <div class="previzualizare">
     <h1>Cosul de cumparaturi</h1>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-	    <td width="38%" class="rand2"><p>Produs</p></td>
-	    <td width="13%" class="rand2"><p>Marime</p></td>
-	    <td width="17%" class="rand2"><p>Culoare</p></td>
-	    <td width="20%" class="rand2"><p>Cantitate</p></td>
-	    <td width="12%" class="rand2"><p>Pret</p></td>
-	</tr>
-	<?php $total = 0;?>
-	<?php if(null != $this->cart){?>
-		<?php foreach($this->cart as $value){?>
-		<?php
-		    $subtotal = $value->getProduct()->getPrice()*$value->getQuantity();
-		    $total += $subtotal;
-		?>
-		<tr>
-		    <td class="rand1">
-		    <?php $link = $this->url(array('id' => $value->getProduct()->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower(getProdCateg($value->getProduct()->getId())."-".$value->getProduct()->getName())),),'product');?>
-			<a href="<?php echo $link;?>" title="<?php echo $value->getProduct()->getName();?>">
-			    <img src="/media/products/small/<?php echo $value->getProduct()->getImage();?>" height="64" alt="<?php echo $value->getProduct()->getName();?>" title="<?php echo $value->getProduct()->getName();?>" class="fl mr10" />
-			</a>
-			<p class="fl text_tabel" style="width: 100px; line-height: 18px; margin-top: 22px;"><?php echo $value->getProduct()->getName();?></p>
-		    </td>
-		    <td class="rand1" valign="middle"><p class="text_tabel" style="line-height: 14px;"><?php echo $value->getSizeName();?></p></td>
-		    <td class="rand1"><p class="text_tabel" style="line-height: 14px;"><?php echo $value->getColorName();?></p></td>
-		    <td class="rand1">
-			<ul>
-			    <li>
-					<a href="/cart/oneless/id/<?php echo $value->getId();?>">
-					    <img src="images/_.gif" alt="minus unu" />
-					</a>
-			    </li>
-			    <li>
-					<p><?php echo $value->getQuantity(); ?></p>
-			    </li>
-			    <li>
-					<a href="/cart/onemore/id/<?php echo $value->getId();?>">
-					    <img src="images/+.gif" alt="plus unu" />
-					</a>
-			    </li>
-			    <li>
-					<a href="/cart/deleteproduct/id/<?php echo $value->getId();?>">
-					    <img src="images/x.gif" alt="sterge produs" />
-					</a>
-			    </li>
-			</ul>
-		    </td>
-		    <td class="rand1"><p class="text_tabel"><?php echo $subtotal;?> Ron</p></td>
-		</tr>
-		<?php }?>
-	<?php }?>
+        <tr>
+            <td width="38%" class="rand2"><p>Produs</p></td>
+            <td width="13%" class="rand2"><p>Marime</p></td>
+            <td width="17%" class="rand2"><p>Culoare</p></td>
+            <td width="20%" class="rand2"><p>Cantitate</p></td>
+            <td width="12%" class="rand2"><p>Pret</p></td>
+        </tr>
+        <?php $total = 0; ?>
+        <?php if (null != $this->cart) { ?>
+            <?php foreach ($this->cart as $value) { ?>
+                <?php
+                $subtotal = $value->getProduct()->getPrice() * $value->getQuantity();
+                $total += $subtotal;
+                ?>
+                <tr>
+                    <td class="rand1">
+                        <?php $link = $this->url(array('id' => $value->getProduct()->getId(), 'categAndName' => preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower(getProdCateg($value->getProduct()->getId()) . "-" . $value->getProduct()->getName())),), 'product'); ?>
+                        <a href="<?php echo $link; ?>" title="<?php echo $value->getProduct()->getName(); ?>">
+                            <img src="/media/products/small/<?php echo $value->getProduct()->getImage(); ?>" height="64"
+                                 alt="<?php echo $value->getProduct()->getName(); ?>"
+                                 title="<?php echo $value->getProduct()->getName(); ?>" class="fl mr10"/>
+                        </a>
+                        <p class="fl text_tabel"
+                           style="width: 100px; line-height: 18px; margin-top: 22px;"><?php echo $value->getProduct()->getName(); ?></p>
+                    </td>
+                    <td class="rand1" valign="middle"><p class="text_tabel"
+                                                         style="line-height: 14px;"><?php echo $value->getSizeName(); ?></p>
+                    </td>
+                    <td class="rand1"><p class="text_tabel"
+                                         style="line-height: 14px;"><?php echo $value->getColorName(); ?></p></td>
+                    <td class="rand1">
+                        <ul>
+                            <li>
+                                <a href="/cart/oneless/id/<?php echo $value->getId(); ?>">
+                                    <img src="images/_.gif" alt="minus unu"/>
+                                </a>
+                            </li>
+                            <li>
+                                <p><?php echo $value->getQuantity(); ?></p>
+                            </li>
+                            <li>
+                                <a href="/cart/onemore/id/<?php echo $value->getId(); ?>">
+                                    <img src="images/+.gif" alt="plus unu"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cart/deleteproduct/id/<?php echo $value->getId(); ?>">
+                                    <img src="images/x.gif" alt="sterge produs"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="rand1"><p class="text_tabel"><?php echo $subtotal; ?> Ron</p></td>
+                </tr>
+            <?php } ?>
+        <?php } ?>
     </table>
 </div>
 <form id="frmCart" name="frmCart" action="/order" method="post">
     <div class="informatii">
         <h2>Cupon reducere</h2>
         <ul>
-            <li><input id="coupon" name="coupon" value="" type="text" /></li>
+            <li><input id="coupon" name="coupon" value="" type="text"/></li>
         </ul>
     </div>
-	<div class="informatii">
-		<h2>Metode de plata</h2>
-		<ul>
-			<?php if(null != $this->paymentMethods){?>
-			<?php $i=0; foreach($this->paymentMethods as $value){?>
-			<li><input id="<?php echo preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($value->getName()))?>" name="payment" value="<?php echo $value->getId();?>" <?php if($i==0){echo 'checked="checked"';}?> type="radio" /></li>
-			<li><p><label for="<?php echo preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($value->getName()))?>"><?php echo $value->getName();?></label> </p></li>
-			<?php $i++;}?>
-			<?php }?>
-		</ul>
-	</div>
-	<div class="informatii">
-		<h2>Livrare</h2>
-		<ul>
-			<?php if(null != $this->couriers){?>
-			<?php foreach($this->couriers as $value){?>
-			<li><input class="validate[required] radio" id="<?php echo preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($value->getName()))?>" name="courier" value="<?php echo $value->getId();?>" type="radio" /></li>
-			<li><p><label for="<?php echo preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($value->getName()))?>"><?php echo $value->getName();?> </label></p> </li>
-			<?php }?>
-			<?php }?>
-		</ul>
-	</div>
-	<br />
-	<div class="trimite">
-		<p>Valoarea totala a produselor: <?php echo $total;?> Ron</p>
-		<?php if(null != $total){?>
+    <div class="informatii">
+        <h2>Metode de plata</h2>
+        <ul>
+            <?php if (null != $this->paymentMethods) { ?>
+                <?php $i = 0;
+                foreach ($this->paymentMethods as $value) { ?>
+                    <li><input id="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($value->getName())) ?>"
+                               name="payment" value="<?php echo $value->getId(); ?>" <?php if ($i == 0) {
+                            echo 'checked="checked"';
+                        } ?> type="radio"/></li>
+                    <li><p><label
+                                for="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($value->getName())) ?>"><?php echo $value->getName(); ?></label>
+                        </p></li>
+                    <?php $i++;
+                } ?>
+            <?php } ?>
+        </ul>
+    </div>
+    <div class="informatii">
+        <h2>Livrare</h2>
+        <ul>
+            <?php if (null != $this->couriers) { ?>
+                <?php foreach ($this->couriers as $value) { ?>
+                    <li><input class="validate[required] radio"
+                               id="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($value->getName())) ?>"
+                               name="courier" value="<?php echo $value->getId(); ?>" type="radio"/></li>
+                    <li><p><label
+                                for="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($value->getName())) ?>"><?php echo $value->getName(); ?> </label>
+                        </p></li>
+                <?php } ?>
+            <?php } ?>
+        </ul>
+    </div>
+    <br/>
+    <div class="trimite">
+        <p>Valoarea totala a produselor: <?php echo $total; ?> Ron</p>
+        <?php if (null != $total) { ?>
 
-		<input class="fr" type="image" src="/images/bt_trimite.gif" value="Submit" />
-<!--		<a class="jsIframeLogin" href="/order">
-			<img src="images/bt_trimite.gif" alt="trimite" />
-		</a>-->
-		<?php }?>
-	</div>
+            <input class="fr" type="image" src="/images/bt_trimite.gif" value="Submit"/>
+            <!--		<a class="jsIframeLogin" href="/order">
+                        <img src="images/bt_trimite.gif" alt="trimite" />
+                    </a>-->
+        <?php } ?>
+    </div>
 </form>
 <a href="/" class="link1"><< continua cumparaturile</a>
 
 <script type="text/javascript">
-function deliverycost()
-{
-	var payment = $('input:radio[name=payment]:checked').val();
-	var delivery = $('input:radio[name=courier]:checked').val();
-	$.get('/ajax/fetchdelivery/payment/'+payment+'/delivery/'+delivery, function(data) {
-		if(data) {
-			try {
-				var items = eval('(' + data + ')');
-			} catch (e) {}
-			if(items) {
-				if(delivery == 1){
-					$('label[for="curier-rapid"]').html('Curier Rapid ('+items+' Ron)');
-					$('label[for="posta-romana"]').html('Posta Romana');
-				}else if(delivery == 2){
-					$('label[for="curier-rapid"]').html('Curier Rapid ');
-					$('label[for="posta-romana"]').html('Posta Romana ('+items+' Ron)');
-				}
-			}
-		}
-	});
-}
-$(document).ready(function(){
-	deliverycost();
-	$('input:radio[name=payment]').click(function (){
-		deliverycost();
-	});
-	$('input:radio[name=courier]').click(function (){
-		deliverycost();
-	});
-});
+    function deliverycost() {
+        var payment = $('input:radio[name=payment]:checked').val();
+        var delivery = $('input:radio[name=courier]:checked').val();
+        $.get('/ajax/fetchdelivery/payment/' + payment + '/delivery/' + delivery, function (data) {
+            if (data) {
+                try {
+                    var items = eval('(' + data + ')');
+                } catch (e) {
+                }
+                if (items) {
+                    if (delivery == 1) {
+                        $('label[for="curier-rapid"]').html('Curier Rapid (' + items + ' Ron)');
+                        $('label[for="posta-romana"]').html('Posta Romana');
+                    } else if (delivery == 2) {
+                        $('label[for="curier-rapid"]').html('Curier Rapid ');
+                        $('label[for="posta-romana"]').html('Posta Romana (' + items + ' Ron)');
+                    }
+                }
+            }
+        });
+    }
+    $(document).ready(function () {
+        deliverycost();
+        $('input:radio[name=payment]').click(function () {
+            deliverycost();
+        });
+        $('input:radio[name=courier]').click(function () {
+            deliverycost();
+        });
+    });
 </script>
 <?php
 // BEGIN: POPUP LOGIN BOX
-if($this->authClient == null && 1 == 2){
-?>
-<script type="text/javascript">
-$('.jsIframeLogin').attr('href', '/iframe/login');
-$('.jsIframeLogin').fancybox({
-	'hideOnOverlayClick': false,
-	'type'				: 'iframe',
-	'hideOnOverlayClick': false,
-	'showCloseButton'	: true,
-	'titleShow'			: false,
-	'transitionIn'		: 'fade',
-	'transitionOut'		: 'fade',
-	'overlayOpacity'	: 0.3,
-	'overlayColor'		: '#E5E5E5',
-	'autoDimensions'	: false,
-	'width'				: 500,
-	'height'			: 220
-});
-</script>
-<?php
+if ($this->authClient == null && 1 == 2) {
+    ?>
+    <script type="text/javascript">
+        $('.jsIframeLogin').attr('href', '/iframe/login');
+        $('.jsIframeLogin').fancybox({
+            'hideOnOverlayClick': false,
+            'type': 'iframe',
+            'hideOnOverlayClick': false,
+            'showCloseButton': true,
+            'titleShow': false,
+            'transitionIn': 'fade',
+            'transitionOut': 'fade',
+            'overlayOpacity': 0.3,
+            'overlayColor': '#E5E5E5',
+            'autoDimensions': false,
+            'width': 500,
+            'height': 220
+        });
+    </script>
+    <?php
 }
 // END: POPUP LOGIN BOX
 ?>
 <script type="text/javascript">
-$(document).ready(function() {
-    $("#frmCart").validationEngine();
-});
+    $(document).ready(function () {
+        $("#frmCart").validationEngine();
+    });
 </script>

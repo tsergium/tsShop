@@ -1,46 +1,55 @@
 <ul class="sitemap">
-	<li>
-		<a href="/" title="<?php echo Zend_Registry::get('translate')->_('homepage_home'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_home'); ?></a>
-	</li>
-	<li>
-		<a href="/products" title="<?php echo Zend_Registry::get('translate')->_('homepage_navigation_products'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_navigation_products'); ?></a>
-		<ul>
-			<li>
-				<a href="/products/promotii" title="<?php echo Zend_Registry::get('translate')->_('homepage_promotions'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_promotions'); ?></a>
-			</li>
-			<li>
-				<a href="/products/promotii" title="<?php echo Zend_Registry::get('translate')->_('homepage_stock_clearance'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_stock_clearance'); ?></a>
-			</li>
-			<li>
-				<a href="/products/topsales" title="<?php echo Zend_Registry::get('translate')->_('homepage_top_sells_sitemap'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_top_sells_sitemap'); ?></a>
-			</li>
-			<li>
-				<a href="/products/topbrands" title="<?php echo Zend_Registry::get('translate')->_('homepage_top_brands'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_top_brands'); ?></a>
-			</li>
-			<?php if(null != $this->productArray) : ?>
-				<?php foreach($this->productArray as $value) : ?>
-				<li>
-					<a href="<?php echo $this->url(array('id' => $value->getId(), 'title' => preg_replace('/\s+/','-', strtolower(str_replace('/','', $value->getName())))), 'productdetails'); ?>" title="<?php echo $value->getName(); ?>"><?php echo $value->getName(); ?></a>
-				</li>
-				<?php endforeach; ?>
-			<?php endif; ?>
-		</ul>
-	</li>
-	<?php if(null != $this->cmsArray) : ?>
-		<?php foreach($this->cmsArray as $value) : ?>
-		<li>
-			<a href="/cms/view/page/<?php echo $value->getUrl(); ?>" title="<?php echo $value->getTitle(); ?>"><?php echo $value->getTitle(); ?></a>
-		</li>
-		<?php endforeach; ?>
-	<?php endif; ?>
-	<li>
-		<a href="/news" title="<?php echo Zend_Registry::get('translate')->_('homepage_news'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_news'); ?></a>
-	</li>
-	<li>
-		<a href="/contactus" title="Contact">Contact</a>
-	</li>
-	<li>
-		<a href="/blog" title="Blog">Blog</a>
-	</li>
+    <li>
+        <a href="/"
+           title="<?php echo Zend_Registry::get('translate')->_('homepage_home'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_home'); ?></a>
+    </li>
+    <li>
+        <a href="/products"
+           title="<?php echo Zend_Registry::get('translate')->_('homepage_navigation_products'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_navigation_products'); ?></a>
+        <ul>
+            <li>
+                <a href="/products/promotii"
+                   title="<?php echo Zend_Registry::get('translate')->_('homepage_promotions'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_promotions'); ?></a>
+            </li>
+            <li>
+                <a href="/products/promotii"
+                   title="<?php echo Zend_Registry::get('translate')->_('homepage_stock_clearance'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_stock_clearance'); ?></a>
+            </li>
+            <li>
+                <a href="/products/topsales"
+                   title="<?php echo Zend_Registry::get('translate')->_('homepage_top_sells_sitemap'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_top_sells_sitemap'); ?></a>
+            </li>
+            <li>
+                <a href="/products/topbrands"
+                   title="<?php echo Zend_Registry::get('translate')->_('homepage_top_brands'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_top_brands'); ?></a>
+            </li>
+            <?php if (null != $this->productArray) : ?>
+                <?php foreach ($this->productArray as $value) : ?>
+                    <li>
+                        <a href="<?php echo $this->url(array('id' => $value->getId(), 'title' => preg_replace('/\s+/', '-', strtolower(str_replace('/', '', $value->getName())))), 'productdetails'); ?>"
+                           title="<?php echo $value->getName(); ?>"><?php echo $value->getName(); ?></a>
+                    </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </ul>
+    </li>
+    <?php if (null != $this->cmsArray) : ?>
+        <?php foreach ($this->cmsArray as $value) : ?>
+            <li>
+                <a href="/cms/view/page/<?php echo $value->getUrl(); ?>"
+                   title="<?php echo $value->getTitle(); ?>"><?php echo $value->getTitle(); ?></a>
+            </li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    <li>
+        <a href="/news"
+           title="<?php echo Zend_Registry::get('translate')->_('homepage_news'); ?>"><?php echo Zend_Registry::get('translate')->_('homepage_news'); ?></a>
+    </li>
+    <li>
+        <a href="/contactus" title="Contact">Contact</a>
+    </li>
+    <li>
+        <a href="/blog" title="Blog">Blog</a>
+    </li>
 </ul>
 <div class="empty10"></div>

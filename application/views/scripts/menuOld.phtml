@@ -1,42 +1,43 @@
 <div class="menu">
-	<div class="left_menu"></div>
-	<div class="central_menu" >	    
-	    <ul class="left_meniu" id="nav">
-		    <?php if(null != $this->categories){?>
-			<?php foreach($this->categories as $value){?>
-			<li style="height:30px;">
-				<?php $link = $this->url(array('id'=>$value->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/','_', strtolower($value->getName())), 'page'=>'1'),'prodcategroutepag');?>
-				<a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $link;?>" class="first"><?php echo $value->getName();?></a>
-				<?php
-					$subcategories = getSubcatForCat($value->getId());
-					if(null != $subcategories){
-				?>
-				<div class="subcategorie">
-				    <ul>
-					    <?php foreach($subcategories as $value2){?>
-					    <?php $link = $this->url(array('id'=>$value2->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/','_', strtolower($value2->getName())), 'page'=>'1'),'prodcategroutepag');?>
-					    <li >
-						    <a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $link;?>"><?php echo $value2->getName();?></a>
-					    </li>
-					    <?php }?>
-				    </ul>
-				</div>
-				<?php }?>
-			</li>
-			<?php }?>
-		    <?php }?>
-	    </ul>	   
-	    <ul class="right_meniu">
-		<li>
-		    <?php $link = $this->url(array('page'=>'1'),'hainefemeiroute');?>
-		    <a class="linkSpec" href="<?php echo WEBPAGE_ADDRESS;?><?php echo $link;?>">Haine femei</a>
-		</li>
-		<li>
-		    <?php $link = $this->url(array('page'=>'1'),'reduceriroute');?>
-		    <a class="linkSpec" href="<?php echo WEBPAGE_ADDRESS;?><?php echo $link;?>">Reduceri</a>
-		</li>
-	    </ul>
-	</div>
-	<div class="right_menu"></div>
-	<div class="clear"></div>
+    <div class="left_menu"></div>
+    <div class="central_menu">
+        <ul class="left_meniu" id="nav">
+            <?php if (null != $this->categories) { ?>
+                <?php foreach ($this->categories as $value) { ?>
+                    <li style="height:30px;">
+                        <?php $link = $this->url(array('id' => $value->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/', '_', strtolower($value->getName())), 'page' => '1'), 'prodcategroutepag'); ?>
+                        <a href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $link; ?>"
+                           class="first"><?php echo $value->getName(); ?></a>
+                        <?php
+                        $subcategories = getSubcatForCat($value->getId());
+                        if (null != $subcategories) {
+                            ?>
+                            <div class="subcategorie">
+                                <ul>
+                                    <?php foreach ($subcategories as $value2) { ?>
+                                        <?php $link = $this->url(array('id' => $value2->getId(), 'name' => preg_replace('/[^a-zA-Z0-9]+/', '_', strtolower($value2->getName())), 'page' => '1'), 'prodcategroutepag'); ?>
+                                        <li>
+                                            <a href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $link; ?>"><?php echo $value2->getName(); ?></a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        <?php } ?>
+                    </li>
+                <?php } ?>
+            <?php } ?>
+        </ul>
+        <ul class="right_meniu">
+            <li>
+                <?php $link = $this->url(array('page' => '1'), 'hainefemeiroute'); ?>
+                <a class="linkSpec" href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $link; ?>">Haine femei</a>
+            </li>
+            <li>
+                <?php $link = $this->url(array('page' => '1'), 'reduceriroute'); ?>
+                <a class="linkSpec" href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $link; ?>">Reduceri</a>
+            </li>
+        </ul>
+    </div>
+    <div class="right_menu"></div>
+    <div class="clear"></div>
 </div>

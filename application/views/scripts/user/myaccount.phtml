@@ -1,112 +1,112 @@
-<?php if(null != $this->user) { ?>
-<!--	<h1><?php echo Zend_Registry::get('translate')->_('user_my_account');?></h1>-->
-	<div class="box">
-		<h2>Date Personale</h2>
-		<table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
-			<col width="200" />
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_name'); ?></td>
-				<td><?php echo strip_tags($this->user->getFirstname()).' '.strip_tags($this->user->getLastname()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_email');?></td>
-				<td><?php echo strip_tags($this->user->getEmail()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_member_since'); ?></td>
-				<td><?php echo date('d M Y', $this->user->getCreated()); ?></td>
-			</tr>
-			<tr>
-				<td>Data nasterii</td>
-				<td><?php echo date('d M Y',$this->user->getBirthday()); ?></td>
-			</tr>
-			<tr>
-				<td>Sex</td>
-				<td><?php echo ($this->user->getGender() == 1)? 'Masculin':'Feminin'; ?></td>
-			</tr>
-		</table>
-	</div>
-	<div class="empty10"></div>
-	<div class="box">
-		<h2>Adresa de facturare</h2>
-		<table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
-			<col width="200" />			
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_address'); ?></td>
-				<td><?php echo strip_tags($this->user->getAddress()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_county'); ?></td>
-				<td><?php echo strip_tags($this->user->getCounty()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_city'); ?></td>
-				<td><?php echo strip_tags($this->user->getCity()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_zip');  ?></td>
-				<td><?php echo ($this->user->getZip() != null)?strip_tags($this->user->getZip()):'-'; ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_phone'); ?></td>
-				<td><?php echo strip_tags($this->user->getPhone()); ?></td>
-			</tr>			
-		</table>
-	</div>	
-	<div class="empty10"></div>
-	<div class="box">
-		<h2>Adresa de livrare</h2>
-		<table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
-			<col width="200" />
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_name'); ?></td>
-				<td><?php echo strip_tags($this->user->getFirstnameS()).' '.strip_tags($this->user->getLastnameS()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_address'); ?></td>
-				<td><?php echo strip_tags($this->user->getAddressS()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_county'); ?></td>
-				<td><?php echo strip_tags($this->user->getStateS()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_city'); ?></td>
-				<td><?php echo strip_tags($this->user->getZipcodeS()); ?></td>
-			</tr>
-		</table>
-	</div>
-	<div class="empty10"></div>
-	<?php if($this->user->getClienttype() == 1){ ?>
-	<div class="box">		    
-		<h2><?php echo Zend_Registry::get('translate')->_('user_person_information'); ?></h2>
-		<table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
-			<col width="200" />
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_institution'); ?></td>
-				<td><?php echo strip_tags($this->user->getCompanyname()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_fiscal_code'); ?></td>
-				<td><?php echo strip_tags($this->user->getFiscalcode()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_trade_register'); ?></td>
-				<td><?php echo strip_tags($this->user->getTraderegister()); ?></td>
-			</tr>
-			<tr>
-				<td><?php echo Zend_Registry::get('translate')->_('user_bank'); ?></td>
-				<td><?php echo strip_tags($this->user->getBank()); ?></td>
-			</tr>
-			<tr>
-				<td>Cont bancar</td>
-				<td><?php echo strip_tags($this->user->getBankaccount()); ?></td>
-			</tr>
-		</table>
-	</div>	
-	<?php } ?>
+<?php if (null != $this->user) { ?>
+    <!--	<h1><?php echo Zend_Registry::get('translate')->_('user_my_account'); ?></h1>-->
+    <div class="box">
+        <h2>Date Personale</h2>
+        <table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
+            <col width="200"/>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_name'); ?></td>
+                <td><?php echo strip_tags($this->user->getFirstname()) . ' ' . strip_tags($this->user->getLastname()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_email'); ?></td>
+                <td><?php echo strip_tags($this->user->getEmail()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_member_since'); ?></td>
+                <td><?php echo date('d M Y', $this->user->getCreated()); ?></td>
+            </tr>
+            <tr>
+                <td>Data nasterii</td>
+                <td><?php echo date('d M Y', $this->user->getBirthday()); ?></td>
+            </tr>
+            <tr>
+                <td>Sex</td>
+                <td><?php echo ($this->user->getGender() == 1) ? 'Masculin' : 'Feminin'; ?></td>
+            </tr>
+        </table>
+    </div>
+    <div class="empty10"></div>
+    <div class="box">
+        <h2>Adresa de facturare</h2>
+        <table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
+            <col width="200"/>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_address'); ?></td>
+                <td><?php echo strip_tags($this->user->getAddress()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_county'); ?></td>
+                <td><?php echo strip_tags($this->user->getCounty()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_city'); ?></td>
+                <td><?php echo strip_tags($this->user->getCity()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_zip'); ?></td>
+                <td><?php echo ($this->user->getZip() != null) ? strip_tags($this->user->getZip()) : '-'; ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_phone'); ?></td>
+                <td><?php echo strip_tags($this->user->getPhone()); ?></td>
+            </tr>
+        </table>
+    </div>
+    <div class="empty10"></div>
+    <div class="box">
+        <h2>Adresa de livrare</h2>
+        <table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
+            <col width="200"/>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_name'); ?></td>
+                <td><?php echo strip_tags($this->user->getFirstnameS()) . ' ' . strip_tags($this->user->getLastnameS()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_address'); ?></td>
+                <td><?php echo strip_tags($this->user->getAddressS()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_county'); ?></td>
+                <td><?php echo strip_tags($this->user->getStateS()); ?></td>
+            </tr>
+            <tr>
+                <td><?php echo Zend_Registry::get('translate')->_('user_city'); ?></td>
+                <td><?php echo strip_tags($this->user->getZipcodeS()); ?></td>
+            </tr>
+        </table>
+    </div>
+    <div class="empty10"></div>
+    <?php if ($this->user->getClienttype() == 1) { ?>
+        <div class="box">
+            <h2><?php echo Zend_Registry::get('translate')->_('user_person_information'); ?></h2>
+            <table class="cart-delivery-tbl" border="0" width="100%" cellpadding="0" cellspacing="5">
+                <col width="200"/>
+                <tr>
+                    <td><?php echo Zend_Registry::get('translate')->_('user_institution'); ?></td>
+                    <td><?php echo strip_tags($this->user->getCompanyname()); ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo Zend_Registry::get('translate')->_('user_fiscal_code'); ?></td>
+                    <td><?php echo strip_tags($this->user->getFiscalcode()); ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo Zend_Registry::get('translate')->_('user_trade_register'); ?></td>
+                    <td><?php echo strip_tags($this->user->getTraderegister()); ?></td>
+                </tr>
+                <tr>
+                    <td><?php echo Zend_Registry::get('translate')->_('user_bank'); ?></td>
+                    <td><?php echo strip_tags($this->user->getBank()); ?></td>
+                </tr>
+                <tr>
+                    <td>Cont bancar</td>
+                    <td><?php echo strip_tags($this->user->getBankaccount()); ?></td>
+                </tr>
+            </table>
+        </div>
+    <?php } ?>
 
-	
+
 <?php } else { ?>
-	<?php echo Zend_Registry::get('translate')->_('user_invalid_account_selected');?>
-<?php }?>
+    <?php echo Zend_Registry::get('translate')->_('user_invalid_account_selected'); ?>
+<?php } ?>

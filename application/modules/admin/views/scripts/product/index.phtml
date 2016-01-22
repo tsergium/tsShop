@@ -1,95 +1,102 @@
 <!--BEGIN: SEARCH PRODUCTS-->
 <div class="empty10"></div>
 <div class="fL">
-	<a class="button1" href="/admin/product"><small>Toate Produsele</small></a>
-	<a class="button1" href="/admin/product/index/type/inactive"><small>Produse Inactive</small></a>
+    <a class="button1" href="/admin/product">
+        <small>Toate Produsele</small>
+    </a>
+    <a class="button1" href="/admin/product/index/type/inactive">
+        <small>Produse Inactive</small>
+    </a>
 </div>
 <div class="fR">
-	<?php echo $this->searchForm;?>
+    <?php echo $this->searchForm; ?>
 </div>
 <div class="clear">&nbsp;</div>
-<?php if($this->search){ ?>
-<div class="empty10"></div>
-<h2>Rezultatul cautarii &quot;<b><?php echo $this->search; ?></b>&quot; :</h2><br/>
+<?php if ($this->search) { ?>
+    <div class="empty10"></div>
+    <h2>Rezultatul cautarii &quot;<b><?php echo $this->search; ?></b>&quot; :</h2><br/>
 <?php } ?>
 <!--END: SEARCH PRODUCTS-->
 
-<?php if(!empty($this->message)){?>
-	<?php foreach($this->message as $value){?>
-		<div class="empty10"></div>
-		<?php echo $value;?>
-	<?php }?>
-<?php }?>
+<?php if (!empty($this->message)) { ?>
+    <?php foreach ($this->message as $value) { ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php } ?>
+<?php } ?>
 
-<?php if(null != $this->result){?>
-<div class="empty10"></div>
-<table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
-	<col width="" />
-	<col width="120" />
-	<col width="120" />
-	<col width="120" />
-	<tr>
-		<th>Nume</th>
-		<th>Pret</th>
-		<th>Adaugat la</th>
-		<th>Optiuni</th>
-	</tr>
-	<?php foreach($this->result as $value){?>
-	<tr>
-		<td><?php echo $value->getName();?></td>
-		<td align="center"><?php echo $value->getPrice();?> <small style="color: #999;">RON</small></td>
-		<td align="center"><?php echo date('d M, Y',$value->getCreated());?></td>
-		<td align="center">
-			<a href="/products/details/id/<?php echo $value->getId();?>" target="_blank" title="Vizualizeaza">
-				<img src="/images/admin/icons/display.png" alt="vizualizeaza" />
-			</a>
-			<a href="/admin/product/edit/id/<?php echo $value->getId();?>" title="Modifica">
-				<img src="/images/admin/icons/edit.png" alt="modifica" />
-			</a>
-			<a class="confirmDelete" href="/admin/product/delete/id/<?php echo $value->getId();?>" title="Sterge">
-				<img src="/images/admin/icons/delete.png" alt="sterge" />
-			</a>
-		</td>
-	</tr>
-	<?php }?>	
-</table>
-<?php
-	// BEGIN: PAGINATION
-	$itemCountPerPage = $this->itemCountPerPage;
-	$totalItemCount = $this->totalItemCount;
-	if($itemCountPerPage < $totalItemCount){
-		echo $this->result;
-	}
-	// END: PAGINATION
-?>
-<div id="confirmDelete" title="Mesaj de confirmare" style="display:none;">
-	Sunteţi sigur că doriţi să ştergeţi aceast produs?
-</div>
-<?php }else{?>
-	<div class="empty10"></div>
-	<div class="mess-false">Nu exista produse!</div>
-<?php }?>
+<?php if (null != $this->result) { ?>
+    <div class="empty10"></div>
+    <table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <col width=""/>
+        <col width="120"/>
+        <col width="120"/>
+        <col width="120"/>
+        <tr>
+            <th>Nume</th>
+            <th>Pret</th>
+            <th>Adaugat la</th>
+            <th>Optiuni</th>
+        </tr>
+        <?php foreach ($this->result as $value) { ?>
+            <tr>
+                <td><?php echo $value->getName(); ?></td>
+                <td align="center"><?php echo $value->getPrice(); ?>
+                    <small style="color: #999;">RON</small>
+                </td>
+                <td align="center"><?php echo date('d M, Y', $value->getCreated()); ?></td>
+                <td align="center">
+                    <a href="/products/details/id/<?php echo $value->getId(); ?>" target="_blank" title="Vizualizeaza">
+                        <img src="/images/admin/icons/display.png" alt="vizualizeaza"/>
+                    </a>
+                    <a href="/admin/product/edit/id/<?php echo $value->getId(); ?>" title="Modifica">
+                        <img src="/images/admin/icons/edit.png" alt="modifica"/>
+                    </a>
+                    <a class="confirmDelete" href="/admin/product/delete/id/<?php echo $value->getId(); ?>"
+                       title="Sterge">
+                        <img src="/images/admin/icons/delete.png" alt="sterge"/>
+                    </a>
+                </td>
+            </tr>
+        <?php } ?>
+    </table>
+    <?php
+    // BEGIN: PAGINATION
+    $itemCountPerPage = $this->itemCountPerPage;
+    $totalItemCount = $this->totalItemCount;
+    if ($itemCountPerPage < $totalItemCount) {
+        echo $this->result;
+    }
+    // END: PAGINATION
+    ?>
+    <div id="confirmDelete" title="Mesaj de confirmare" style="display:none;">
+        Sunteţi sigur că doriţi să ştergeţi aceast produs?
+    </div>
+<?php } else { ?>
+    <div class="empty10"></div>
+    <div class="mess-false">Nu exista produse!</div>
+<?php } ?>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	$('.confirmDelete').click(function(){
-		var link = $(this);
-		$("#confirmDelete").dialog({
-			bgiframe: true,
-			height: 140,
-			width: 400,
-			modal: true,
-			buttons:{
-				'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function(){
-					$(this).dialog('close').dialog('destroy');
-					window.location.href = link.attr('href');
-				},
-				'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function(){
-					$(this).dialog('close').dialog('destroy');
-				}
-			}
-		});
-		return false;
-	});
-});
+    $(document).ready(function () {
+        $('.confirmDelete').click(function () {
+            var link = $(this);
+            $("#confirmDelete").dialog({
+                bgiframe: true,
+                height: 140,
+                width: 400,
+                modal: true,
+                buttons: {
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                        window.location.href = link.attr('href');
+                    },
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                    }
+                }
+            });
+            return false;
+        });
+    });
 </script>	

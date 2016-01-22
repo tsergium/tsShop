@@ -5,51 +5,51 @@
 <?php header('Content-type: text/html; charset=utf-8'); ?>
 <head>
     <?php echo $this->headTitle() ?>
-	<?php echo $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8'); ?>
-	<?php echo $this->headLink() ?>
+    <?php echo $this->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8'); ?>
+    <?php echo $this->headLink() ?>
     <?php echo $this->headStyle() ?>
     <?php echo $this->headScript() ?>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="content">
-			<?php echo $this->render('header.phtml') ?>
-			<div class="main_context">
-			    <?php echo $this->navigation()->menu();?>
-			</div>
-			<div class="main_content">
-				<h2 class="title">
-				<?php if($this->controller == "sales" && $this->action == "details"){
-					$orderDetails = getOrderDetails($this->orderId);
-							if($orderDetails->getStatus() == 'pending'){
-								$orderStatus = Zend_Registry::get('translate')->_('sales_index_table_pending');
-							}
-							if($orderDetails->getStatus() == 'accepted'){
-								$orderStatus = Zend_Registry::get('translate')->_('sales_index_table_accepted');
-							}
-							if($orderDetails->getStatus() == 'completed'){
-								$orderStatus = Zend_Registry::get('translate')->_('sales_index_table_completed');
-							}
-							if($orderDetails->getStatus() == 'rejected'){
-								$orderStatus = Zend_Registry::get('translate')->_('sales_index_table_rejected');
-							}
+<div class="wrapper">
+    <div class="content">
+        <?php echo $this->render('header.phtml') ?>
+        <div class="main_context">
+            <?php echo $this->navigation()->menu(); ?>
+        </div>
+        <div class="main_content">
+            <h2 class="title">
+                <?php if ($this->controller == "sales" && $this->action == "details") {
+                    $orderDetails = getOrderDetails($this->orderId);
+                    if ($orderDetails->getStatus() == 'pending') {
+                        $orderStatus = Zend_Registry::get('translate')->_('sales_index_table_pending');
+                    }
+                    if ($orderDetails->getStatus() == 'accepted') {
+                        $orderStatus = Zend_Registry::get('translate')->_('sales_index_table_accepted');
+                    }
+                    if ($orderDetails->getStatus() == 'completed') {
+                        $orderStatus = Zend_Registry::get('translate')->_('sales_index_table_completed');
+                    }
+                    if ($orderDetails->getStatus() == 'rejected') {
+                        $orderStatus = Zend_Registry::get('translate')->_('sales_index_table_rejected');
+                    }
 
-					echo '<a href="/admin/sales/"><b><b>Vânzări</b></b></a> &raquo; <b><b>'.date('d M, Y', $orderDetails->getDate()).'</b></b> &raquo; <b><b>Comandă '.$orderDetails->getId().'</b></b>&raquo; <b><b>'.$orderStatus.'</b></b>';
-				}else{?>
-					<?php echo $this->navigation()->breadcrumbs()->setMinDepth(0)->setRenderInvisible(true)->setSeparator(' &raquo; '); ?>
-				<?php }?>
-				</h2>
-				
-				<div class="<?php if($this->controller != 'dashboard') { ?>table-width<?php } ?>">
-			    <?php echo $this->layout()->content ?>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="push"></div>
-	</div>
-	
-	<?php echo $this->render('footer.phtml'); ?>
-	<?php echo $this->inlineScript() ?>
+                    echo '<a href="/admin/sales/"><b><b>Vânzări</b></b></a> &raquo; <b><b>' . date('d M, Y', $orderDetails->getDate()) . '</b></b> &raquo; <b><b>Comandă ' . $orderDetails->getId() . '</b></b>&raquo; <b><b>' . $orderStatus . '</b></b>';
+                } else { ?>
+                    <?php echo $this->navigation()->breadcrumbs()->setMinDepth(0)->setRenderInvisible(true)->setSeparator(' &raquo; '); ?>
+                <?php } ?>
+            </h2>
+
+            <div class="<?php if ($this->controller != 'dashboard') { ?>table-width<?php } ?>">
+                <?php echo $this->layout()->content ?>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="push"></div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>
+<?php echo $this->inlineScript() ?>
 </body>
 </html>

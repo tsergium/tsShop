@@ -1,236 +1,254 @@
-<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getAttrib('id');?>" class="<?php echo $this->element->getAttrib('class');?>" enctype="<?php echo $this->element->getEncType();?>">
-	<?php
-		echo $this->{$this->element->formorder->helper}(
-						$this->element->formorder->getName(),
-						$this->element->formorder->getValue(),
-						$this->element->formorder->getAttribs()
-					);
-	?>
-	<?php
-		echo $this->{$this->element->productsCost->helper}(
-						$this->element->productsCost->getName(),
-						$this->element->productsCost->getValue(),
-						$this->element->productsCost->getAttribs()
-					);
-	?>
-	<?php
-		echo $this->{$this->element->vat->helper}(
-						$this->element->vat->getName(),
-						$this->element->vat->getValue(),
-						$this->element->vat->getAttribs()
-					);
-	?>
-	<?php
-		echo $this->{$this->element->tax->helper}(
-						$this->element->tax->getName(),
-						$this->element->tax->getValue(),
-						$this->element->tax->getAttribs()
-					);
-	?>
-	<?php
-		echo $this->{$this->element->discount->helper}(
-						$this->element->discount->getName(),
-						$this->element->discount->getValue(),
-						$this->element->discount->getAttribs()
-					);
-	?>
-	<?php
-		echo $this->{$this->element->ramburs->helper}(
-						$this->element->ramburs->getName(),
-						$this->element->ramburs->getValue(),
-						$this->element->ramburs->getAttribs()
-					);
-	?>
-	<?php
-		echo $this->{$this->element->totalCost->helper}(
-						$this->element->totalCost->getName(),
-						$this->element->totalCost->getValue(),
-						$this->element->totalCost->getAttribs()
-					);
-	?>
-	<?php
-		echo $this->{$this->element->payment->helper}(
-						$this->element->payment->getName(),
-						$this->element->payment->getValue(),
-						$this->element->payment->getAttribs()
-					);
-	?>
-	<table width="100%" cellpadding="0" cellspacing="2" class="cart-delivery-tbl">
-		<col width="200" />
-		<tr>
-			<td colspan="2">
-				<small class="hint fR"><?php echo Zend_Registry::get('translate')->_("cart_fields_marked");?> <img src="/images/required.gif" width="10" height="8" border="0" align="absmiddle" alt="" /> <?php echo Zend_Registry::get('translate')->_("cart_are_required");?></small>
-			</td>
-		</tr>
-	</table>
-	<table width="660" border="0" cellpadding="0" cellspacing="2" id="accounthidden" class="cart-delivery-tbl">
-		<col width="200" />
-		<tr>
-			<td valign="top">
-				<?php
-				$attribs = array();
-				if ($this->element->firstnameb->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->firstnameb->getName(), $this->element->firstnameb->getLabel(), $attribs);?>
-			</td>
-			<td>
-				<?php
-					echo $this->{$this->element->firstnameb->helper}(
-								$this->element->firstnameb->getName(),
-								$this->element->firstnameb->getValue(),
-								$this->element->firstnameb->getAttribs()
-							);
-				?>
-				<?php if('<ul class="errors"><li></li></ul>'!=($this->element->firstnameb->getMessages())){ echo  $this->formErrors($this->element->firstnameb->getMessages());} ?>
-				<div class="hint"><?php echo $this->element->firstnameb->getDescription(); ?></div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<?php
-				$attribs = array();
-				if ($this->element->lastnameb->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->lastnameb->getName(), $this->element->lastnameb->getLabel(), $attribs);?>
-			</td>
-			<td>
-				<?php
-					echo $this->{$this->element->lastnameb->helper}(
-								$this->element->lastnameb->getName(),
-								$this->element->lastnameb->getValue(),
-								$this->element->lastnameb->getAttribs()
-							);
-				?>
-				<?php if('<ul class="errors"><li></li></ul>'!=($this->element->lastnameb->getMessages())){ echo  $this->formErrors($this->element->lastnameb->getMessages());} ?>
-				<div class="hint"><?php echo $this->element->lastnameb->getDescription(); ?></div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<?php
-				$attribs = array();
-				if ($this->element->emailb->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->emailb->getName(), $this->element->emailb->getLabel(), $attribs);?>
-			</td>
-			<td>
-				<?php
-					echo $this->{$this->element->emailb->helper}(
-								$this->element->emailb->getName(),
-								$this->element->emailb->getValue(),
-								$this->element->emailb->getAttribs()
-							);
-				?>
-				<?php if('<ul class="errors"><li></li></ul>'!=($this->element->emailb->getMessages())){ echo  $this->formErrors($this->element->emailb->getMessages());} ?>
-				<div class="hint"><?php echo $this->element->emailb->getDescription(); ?></div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<?php
-				$attribs = array();
-				if ($this->element->phoneb->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->phoneb->getName(), $this->element->phoneb->getLabel(), $attribs);?>
-			</td>
-			<td>
-				<?php
-					echo $this->{$this->element->phoneb->helper}(
-								$this->element->phoneb->getName(),
-								$this->element->phoneb->getValue(),
-								$this->element->phoneb->getAttribs()
-							);
-				?>
-				<?php if('<ul class="errors"><li></li></ul>'!=($this->element->phoneb->getMessages())){ echo  $this->formErrors($this->element->phoneb->getMessages());} ?>
-				<div class="hint"><?php echo $this->element->phoneb->getDescription(); ?></div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<?php
-				$attribs = array();
-				if ($this->element->addressb->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->addressb->getName(), $this->element->addressb->getLabel(), $attribs);?>
-			</td>
-			<td>
-				<?php
-					echo $this->{$this->element->addressb->helper}(
-								$this->element->addressb->getName(),
-								$this->element->addressb->getValue(),
-								$this->element->addressb->getAttribs()
-							);
-				?>
-				<?php if('<ul class="errors"><li></li></ul>'!=($this->element->addressb->getMessages())){ echo  $this->formErrors($this->element->addressb->getMessages());} ?>
-				<div class="hint"><?php echo $this->element->addressb->getDescription(); ?></div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<?php
-				$attribs = array();
-				if ($this->element->cityb->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->cityb->getName(), $this->element->cityb->getLabel(), $attribs);?>
-			</td>
-			<td>
-				<div>
-					<?php
-						echo $this->{$this->element->cityb->helper}(
-									$this->element->cityb->getName(),
-									$this->element->cityb->getValue(),
-									$this->element->cityb->getAttribs()
+<form method="<?php echo $this->element->getMethod(); ?>" action="<?php echo $this->element->getAction(); ?>"
+      id="<?php echo $this->element->getAttrib('id'); ?>" class="<?php echo $this->element->getAttrib('class'); ?>"
+      enctype="<?php echo $this->element->getEncType(); ?>">
+    <?php
+    echo $this->{$this->element->formorder->helper}(
+        $this->element->formorder->getName(),
+        $this->element->formorder->getValue(),
+        $this->element->formorder->getAttribs()
+    );
+    ?>
+    <?php
+    echo $this->{$this->element->productsCost->helper}(
+        $this->element->productsCost->getName(),
+        $this->element->productsCost->getValue(),
+        $this->element->productsCost->getAttribs()
+    );
+    ?>
+    <?php
+    echo $this->{$this->element->vat->helper}(
+        $this->element->vat->getName(),
+        $this->element->vat->getValue(),
+        $this->element->vat->getAttribs()
+    );
+    ?>
+    <?php
+    echo $this->{$this->element->tax->helper}(
+        $this->element->tax->getName(),
+        $this->element->tax->getValue(),
+        $this->element->tax->getAttribs()
+    );
+    ?>
+    <?php
+    echo $this->{$this->element->discount->helper}(
+        $this->element->discount->getName(),
+        $this->element->discount->getValue(),
+        $this->element->discount->getAttribs()
+    );
+    ?>
+    <?php
+    echo $this->{$this->element->ramburs->helper}(
+        $this->element->ramburs->getName(),
+        $this->element->ramburs->getValue(),
+        $this->element->ramburs->getAttribs()
+    );
+    ?>
+    <?php
+    echo $this->{$this->element->totalCost->helper}(
+        $this->element->totalCost->getName(),
+        $this->element->totalCost->getValue(),
+        $this->element->totalCost->getAttribs()
+    );
+    ?>
+    <?php
+    echo $this->{$this->element->payment->helper}(
+        $this->element->payment->getName(),
+        $this->element->payment->getValue(),
+        $this->element->payment->getAttribs()
+    );
+    ?>
+    <table width="100%" cellpadding="0" cellspacing="2" class="cart-delivery-tbl">
+        <col width="200"/>
+        <tr>
+            <td colspan="2">
+                <small class="hint fR"><?php echo Zend_Registry::get('translate')->_("cart_fields_marked"); ?> <img
+                        src="/images/required.gif" width="10" height="8" border="0" align="absmiddle"
+                        alt=""/> <?php echo Zend_Registry::get('translate')->_("cart_are_required"); ?></small>
+            </td>
+        </tr>
+    </table>
+    <table width="660" border="0" cellpadding="0" cellspacing="2" id="accounthidden" class="cart-delivery-tbl">
+        <col width="200"/>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->firstnameb->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->firstnameb->getName(), $this->element->firstnameb->getLabel(), $attribs); ?>
+            </td>
+            <td>
+                <?php
+                echo $this->{$this->element->firstnameb->helper}(
+                    $this->element->firstnameb->getName(),
+                    $this->element->firstnameb->getValue(),
+                    $this->element->firstnameb->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->firstnameb->getMessages())) {
+                    echo $this->formErrors($this->element->firstnameb->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->firstnameb->getDescription(); ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->lastnameb->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->lastnameb->getName(), $this->element->lastnameb->getLabel(), $attribs); ?>
+            </td>
+            <td>
+                <?php
+                echo $this->{$this->element->lastnameb->helper}(
+                    $this->element->lastnameb->getName(),
+                    $this->element->lastnameb->getValue(),
+                    $this->element->lastnameb->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->lastnameb->getMessages())) {
+                    echo $this->formErrors($this->element->lastnameb->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->lastnameb->getDescription(); ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->emailb->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->emailb->getName(), $this->element->emailb->getLabel(), $attribs); ?>
+            </td>
+            <td>
+                <?php
+                echo $this->{$this->element->emailb->helper}(
+                    $this->element->emailb->getName(),
+                    $this->element->emailb->getValue(),
+                    $this->element->emailb->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->emailb->getMessages())) {
+                    echo $this->formErrors($this->element->emailb->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->emailb->getDescription(); ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->phoneb->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->phoneb->getName(), $this->element->phoneb->getLabel(), $attribs); ?>
+            </td>
+            <td>
+                <?php
+                echo $this->{$this->element->phoneb->helper}(
+                    $this->element->phoneb->getName(),
+                    $this->element->phoneb->getValue(),
+                    $this->element->phoneb->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->phoneb->getMessages())) {
+                    echo $this->formErrors($this->element->phoneb->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->phoneb->getDescription(); ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->addressb->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->addressb->getName(), $this->element->addressb->getLabel(), $attribs); ?>
+            </td>
+            <td>
+                <?php
+                echo $this->{$this->element->addressb->helper}(
+                    $this->element->addressb->getName(),
+                    $this->element->addressb->getValue(),
+                    $this->element->addressb->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->addressb->getMessages())) {
+                    echo $this->formErrors($this->element->addressb->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->addressb->getDescription(); ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->cityb->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->cityb->getName(), $this->element->cityb->getLabel(), $attribs); ?>
+            </td>
+            <td>
+                <div>
+                    <?php
+                    echo $this->{$this->element->cityb->helper}(
+                        $this->element->cityb->getName(),
+                        $this->element->cityb->getValue(),
+                        $this->element->cityb->getAttribs()
 
-								);
-					?>
-					<?php if('<ul class="errors"><li></li></ul>'!=($this->element->cityb->getMessages())){ echo  $this->formErrors($this->element->cityb->getMessages());} ?>
-					<div class="hint"><?php echo $this->element->cityb->getDescription(); ?></div>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<?php
-				$attribs = array();
-				if ($this->element->comments->isRequired()) {
-					$attribs['class'] = 'required';
-				}
-				echo $this->formLabel($this->element->comments->getName(), $this->element->comments->getLabel(), $attribs);?>
-			</td>
-			<td>
-				<?php
-					echo $this->{$this->element->comments->helper}(
-								$this->element->comments->getName(),
-								$this->element->comments->getValue(),
-								$this->element->comments->getAttribs()
-							);
-				?>
-				<?php if('<ul class="errors"><li></li></ul>'!=($this->element->comments->getMessages())){ echo  $this->formErrors($this->element->comments->getMessages());} ?>
-				<div class="hint"><?php echo $this->element->comments->getDescription(); ?></div>
-			</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>
-				<?php echo $this->{$this->element->submit->helper}(
-								$this->element->submit->getName(),
-								$this->element->submit->getValue(),
-								$this->element->submit->getAttribs()
-							);
-				?>
-			</td>
-		</tr>
-	</table>
+                    );
+                    ?>
+                    <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->cityb->getMessages())) {
+                        echo $this->formErrors($this->element->cityb->getMessages());
+                    } ?>
+                    <div class="hint"><?php echo $this->element->cityb->getDescription(); ?></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <?php
+                $attribs = array();
+                if ($this->element->comments->isRequired()) {
+                    $attribs['class'] = 'required';
+                }
+                echo $this->formLabel($this->element->comments->getName(), $this->element->comments->getLabel(), $attribs); ?>
+            </td>
+            <td>
+                <?php
+                echo $this->{$this->element->comments->helper}(
+                    $this->element->comments->getName(),
+                    $this->element->comments->getValue(),
+                    $this->element->comments->getAttribs()
+                );
+                ?>
+                <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->comments->getMessages())) {
+                    echo $this->formErrors($this->element->comments->getMessages());
+                } ?>
+                <div class="hint"><?php echo $this->element->comments->getDescription(); ?></div>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <?php echo $this->{$this->element->submit->helper}(
+                    $this->element->submit->getName(),
+                    $this->element->submit->getValue(),
+                    $this->element->submit->getAttribs()
+                );
+                ?>
+            </td>
+        </tr>
+    </table>
 </form>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('#<?php echo $this->element->getId();?>').validationEngine();
-	});
+    $(document).ready(function () {
+        $('#<?php echo $this->element->getId();?>').validationEngine();
+    });
 </script>

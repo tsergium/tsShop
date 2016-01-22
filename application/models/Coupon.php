@@ -1,7 +1,8 @@
 <?php
+
 class Default_Model_DbTable_Coupon extends Zend_Db_Table_Abstract
 {
-    protected $_name    = 'coupons';
+    protected $_name = 'coupons';
     protected $_primary = 'id';
 }
 
@@ -16,7 +17,7 @@ class Default_Model_Coupon
 
     public function __construct(array $options = null)
     {
-        if(is_array($options)) {
+        if (is_array($options)) {
             $this->setOptions($options);
         }
     }
@@ -24,8 +25,8 @@ class Default_Model_Coupon
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' coupon property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' coupon property ' . $method);
         }
         $this->$method($value);
     }
@@ -33,7 +34,7 @@ class Default_Model_Coupon
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
+        if (('mapper' == $name) || !method_exists($this, $method)) {
             throw new Exception('Invalid coupon property');
         }
         return $this->$method();
@@ -42,9 +43,9 @@ class Default_Model_Coupon
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -53,7 +54,7 @@ class Default_Model_Coupon
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -64,7 +65,7 @@ class Default_Model_Coupon
 
     public function setCode($value)
     {
-        $this->_code =  (!empty($value))?$value:null;
+        $this->_code = (!empty($value)) ? $value : null;
         return $this;
     }
 
@@ -92,7 +93,7 @@ class Default_Model_Coupon
 
     public function getMapper()
     {
-        if(null === $this->_mapper) {
+        if (null === $this->_mapper) {
             $this->setMapper(new Default_Model_CouponMapper());
         }
         return $this->_mapper;
@@ -120,7 +121,7 @@ class Default_Model_Coupon
 
     public function delete()
     {
-        if(null === ($id = $this->getId())) {
+        if (null === ($id = $this->getId())) {
             throw new Exception("Invalid record selected!");
         }
         return $this->getMapper()->delete($id);
@@ -134,10 +135,10 @@ class Default_Model_CouponMapper
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
@@ -146,7 +147,7 @@ class Default_Model_CouponMapper
 
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_Coupon');
         }
         return $this->_dbTable;
@@ -155,18 +156,18 @@ class Default_Model_CouponMapper
     public function find($id, Default_Model_Coupon $model)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
-        $model -> setOptions($row->toArray());
+        $model->setOptions($row->toArray());
         return $model;
     }
 
     public function findByCode($code, Default_Model_Coupon $model)
     {
         $result = $this->getDbTable()->fetchRow("lower(code) like lower('" . $code . "') and status like 'active'");
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
 
@@ -181,7 +182,7 @@ class Default_Model_CouponMapper
         foreach ($resultSet as $row) {
             $model = new Default_Model_Coupon();
             $model->setOptions($row->toArray())
-                      ->setMapper($this);
+                ->setMapper($this);
             $entries[] = $model;
         }
         return $entries;
@@ -190,11 +191,11 @@ class Default_Model_CouponMapper
     public function save(Default_Model_Coupon $model)
     {
         $data = array(
-            'code'                    => $model->getCode(),
-            'status'                  => $model->getStatus(),
+            'code' => $model->getCode(),
+            'status' => $model->getStatus(),
         );
 
-        if(null === ($id = $model->getId())) {
+        if (null === ($id = $model->getId())) {
             $id = $this->getDbTable()->insert($data);
 
         } else {

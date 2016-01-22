@@ -1,25 +1,26 @@
-<?php if($this->result) : ?>
-<div class="news">
-	<h1>
-	<?php
-		if(Zend_Registry::get('lang') == 'en') {
-			echo $this->result->getTitleen();
-		} else {
-			echo $this->result->getTitle();
-		}
-	?>
-	</h1>
-	<div class="clear"></div>
-	<p>
-	<?php
-		if(Zend_Registry::get('lang') == 'en') {
-			echo nl2br($this->result->getContenten());
-		} else {
-			echo nl2br($this->result->getContent());
-		}
-	?>
-	</p>
-	<div class="clear"></div>
-</div>
+<?php if ($this->result) : ?>
+    <div class="news">
+        <h1>
+            <?php
+            if (Zend_Registry::get('lang') == 'en') {
+                echo $this->result->getTitleen();
+            } else {
+                echo $this->result->getTitle();
+            }
+            ?>
+        </h1>
+        <div class="clear"></div>
+        <p>
+            <?php
+            if (Zend_Registry::get('lang') == 'en') {
+                echo nl2br($this->result->getContenten());
+            } else {
+                echo nl2br($this->result->getContent());
+            }
+            ?>
+        </p>
+        <div class="clear"></div>
+    </div>
 <?php endif; ?>
-<a class="blue-small fR" href="/blog" title="<?php echo Zend_Registry::get('translate')->_('blog_details_button_all_articles'); ?>"><?php echo Zend_Registry::get('translate')->_('blog_details_button_all_articles'); ?></a>
+<a class="blue-small fR" href="/blog"
+   title="<?php echo Zend_Registry::get('translate')->_('blog_details_button_all_articles'); ?>"><?php echo Zend_Registry::get('translate')->_('blog_details_button_all_articles'); ?></a>

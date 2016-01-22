@@ -1,28 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Zend Framework Default Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Zend Framework Default Application</title>
 </head>
 <body>
-  <h1><?php echo Zend_Registry::get('translate')->_('error_occurred'); ?></h1>
-  <h2><?php echo $this->message ?></h2>
+<h1><?php echo Zend_Registry::get('translate')->_('error_occurred'); ?></h1>
+<h2><?php echo $this->message ?></h2>
 
-  <?php if ('development' == APPLICATION_ENV && 1==2): ?>
+<?php if ('development' == APPLICATION_ENV && 1 == 2): ?>
 
-  <h3><?php echo Zend_Registry::get('translate')->_('error_exception_information'); ?></h3>
-  <p>
-      <b><?php echo Zend_Registry::get('translate')->_('error_message'); ?></b> <?php echo $this->exception->getMessage() ?>
-  </p>
+    <h3><?php echo Zend_Registry::get('translate')->_('error_exception_information'); ?></h3>
+    <p>
+        <b><?php echo Zend_Registry::get('translate')->_('error_message'); ?></b> <?php echo $this->exception->getMessage() ?>
+    </p>
 
-  <h3><?php echo Zend_Registry::get('translate')->_('error_stack_trace'); ?></h3>
-  <pre><?php echo $this->exception->getTraceAsString() ?>
+    <h3><?php echo Zend_Registry::get('translate')->_('error_stack_trace'); ?></h3>
+    <pre><?php echo $this->exception->getTraceAsString() ?>
   </pre>
 
-  <h3><?php echo Zend_Registry::get('translate')->_('error_request_parameters'); ?></h3>
-  <pre><?php echo var_export($this->request->getParams(), true) ?>
+    <h3><?php echo Zend_Registry::get('translate')->_('error_request_parameters'); ?></h3>
+    <pre><?php echo var_export($this->request->getParams(), true) ?>
   </pre>
-  <?php endif ?>
+<?php endif ?>
 
 </body>
 </html>

@@ -1,51 +1,51 @@
 <?php
-$base_http = "http://".$_SERVER['SERVER_NAME'];
-$handle = fopen(APPLICATION_PUBLIC_PATH.'/sitemap.xml', 'w+');
+$base_http = "http://" . $_SERVER['SERVER_NAME'];
+$handle = fopen(APPLICATION_PUBLIC_PATH . '/sitemap.xml', 'w+');
 $now = date("Y-m-d", time());
 
 $sitemapHead = '<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-$sitemapContent = set($base_http."/", $now, 'daily', 0.9);
-$sitemapContent .= set($base_http."/products", $now, 'daily', 0.9);
-$sitemapContent .= set($base_http."/products/promotii", $now, 'daily', 0.9);
-$sitemapContent .= set($base_http."/lichidari", $now, 'daily', 0.9);
-$sitemapContent .= set($base_http."/products/topsales", $now, 'daily', 0.9);
-$sitemapContent .= set($base_http."/products/topbrands", $now, 'daily', 0.9);
-if($this->productArray) {
-	foreach($this->productArray as $value) {
-		$value->getModified()?$modified = $value->getModified():$modified = $value->getDatetime();
-		$modified =
-		$sitemapContent .= set(
-			$base_http.$this->url(array('id' => $value->getId(), 'title' => preg_replace('/\s+/','-', strtolower(str_replace('/','', $value->getName())))), 'productdetails')
-			,date ("Y-m-d", $modified)
-			,'daily'
-			,0.8
-		);
-	}
+$sitemapContent = set($base_http . "/", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/products", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/products/promotii", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/lichidari", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/products/topsales", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/products/topbrands", $now, 'daily', 0.9);
+if ($this->productArray) {
+    foreach ($this->productArray as $value) {
+        $value->getModified() ? $modified = $value->getModified() : $modified = $value->getDatetime();
+        $modified =
+        $sitemapContent .= set(
+            $base_http . $this->url(array('id' => $value->getId(), 'title' => preg_replace('/\s+/', '-', strtolower(str_replace('/', '', $value->getName())))), 'productdetails')
+            , date("Y-m-d", $modified)
+            , 'daily'
+            , 0.8
+        );
+    }
 }
-if($this->cmsArray) {
-	foreach($this->cmsArray as $value) {
-		$value->getModify()?$modified = $value->getModify():$modified = $value->getDatetime();
-		$sitemapContent .= set($base_http."/cms/view/page/".$value->getUrl(), $modified, 'daily', 0.8);
-	}
+if ($this->cmsArray) {
+    foreach ($this->cmsArray as $value) {
+        $value->getModify() ? $modified = $value->getModify() : $modified = $value->getDatetime();
+        $sitemapContent .= set($base_http . "/cms/view/page/" . $value->getUrl(), $modified, 'daily', 0.8);
+    }
 }
 
-$sitemapContent .= set($base_http."/news", $now, 'daily', 0.9);
-$sitemapContent .= set($base_http."/contactus", $now, 'daily', 0.9);
-$sitemapContent .= set($base_http."/blog", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/news", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/contactus", $now, 'daily', 0.9);
+$sitemapContent .= set($base_http . "/blog", $now, 'daily', 0.9);
 $sitemapFoot = '
 </urlset>';
 
-if(fwrite($handle, $sitemapHead.$sitemapContent.$sitemapFoot)) {
-?>
-<script type="text/javascript">
-	window.location = "/admin/cms/seo/msg/true";
-</script>
+if (fwrite($handle, $sitemapHead . $sitemapContent . $sitemapFoot)) {
+    ?>
+    <script type="text/javascript">
+        window.location = "/admin/cms/seo/msg/true";
+    </script>
 <?php } else { ?>
-<script type="text/javascript">
-	window.location = "/admin/cms/seo/msg/false";
-</script>
-<?php
+    <script type="text/javascript">
+        window.location = "/admin/cms/seo/msg/false";
+    </script>
+    <?php
 }
 fclose($handle);
 ?>

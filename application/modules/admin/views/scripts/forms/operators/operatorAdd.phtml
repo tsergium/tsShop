@@ -1,429 +1,473 @@
-<form method="<?php echo $this->element->getMethod();?>" action="<?php echo $this->element->getAction();?>" id="<?php echo $this->element->getId();?>" enctype="<?php echo $this->element->getEncType();?>">
-	<div class="regFormWrapper">
-		<div class="regSubForm">
-			<h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("customers_create_title_customer");?></h3>
-			<table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
-			<col width="200" />
-				<tr>
-					<td colspan="2"><center class="hint"><?php echo Zend_Registry::get('translate')->_("customers_create_required");?></center></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->username->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->username->getName(), $this->element->username->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->username->helper}(
-									$this->element->username->getName(),
-									$this->element->username->getValue(),
-									$this->element->username->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->username->getMessages()))){ echo $this->formErrors($this->element->username->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->username->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->password->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->password->getName(), $this->element->password->getLabel(), $attribs); ?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->password->helper}(
-									$this->element->password->getName(),
-									$this->element->password->getValue(),
-									$this->element->password->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->password->getMessages()))){ echo $this->formErrors($this->element->password->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->password->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->tbRePassword->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->tbRePassword->getName(), $this->element->tbRePassword->getLabel(), $attribs); ?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->tbRePassword->helper}(
-									$this->element->tbRePassword->getName(),
-									$this->element->tbRePassword->getValue(),
-									$this->element->tbRePassword->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->tbRePassword->getMessages()))){ echo $this->formErrors($this->element->tbRePassword->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->tbRePassword->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->email->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->email->getName(), $this->element->email->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->email->helper}(
-									$this->element->email->getName(),
-									$this->element->email->getValue(),
-									$this->element->email->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->email->getMessages()))){ echo $this->formErrors($this->element->email->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->email->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->tbReEmail->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->tbReEmail->getName(), $this->element->tbReEmail->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->tbReEmail->helper}(
-									$this->element->tbReEmail->getName(),
-									$this->element->tbReEmail->getValue(),
-									$this->element->tbReEmail->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->tbReEmail->getMessages()))){ echo $this->formErrors($this->element->tbReEmail->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->tbReEmail->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->status->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->status->getName(), $this->element->status->getLabel(), $attribs); ?>
-					</td>
-					<td>
+<form method="<?php echo $this->element->getMethod(); ?>" action="<?php echo $this->element->getAction(); ?>"
+      id="<?php echo $this->element->getId(); ?>" enctype="<?php echo $this->element->getEncType(); ?>">
+    <div class="regFormWrapper">
+        <div class="regSubForm">
+            <h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("customers_create_title_customer"); ?></h3>
+            <table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
+                <col width="200"/>
+                <tr>
+                    <td colspan="2">
+                        <center
+                            class="hint"><?php echo Zend_Registry::get('translate')->_("customers_create_required"); ?></center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->username->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->username->getName(), $this->element->username->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->username->helper}(
+                            $this->element->username->getName(),
+                            $this->element->username->getValue(),
+                            $this->element->username->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->username->getMessages()))) {
+                            echo $this->formErrors($this->element->username->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->username->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->password->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->password->getName(), $this->element->password->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->password->helper}(
+                            $this->element->password->getName(),
+                            $this->element->password->getValue(),
+                            $this->element->password->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->password->getMessages()))) {
+                            echo $this->formErrors($this->element->password->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->password->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->tbRePassword->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->tbRePassword->getName(), $this->element->tbRePassword->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->tbRePassword->helper}(
+                            $this->element->tbRePassword->getName(),
+                            $this->element->tbRePassword->getValue(),
+                            $this->element->tbRePassword->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->tbRePassword->getMessages()))) {
+                            echo $this->formErrors($this->element->tbRePassword->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->tbRePassword->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->email->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->email->getName(), $this->element->email->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->email->helper}(
+                            $this->element->email->getName(),
+                            $this->element->email->getValue(),
+                            $this->element->email->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->email->getMessages()))) {
+                            echo $this->formErrors($this->element->email->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->email->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->tbReEmail->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->tbReEmail->getName(), $this->element->tbReEmail->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->tbReEmail->helper}(
+                            $this->element->tbReEmail->getName(),
+                            $this->element->tbReEmail->getValue(),
+                            $this->element->tbReEmail->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->tbReEmail->getMessages()))) {
+                            echo $this->formErrors($this->element->tbReEmail->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->tbReEmail->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->status->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->status->getName(), $this->element->status->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
 
-						<?php
-						echo $this->{$this->element->status->helper}(
-									$this->element->status->getName(),
-									$this->element->status->getValue(),
-									$this->element->status->getAttribs(),
-									$this->element->status->getMultiOptions(),
-									'&nbsp;&nbsp;&nbsp;'
-								);
-			    		?>
-			    		<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->status->getMessages()))){ echo $this->formErrors($this->element->status->getMessages());} ?>
-			    		<p class="description"><?php echo $this->element->status->getDescription() ?></p>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="regSubForm">
-			<h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("customers_create_title_basic");?></h3>
-			<table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
-				<col width="200" />
-				<tr>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->salutation->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->salutation->getName(), $this->element->salutation->getLabel(), $attribs);?>
-					</td>
-					<td>
-						 <?php
-						echo $this->{$this->element->salutation->helper}(
-									$this->element->salutation->getName(),
-									$this->element->salutation->getValue(),
-									$this->element->salutation->getAttribs(),
-									$this->element->salutation->getMultiOptions()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->salutation->getMessages()))){ echo $this->formErrors($this->element->salutation->getMessages());} ?>
-						<p class="description"><?php echo $this->element->salutation->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->firstname->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->firstname->getName(), $this->element->firstname->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->firstname->helper}(
-									$this->element->firstname->getName(),
-									$this->element->firstname->getValue(),
-									$this->element->firstname->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->firstname->getMessages()))){ echo $this->formErrors($this->element->firstname->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->firstname->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->lastname->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->lastname->getName(), $this->element->lastname->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->lastname->helper}(
-									$this->element->lastname->getName(),
-									$this->element->lastname->getValue(),
-									$this->element->lastname->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->lastname->getMessages()))){ echo $this->formErrors($this->element->lastname->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->lastname->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->cnp->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->cnp->getName(), $this->element->cnp->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->cnp->helper}(
-									$this->element->cnp->getName(),
-									$this->element->cnp->getValue(),
-									$this->element->cnp->getAttribs()
-								);
-						?>
-						<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->cnp->getMessages()))){ echo $this->formErrors($this->element->cnp->getMessages());} ?>
-						<p class="description"><small><?php echo $this->element->cnp->getDescription() ?></small></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->seria->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->seria->getName(), $this->element->seria->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->seria->helper}(
-									$this->element->seria->getName(),
-									$this->element->seria->getValue(),
-									$this->element->seria->getAttribs()
-								);
-						?>
-						<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->seria->getMessages()))){ echo $this->formErrors($this->element->seria->getMessages());} ?>
-						<p class="description"><small><?php echo $this->element->seria->getDescription() ?></small></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->address->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->address->getName(), $this->element->address->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->address->helper}(
-									$this->element->address->getName(),
-									$this->element->address->getValue(),
-									$this->element->address->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->address->getMessages()))){ echo $this->formErrors($this->element->address->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->address->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->county->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->county->getName(), $this->element->county->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<div id="suggestCounty">
-							<?php
-								echo $this->{$this->element->county->helper}(
-											$this->element->county->getName(),
-											$this->element->county->getValue(),
-											$this->element->county->getAttribs()
-										);
-							?>
-							<?php if('<ul class="errors"><li></li></ul>'!=($this->element->county->getMessages())){ echo  $this->formErrors($this->element->county->getMessages());} ?>
-							<div class="hint"><?php echo $this->element->county->getDescription(); ?></div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->city->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->city->getName(), $this->element->city->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->city->helper}(
-									$this->element->city->getName(),
-									$this->element->city->getValue(),
-									$this->element->city->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->city->getMessages()))){ echo $this->formErrors($this->element->city->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->city->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->zip->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->zip->getName(), $this->element->zip->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-						echo $this->{$this->element->zip->helper}(
-									$this->element->zip->getName(),
-									$this->element->zip->getValue(),
-									$this->element->zip->getAttribs()
-								);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->zip->getMessages()))){ echo $this->formErrors($this->element->zip->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->zip->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->phone->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->phone->getName(), $this->element->phone->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-							echo $this->{$this->element->phone->helper}(
-										$this->element->phone->getName(),
-										$this->element->phone->getValue(),
-										$this->element->phone->getAttribs()
-									);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->phone->getMessages()))){ echo $this->formErrors($this->element->phone->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->phone->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->phone2->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->phone2->getName(), $this->element->phone2->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-							echo $this->{$this->element->phone2->helper}(
-										$this->element->phone2->getName(),
-										$this->element->phone2->getValue(),
-										$this->element->phone2->getAttribs()
-									);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->phone2->getMessages()))){ echo $this->formErrors($this->element->phone2->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->phone2->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">
-						<?php
-						$attribs = array();
-						if ($this->element->fax->isRequired()) {
-							$attribs['class'] = 'required';
-						}
-						echo $this->formLabel($this->element->fax->getName(), $this->element->fax->getLabel(), $attribs);?>
-					</td>
-					<td>
-						<?php
-							echo $this->{$this->element->fax->helper}(
-										$this->element->fax->getName(),
-										$this->element->fax->getValue(),
-										$this->element->fax->getAttribs()
-									);
-						?>
-				    	<?php if('<ul class="errors"><li></li></ul>'!=($this->formErrors($this->element->fax->getMessages()))){ echo $this->formErrors($this->element->fax->getMessages());} ?>
-				    	<p class="description"><?php echo $this->element->fax->getDescription() ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td valign="top">&nbsp;</td>
-					<td>
-						<?php
-							echo $this->{$this->element->submit->helper}(
-										$this->element->submit->getName(),
-										$this->element->submit->getValue(),
-										$this->element->submit->getAttribs()
-									);
-						?>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
+                        <?php
+                        echo $this->{$this->element->status->helper}(
+                            $this->element->status->getName(),
+                            $this->element->status->getValue(),
+                            $this->element->status->getAttribs(),
+                            $this->element->status->getMultiOptions(),
+                            '&nbsp;&nbsp;&nbsp;'
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->status->getMessages()))) {
+                            echo $this->formErrors($this->element->status->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->status->getDescription() ?></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="regSubForm">
+            <h3 class="expandable"><?php echo Zend_Registry::get('translate')->_("customers_create_title_basic"); ?></h3>
+            <table width="100%" cellpadding="0" cellspacing="5" class="tableAdmin">
+                <col width="200"/>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->salutation->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->salutation->getName(), $this->element->salutation->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->salutation->helper}(
+                            $this->element->salutation->getName(),
+                            $this->element->salutation->getValue(),
+                            $this->element->salutation->getAttribs(),
+                            $this->element->salutation->getMultiOptions()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->salutation->getMessages()))) {
+                            echo $this->formErrors($this->element->salutation->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->salutation->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->firstname->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->firstname->getName(), $this->element->firstname->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->firstname->helper}(
+                            $this->element->firstname->getName(),
+                            $this->element->firstname->getValue(),
+                            $this->element->firstname->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->firstname->getMessages()))) {
+                            echo $this->formErrors($this->element->firstname->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->firstname->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->lastname->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->lastname->getName(), $this->element->lastname->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->lastname->helper}(
+                            $this->element->lastname->getName(),
+                            $this->element->lastname->getValue(),
+                            $this->element->lastname->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->lastname->getMessages()))) {
+                            echo $this->formErrors($this->element->lastname->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->lastname->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->cnp->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->cnp->getName(), $this->element->cnp->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->cnp->helper}(
+                            $this->element->cnp->getName(),
+                            $this->element->cnp->getValue(),
+                            $this->element->cnp->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->cnp->getMessages()))) {
+                            echo $this->formErrors($this->element->cnp->getMessages());
+                        } ?>
+                        <p class="description">
+                            <small><?php echo $this->element->cnp->getDescription() ?></small>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->seria->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->seria->getName(), $this->element->seria->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->seria->helper}(
+                            $this->element->seria->getName(),
+                            $this->element->seria->getValue(),
+                            $this->element->seria->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->seria->getMessages()))) {
+                            echo $this->formErrors($this->element->seria->getMessages());
+                        } ?>
+                        <p class="description">
+                            <small><?php echo $this->element->seria->getDescription() ?></small>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->address->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->address->getName(), $this->element->address->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->address->helper}(
+                            $this->element->address->getName(),
+                            $this->element->address->getValue(),
+                            $this->element->address->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->address->getMessages()))) {
+                            echo $this->formErrors($this->element->address->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->address->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->county->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->county->getName(), $this->element->county->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <div id="suggestCounty">
+                            <?php
+                            echo $this->{$this->element->county->helper}(
+                                $this->element->county->getName(),
+                                $this->element->county->getValue(),
+                                $this->element->county->getAttribs()
+                            );
+                            ?>
+                            <?php if ('<ul class="errors"><li></li></ul>' != ($this->element->county->getMessages())) {
+                                echo $this->formErrors($this->element->county->getMessages());
+                            } ?>
+                            <div class="hint"><?php echo $this->element->county->getDescription(); ?></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->city->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->city->getName(), $this->element->city->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->city->helper}(
+                            $this->element->city->getName(),
+                            $this->element->city->getValue(),
+                            $this->element->city->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->city->getMessages()))) {
+                            echo $this->formErrors($this->element->city->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->city->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->zip->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->zip->getName(), $this->element->zip->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->zip->helper}(
+                            $this->element->zip->getName(),
+                            $this->element->zip->getValue(),
+                            $this->element->zip->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->zip->getMessages()))) {
+                            echo $this->formErrors($this->element->zip->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->zip->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->phone->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->phone->getName(), $this->element->phone->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->phone->helper}(
+                            $this->element->phone->getName(),
+                            $this->element->phone->getValue(),
+                            $this->element->phone->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->phone->getMessages()))) {
+                            echo $this->formErrors($this->element->phone->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->phone->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->phone2->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->phone2->getName(), $this->element->phone2->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->phone2->helper}(
+                            $this->element->phone2->getName(),
+                            $this->element->phone2->getValue(),
+                            $this->element->phone2->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->phone2->getMessages()))) {
+                            echo $this->formErrors($this->element->phone2->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->phone2->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <?php
+                        $attribs = array();
+                        if ($this->element->fax->isRequired()) {
+                            $attribs['class'] = 'required';
+                        }
+                        echo $this->formLabel($this->element->fax->getName(), $this->element->fax->getLabel(), $attribs); ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->fax->helper}(
+                            $this->element->fax->getName(),
+                            $this->element->fax->getValue(),
+                            $this->element->fax->getAttribs()
+                        );
+                        ?>
+                        <?php if ('<ul class="errors"><li></li></ul>' != ($this->formErrors($this->element->fax->getMessages()))) {
+                            echo $this->formErrors($this->element->fax->getMessages());
+                        } ?>
+                        <p class="description"><?php echo $this->element->fax->getDescription() ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">&nbsp;</td>
+                    <td>
+                        <?php
+                        echo $this->{$this->element->submit->helper}(
+                            $this->element->submit->getName(),
+                            $this->element->submit->getValue(),
+                            $this->element->submit->getAttribs()
+                        );
+                        ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </form>
 
 <?php $this->headScript()->captureStart() ?>
-	$(document).ready(function() {
-		 $("#<?php echo $this->element->getId();?>").validationEngine();
-	});
+$(document).ready(function() {
+$("#<?php echo $this->element->getId(); ?>").validationEngine();
+});
 <?php $this->headScript()->captureEnd() ?>

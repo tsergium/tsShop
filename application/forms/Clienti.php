@@ -1,11 +1,12 @@
 <?php
+
 class Default_Form_Clienti extends Zend_Form
 {
-	function init()
-	{
-		// Set the method for the display form to POST
+    function init()
+    {
+        // Set the method for the display form to POST
         $this->setMethod('post');
-        $this->addAttribs(array('id'=>'frmAccount'));
+        $this->addAttribs(array('id' => 'frmAccount'));
         $this->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
 
         //Customer information
@@ -14,19 +15,19 @@ class Default_Form_Clienti extends Zend_Form
         $username->setRequired(true);
         $username->addFilter('StringTrim');
         $usernameStringAlnum = new Zend_Validate_Alnum();
-        $usernameValidateDbNotExists = new Zend_Validate_Db_NoRecordExists(array('table'=>'ts_clients', 'field'=>'username'));
-        $username->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,custom[onlyLetterNumber],minSize[3],maxSize[50]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
-        $username->addValidator(new Zend_Validate_StringLength(3,120));
+        $usernameValidateDbNotExists = new Zend_Validate_Db_NoRecordExists(array('table' => 'ts_clients', 'field' => 'username'));
+        $username->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,custom[onlyLetterNumber],minSize[3],maxSize[50]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
+        $username->addValidator(new Zend_Validate_StringLength(3, 120));
         $username->addValidators(array($usernameStringAlnum, $usernameValidateDbNotExists));
         $this->addElement($username);
-        
-	$password = new Zend_Form_Element_Password('password');
+
+        $password = new Zend_Form_Element_Password('password');
         $password->setLabel('Parola');
         $password->setRequired(true);
         $password->addFilter('StringTrim');
-        $validPasswordLength = new Zend_Validate_StringLength(6,20);
+        $validPasswordLength = new Zend_Validate_StringLength(6, 20);
         $password->addValidators(array($validPasswordLength));
-        $password->setAttribs(array('class'=>'f4 validate[required,minSize[6],maxSize[20]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $password->setAttribs(array('class' => 'f4 validate[required,minSize[6],maxSize[20]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $password->setDescription('Nota: Parola trebuie să fie între 6 şi 20 de caractere');
         $password->setIgnore(true);
         $this->addElement($password);
@@ -36,7 +37,7 @@ class Default_Form_Clienti extends Zend_Form
         $tbRePassword->setAllowEmpty(false);
         $tbRePassword->setRequired(true);
         $tbRePassword->addFilter('StringTrim');
-        $tbRePassword->setAttribs(array('class'=>'f4 validate[equals[password]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $tbRePassword->setAttribs(array('class' => 'f4 validate[equals[password]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $validatePasswordIdenticalField = new App_Validate_IdenticalField('password', 'Password');
         $tbRePassword->addValidators(array($validatePasswordIdenticalField));
         $tbRePassword->setIgnore(true);
@@ -47,9 +48,12 @@ class Default_Form_Clienti extends Zend_Form
         $email->setRequired(true);
         $email->addFilter('StringTrim');
         $validateEmailAddress = new Zend_Validate_EmailAddress(Zend_Validate_Hostname::ALLOW_DNS);
-        try {$validateEmailAddress->setValidateMx(true);} catch (Exception $e) {}
-        $emailValidateDbNotExists = new Zend_Validate_Db_NoRecordExists(array('table'=>'ts_clients', 'field'=>'email'));
-        $email->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,custom[email]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        try {
+            $validateEmailAddress->setValidateMx(true);
+        } catch (Exception $e) {
+        }
+        $emailValidateDbNotExists = new Zend_Validate_Db_NoRecordExists(array('table' => 'ts_clients', 'field' => 'email'));
+        $email->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,custom[email]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $email->addValidators(array($validateEmailAddress, $emailValidateDbNotExists));
         $this->addElement($email);
 
@@ -60,47 +64,47 @@ class Default_Form_Clienti extends Zend_Form
         $tbReEmail->setAllowEmpty(false);
         $validateEmailIdenticalField = new App_Validate_IdenticalField('email', 'Email');
         $tbReEmail->addValidators(array($validateEmailIdenticalField));
-        $tbReEmail->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[equals[email]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $tbReEmail->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[equals[email]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $tbReEmail->setIgnore(true);
         $this->addElement($tbReEmail);
 
         //Basic information
         $clienttype = new Zend_Form_Element_Radio('clienttype');
         $clienttype->setLabel('');
-        $optionclienttype = array('0'=>'Persoana Fizica', '1'=>'Companie');
+        $optionclienttype = array('0' => 'Persoana Fizica', '1' => 'Companie');
         $clienttype->addMultiOptions($optionclienttype);
         $clienttype->addValidator(new Zend_Validate_InArray(array_keys($optionclienttype)));
         $clienttype->setValue("0");
         $clienttype->setSeparator('');
-        $clienttype->setAttribs(array('class'=>'validate[required]'));
+        $clienttype->setAttribs(array('class' => 'validate[required]'));
         $clienttype->setRequired(true);
         $this->addElement($clienttype);
-		
-		$firstname = new Zend_Form_Element_Text('firstname');
+
+        $firstname = new Zend_Form_Element_Text('firstname');
         $firstname->setLabel('Prenume');
         $firstname->setRequired(true);
         $firstname->addFilter('StringTrim');
         $firstname->addValidator(new Zend_Validate_Alpha(true));
-        $firstname->addValidator(new Zend_Validate_StringLength(3,45));
-        $firstname->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $firstname->addValidator(new Zend_Validate_StringLength(3, 45));
+        $firstname->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $this->addElement($firstname);
-        
+
         $lastname = new Zend_Form_Element_Text('lastname');
         $lastname->setLabel('Nume');
         $lastname->setRequired(true);
         $lastname->addFilter('StringTrim');
         $lastname->addValidator(new Zend_Validate_Alpha(true));
-        $lastname->addValidator(new Zend_Validate_StringLength(3,45));
-        $lastname->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $lastname->addValidator(new Zend_Validate_StringLength(3, 45));
+        $lastname->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $this->addElement($lastname);
 
-		$firstnameS = new Zend_Form_Element_Text('firstnameS');
+        $firstnameS = new Zend_Form_Element_Text('firstnameS');
         $firstnameS->setLabel('Prenume');
         $firstnameS->setRequired(true);
         $firstnameS->addFilter('StringTrim');
         $firstnameS->addValidator(new Zend_Validate_Alpha(true));
-        $firstnameS->addValidator(new Zend_Validate_StringLength(3,45));
-        $firstnameS->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $firstnameS->addValidator(new Zend_Validate_StringLength(3, 45));
+        $firstnameS->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $this->addElement($firstnameS);
 
         $lastnameS = new Zend_Form_Element_Text('lastnameS');
@@ -108,13 +112,13 @@ class Default_Form_Clienti extends Zend_Form
         $lastnameS->setRequired(true);
         $lastnameS->addFilter('StringTrim');
         $lastnameS->addValidator(new Zend_Validate_Alpha(true));
-        $lastnameS->addValidator(new Zend_Validate_StringLength(3,45));
-        $lastnameS->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $lastnameS->addValidator(new Zend_Validate_StringLength(3, 45));
+        $lastnameS->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[3],maxSize[50]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $this->addElement($lastnameS);
-        
+
         $birthday = new Zend_Form_Element_Text('birthday');
         $birthday->setLabel('Data nasterii');
-        $birthday->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,custom[date]]'));
+        $birthday->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,custom[date]]'));
         $birthday->setDescription('ex.1990-05-25');
         $birthday->setRequired(true);
         $this->addElement($birthday);
@@ -122,62 +126,62 @@ class Default_Form_Clienti extends Zend_Form
 
         $gender = new Zend_Form_Element_Radio('gender');
         $gender->setLabel('Sex');
-        $options = array('0'=>'Feminin', '1'=>'Masculin');
+        $options = array('0' => 'Feminin', '1' => 'Masculin');
         $gender->addMultiOptions($options);
         $gender->addValidator(new Zend_Validate_InArray(array_keys($options)));
         $gender->setValue('0');
         $gender->setSeparator('');
-        $gender->setAttribs(array('class'=>'validate[required]'));
+        $gender->setAttribs(array('class' => 'validate[required]'));
         $gender->setRequired(true);
-        $this->addElement($gender);		
-        
+        $this->addElement($gender);
+
         $address = new Zend_Form_Element_Text('address');
         $address->setLabel('Adresa');
-        $address->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[3],maxSize[50]]'));
+        $address->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[3],maxSize[50]]'));
         $address->setRequired(true);
         $address->setFilters(array(new Zend_Filter_StringTrim(),));
         $this->addElement($address);
-		
+
         $addressS = new Zend_Form_Element_Text('addressS');
         $addressS->setLabel('Adresa');
-        $addressS->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[3],maxSize[50]]'));
+        $addressS->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[3],maxSize[50]]'));
         $addressS->setRequired(true);
         $addressS->setFilters(array(new Zend_Filter_StringTrim(),));
         $this->addElement($addressS);
 
         $county = new Zend_Form_Element_Text('county');
         $county->setLabel('Judet');
-        $county->setAttribs(array('class'=>'f4 validate[required,maxSize[50]]','autocomplete'=>'off'));
+        $county->setAttribs(array('class' => 'f4 validate[required,maxSize[50]]', 'autocomplete' => 'off'));
         $county->setRequired(true);
         $this->addElement($county);
 
         $stateS = new Zend_Form_Element_Text('stateS');
         $stateS->setLabel('Judet');
-        $stateS->setAttribs(array('class'=>'f4 validate[required,maxSize[50]]','autocomplete'=>'off'));
+        $stateS->setAttribs(array('class' => 'f4 validate[required,maxSize[50]]', 'autocomplete' => 'off'));
         $stateS->setRequired(true);
         $this->addElement($stateS);
 
         $city = new Zend_Form_Element_Text('city');
         $city->setLabel('Oras');
-        $city->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[2],maxSize[50]]','autocomplete'=>'off'));
-        $city->setRequired(true);     
+        $city->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[2],maxSize[50]]', 'autocomplete' => 'off'));
+        $city->setRequired(true);
         $this->addElement($city);
 
         $zip = new Zend_Form_Element_Text('zip');
         $zip->setLabel('Cod postal');
-        $zip->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[minSize[2],maxSize[50]]'));
+        $zip->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[minSize[2],maxSize[50]]'));
         $zip->setRequired(FALSE);
         $this->addElement($zip);
 
         $zipcodeS = new Zend_Form_Element_Text('zipcodeS');
         $zipcodeS->setLabel('Cod postal');
-        $zipcodeS->setAttribs(array('maxlength'=>'10', 'class'=>'f4 validate[minSize[2],maxSize[10]]'));
+        $zipcodeS->setAttribs(array('maxlength' => '10', 'class' => 'f4 validate[minSize[2],maxSize[10]]'));
         $zipcodeS->setRequired(FALSE);
         $this->addElement($zipcodeS);
 
         $phone = new Zend_Form_Element_Text('phone');
         $phone->setLabel('Nr. telefon');
-        $phone->setAttribs(array('maxlength'=>'50', 'class'=>'f4 validate[required,minSize[3],maxSize[50]]'));
+        $phone->setAttribs(array('maxlength' => '50', 'class' => 'f4 validate[required,minSize[3],maxSize[50]]'));
         $phone->setRequired(true);
         $this->addElement($phone);
 
@@ -189,31 +193,31 @@ class Default_Form_Clienti extends Zend_Form
 
         $companyname = new Zend_Form_Element_Text('companyname');
         $companyname->setLabel('Denumire Companie');
-        $companyname->setAttribs(array('maxlength'=>'200', 'class'=>'f4 validate[required,minSize[3],maxSize[200]]'));
+        $companyname->setAttribs(array('maxlength' => '200', 'class' => 'f4 validate[required,minSize[3],maxSize[200]]'));
         $companyname->setRequired(false);
         $this->addElement($companyname);
 
         $fiscalcode = new Zend_Form_Element_Text('fiscalcode');
         $fiscalcode->setLabel('Cod fiscal');
-        $fiscalcode->setAttribs(array('maxlength'=>'120', 'class'=>'f4 validate[required,minSize[3],maxSize[120]]'));
+        $fiscalcode->setAttribs(array('maxlength' => '120', 'class' => 'f4 validate[required,minSize[3],maxSize[120]]'));
         $fiscalcode->setRequired(false);
         $this->addElement($fiscalcode);
 
         $traderegister = new Zend_Form_Element_Text('traderegister');
         $traderegister->setLabel('Cod Reg. Com.');
-        $traderegister->setAttribs(array('maxlength'=>'120', 'class'=>'f4 validate[required,minSize[2],maxSize[120]]'));
+        $traderegister->setAttribs(array('maxlength' => '120', 'class' => 'f4 validate[required,minSize[2],maxSize[120]]'));
         $traderegister->setRequired(false);
         $this->addElement($traderegister);
 
         $bank = new Zend_Form_Element_Text('bank');
         $bank->setLabel('Banca');
-        $bank->setAttribs(array('maxlength'=>'120', 'class'=>'f4 validate[minSize[2],maxSize[120]]'));
+        $bank->setAttribs(array('maxlength' => '120', 'class' => 'f4 validate[minSize[2],maxSize[120]]'));
         $bank->setRequired(false);
         $this->addElement($bank);
 
         $bankaccount = new Zend_Form_Element_Text('bankaccount');
         $bankaccount->setLabel('Cont bancar');
-        $bankaccount->setAttribs(array('maxlength'=>'120', 'class'=>'f4 validate[minSize[3],maxSize[120]]'));
+        $bankaccount->setAttribs(array('maxlength' => '120', 'class' => 'f4 validate[minSize[3],maxSize[120]]'));
         $bankaccount->setRequired(false);
         $this->addElement($bankaccount);
 
@@ -226,48 +230,48 @@ class Default_Form_Clienti extends Zend_Form
 
         $submit = new Zend_Form_Element_Submit('submit');
         $submit->setValue('Trimite');
-        $submit->setAttribs(array('class'=>'button1'));
+        $submit->setAttribs(array('class' => 'button1'));
         $submit->setIgnore(true);
         $this->addElement($submit);
-	}
+    }
 
-	public function edit(Default_Model_Clients $client)
-	{
+    public function edit(Default_Model_Clients $client)
+    {
 //		// Set the method for the display form to POST
-		$this->clienttype->setValue($client->getClienttype());
+        $this->clienttype->setValue($client->getClienttype());
 
-		$this->firstnameS->setValue($client->getFirstnameS());
-		$this->lastnameS->setValue($client->getLastnameS());
-		$this->firstname->setValue($client->getFirstname());
-		$this->lastname->setValue($client->getLastname());
-		$this->birthday->setValue(date('Y-m-d',$client->getBirthday()));
-		$this->gender->setValue($client->getGender());
-		
-		$this->address->setValue($client->getAddress());		
-		$this->county->setValue($client->getCounty());
-		$this->addressS->setValue($client->getAddressS());
-		$this->stateS->setValue($client->getStateS());
-		$this->zipcodeS->setValue($client->getZipcodeS());
-		$this->city->setValue($client->getCity());
-		$this->zip->setValue($client->getZip());
-		$this->phone->setValue($client->getPhone());
+        $this->firstnameS->setValue($client->getFirstnameS());
+        $this->lastnameS->setValue($client->getLastnameS());
+        $this->firstname->setValue($client->getFirstname());
+        $this->lastname->setValue($client->getLastname());
+        $this->birthday->setValue(date('Y-m-d', $client->getBirthday()));
+        $this->gender->setValue($client->getGender());
+
+        $this->address->setValue($client->getAddress());
+        $this->county->setValue($client->getCounty());
+        $this->addressS->setValue($client->getAddressS());
+        $this->stateS->setValue($client->getStateS());
+        $this->zipcodeS->setValue($client->getZipcodeS());
+        $this->city->setValue($client->getCity());
+        $this->zip->setValue($client->getZip());
+        $this->phone->setValue($client->getPhone());
 //		$this->fax->setValue($client->getFax());
-		$this->email->setValue($client->getEmail());
+        $this->email->setValue($client->getEmail());
 //
-		$this->companyname->setValue($client->getCompanyname());
-		$this->fiscalcode->setValue($client->getFiscalcode());
-		$this->traderegister->setValue($client->getTraderegister());
-		$this->bank->setValue($client->getBank());
-		$this->bankaccount->setValue($client->getBankaccount());
+        $this->companyname->setValue($client->getCompanyname());
+        $this->fiscalcode->setValue($client->getFiscalcode());
+        $this->traderegister->setValue($client->getTraderegister());
+        $this->bank->setValue($client->getBank());
+        $this->bankaccount->setValue($client->getBankaccount());
 //
-		$this->submit->setValue('Modifica');
+        $this->submit->setValue('Modifica');
 //
-		$emailValidateDbNotExists = $this->email->getValidator('Zend_Validate_Db_NoRecordExists');
-		$emailValidateDbNotExists->setExclude(array('field'=>'email', 'value' => $client->getEmail()));
-		$this->removeElement('password');
-		$this->removeElement('tbRePassword');
-		$this->removeElement('tbReEmail');
-		$this->removeElement('newsletter');
-		$this->removeElement('username');
-	}
+        $emailValidateDbNotExists = $this->email->getValidator('Zend_Validate_Db_NoRecordExists');
+        $emailValidateDbNotExists->setExclude(array('field' => 'email', 'value' => $client->getEmail()));
+        $this->removeElement('password');
+        $this->removeElement('tbRePassword');
+        $this->removeElement('tbReEmail');
+        $this->removeElement('newsletter');
+        $this->removeElement('username');
+    }
 }

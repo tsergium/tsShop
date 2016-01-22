@@ -1,77 +1,82 @@
 <div class="right_col">
-	<!--inceput modu logare-->
-	<div class="sus_modul"></div>
-	<div class="modul_right">
-		<?php if($this->authClient == null){ ?>
-			
-		<?php }else{ ?>
-			<p><a class="link" href="<?php echo WEBPAGE_ADDRESS;?>/user/orders">Istoric Comenzi</a></p>
-			<p><a class="link" href="<?php echo WEBPAGE_ADDRESS;?>/user/myaccount">Detalii Cont</a></p>
-			<p><a class="link" href="<?php echo WEBPAGE_ADDRESS;?>/user/editaccount">Editare Detalii</a></p>
-			<p><a class="link" href="<?php echo WEBPAGE_ADDRESS;?>/auth/logout">Deconectare</a></p>
-		<?php } ?>
-	</div>
-	<div class="jos_modul"></div>
-	
-	<!--inceput modul newsletter-->
-	<div class="sus_modul" style="margin-top:5px;"></div>
-	<div class="modul_right">
-		<ul>
-			<li class="titlu1">Newsletter: </li>
-			<li class="continut">Afla primul noutatile!</li>
-			<li>			
-				<?php echo $this->formNewletter; ?>
-			</li>
-		</ul>
-	</div>
-	<div class="jos_modul"></div>
-	
-	<!--inceput modul cos-->
-	<div class="sus_cos" style="margin-top:5px;"></div>
-	<div class="modul_cos">
-		<p class="paragraf">Cosul de cumparaturi<br /> contine <?php echo $this->prodCartNr?$this->prodCartNr:"0";?> produse</p>
-		<img src="<?php echo WEBPAGE_ADDRESS;?>/images/cos.jpg" alt="cos" />
-		<div style="height:1px; clear:both; "></div>
-		<?php if(null != $this->prodCartTotal){?>
-		<div class="total">
-			<p class="fl">Total: <?php echo $this->prodCartTotal;?> Ron</p>
-			<p class="fr"><a href="<?php echo WEBPAGE_ADDRESS;?>/cart" title="Vezi cosul">Vezi cosul</a></p>
-		</div>
-		<?php }?>
-	</div>
-	<div class="jos_modul"></div>
+    <!--inceput modu logare-->
+    <div class="sus_modul"></div>
+    <div class="modul_right">
+        <?php if ($this->authClient == null) { ?>
 
-	<!--inceput modul cele mai vandute produse-->
-	<?php if(($value = $this->bestSellers)){ ?>
-	<div class="contur">
-		<div class="modul_poza1">
-			<?php $categ = getProdCateg($value->getId()); ?>
-			<a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $this->url(array('id' => $value->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($categ."-".$value->getName())),),'product'); ?>">
-				<img src="<?php echo WEBPAGE_ADDRESS;?><?php echo null != $value->getImage()?"/media/products/big/".$value->getImage():"/images/no-pic-small.jpg";?>" alt="<?php echo $value->getName();?>" title="<?php echo $value->getName();?>" border="0" width="186"/>
-			</a>
-		</div>
-		<div class="modul_continut1">
-			<ul>
-				<li>
-					<p class="titlu_continut1">Cel mai vandut produs</p>
-				</li>
-				<li>
-					<p class="denumire_continut1">
-						<a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $this->url(array('id' => $value->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($categ."-".$value->getName())),),'product'); ?>">
-							<?php echo $value->getName(); ?>
-						</a>
-					</p>
-				</li>
-				<li>
-					<div class="pret_continut1">
-						<p>Pret: <span><?php echo $value->getPrice();?> RON</span></p>
-						<a href="<?php echo WEBPAGE_ADDRESS;?><?php echo $this->url(array('id' => $value->getId(),'categAndName' => preg_replace('/[^a-zA-Z0-9]+/','-', strtolower($categ."-".$value->getName())),),'product'); ?>">
-							<img src="<?php echo WEBPAGE_ADDRESS;?>/images/bt_detalii_gri.gif" alt="detalii" border="0" />
-						</a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<?php } ?>
+        <?php } else { ?>
+            <p><a class="link" href="<?php echo WEBPAGE_ADDRESS; ?>/user/orders">Istoric Comenzi</a></p>
+            <p><a class="link" href="<?php echo WEBPAGE_ADDRESS; ?>/user/myaccount">Detalii Cont</a></p>
+            <p><a class="link" href="<?php echo WEBPAGE_ADDRESS; ?>/user/editaccount">Editare Detalii</a></p>
+            <p><a class="link" href="<?php echo WEBPAGE_ADDRESS; ?>/auth/logout">Deconectare</a></p>
+        <?php } ?>
+    </div>
+    <div class="jos_modul"></div>
+
+    <!--inceput modul newsletter-->
+    <div class="sus_modul" style="margin-top:5px;"></div>
+    <div class="modul_right">
+        <ul>
+            <li class="titlu1">Newsletter:</li>
+            <li class="continut">Afla primul noutatile!</li>
+            <li>
+                <?php echo $this->formNewletter; ?>
+            </li>
+        </ul>
+    </div>
+    <div class="jos_modul"></div>
+
+    <!--inceput modul cos-->
+    <div class="sus_cos" style="margin-top:5px;"></div>
+    <div class="modul_cos">
+        <p class="paragraf">Cosul de cumparaturi<br/> contine <?php echo $this->prodCartNr ? $this->prodCartNr : "0"; ?>
+            produse</p>
+        <img src="<?php echo WEBPAGE_ADDRESS; ?>/images/cos.jpg" alt="cos"/>
+        <div style="height:1px; clear:both; "></div>
+        <?php if (null != $this->prodCartTotal) { ?>
+            <div class="total">
+                <p class="fl">Total: <?php echo $this->prodCartTotal; ?> Ron</p>
+                <p class="fr"><a href="<?php echo WEBPAGE_ADDRESS; ?>/cart" title="Vezi cosul">Vezi cosul</a></p>
+            </div>
+        <?php } ?>
+    </div>
+    <div class="jos_modul"></div>
+
+    <!--inceput modul cele mai vandute produse-->
+    <?php if (($value = $this->bestSellers)) { ?>
+        <div class="contur">
+            <div class="modul_poza1">
+                <?php $categ = getProdCateg($value->getId()); ?>
+                <a href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $this->url(array('id' => $value->getId(), 'categAndName' => preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($categ . "-" . $value->getName())),), 'product'); ?>">
+                    <img
+                        src="<?php echo WEBPAGE_ADDRESS; ?><?php echo null != $value->getImage() ? "/media/products/big/" . $value->getImage() : "/images/no-pic-small.jpg"; ?>"
+                        alt="<?php echo $value->getName(); ?>" title="<?php echo $value->getName(); ?>" border="0"
+                        width="186"/>
+                </a>
+            </div>
+            <div class="modul_continut1">
+                <ul>
+                    <li>
+                        <p class="titlu_continut1">Cel mai vandut produs</p>
+                    </li>
+                    <li>
+                        <p class="denumire_continut1">
+                            <a href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $this->url(array('id' => $value->getId(), 'categAndName' => preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($categ . "-" . $value->getName())),), 'product'); ?>">
+                                <?php echo $value->getName(); ?>
+                            </a>
+                        </p>
+                    </li>
+                    <li>
+                        <div class="pret_continut1">
+                            <p>Pret: <span><?php echo $value->getPrice(); ?> RON</span></p>
+                            <a href="<?php echo WEBPAGE_ADDRESS; ?><?php echo $this->url(array('id' => $value->getId(), 'categAndName' => preg_replace('/[^a-zA-Z0-9]+/', '-', strtolower($categ . "-" . $value->getName())),), 'product'); ?>">
+                                <img src="<?php echo WEBPAGE_ADDRESS; ?>/images/bt_detalii_gri.gif" alt="detalii"
+                                     border="0"/>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <?php } ?>
 </div>

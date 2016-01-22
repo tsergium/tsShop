@@ -1,72 +1,74 @@
-<?php if(!empty($this->message)) : ?>
-	<?php foreach($this->message as $value) : ?>
-		<div class="empty10"></div>
-		<?php echo $value; ?>
-	<?php endforeach; ?>
+<?php if (!empty($this->message)) : ?>
+    <?php foreach ($this->message as $value) : ?>
+        <div class="empty10"></div>
+        <?php echo $value; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
 
 <div class="empty10"></div>
-<?php echo $this->form;?>
+<?php echo $this->form; ?>
 
-<?php if(null != $this->result){?>
-<div class="empty10"></div>
-<table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
-	<col width="120" />
-	<col width="200" />
-	<col  />
-	<col width="120" />
-	<tr>
-		<th>Poza</th>
-		<th>Nume</th>
-		<th>Descriere</th>
-		<th>Optiuni</th>
-	</tr>
-	<?php foreach($this->result as $value){?>
-	<tr>		
-		<td align="center" height="70" valign="middle">
-		    <img src="/media/productsInstructions/<?php echo $value->getImage();?>" alt="<?php echo $value->getName();?>" />
-		</td>
-		<td><?php echo $value->getName();?></td>
-		<td align="center" valign="middle">
-		    <?php echo $value->getDescription();?>
-		</td>
-		<td align="center" valign="middle">			
-			<a href="/admin/product/editinstructions/id/<?php echo $value->getId();?>" title="Modifica">
-				<img src="/images/admin/icons/edit.png" alt="modifica" />
-			</a>
-			<a class="confirmDelete" href="/admin/product/deleteinstructions/id/<?php echo $value->getId();?>" title="Sterge">
-				<img src="/images/admin/icons/delete.png" alt="sterge" />
-			</a>
-		</td>
-	</tr>
-	<?php }?>	
-</table>
-<div class="clear"></div>
-<div id="confirmDelete" title="Mesaj de confirmare" style="display:none;">
-	Sunteţi sigur că doriţi să ştergeţi instructiunile?
-</div>
-<?php }?>
+<?php if (null != $this->result) { ?>
+    <div class="empty10"></div>
+    <table class="tableListingsAll" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <col width="120"/>
+        <col width="200"/>
+        <col/>
+        <col width="120"/>
+        <tr>
+            <th>Poza</th>
+            <th>Nume</th>
+            <th>Descriere</th>
+            <th>Optiuni</th>
+        </tr>
+        <?php foreach ($this->result as $value) { ?>
+            <tr>
+                <td align="center" height="70" valign="middle">
+                    <img src="/media/productsInstructions/<?php echo $value->getImage(); ?>"
+                         alt="<?php echo $value->getName(); ?>"/>
+                </td>
+                <td><?php echo $value->getName(); ?></td>
+                <td align="center" valign="middle">
+                    <?php echo $value->getDescription(); ?>
+                </td>
+                <td align="center" valign="middle">
+                    <a href="/admin/product/editinstructions/id/<?php echo $value->getId(); ?>" title="Modifica">
+                        <img src="/images/admin/icons/edit.png" alt="modifica"/>
+                    </a>
+                    <a class="confirmDelete" href="/admin/product/deleteinstructions/id/<?php echo $value->getId(); ?>"
+                       title="Sterge">
+                        <img src="/images/admin/icons/delete.png" alt="sterge"/>
+                    </a>
+                </td>
+            </tr>
+        <?php } ?>
+    </table>
+    <div class="clear"></div>
+    <div id="confirmDelete" title="Mesaj de confirmare" style="display:none;">
+        Sunteţi sigur că doriţi să ştergeţi instructiunile?
+    </div>
+<?php } ?>
 
 <script type="text/javascript">
-$(document).ready(function(){
-	$('.confirmDelete').click(function(){
-		var link = $(this);
-		$("#confirmDelete").dialog({
-			bgiframe: true,
-			height: 140,
-			width: 400,
-			modal: true,
-			buttons:{
-				'<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function(){
-					$(this).dialog('close').dialog('destroy');
-					window.location.href = link.attr('href');
-				},
-				'<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function(){
-					$(this).dialog('close').dialog('destroy');
-				}
-			}
-		});
-		return false;
-	});
-});
+    $(document).ready(function () {
+        $('.confirmDelete').click(function () {
+            var link = $(this);
+            $("#confirmDelete").dialog({
+                bgiframe: true,
+                height: 140,
+                width: 400,
+                modal: true,
+                buttons: {
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_yes'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                        window.location.href = link.attr('href');
+                    },
+                    '<?php echo Zend_Registry::get('translate')->_('confirmation_no'); ?>': function () {
+                        $(this).dialog('close').dialog('destroy');
+                    }
+                }
+            });
+            return false;
+        });
+    });
 </script>

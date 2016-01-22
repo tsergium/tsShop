@@ -1,7 +1,19 @@
 <style>
-    .grid-item { width: 200px;margin: 0 5px 5px 5px;background-color: #ffffff;border-radius: 0 0 5px 5px; }
-    .grid-item .image img { border-radius: 5px 5px 0 0;cursor: zoom-in; }
-    .grid-item .name, .grid-item .price, .grid-item .details { padding:0 10px; }
+    .grid-item {
+        width: 200px;
+        margin: 0 5px 5px 5px;
+        background-color: #ffffff;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .grid-item .image img {
+        border-radius: 5px 5px 0 0;
+        cursor: zoom-in;
+    }
+
+    .grid-item .name, .grid-item .price, .grid-item .details {
+        padding: 0 10px;
+    }
 </style>
 
 <?php
@@ -15,62 +27,64 @@ endif;
 
 <?php if ($this->products): ?>
     <div class="grid">
-    <?php foreach ($this->products as $product): ?>
-        <div class="grid-item" data-active="false" data-url="<?php echo $product->getUrlOrigin() ?>">
-            <div class="image">
-                <img width="200" src="<?php echo WEBPAGE_ADDRESS . '/media/products/shopmania/' . $product->getImageShopmania() ?>" alt="" \>
+        <?php foreach ($this->products as $product): ?>
+            <div class="grid-item" data-active="false" data-url="<?php echo $product->getUrlOrigin() ?>">
+                <div class="image">
+                    <img width="200"
+                         src="<?php echo WEBPAGE_ADDRESS . '/media/products/shopmania/' . $product->getImageShopmania() ?>"
+                         alt="" \>
+                </div>
+                <div class="name"><?php echo $product->getName() ?></div>
+                <div class="price">
+                    <span class="old"><?php echo $product->getOldprice() ?></span>
+                    <span class="new"><?php echo $product->getPrice() ?></span>
+                </div>
+                <div class="details">details</div>
             </div>
-            <div class="name"><?php echo $product->getName() ?></div>
-            <div class="price">
-                <span class="old"><?php echo $product->getOldprice() ?></span>
-                <span class="new"><?php echo $product->getPrice() ?></span>
-            </div>
-            <div class="details">details</div>
-        </div>
-    <?php endforeach ?>
+        <?php endforeach ?>
     </div>
 <?php endif ?>
 
 
-
 <script>
-$(function() {
-    $(".grid-item").each(function(){
-        $(this).click(function(){
-            var docHeight = $(document).height();
-            var itemName = $(".name", this).text();
-            var overlay = "<div id='overlay'>" +
-                                "<div id='overlay-item'>" +
-                                    "<div id='overlay-name' style='text-align: center;'>" + itemName + "</div>" +
-                                    "<img style='display: block;margin-left: auto;margin-right: auto;' src='" + $(".image img", this).attr("src") + "'>" +
-                                    "<a id='overlay-close'>close</a></div>" +
-                                "</div>" +
-                            "</div>";
-            $("body").append(overlay);
+    $(function () {
+        $(".grid-item").each(function () {
+            $(this).click(function () {
+                var docHeight = $(document).height();
+                var itemName = $(".name", this).text();
+                var urlOrigin = $(this).data("url");
+                var overlay = "<div id='overlay'>" +
+                    "<div id='overlay-item' data-url='" + urlOrigin + "'>" +
+                    "<div id='overlay-name' style='text-align: center;'>" + itemName + "</div>" +
+                    "<img style='display: block;margin-left: auto;margin-right: auto;' src='" + $(".image img", this).attr("src") + "'>" +
+                    "<a id='overlay-close'>close</a></div>" +
+                    "</div>" +
+                    "</div>";
+                $("body").append(overlay);
 
-            $("#overlay")
-                .height(docHeight)
-                .css({
-                    'opacity' : 1,
-                    'display' : 'block',
-                    'position': 'absolute',
-                    'top': 0,
-                    'left': 0,
-                    'background-color': 'rgba(247, 247, 247, 0.960784)',
-                    'width': '100%',
-                    'z-index': 5000
-                });
+                $("#overlay")
+                    .height(docHeight)
+                    .css({
+                        'opacity': 1,
+                        'display': 'block',
+                        'position': 'absolute',
+                        'top': 0,
+                        'left': 0,
+                        'background-color': 'rgba(247, 247, 247, 0.960784)',
+                        'width': '100%',
+                        'z-index': 5000
+                    });
+            });
+        });
+
+        $(document).keyup(function (e) {
+            // on Enter
+            if (e.keyCode == 13) { // on Enter
+                $(location).attr('href', $("#overlay").data("url"));
+            }
+            if (e.keyCode == 27) { // on Esc
+                $("#overlay").remove();
+            }
         });
     });
-
-    $(document).keyup(function(e) {
-        // on Enter
-        if (e.keyCode == 13) { // on Enter
-            //$(location).attr('href', 'http://stackoverflow.com')
-        }
-        if (e.keyCode == 27) { // on Esc
-            $("#overlay").remove();
-        }
-    });
-});
 </script>

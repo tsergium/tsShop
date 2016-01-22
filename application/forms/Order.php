@@ -1,21 +1,22 @@
 <?php
+
 class Default_Form_Order extends Zend_Form
 {
-	function init()
-	{
-		// Set the method for the display form to POST
-		$this->setMethod('post');
-		$this->setAction('/submit');
-		$this->addAttribs(array('id'=>'frmOrder'));
-		$this->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
+    function init()
+    {
+        // Set the method for the display form to POST
+        $this->setMethod('post');
+        $this->setAction('/submit');
+        $this->addAttribs(array('id' => 'frmOrder'));
+        $this->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
 
-		$formorder = new Zend_Form_Element_Hidden('formorder');
-		$formorder->setValue('formorder');
+        $formorder = new Zend_Form_Element_Hidden('formorder');
+        $formorder->setValue('formorder');
 
-		$productsCost = new Zend_Form_Element_Hidden('productsCost');
-		$productsCost->setLabel('productsCost');
-		$productsCost->setAttribs(array());
-		$productsCost->setRequired(true);
+        $productsCost = new Zend_Form_Element_Hidden('productsCost');
+        $productsCost->setLabel('productsCost');
+        $productsCost->setAttribs(array());
+        $productsCost->setRequired(true);
 
 //		$model = new Default_Model_Company();
 //		$select = $model->getMapper()->getDbTable()->select();
@@ -33,37 +34,37 @@ class Default_Form_Order extends Zend_Form
 //				$vatValue = '0';
 //			}
 //		}
-		
+
 //		$vat = new Zend_Form_Element_Hidden('vat');
 //		$vat->setLabel('vat');
 //		$vat->setValue($vatValue);
 //		$vat->setAttribs(array());
 //		$vat->setRequired(false);
 
-		$tax = new Zend_Form_Element_Hidden('tax');
-		$tax->setLabel('tax');
-		$tax->setAttribs(array());
-		$tax->setRequired(false);
+        $tax = new Zend_Form_Element_Hidden('tax');
+        $tax->setLabel('tax');
+        $tax->setAttribs(array());
+        $tax->setRequired(false);
 
-		$discount = new Zend_Form_Element_Hidden('discount');
-		$discount->setLabel('discount');
-		$discount->setAttribs(array());
-		$discount->setRequired(false);
+        $discount = new Zend_Form_Element_Hidden('discount');
+        $discount->setLabel('discount');
+        $discount->setAttribs(array());
+        $discount->setRequired(false);
 
-		$ramburs = new Zend_Form_Element_Hidden('ramburs');
-		$ramburs->setLabel('ramburs');
-		$ramburs->setAttribs(array());
-		$ramburs->setRequired(false);
+        $ramburs = new Zend_Form_Element_Hidden('ramburs');
+        $ramburs->setLabel('ramburs');
+        $ramburs->setAttribs(array());
+        $ramburs->setRequired(false);
 
-		$totalCost = new Zend_Form_Element_Hidden('totalCost');
-		$totalCost->setLabel('totalCost');
-		$totalCost->setAttribs(array());
-		$totalCost->setRequired(true);
+        $totalCost = new Zend_Form_Element_Hidden('totalCost');
+        $totalCost->setLabel('totalCost');
+        $totalCost->setAttribs(array());
+        $totalCost->setRequired(true);
 
-		$payment = new Zend_Form_Element_Hidden('payment');
-		$payment->setLabel('payment');
-		$payment->setAttribs(array());
-		$payment->setRequired(false);
+        $payment = new Zend_Form_Element_Hidden('payment');
+        $payment->setLabel('payment');
+        $payment->setAttribs(array());
+        $payment->setRequired(false);
 
 //		$email = new Zend_Form_Element_Text('email');
 //        $email->setLabel(Zend_Registry::get('translate')->_('user_email'));
@@ -117,21 +118,21 @@ class Default_Form_Order extends Zend_Form
 //
 
 
-		$firstnameb = new Zend_Form_Element_Text('firstnameb');
+        $firstnameb = new Zend_Form_Element_Text('firstnameb');
         $firstnameb->setLabel(Zend_Registry::get('translate')->_('cart_first_name'));
         $firstnameb->setRequired(true);
         $firstnameb->addFilter('StringTrim');
         $firstnameb->addValidator(new Zend_Validate_Alpha(true));
-        $firstnameb->addValidator(new Zend_Validate_StringLength(3,45));
-        $firstnameb->setAttribs(array('maxlength'=>'45', 'class'=>'validate[required,minSize[3],maxSize[45]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $firstnameb->addValidator(new Zend_Validate_StringLength(3, 45));
+        $firstnameb->setAttribs(array('maxlength' => '45', 'class' => 'validate[required,minSize[3],maxSize[45]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
 
         $lastnameb = new Zend_Form_Element_Text('lastnameb');
         $lastnameb->setLabel(Zend_Registry::get('translate')->_('cart_last_name'));
         $lastnameb->setRequired(true);
         $lastnameb->addFilter('StringTrim');
         $lastnameb->addValidator(new Zend_Validate_Alpha(true));
-        $lastnameb->addValidator(new Zend_Validate_StringLength(3,45));
-        $lastnameb->setAttribs(array('maxlength'=>'45', 'class'=>'validate[required,minSize[3],maxSize[45]]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        $lastnameb->addValidator(new Zend_Validate_StringLength(3, 45));
+        $lastnameb->setAttribs(array('maxlength' => '45', 'class' => 'validate[required,minSize[3],maxSize[45]]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
 
 //		$cnpb = new Zend_Form_Element_Text('cnpb');
 //		$cnpb->setLabel(Zend_Registry::get('translate')->_('cart_cnp'));
@@ -180,30 +181,30 @@ class Default_Form_Order extends Zend_Form
 //		$department->setAttribs(array('maxlength'=>'120', 'class'=>'validate[required,minSize[1],maxSize[120]]'));
 //		$department->setRequired(true);
 
-		$addressb = new Zend_Form_Element_Text('addressb');
-		$addressb->setLabel(Zend_Registry::get('translate')->_('cart_address'));
-		$addressb->setAttribs(array('maxlength'=>'120', 'class'=>'validate[maxSize[120]]'));
-		$addressb->setRequired(false);
+        $addressb = new Zend_Form_Element_Text('addressb');
+        $addressb->setLabel(Zend_Registry::get('translate')->_('cart_address'));
+        $addressb->setAttribs(array('maxlength' => '120', 'class' => 'validate[maxSize[120]]'));
+        $addressb->setRequired(false);
 
 //		$countyb = new Zend_Form_Element_Text('countyb');
 //		$countyb->setLabel(Zend_Registry::get('translate')->_('cart_county'));
 //		$countyb->setAttribs(array('class'=>'validate[required]', 'autocomplete'=>'off'));
 //		$countyb->setRequired(true);
 
-		$cityb = new Zend_Form_Element_Text('cityb');
-		$cityb->setLabel(Zend_Registry::get('translate')->_('cart_town_city'));
-		$cityb->setAttribs(array('maxlength'=>'120', 'class'=>'validate[required,minSize[1],maxSize[120]]', 'autocomplete'=>'off'));
-		$cityb->setRequired(true);
+        $cityb = new Zend_Form_Element_Text('cityb');
+        $cityb->setLabel(Zend_Registry::get('translate')->_('cart_town_city'));
+        $cityb->setAttribs(array('maxlength' => '120', 'class' => 'validate[required,minSize[1],maxSize[120]]', 'autocomplete' => 'off'));
+        $cityb->setRequired(true);
 
 //		$zipb = new Zend_Form_Element_Text('zipb');
 //		$zipb->setLabel(Zend_Registry::get('translate')->_('cart_zip_postal'));
 //		$zipb->setAttribs(array('maxlength'=>'120', 'class'=>'validate[required,minSize[1],maxSize[120]]'));
 //		$zipb->setRequired(true);
 
-		$phoneb = new Zend_Form_Element_Text('phoneb');
-		$phoneb->setLabel(Zend_Registry::get('translate')->_('cart_phone'));
-		$phoneb->setAttribs(array('maxlength'=>'120', 'class'=>'validate[required,minSize[1],maxSize[120]]'));
-		$phoneb->setRequired(true);
+        $phoneb = new Zend_Form_Element_Text('phoneb');
+        $phoneb->setLabel(Zend_Registry::get('translate')->_('cart_phone'));
+        $phoneb->setAttribs(array('maxlength' => '120', 'class' => 'validate[required,minSize[1],maxSize[120]]'));
+        $phoneb->setRequired(true);
 
 //		$faxb = new Zend_Form_Element_Text('faxb');
 //		$faxb->setLabel(Zend_Registry::get('translate')->_('cart_fax'));
@@ -215,14 +216,17 @@ class Default_Form_Order extends Zend_Form
         $emailb->setRequired(true);
         $emailb->addFilter('StringTrim');
         $validateEmailAddress = new Zend_Validate_EmailAddress(Zend_Validate_Hostname::ALLOW_DNS);
-        try {$validateEmailAddress->setValidateMx(true);} catch (Exception $e) {}
-        $emailb->setAttribs(array('maxlength'=>'100', 'class'=>'validate[required,custom[email]', 'autocomplete'=>'off', 'oncontextmenu'=>'return false', 'ondrop'=>'return false', 'onpaste'=>'return false'));
+        try {
+            $validateEmailAddress->setValidateMx(true);
+        } catch (Exception $e) {
+        }
+        $emailb->setAttribs(array('maxlength' => '100', 'class' => 'validate[required,custom[email]', 'autocomplete' => 'off', 'oncontextmenu' => 'return false', 'ondrop' => 'return false', 'onpaste' => 'return false'));
         $emailb->addValidators(array($validateEmailAddress));
 
-		$comments = new Zend_Form_Element_Textarea('comments');
-		$comments->setLabel(Zend_Registry::get('translate')->_('cart_comments'));
-		$comments->setAttribs(array());
-		$comments->setRequired(false);
+        $comments = new Zend_Form_Element_Textarea('comments');
+        $comments->setLabel(Zend_Registry::get('translate')->_('cart_comments'));
+        $comments->setAttribs(array());
+        $comments->setRequired(false);
 
 //		$salutations = new Zend_Form_Element_Select('salutations');
 //		$salutations->setLabel(Zend_Registry::get('translate')->_('cart_salutation'));
@@ -283,10 +287,10 @@ class Default_Form_Order extends Zend_Form
 //		$phones->setAttribs(array('maxlength'=>'120', 'class'=>'validate[required,minSize[1],maxSize[120]]'));
 //		$phones->setRequired(true);
 
-		$submit = new Zend_Form_Element_Submit('submit');
-		$submit->setValue(Zend_Registry::get('translate')->_('cart_continue'));
-		$submit->setAttribs(array('class'=>'blue-big mb20'));
-		$submit->setIgnore(true);
+        $submit = new Zend_Form_Element_Submit('submit');
+        $submit->setValue(Zend_Registry::get('translate')->_('cart_continue'));
+        $submit->setAttribs(array('class' => 'blue-big mb20'));
+        $submit->setIgnore(true);
 
 //		$this->addElements(array($formorder, $productsCost, $vat, $tax, $discount, $ramburs, $totalCost, $payment,
 //			$password, $tbRePassword, $email, $tbReEmail,
@@ -295,55 +299,55 @@ class Default_Form_Order extends Zend_Form
 //			$salutations, $firstnames, $lastnames, $addresss, $countys, $citys, $zips, $phones,
 //			$submit
 //		));
-		$this->addElements(array($formorder, $productsCost, $vat, $tax, $discount, $ramburs, $totalCost, $payment, $comments,
-			$firstnameb, $lastnameb, $addressb, $cityb, $phoneb, $emailb,
-			$submit
-		));
-	}
+        $this->addElements(array($formorder, $productsCost, $vat, $tax, $discount, $ramburs, $totalCost, $payment, $comments,
+            $firstnameb, $lastnameb, $addressb, $cityb, $phoneb, $emailb,
+            $submit
+        ));
+    }
 
-	public function plugincomplete($properties)
-	{
-		if($properties != null){
-		   if(!empty($properties['email'])){
-				$this->emailb->setValue($properties['email']);
+    public function plugincomplete($properties)
+    {
+        if ($properties != null) {
+            if (!empty($properties['email'])) {
+                $this->emailb->setValue($properties['email']);
 //				$this->tbReEmail->setValue($properties['email']);
-		   }
-		   if(!empty($properties['first_name'])){
+            }
+            if (!empty($properties['first_name'])) {
 //			   $this->firstnames->setValue($properties['first_name']);
-			   $this->firstnameb->setValue($properties['first_name']);
-		   }
-		   if(!empty($properties['last_name'])){
+                $this->firstnameb->setValue($properties['first_name']);
+            }
+            if (!empty($properties['last_name'])) {
 //				$this->lastnames->setValue($properties['last_name']);
-				$this->lastnameb->setValue($properties['last_name']);
-		   }
-		}
-	}
+                $this->lastnameb->setValue($properties['last_name']);
+            }
+        }
+    }
 
 
-	public function setting()
-	{
-		$auth = Zend_Auth::getInstance();
-		$authAccount = $auth->getStorage()->read();
-		if(null != $authAccount && is_object($authAccount)) {
-			$customerId = $authAccount->getId();
-			if(null != $customerId) {
-				$customer = new Default_Model_AdminUser();
-				$customer->find($customerId);
-				if(null != $customer->getId()) {
+    public function setting()
+    {
+        $auth = Zend_Auth::getInstance();
+        $authAccount = $auth->getStorage()->read();
+        if (null != $authAccount && is_object($authAccount)) {
+            $customerId = $authAccount->getId();
+            if (null != $customerId) {
+                $customer = new Default_Model_AdminUser();
+                $customer->find($customerId);
+                if (null != $customer->getId()) {
 //					$this->person->setValue($customer->getPerson());
 //					$this->salutationb->setValue($customer->getSalutation());
-					$this->firstnameb->setValue($customer->getFirstname());
-					$this->lastnameb->setValue($customer->getLastname());
+                    $this->firstnameb->setValue($customer->getFirstname());
+                    $this->lastnameb->setValue($customer->getLastname());
 //					$this->cnpb->setValue($customer->getCnp());
 //					$this->seriab->setValue($customer->getSeria());
-					$this->addressb->setValue($customer->getAddress());
+                    $this->addressb->setValue($customer->getAddress());
 //					$this->countyb->setValue($customer->getCounty());
-					$this->cityb->setValue($customer->getCity());
+                    $this->cityb->setValue($customer->getCity());
 //					$this->zipb->setValue($customer->getZip());
-					$this->phoneb->setValue($customer->getPhone());
+                    $this->phoneb->setValue($customer->getPhone());
 //					$this->faxb->setValue($customer->getFax());
-					$this->emailb->setValue($customer->getEmail());
-					
+                    $this->emailb->setValue($customer->getEmail());
+
 //					$this->institution->setValue($customer->getInstitution());
 //					$this->fiscalcode->setValue($customer->getFiscalcode());
 //					$this->traderegister->setValue($customer->getTraderegister());
@@ -357,8 +361,8 @@ class Default_Form_Order extends Zend_Form
 //					$this->citys->setValue($customer->getCityS());
 //					$this->zips->setValue($customer->getZipS());
 //					$this->phones->setValue($customer->getPhoneS());
-				}
-			}
-		}
-	}
+                }
+            }
+        }
+    }
 }

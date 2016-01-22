@@ -1,16 +1,17 @@
 <?php
+
 class Admin_Form_Cms extends Zend_Form
 {
-	function init()
-	{
-		// Set the method for the display form to POST
-	}
+    function init()
+    {
+        // Set the method for the display form to POST
+    }
 
-	function pageAdd()
-	{
+    function pageAdd()
+    {
         $this->setMethod('post');
-        $this->addAttribs(array('id'=>'frmPage'));
-		$this->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
+        $this->addAttribs(array('id' => 'frmPage'));
+        $this->setEnctype(Zend_Form::ENCTYPE_MULTIPART);
 
 //		$title = new Zend_Form_Element_Text('title');
 //        $title->setLabel(Zend_Registry::get('translate')->_('cms_add_page_table_title'));
@@ -24,29 +25,29 @@ class Admin_Form_Cms extends Zend_Form
 //		$url->setRequired(true);
 //		$this->addElement($url);
 
-		$headline = new Zend_Form_Element_Text('headline');
+        $headline = new Zend_Form_Element_Text('headline');
         $headline->setLabel(Zend_Registry::get('translate')->_('cms_add_page_table_head_line'));
         $headline->setAttribs(array());
-		$this->addElement($headline);
+        $this->addElement($headline);
 
-		$content = new Zend_Form_Element_Textarea('content');
+        $content = new Zend_Form_Element_Textarea('content');
         $content->setLabel(Zend_Registry::get('translate')->_('cms_add_page_table_content'));
         $content->setAttribs(array());
-		$this->addElement($content);
+        $this->addElement($content);
 
 
-		$submit = new Zend_Form_Element_Submit('submit');
+        $submit = new Zend_Form_Element_Submit('submit');
         $submit->setValue(Zend_Registry::get('translate')->_('cms_add_page_table_submit'));
-        $submit->setAttribs(array('class'=>'button1'));
+        $submit->setAttribs(array('class' => 'button1'));
         $submit->setIgnore(true);
-		$this->addElement($submit);
-	}
+        $this->addElement($submit);
+    }
 
-	function pageEdit(Default_Model_Cms $value)
-	{		
-		$this->headline->setValue($value->getHeadline());
-		$this->content->setValue($value->getContent());
-		$this->submit->setValue(Zend_Registry::get('translate')->_('cms_add_page_table_modify'));
-	}
+    function pageEdit(Default_Model_Cms $value)
+    {
+        $this->headline->setValue($value->getHeadline());
+        $this->content->setValue($value->getContent());
+        $this->submit->setValue(Zend_Registry::get('translate')->_('cms_add_page_table_modify'));
+    }
 
 }

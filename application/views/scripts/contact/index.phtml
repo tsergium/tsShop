@@ -1,32 +1,33 @@
 <div class="detaliu_produs">
-	<h3>Contact</h3>
-	<?php echo $this->form; ?>
-	<div class="contact_firma">
-		<?php 
-			$company = $this->company[0];
-		?>
-		<h3>Adresa noastra</h3>
-		<p class="fl">Societate: <?php echo $company->getInstitution()  ?><br />
-			Telefon:
-			<?php echo $company->getPhone(); ?>
-			<?php if($company->getPhone2()){ ?>
-			sau
-			<?php echo $company->getPhone2(); ?>
-			<?php } ?>
-		</p>
-		<p class="fr" style="width:250px;">Adresa: <?php echo $company->getAddress();  ?> </p>
-		<div class="clearfix">&nbsp;</div>
-		<p class="fl">
-			Datele fiscale:<br/>
-			SC Oliver SRL<br/>
-			J34/352/2008<br/>
-			ro23809010<br/>
-		</p>
-		<p class="fr" style="width:250px;">
-			Timp de raspuns - maxim 24-48 ore <br/>
-			Program de lucru: Luni-Duminica 9:00 - 24:00
-		</p>
-		<div class="clearfix">&nbsp;</div>
-		<p style="clear:both;">Sau puteti completa formularul de mai sus si, in cel mai scurt timp, un reprezentant va va oferi toate informatiile solicitate.</p>
-	</div>
+    <h3>Contact</h3>
+    <?php echo $this->form; ?>
+    <div class="contact_firma">
+        <?php
+        $company = $this->company[0];
+        ?>
+        <h3>Adresa noastra</h3>
+        <p class="fl">Societate: <?php echo $company->getInstitution() ?><br/>
+            Telefon:
+            <?php echo $company->getPhone(); ?>
+            <?php if ($company->getPhone2()) { ?>
+                sau
+                <?php echo $company->getPhone2(); ?>
+            <?php } ?>
+        </p>
+        <p class="fr" style="width:250px;">Adresa: <?php echo $company->getAddress(); ?> </p>
+        <div class="clearfix">&nbsp;</div>
+        <p class="fl">
+            Datele fiscale:<br/>
+            SC Oliver SRL<br/>
+            J34/352/2008<br/>
+            ro23809010<br/>
+        </p>
+        <p class="fr" style="width:250px;">
+            Timp de raspuns - maxim 24-48 ore <br/>
+            Program de lucru: Luni-Duminica 9:00 - 24:00
+        </p>
+        <div class="clearfix">&nbsp;</div>
+        <p style="clear:both;">Sau puteti completa formularul de mai sus si, in cel mai scurt timp, un reprezentant va
+            va oferi toate informatiile solicitate.</p>
+    </div>
 </div>

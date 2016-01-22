@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: sergiu
@@ -7,6 +8,6 @@
  */
 class Default_Model_DbTable_Clients extends Zend_Db_Table_Abstract
 {
-    protected $_name			= 'ts_clients';
-    protected $_primary			= 'id';
+    protected $_name = 'ts_clients';
+    protected $_primary = 'id';
 }

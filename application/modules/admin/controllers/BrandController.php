@@ -1,4 +1,5 @@
 <?php
+
 class Admin_BrandController extends Zend_Controller_Action
 {
     public function init()
@@ -9,12 +10,11 @@ class Admin_BrandController extends Zend_Controller_Action
 
     public function indexAction()
     {
-		$model = new Default_Model_Brand();
-		$select = $model->getMapper()->getDbTable()->select();
-		$result = $model->fetchAll($select);
-		if($result)
-		{
-			$this->view->brands = $result;
-		}
+        $model = new Default_Model_Brand();
+        $select = $model->getMapper()->getDbTable()->select();
+        $result = $model->fetchAll($select);
+        if ($result) {
+            $this->view->brands = $result;
+        }
     }
 }

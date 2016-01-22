@@ -1,21 +1,22 @@
 <?php
+
 class Default_Model_DbTable_Sitepreferences extends Zend_Db_Table_Abstract
 {
-	protected $_name    = 'fp_site_preferences';
-	protected $_primary = 'id';
+    protected $_name = 'fp_site_preferences';
+    protected $_primary = 'id';
 }
 
 class Default_Model_Sitepreferences
 {
-	protected $_id;
-	protected $_name;
-	protected $_setvalue;
+    protected $_id;
+    protected $_name;
+    protected $_setvalue;
 
-	protected $_mapper;
+    protected $_mapper;
 
     public function __construct(array $options = null)
     {
-        if(is_array($options)) {
+        if (is_array($options)) {
             $this->setOptions($options);
         }
     }
@@ -23,8 +24,8 @@ class Default_Model_Sitepreferences
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' property ' . $method);
         }
         $this->$method($value);
     }
@@ -32,8 +33,8 @@ class Default_Model_Sitepreferences
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' property ' . $method);
         }
         return $this->$method();
     }
@@ -41,9 +42,9 @@ class Default_Model_Sitepreferences
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -52,7 +53,7 @@ class Default_Model_Sitepreferences
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -63,7 +64,7 @@ class Default_Model_Sitepreferences
 
     public function setName($name)
     {
-        $this->_name = (string) $name;
+        $this->_name = (string)$name;
         return $this;
     }
 
@@ -74,7 +75,7 @@ class Default_Model_Sitepreferences
 
     public function setSetvalue($setvalue)
     {
-        $this->_setvalue = (string) $setvalue;
+        $this->_setvalue = (string)$setvalue;
         return $this;
     }
 
@@ -97,7 +98,7 @@ class Default_Model_Sitepreferences
         return $this->_mapper;
     }
 
-	public function find($id)
+    public function find($id)
     {
         return $this->getMapper()->find($id, $this);
     }
@@ -112,11 +113,11 @@ class Default_Model_Sitepreferences
         return $this->getMapper()->save($this);
     }
 
-	public function delete()
+    public function delete()
     {
-    	if(null === ($id = $this->getId())) {
-    		throw new Exception("Invalid record selected!");
-    	}
+        if (null === ($id = $this->getId())) {
+            throw new Exception("Invalid record selected!");
+        }
         return $this->getMapper()->delete($id);
     }
 }
@@ -127,10 +128,10 @@ class Default_Model_SitepreferencesMapper
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
@@ -139,7 +140,7 @@ class Default_Model_SitepreferencesMapper
 
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_Sitepreferences');
         }
         return $this->_dbTable;
@@ -148,12 +149,12 @@ class Default_Model_SitepreferencesMapper
     public function find($id, Default_Model_Sitepreferences $value)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
         $value->setOptions($row->toArray());
-		return $value;
+        return $value;
     }
 
     public function fetchAll($select)
@@ -161,31 +162,32 @@ class Default_Model_SitepreferencesMapper
         $resultSet = $this->getDbTable()->fetchAll($select);
 
         $entries = array();
-        foreach($resultSet as $row) {
+        foreach ($resultSet as $row) {
             $value = new Default_Model_Sitepreferences();
             $value->setOptions($row->toArray())
-					->setMapper($this);
+                ->setMapper($this);
             $entries[] = $value;
         }
         return $entries;
     }
 
-	public function save(Default_Model_Sitepreferences $value)
+    public function save(Default_Model_Sitepreferences $value)
     {
         $data = array(
-			'name'					=> $value->getName(),
-			'setvalue'				=> $value->getSetvalue(),
+            'name' => $value->getName(),
+            'setvalue' => $value->getSetvalue(),
         );
-        if(null == ($id = $value->getId())) {
+        if (null == ($id = $value->getId())) {
             $id = $this->getDbTable()->insert($data);
         } else {
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
         return $id;
     }
+
     public function delete($id)
     {
-    	$where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
         return $this->getDbTable()->delete($where);
     }
 }

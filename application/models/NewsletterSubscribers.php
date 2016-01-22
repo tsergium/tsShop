@@ -1,19 +1,20 @@
 <?php
+
 class Default_Model_DbTable_NewsletterSubscribers extends Zend_Db_Table_Abstract
 {
-	protected $_name    = 'ts_newsletter_subscribers';
-	protected $_primary = 'id';
+    protected $_name = 'ts_newsletter_subscribers';
+    protected $_primary = 'id';
 }
 
 class Default_Model_NewsletterSubscribers
 {
-	protected $_id;
-	protected $_email;
-	protected $_unsubscribe;
-	protected $_status;
-	protected $_created;
-	protected $_modified;
-	protected $_mapper;
+    protected $_id;
+    protected $_email;
+    protected $_unsubscribe;
+    protected $_status;
+    protected $_created;
+    protected $_modified;
+    protected $_mapper;
 
     public function __construct(array $options = null)
     {
@@ -25,8 +26,8 @@ class Default_Model_NewsletterSubscribers
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' property '.$method);
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' property ' . $method);
         }
         $this->$method($value);
     }
@@ -34,8 +35,8 @@ class Default_Model_NewsletterSubscribers
     public function __get($name)
     {
         $method = 'get' . $name;
-        if(('mapper' == $name) || !method_exists($this, $method)) {
-            throw new Exception('Invalid '.$name.' property');
+        if (('mapper' == $name) || !method_exists($this, $method)) {
+            throw new Exception('Invalid ' . $name . ' property');
         }
         return $this->$method();
     }
@@ -43,9 +44,9 @@ class Default_Model_NewsletterSubscribers
     public function setOptions(array $options)
     {
         $methods = get_class_methods($this);
-        foreach($options as $key => $value) {
+        foreach ($options as $key => $value) {
             $method = 'set' . ucfirst($key);
-            if(in_array($method, $methods)) {
+            if (in_array($method, $methods)) {
                 $this->$method($value);
             }
         }
@@ -54,7 +55,7 @@ class Default_Model_NewsletterSubscribers
 
     public function setId($id)
     {
-        $this->_id = (int) $id;
+        $this->_id = (int)$id;
         return $this;
     }
 
@@ -63,9 +64,9 @@ class Default_Model_NewsletterSubscribers
         return $this->_id;
     }
 
-	public function setEmail($email)
+    public function setEmail($email)
     {
-        $this->_email = (string) $email;
+        $this->_email = (string)$email;
         return $this;
     }
 
@@ -74,9 +75,9 @@ class Default_Model_NewsletterSubscribers
         return $this->_email;
     }
 
-	public function setUnsubscribe($unsubscribe)
+    public function setUnsubscribe($unsubscribe)
     {
-        $this->_unsubscribe = (string) $unsubscribe;
+        $this->_unsubscribe = (string)$unsubscribe;
         return $this;
     }
 
@@ -85,9 +86,9 @@ class Default_Model_NewsletterSubscribers
         return $this->_unsubscribe;
     }
 
-	public function setStatus($status)
+    public function setStatus($status)
     {
-        $this->_status = (!empty($status))?(string) $status:'0';
+        $this->_status = (!empty($status)) ? (string)$status : '0';
         return $this;
     }
 
@@ -96,9 +97,9 @@ class Default_Model_NewsletterSubscribers
         return $this->_status;
     }
 
-	public function setCreated($created)
+    public function setCreated($created)
     {
-        $this->_created = (!empty($created) && strtotime($created)>0)?strtotime($created):null;
+        $this->_created = (!empty($created) && strtotime($created) > 0) ? strtotime($created) : null;
         return $this;
     }
 
@@ -107,9 +108,9 @@ class Default_Model_NewsletterSubscribers
         return $this->_created;
     }
 
-	public function setModified($date)
+    public function setModified($date)
     {
-        $this->_modified = (!empty($date) && strtotime($date)>0)?strtotime($date):null;
+        $this->_modified = (!empty($date) && strtotime($date) > 0) ? strtotime($date) : null;
         return $this;
     }
 
@@ -149,22 +150,23 @@ class Default_Model_NewsletterSubscribers
 
     public function delete()
     {
-    	if(null === ($id = $this->getId())) {
-    		throw new Exception("Invalid record selected!");
-    	}
+        if (null === ($id = $this->getId())) {
+            throw new Exception("Invalid record selected!");
+        }
         return $this->getMapper()->delete($id);
     }
 }
+
 class Default_Model_NewsletterSubscribersMapper
 {
-	protected $_dbTable;
+    protected $_dbTable;
 
     public function setDbTable($dbTable)
     {
-        if(is_string($dbTable)) {
+        if (is_string($dbTable)) {
             $dbTable = new $dbTable();
         }
-        if(!$dbTable instanceof Zend_Db_Table_Abstract) {
+        if (!$dbTable instanceof Zend_Db_Table_Abstract) {
             throw new Exception('Invalid table data gateway provided');
         }
         $this->_dbTable = $dbTable;
@@ -173,7 +175,7 @@ class Default_Model_NewsletterSubscribersMapper
 
     public function getDbTable()
     {
-        if(null === $this->_dbTable) {
+        if (null === $this->_dbTable) {
             $this->setDbTable('Default_Model_DbTable_NewsletterSubscribers');
         }
         return $this->_dbTable;
@@ -182,12 +184,12 @@ class Default_Model_NewsletterSubscribersMapper
     public function find($id, Default_Model_NewsletterSubscribers $newsletter)
     {
         $result = $this->getDbTable()->find($id);
-        if(0 == count($result)) {
+        if (0 == count($result)) {
             return;
         }
         $row = $result->current();
         $newsletter->setOptions($row->toArray());
-		return $newsletter;
+        return $newsletter;
     }
 
     public function fetchAll($select)
@@ -195,10 +197,10 @@ class Default_Model_NewsletterSubscribersMapper
         $resultSet = $this->getDbTable()->fetchAll($select);
 
         $entries = array();
-        foreach($resultSet as $row) {
+        foreach ($resultSet as $row) {
             $value = new Default_Model_NewsletterSubscribers();
             $value->setOptions($row->toArray())
-					->setMapper($this);
+                ->setMapper($this);
             $entries[] = $value;
         }
         return $entries;
@@ -207,23 +209,24 @@ class Default_Model_NewsletterSubscribersMapper
     public function save(Default_Model_NewsletterSubscribers $value)
     {
         $data = array(
-			'email'					=> $value->getEmail(),
-			'unsubscribe'			=> $value->getUnsubscribe(),
-			'status'				=> $value->getStatus(),
+            'email' => $value->getEmail(),
+            'unsubscribe' => $value->getUnsubscribe(),
+            'status' => $value->getStatus(),
         );
-        if(null === ($id = $value->getId())) {
-			$data['created']	 = new Zend_Db_Expr('NOW()');
+        if (null === ($id = $value->getId())) {
+            $data['created'] = new Zend_Db_Expr('NOW()');
             $id = $this->getDbTable()->insert($data);
 
         } else {
-        	$data['modified']	 = new Zend_Db_Expr('NOW()');
+            $data['modified'] = new Zend_Db_Expr('NOW()');
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
         return $id;
     }
+
     public function delete($id)
     {
-    	$where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
         return $this->getDbTable()->delete($where);
     }
 }
